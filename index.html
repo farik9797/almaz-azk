@@ -10,7 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -19,6 +19,7 @@
       extend: {
         fontFamily: {
           sans: ['Manrope', 'sans-serif'],
+          heading: ['"IBM Plex Sans"', 'sans-serif'],
         },
         colors: {
           navy: {
@@ -43,6 +44,24 @@
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Manrope', sans-serif; background: #FFFFFF; color: #1E293B; }
+  h1, h2, h3, h4 { font-family: 'IBM Plex Sans', sans-serif; letter-spacing: -0.01em; }
+
+  .bg-dots {
+    background-image: radial-gradient(rgba(255,255,255,0.09) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .photo-navy { position: relative; }
+  .photo-navy::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(11,42,74,0.16);
+    pointer-events: none;
+  }
+
+  .card-hover { transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+  .card-hover:hover { border-color: rgba(11,42,74,0.35); box-shadow: 0 8px 24px -8px rgba(11,42,74,0.15); transform: translateY(-2px); }
 
   .reveal { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
   .reveal.in { opacity: 1; transform: none; }
@@ -115,8 +134,9 @@
 </header>
 
 <!-- HERO -->
-<section id="top" class="bg-navy text-white">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+<section id="top" class="relative bg-navy text-white overflow-hidden">
+  <div class="absolute inset-0 bg-dots"></div>
+  <div class="relative max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
     <div class="reveal">
       <span class="inline-block text-accent font-semibold text-sm uppercase tracking-wide mb-4">Нефтепродукты оптом и в розницу</span>
       <h1 class="font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight mb-5">
@@ -152,7 +172,7 @@
     </div>
 
     <!-- иллюстративное фото (Unsplash) — заменить на реальное, когда пришлёте -->
-    <div class="reveal hidden lg:block rounded-2xl overflow-hidden border border-white/10">
+    <div class="reveal hidden lg:block photo-navy rounded-2xl overflow-hidden border border-white/10">
       <img src="https://images.unsplash.com/photo-1780882899461-0b158f457b44?auto=format&fit=crop&w=1000&q=70"
            alt="Резервуары для хранения нефтепродуктов" class="w-full h-[420px] object-cover">
     </div>
@@ -186,19 +206,19 @@
     </div>
 
     <div class="reveal grid sm:grid-cols-2 gap-4 content-start">
-      <div class="rounded-xl border border-slate-200 p-5">
+      <div class="rounded-xl border border-slate-200 p-5 card-hover">
         <i data-lucide="shield-check" class="w-7 h-7 text-leaf mb-3"></i>
         <div class="font-bold text-navy text-sm">Надёжность</div>
       </div>
-      <div class="rounded-xl border border-slate-200 p-5">
+      <div class="rounded-xl border border-slate-200 p-5 card-hover">
         <i data-lucide="award" class="w-7 h-7 text-leaf mb-3"></i>
         <div class="font-bold text-navy text-sm">Качество</div>
       </div>
-      <div class="rounded-xl border border-slate-200 p-5">
+      <div class="rounded-xl border border-slate-200 p-5 card-hover">
         <i data-lucide="hard-hat" class="w-7 h-7 text-leaf mb-3"></i>
         <div class="font-bold text-navy text-sm">Безопасность</div>
       </div>
-      <div class="rounded-xl border border-slate-200 p-5">
+      <div class="rounded-xl border border-slate-200 p-5 card-hover">
         <i data-lucide="handshake" class="w-7 h-7 text-leaf mb-3"></i>
         <div class="font-bold text-navy text-sm">Честное партнёрство</div>
       </div>
@@ -219,27 +239,40 @@
     </div>
 
     <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="bg-white rounded-xl border border-slate-200 p-6">
+      <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="warehouse" class="w-8 h-8 text-navy mb-4"></i>
         <h3 class="font-bold text-navy mb-2">Нефтебаза</h3>
         <p class="text-steel text-sm leading-relaxed">Приём, хранение, контроль качества и отпуск нефтепродуктов с соблюдением требований промышленной и пожарной безопасности.</p>
       </div>
-      <div class="bg-white rounded-xl border border-slate-200 p-6">
+      <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="fuel" class="w-8 h-8 text-navy mb-4"></i>
         <h3 class="font-bold text-navy mb-2">Сеть АЗС</h3>
         <p class="text-steel text-sm leading-relaxed">Розничная реализация бензина и дизельного топлива, качественное обслуживание и надёжный сервис для клиентов.</p>
       </div>
-      <div class="bg-white rounded-xl border border-slate-200 p-6">
+      <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="truck" class="w-8 h-8 text-navy mb-4"></i>
         <h3 class="font-bold text-navy mb-2">Отдел оптовых продаж</h3>
         <p class="text-steel text-sm leading-relaxed">Поставки нефтепродуктов корпоративным клиентам, промышленным предприятиям, сельхозорганизациям и госучреждениям.</p>
       </div>
-      <div class="bg-white rounded-xl border border-slate-200 p-6">
+      <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="clipboard-list" class="w-8 h-8 text-navy mb-4"></i>
         <h3 class="font-bold text-navy mb-2">Логистика и администрация</h3>
         <p class="text-steel text-sm leading-relaxed">Координация работы подразделений, сопровождение поставок, документооборот и взаимодействие с партнёрами.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ФОТО-БАННЕР -->
+<section class="reveal relative photo-navy h-64 md:h-80 overflow-hidden">
+  <!-- иллюстративное фото (Unsplash) -->
+  <img src="https://images.unsplash.com/photo-1726731782158-fcf6822b6ca4?auto=format&fit=crop&w=1600&q=70"
+       alt="Инфраструктура хранения и переработки нефтепродуктов" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-navy-dark/55"></div>
+  <div class="relative h-full max-w-6xl mx-auto px-5 lg:px-8 flex items-center">
+    <p class="text-white font-heading font-bold text-xl md:text-2xl max-w-xl leading-snug">
+      Контроль качества нефтепродуктов на всех этапах — от приёма на нефтебазу до отпуска клиенту.
+    </p>
   </div>
 </section>
 
@@ -252,21 +285,21 @@
     </div>
 
     <div class="reveal grid sm:grid-cols-3 gap-5 mb-6">
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <div class="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-4">
           <i data-lucide="fuel" class="w-6 h-6 text-navy"></i>
         </div>
         <h3 class="font-bold text-navy text-lg mb-1">Дизельное топливо</h3>
         <p class="text-steel text-sm leading-relaxed">Оптовые и розничные поставки дизельного топлива со собственной нефтебазы.</p>
       </div>
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <div class="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-4">
           <i data-lucide="droplet" class="w-6 h-6 text-navy"></i>
         </div>
         <h3 class="font-bold text-navy text-lg mb-1">Бензин АИ-92</h3>
         <p class="text-steel text-sm leading-relaxed">Реализация бензина марки АИ-92 через сеть АЗС.</p>
       </div>
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <div class="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-4">
           <i data-lucide="droplets" class="w-6 h-6 text-navy"></i>
         </div>
@@ -277,32 +310,32 @@
     <p class="reveal text-steel text-sm mb-10">Вся реализуемая продукция соответствует установленным требованиям качества и сопровождается необходимой документацией.</p>
 
     <div class="reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="truck" class="w-7 h-7 text-leaf mb-3"></i>
         <h4 class="font-bold text-navy mb-1.5">Оптовая реализация</h4>
         <p class="text-steel text-sm leading-relaxed">Поставка топлива корпоративным клиентам, предприятиям, сельхозорганизациям и госучреждениям.</p>
       </div>
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="store" class="w-7 h-7 text-leaf mb-3"></i>
         <h4 class="font-bold text-navy mb-1.5">Розничная реализация</h4>
         <p class="text-steel text-sm leading-relaxed">Продажа бензина и дизельного топлива через собственную сеть АЗС.</p>
       </div>
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="warehouse" class="w-7 h-7 text-leaf mb-3"></i>
         <h4 class="font-bold text-navy mb-1.5">Хранение нефтепродуктов</h4>
         <p class="text-steel text-sm leading-relaxed">Приём, безопасное хранение и отпуск топлива с соблюдением требований безопасности.</p>
       </div>
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="shield-check" class="w-7 h-7 text-leaf mb-3"></i>
         <h4 class="font-bold text-navy mb-1.5">Контроль качества</h4>
         <p class="text-steel text-sm leading-relaxed">Контроль качества нефтепродуктов на всех этапах приёма, хранения и реализации.</p>
       </div>
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="credit-card" class="w-7 h-7 text-leaf mb-3"></i>
         <h4 class="font-bold text-navy mb-1.5">Топливные карты и талоны</h4>
         <p class="text-steel text-sm leading-relaxed">Безналичный расчёт по картам и талонам для компаний и автопарков.</p>
       </div>
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="users" class="w-7 h-7 text-leaf mb-3"></i>
         <h4 class="font-bold text-navy mb-1.5">Индивидуальный подход</h4>
         <p class="text-steel text-sm leading-relaxed">Оперативное сопровождение сделок, гибкие условия и долгосрочное партнёрство.</p>
@@ -310,19 +343,19 @@
     </div>
 
     <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
-      <div class="rounded-xl border border-slate-200 p-5 text-center">
+      <div class="rounded-xl border border-slate-200 p-5 text-center card-hover">
         <i data-lucide="clock" class="w-6 h-6 text-navy mb-2 mx-auto"></i>
         <div class="font-semibold text-navy text-sm">Круглосуточно</div>
       </div>
-      <div class="rounded-xl border border-slate-200 p-5 text-center">
+      <div class="rounded-xl border border-slate-200 p-5 text-center card-hover">
         <i data-lucide="user-check" class="w-6 h-6 text-navy mb-2 mx-auto"></i>
         <div class="font-semibold text-navy text-sm">Заправка с заправщиком</div>
       </div>
-      <div class="rounded-xl border border-slate-200 p-5 text-center">
+      <div class="rounded-xl border border-slate-200 p-5 text-center card-hover">
         <i data-lucide="coffee" class="w-6 h-6 text-navy mb-2 mx-auto"></i>
         <div class="font-semibold text-navy text-sm">Магазин и кофе на АЗС</div>
       </div>
-      <div class="rounded-xl border border-slate-200 p-5 text-center">
+      <div class="rounded-xl border border-slate-200 p-5 text-center card-hover">
         <i data-lucide="car" class="w-6 h-6 text-navy mb-2 mx-auto"></i>
         <div class="font-semibold text-navy text-sm">Автомойка</div>
       </div>
@@ -331,8 +364,9 @@
 </section>
 
 <!-- ГЕОГРАФИЯ -->
-<section id="geo" class="py-16 md:py-24 bg-navy text-white">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+<section id="geo" class="relative py-16 md:py-24 bg-navy text-white overflow-hidden">
+  <div class="absolute inset-0 bg-dots"></div>
+  <div class="relative max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
     <div class="reveal">
       <span class="text-accent font-semibold text-sm uppercase tracking-wide">География</span>
       <h2 class="font-extrabold text-2xl md:text-3xl mt-2 mb-5 leading-tight">Работаем по всему югу Казахстана</h2>
@@ -367,7 +401,7 @@
 <!-- КАК МЫ РАБОТАЕМ -->
 <section class="py-16 md:py-24">
   <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
-    <div class="reveal order-2 lg:order-1 rounded-2xl overflow-hidden border border-slate-200">
+    <div class="reveal order-2 lg:order-1 photo-navy rounded-2xl overflow-hidden border border-slate-200">
       <!-- иллюстративное фото (Unsplash) -->
       <img src="https://images.unsplash.com/photo-1758519288905-38b7b00c1023?auto=format&fit=crop&w=1000&q=70"
            alt="Оформление договора на поставку нефтепродуктов" class="w-full h-[360px] object-cover">
@@ -410,22 +444,22 @@
       <p class="text-steel mt-3 leading-relaxed">Нашу продукцию и услуги выбирают за надёжность, качество и выгодные условия сотрудничества.</p>
     </div>
     <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="bg-white rounded-xl border border-slate-200 p-6">
+      <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="tag" class="w-7 h-7 text-accent-dark mb-3"></i>
         <h3 class="font-bold text-navy mb-1.5">Выгодные цены</h3>
         <p class="text-steel text-sm leading-relaxed">Конкурентоспособные цены на нефтепродукты.</p>
       </div>
-      <div class="bg-white rounded-xl border border-slate-200 p-6">
+      <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="award" class="w-7 h-7 text-accent-dark mb-3"></i>
         <h3 class="font-bold text-navy mb-1.5">Высокое качество</h3>
         <p class="text-steel text-sm leading-relaxed">Топливо соответствует требованиям качества, документы — на каждую партию.</p>
       </div>
-      <div class="bg-white rounded-xl border border-slate-200 p-6">
+      <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="heart-handshake" class="w-7 h-7 text-accent-dark mb-3"></i>
         <h3 class="font-bold text-navy mb-1.5">Клиентоориентированность</h3>
         <p class="text-steel text-sm leading-relaxed">Высокий уровень сервиса и индивидуальный подход к каждому клиенту.</p>
       </div>
-      <div class="bg-white rounded-xl border border-slate-200 p-6">
+      <div class="bg-white rounded-xl border border-slate-200 p-6 card-hover">
         <i data-lucide="zap" class="w-7 h-7 text-accent-dark mb-3"></i>
         <h3 class="font-bold text-navy mb-1.5">Оперативная связь</h3>
         <p class="text-steel text-sm leading-relaxed">Быстрое решение вопросов клиентов на всех этапах сотрудничества.</p>
@@ -524,19 +558,19 @@
     </div>
 
     <div class="reveal grid lg:grid-cols-2 gap-10 mb-10">
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <div class="text-xs uppercase tracking-wide text-steel mb-2">По вопросам оптовой покупки</div>
         <a href="tel:+87077294051" class="flex items-center gap-3 font-bold text-navy text-lg">
           <i data-lucide="phone" class="w-5 h-5 text-accent-dark"></i> +7 707 729 4051
         </a>
       </div>
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <div class="text-xs uppercase tracking-wide text-steel mb-2">Розничная покупка на АЗС (талоны, карты)</div>
         <a href="tel:+87758653737" class="flex items-center gap-3 font-bold text-navy text-lg">
           <i data-lucide="phone" class="w-5 h-5 text-accent-dark"></i> +7 775 865 3737
         </a>
       </div>
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <div class="text-xs uppercase tracking-wide text-steel mb-2">По всем остальным вопросам</div>
         <a href="tel:+87252357444" class="flex items-center gap-3 font-bold text-navy text-lg">
           <i data-lucide="phone" class="w-5 h-5 text-accent-dark"></i> 8 (7252) 357-444
@@ -545,7 +579,7 @@
           <i data-lucide="phone" class="w-5 h-5 text-accent-dark"></i> +7 771 061 10 66
         </a>
       </div>
-      <div class="rounded-xl border border-slate-200 p-6">
+      <div class="rounded-xl border border-slate-200 p-6 card-hover">
         <div class="text-xs uppercase tracking-wide text-steel mb-2">Офис компании</div>
         <div class="flex items-start gap-3 font-semibold text-navy">
           <i data-lucide="map-pin" class="w-5 h-5 text-accent-dark mt-0.5 shrink-0"></i>
@@ -556,18 +590,18 @@
 
     <h3 class="reveal font-bold text-navy text-lg mb-4">Адреса АЗС</h3>
     <div class="reveal grid sm:grid-cols-3 gap-5 mb-8">
-      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5">
+      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5 card-hover">
         <div class="font-bold text-navy mb-1">АЗС-1</div>
         <p class="text-steel text-sm">г. Шымкент, район Тұран, трасса Алматы — Термез, А2, 858 км, справа по дороге на г. Ташкент</p>
       </div>
-      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5">
+      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5 card-hover">
         <div class="font-bold text-navy mb-1">АЗС-2</div>
         <p class="text-steel text-sm">г. Шымкент, Абайский район, жилой массив Кайнарбулак, участок 349, справа на г. Тараз</p>
         <a href="https://2gis.kz/shymkent/firm/70000001067526224" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-accent-dark text-sm font-semibold mt-2">
           Открыть на 2ГИС <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
         </a>
       </div>
-      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5">
+      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5 card-hover">
         <div class="font-bold text-navy mb-1">АЗС-3</div>
         <p class="text-steel text-sm">Туркестанская обл., Сайрамский район, Кайнарбулакский с/о, с. Касымбек Датка, квартал 219, справа на г. Туркестан</p>
       </div>
