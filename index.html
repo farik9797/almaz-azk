@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>АЗК Алмаз — дизельное топливо и АЗС в Шымкенте с 2001 года</title>
-<meta name="description" content="ТОО «АЗК АЛМАЗ» — собственная нефтебаза, оптовая и розничная торговля дизельным топливом в Шымкенте. Круглосуточная АЗС с заправщиком. На рынке с 2001 года.">
+<title>АЗК Алмаз — нефтепродукты оптом и в розницу в Шымкенте и Туркестанской области</title>
+<meta name="description" content="ТОО «АЗК АЛМАЗ» — на рынке нефтепродуктов с 1998 года. Собственная нефтебаза и сеть АЗС в Шымкенте и Туркестанской области. Оптовая и розничная реализация АИ-92, АИ-95, дизельного топлива.">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000000'/%3E%3Crect x='24' y='25' width='15' height='55' fill='%230066B1'/%3E%3Crect x='42.5' y='25' width='15' height='55' fill='%236F0F3A'/%3E%3Crect x='61' y='25' width='15' height='55' fill='%23E4002B'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B2A4A'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='800' font-size='56' fill='%23FBBF24' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -18,787 +18,582 @@
     theme: {
       extend: {
         fontFamily: {
-          heading: ['"Barlow Condensed"', 'sans-serif'],
-          body: ['Barlow', 'sans-serif'],
+          sans: ['Manrope', 'sans-serif'],
         },
         colors: {
-          graphite: {
-            DEFAULT: '#0A0A0A',
-            deep: '#000000',
-            soft: '#171717',
+          navy: {
+            DEFAULT: '#0B2A4A',
+            dark: '#071B31',
+            light: '#12385F',
           },
-          steel: {
-            DEFAULT: '#9CA3AF',
-            light: '#D1D5DB',
-          },
+          ink: '#1E293B',
+          steel: '#64748B',
           accent: {
-            DEFAULT: '#0066B1',
-            dark: '#004C87',
-            light: '#4D94D6',
+            DEFAULT: '#F5A623',
+            dark: '#D9860A',
           },
-          mviolet: '#6F0F3A',
-          mred: '#E4002B',
-        },
-        boxShadow: {
-          glow: '0 0 60px -12px rgba(0,102,177,0.45)',
-          'glow-sm': '0 0 30px -8px rgba(0,102,177,0.5)',
+          leaf: '#1E8E4F',
         },
       },
     },
   };
 </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
   html { scroll-behavior: smooth; }
-  body { font-family: 'Barlow', sans-serif; background: #0A0A0A; }
-  h1, h2, h3, h4, .font-heading { font-family: 'Barlow Condensed', sans-serif; }
-  h1, h2, h3, h4 { text-transform: uppercase; letter-spacing: 0.005em; }
+  body { font-family: 'Manrope', sans-serif; background: #FFFFFF; color: #1E293B; }
 
-  .bg-grid {
-    background-image:
-      linear-gradient(rgba(180,190,204,0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(180,190,204,0.07) 1px, transparent 1px);
-    background-size: 44px 44px;
-    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 100%);
-    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 100%);
-  }
-
-  .grain::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 60;
-    pointer-events: none;
-    opacity: 0.05;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  .glass {
-    background: rgba(255,255,255,0.045);
-    border: 1px solid rgba(255,255,255,0.09);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-  .glass-hover {
-    transition: transform .35s ease, border-color .35s ease, background-color .35s ease, box-shadow .35s ease;
-  }
-  .glass-hover:hover {
-    transform: translateY(-6px);
-    border-color: rgba(0,102,177,0.4);
-    background: rgba(255,255,255,0.07);
-    box-shadow: 0 20px 60px -20px rgba(0,102,177,0.3);
-  }
-
-  .text-gradient {
-    color: #0066B1;
-  }
-
-  .stripe { display: flex; overflow: hidden; }
-  .stripe > span { flex: 1 1 0%; }
-
-  .btn-primary {
-    background: #ffffff;
-    transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease;
-  }
-  .btn-primary:hover { background-color: #E5E5E5; transform: translateY(-2px); box-shadow: 0 16px 40px -12px rgba(0,0,0,0.5); }
-
-  .btn-glass {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.14);
-    transition: transform .3s ease, border-color .3s ease, background-color .3s ease;
-  }
-  .btn-glass:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.09); }
-
-  .mesh {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(90px);
-    pointer-events: none;
-  }
-
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  .marquee-track {
-    display: flex;
-    width: max-content;
-    animation: marquee 28s linear infinite;
-  }
-
+  .reveal { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
-    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; transition: none; }
   }
 
-  .reveal { opacity: 0; transform: translateY(24px); }
+  .btn-accent { background: #F5A623; color: #0B2A4A; transition: background-color .2s ease; }
+  .btn-accent:hover { background-color: #D9860A; }
+
+  .btn-outline { border: 1.5px solid #CBD5E1; transition: border-color .2s ease, background-color .2s ease; }
+  .btn-outline:hover { border-color: #0B2A4A; background-color: #F8FAFC; }
+
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
 </style>
 </head>
 
-<body class="grain text-white antialiased overflow-x-hidden">
+<body class="antialiased">
+
+<!-- TOP BAR -->
+<div class="hidden md:block bg-navy-dark text-slate-300 text-xs">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 h-9 flex items-center justify-between">
+    <span>Республика Казахстан, г. Шымкент, район Туран, проспект Абая, 1А</span>
+    <div class="flex items-center gap-5">
+      <a href="tel:+87077294051" class="hover:text-white transition-colors">Опт: +7 707 729 4051</a>
+      <a href="tel:+87758653737" class="hover:text-white transition-colors">Розница/АЗС: +7 775 865 3737</a>
+    </div>
+  </div>
+</div>
 
 <!-- HEADER -->
-<header class="fixed top-3 md:top-5 inset-x-0 z-50 px-4">
-  <div class="max-w-6xl mx-auto">
-    <div class="glass rounded-2xl px-4 md:px-6 h-16 flex items-center justify-between shadow-lg shadow-black/20">
-      <a href="#top" id="top" class="flex items-center gap-3 shrink-0">
-        <span class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center font-heading font-black text-white text-base shadow-glow-sm">А</span>
-        <span class="stripe w-6 h-8 rounded-sm shrink-0 gap-[1.5px]">
-          <span class="bg-accent"></span><span class="bg-mviolet"></span><span class="bg-mred"></span>
-        </span>
-        <span class="leading-tight hidden sm:block">
-          <span class="block font-heading font-bold text-white tracking-wide text-sm">АЗК АЛМАЗ</span>
-          <span class="block text-[11px] text-steel">с 2001 года · Шымкент</span>
-        </span>
-      </a>
+<header class="sticky top-0 z-50 bg-white border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 h-16 md:h-[72px] flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3 shrink-0">
+      <span class="w-10 h-10 rounded-lg bg-navy flex items-center justify-center font-extrabold text-accent text-lg">А</span>
+      <span class="leading-tight">
+        <span class="block font-extrabold text-navy text-base">АЗК АЛМАЗ</span>
+        <span class="block text-[11px] text-steel">нефтепродукты с 1998 года</span>
+      </span>
+    </a>
 
-      <nav class="hidden lg:flex items-center gap-7 font-heading text-[13px] text-steel-light">
-        <a href="#about" class="hover:text-white transition-colors">О компании</a>
-        <a href="#neftebaza" class="hover:text-white transition-colors">Нефтебаза</a>
-        <a href="#fuel" class="hover:text-white transition-colors">Топливо</a>
-        <a href="#advantages" class="hover:text-white transition-colors">Преимущества</a>
-        <a href="#faq" class="hover:text-white transition-colors">Вопросы</a>
-        <a href="#contacts" class="hover:text-white transition-colors">Контакты</a>
-      </nav>
-
-      <div class="flex items-center gap-2">
-        <a href="https://2gis.kz/shymkent/firm/70000001067526224" target="_blank" rel="noopener"
-           class="btn-primary hidden sm:inline-flex items-center gap-2 rounded-full text-graphite-deep font-heading font-semibold text-[13px] px-4 py-2.5 cursor-pointer">
-          <i data-lucide="map-pin" class="w-4 h-4"></i>
-          На карте 2ГИС
-        </a>
-        <button id="menu-btn" aria-label="Открыть меню" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl text-white cursor-pointer">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- mobile menu -->
-    <nav id="mobile-menu" class="lg:hidden hidden flex-col gap-1 mt-2 glass rounded-2xl p-4 font-heading text-sm text-steel-light">
-      <a href="#about" class="py-2.5 border-b border-white/5">О компании</a>
-      <a href="#neftebaza" class="py-2.5 border-b border-white/5">Нефтебаза</a>
-      <a href="#fuel" class="py-2.5 border-b border-white/5">Топливо</a>
-      <a href="#advantages" class="py-2.5 border-b border-white/5">Преимущества</a>
-      <a href="#faq" class="py-2.5 border-b border-white/5">Вопросы</a>
-      <a href="#contacts" class="py-2.5">Контакты</a>
-      <a href="https://2gis.kz/shymkent/firm/70000001067526224" target="_blank" rel="noopener" class="btn-primary mt-2 inline-flex items-center gap-2 rounded-full text-graphite-deep font-semibold px-4 py-2.5 w-fit">
-        <i data-lucide="map-pin" class="w-4 h-4"></i> На карте 2ГИС
-      </a>
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-ink">
+      <a href="#about" class="hover:text-navy transition-colors">О компании</a>
+      <a href="#structure" class="hover:text-navy transition-colors">Структура</a>
+      <a href="#fuel" class="hover:text-navy transition-colors">Услуги</a>
+      <a href="#geo" class="hover:text-navy transition-colors">География</a>
+      <a href="#faq" class="hover:text-navy transition-colors">Вопросы</a>
+      <a href="#contacts" class="hover:text-navy transition-colors">Контакты</a>
     </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="tel:+87252357444" class="hidden sm:flex items-center gap-2 font-semibold text-navy text-sm">
+        <i data-lucide="phone" class="w-4 h-4 text-accent"></i> 8 (7252) 357-444
+      </a>
+      <button id="menu-btn" aria-label="Открыть меню" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg text-navy cursor-pointer">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
   </div>
+
+  <nav id="mobile-menu" class="lg:hidden hidden flex-col border-t border-slate-200 px-5 py-3 text-sm font-medium text-ink">
+    <a href="#about" class="py-2.5 border-b border-slate-100">О компании</a>
+    <a href="#structure" class="py-2.5 border-b border-slate-100">Структура</a>
+    <a href="#fuel" class="py-2.5 border-b border-slate-100">Услуги</a>
+    <a href="#geo" class="py-2.5 border-b border-slate-100">География</a>
+    <a href="#faq" class="py-2.5 border-b border-slate-100">Вопросы</a>
+    <a href="#contacts" class="py-2.5">Контакты</a>
+  </nav>
 </header>
 
 <!-- HERO -->
-<section class="relative pt-40 pb-16 md:pt-52 md:pb-20 overflow-hidden">
-  <div class="absolute inset-0 bg-grid opacity-60"></div>
-  <div class="mesh -right-40 -top-20 w-[560px] h-[560px] bg-accent/20"></div>
-  <div class="mesh -left-40 top-64 w-[420px] h-[420px] bg-steel/10"></div>
-
-  <div class="relative max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
-    <div>
-      <span class="reveal inline-flex items-center gap-2.5 glass rounded-full px-4 py-1.5 text-xs md:text-sm font-heading text-steel-light mb-7">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-        </span>
-        Оптовая и розничная торговля дизельным топливом · Шымкент
-      </span>
-      <h1 class="reveal font-heading font-black text-4xl sm:text-5xl lg:text-[3.3rem] leading-[1.1] mb-6 tracking-tight">
-        Дизельное топливо,<br> которому доверяют<br> с <span class="text-gradient">2001 года</span>
+<section id="top" class="bg-navy text-white">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <span class="inline-block text-accent font-semibold text-sm uppercase tracking-wide mb-4">Нефтепродукты оптом и в розницу</span>
+      <h1 class="font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight mb-5">
+        Надёжный поставщик топлива в Шымкенте и Туркестанской области
       </h1>
-      <p class="reveal text-steel-light text-lg leading-relaxed max-w-xl mb-10">
-        ТОО «АЗК АЛМАЗ» — собственная нефтебаза, контроль качества на каждом
-        этапе хранения и круглосуточная заправка в Шымкенте с полным сервисом.
+      <p class="text-slate-300 text-lg leading-relaxed mb-8 max-w-xl">
+        ТОО «АЗК Алмаз» — на рынке нефтепродуктов с 1998 года. Собственная нефтебаза
+        и сеть автозаправочных станций, одни из самых выгодных цен на рынке при
+        неизменно высоком качестве топлива и уровне обслуживания.
       </p>
-
-      <div class="reveal flex flex-wrap gap-4 mb-14">
-        <a href="#contacts" class="btn-primary inline-flex items-center gap-2 rounded-full text-graphite-deep font-heading font-semibold px-6 py-3.5 cursor-pointer">
-          Адрес и контакты <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      <div class="flex flex-wrap gap-4 mb-12">
+        <a href="#contacts" class="btn-accent inline-flex items-center gap-2 rounded-lg font-semibold px-6 py-3.5 cursor-pointer">
+          Связаться с нами <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
-        <a href="https://2gis.kz/shymkent/firm/70000001067526224" target="_blank" rel="noopener" class="btn-glass inline-flex items-center gap-2 rounded-full font-heading font-semibold px-6 py-3.5 cursor-pointer">
-          Отзывы на 2ГИС <i data-lucide="external-link" class="w-4 h-4"></i>
+        <a href="#fuel" class="btn-outline inline-flex items-center gap-2 rounded-lg font-semibold px-6 py-3.5 cursor-pointer text-white">
+          Наши услуги
         </a>
       </div>
-
-      <div class="reveal grid grid-cols-3 gap-3 max-w-lg">
-        <div class="glass glass-hover rounded-2xl px-4 py-4 text-center">
-          <div class="font-heading font-black text-2xl md:text-3xl text-gradient" data-counter="24" data-suffix="+">0+</div>
-          <div class="text-[11px] md:text-xs text-steel mt-1">года на рынке</div>
+      <div class="grid grid-cols-3 gap-6 max-w-md border-t border-white/15 pt-6">
+        <div>
+          <div class="font-extrabold text-2xl md:text-3xl text-accent">25+</div>
+          <div class="text-xs text-slate-400 mt-1">лет на рынке</div>
         </div>
-        <div class="glass glass-hover rounded-2xl px-4 py-4 text-center">
-          <div class="font-heading font-black text-2xl md:text-3xl text-gradient">24/7</div>
-          <div class="text-[11px] md:text-xs text-steel mt-1">без выходных</div>
+        <div>
+          <div class="font-extrabold text-2xl md:text-3xl text-accent">3</div>
+          <div class="text-xs text-slate-400 mt-1">АЗС в регионе</div>
         </div>
-        <div class="glass glass-hover rounded-2xl px-4 py-4 text-center">
-          <div class="font-heading font-black text-2xl md:text-3xl text-gradient" data-counter="4.8" data-decimals="1">0.0</div>
-          <div class="text-[11px] md:text-xs text-steel mt-1">рейтинг 2ГИС</div>
+        <div>
+          <div class="font-extrabold text-2xl md:text-3xl text-accent">4.8</div>
+          <div class="text-xs text-slate-400 mt-1">рейтинг на 2ГИС</div>
         </div>
       </div>
     </div>
 
-    <!-- hero photo (иллюстративное фото АЗС, Unsplash — заменить на реальное фото объекта, когда появится) -->
-    <div class="reveal relative hidden lg:block h-[440px]">
-      <div class="mesh inset-0 w-full h-full bg-accent/10 blur-[100px]"></div>
-      <div class="relative h-full rounded-3xl overflow-hidden border border-white/10 shadow-glow">
-        <img src="https://images.unsplash.com/photo-1695561324569-5e47c76dc0a3?auto=format&fit=crop&w=1200&q=70"
-             alt="Автозаправочная станция в тёмное время суток"
-             class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-graphite/60"></div>
-      </div>
-
-      <div class="glass rounded-xl px-4 py-3 absolute top-6 left-0 text-xs font-heading">
-        <div class="text-steel">Профиль компании</div>
-        <div class="font-semibold text-white">Дизельное топливо</div>
-      </div>
-      <div class="glass rounded-xl px-4 py-3 absolute bottom-6 right-4 text-xs font-heading">
-        <div class="text-steel">Собственная</div>
-        <div class="font-semibold text-white">Нефтебаза</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<section class="relative border-y border-white/5 py-4 overflow-hidden bg-white/[0.02]">
-  <div class="marquee-track gap-10 text-steel font-heading text-xs md:text-sm uppercase tracking-wide">
-    <div class="flex items-center gap-10 pr-10">
-      <span>БИН 011240001881</span>
-      <span class="text-accent">•</span>
-      <span>На рынке с 2001 года</span>
-      <span class="text-accent">•</span>
-      <span>Плательщик НДС</span>
-      <span class="text-accent">•</span>
-      <span>Собственная нефтебаза</span>
-      <span class="text-accent">•</span>
-      <span>Круглосуточно · Шымкент</span>
-      <span class="text-accent">•</span>
-      <span>Рейтинг 4.8 на 2ГИС</span>
-      <span class="text-accent">•</span>
-    </div>
-    <div class="flex items-center gap-10 pr-10" aria-hidden="true">
-      <span>БИН 011240001881</span>
-      <span class="text-accent">•</span>
-      <span>На рынке с 2001 года</span>
-      <span class="text-accent">•</span>
-      <span>Плательщик НДС</span>
-      <span class="text-accent">•</span>
-      <span>Собственная нефтебаза</span>
-      <span class="text-accent">•</span>
-      <span>Круглосуточно · Шымкент</span>
-      <span class="text-accent">•</span>
-      <span>Рейтинг 4.8 на 2ГИС</span>
-      <span class="text-accent">•</span>
+    <!-- иллюстративное фото (Unsplash) — заменить на реальное, когда пришлёте -->
+    <div class="reveal hidden lg:block rounded-2xl overflow-hidden border border-white/10">
+      <img src="https://images.unsplash.com/photo-1780882899461-0b158f457b44?auto=format&fit=crop&w=1000&q=70"
+           alt="Резервуары для хранения нефтепродуктов" class="w-full h-[420px] object-cover">
     </div>
   </div>
 </section>
 
 <!-- О КОМПАНИИ -->
-<section id="about" class="py-20 md:py-28 relative">
-  <div class="mesh left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-steel/5"></div>
-  <div class="relative max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-16">
+<section id="about" class="py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14">
     <div class="reveal">
-      <span class="text-accent font-heading font-semibold text-sm uppercase tracking-wide">О компании</span>
-      <span class="stripe w-10 h-1 rounded-full mt-2 mb-1"><span class="bg-accent"></span><span class="bg-mviolet"></span><span class="bg-mred"></span></span>
-      <h2 class="font-heading font-bold text-3xl md:text-4xl mt-3 mb-6 leading-tight">
-        Более 20 лет на топливном рынке Шымкента
-      </h2>
-      <p class="text-steel-light leading-relaxed mb-4">
-        ТОО «АЗК АЛМАЗ» зарегистрировано в Шымкенте в 2001 году и работает на
-        рынке дизельного топлива более двух десятилетий. Компания ведёт
-        оптовую и розничную торговлю дизельным топливом, а также реализует
-        бензин АИ-92 через собственную АЗС.
+      <span class="text-accent-dark font-semibold text-sm uppercase tracking-wide">О компании</span>
+      <h2 class="font-extrabold text-2xl md:text-3xl text-navy mt-2 mb-5 leading-tight">История и принципы работы</h2>
+      <p class="text-steel leading-relaxed mb-4">
+        ТОО «АЗК Алмаз» осуществляет деятельность на рынке нефтепродуктов с 1998 года.
+        За годы работы компания накопила богатый опыт в сфере хранения, оптовой и
+        розничной реализации нефтепродуктов, зарекомендовав себя как надёжный и
+        ответственный партнёр.
       </p>
-      <p class="text-steel-light leading-relaxed mb-8">
-        Штат компании — 21–30 сотрудников, предприятие является плательщиком
-        НДС и работает как с частными клиентами, так и с юридическими лицами
-        на прозрачных условиях.
+      <p class="text-steel leading-relaxed mb-4">
+        На протяжении более чем 25 лет мы последовательно развиваем свою
+        инфраструктуру, совершенствуем качество обслуживания и расширяем спектр
+        предоставляемых услуг. Сегодня ТОО «АЗК Алмаз» располагает собственной
+        нефтебазой и сетью автозаправочных станций, обеспечивая бесперебойные
+        поставки бензина и дизельного топлива как корпоративным, так и частным
+        клиентам.
       </p>
-
-      <!-- иллюстративное фото (Unsplash) — заменить на реальное, когда появится -->
-      <div class="relative h-48 md:h-56 rounded-2xl overflow-hidden border border-white/10 mb-8">
-        <img src="https://images.unsplash.com/photo-1734214948609-fa6795513ba5?auto=format&fit=crop&w=1000&q=70"
-             alt="Заправка автомобиля"
-             class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-graphite/50"></div>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-4">
-        <div class="glass glass-hover rounded-2xl p-4">
-          <dt class="text-xs uppercase tracking-wide text-steel">БИН</dt>
-          <dd class="font-heading font-semibold text-white mt-1">011240001881</dd>
-        </div>
-        <div class="glass glass-hover rounded-2xl p-4">
-          <dt class="text-xs uppercase tracking-wide text-steel">Статус</dt>
-          <dd class="font-heading font-semibold text-white mt-1">Действующее предприятие</dd>
-        </div>
-        <div class="glass glass-hover rounded-2xl p-4">
-          <dt class="text-xs uppercase tracking-wide text-steel">Руководитель</dt>
-          <dd class="font-heading font-semibold text-white mt-1">А. Б. Уразалиев</dd>
-        </div>
-        <div class="glass glass-hover rounded-2xl p-4">
-          <dt class="text-xs uppercase tracking-wide text-steel">Основной профиль</dt>
-          <dd class="font-heading font-semibold text-white mt-1">Оптовая торговля ДТ</dd>
-        </div>
-      </div>
+      <p class="text-steel leading-relaxed">
+        В своей работе мы руководствуемся принципами надёжности, качества,
+        безопасности и честного партнёрства.
+      </p>
     </div>
 
-    <div class="reveal space-y-2">
-      <div class="flex gap-5">
-        <div class="flex flex-col items-center">
-          <span class="w-3 h-3 rounded-full bg-accent shadow-glow-sm"></span>
-          <span class="w-px flex-1 bg-white/10 mt-2"></span>
-        </div>
-        <div class="pb-8 glass rounded-2xl p-5 -mt-2">
-          <div class="font-heading font-bold text-lg text-gradient">2001</div>
-          <p class="text-steel-light mt-1 text-sm">Регистрация ТОО «АЗК АЛМАЗ» в Шымкенте, начало работы на рынке дизельного топлива.</p>
-        </div>
+    <div class="reveal grid sm:grid-cols-2 gap-4 content-start">
+      <div class="rounded-xl border border-slate-200 p-5">
+        <i data-lucide="shield-check" class="w-7 h-7 text-leaf mb-3"></i>
+        <div class="font-bold text-navy text-sm">Надёжность</div>
       </div>
-      <div class="flex gap-5">
-        <div class="flex flex-col items-center">
-          <span class="w-3 h-3 rounded-full bg-accent shadow-glow-sm"></span>
-          <span class="w-px flex-1 bg-white/10 mt-2"></span>
-        </div>
-        <div class="pb-8 glass rounded-2xl p-5 -mt-2">
-          <div class="font-heading font-bold text-lg text-gradient">2017</div>
-          <p class="text-steel-light mt-1 text-sm">Новый этап развития компании под руководством действующего директора.</p>
-        </div>
+      <div class="rounded-xl border border-slate-200 p-5">
+        <i data-lucide="award" class="w-7 h-7 text-leaf mb-3"></i>
+        <div class="font-bold text-navy text-sm">Качество</div>
       </div>
-      <div class="flex gap-5">
-        <div class="flex flex-col items-center">
-          <span class="w-3 h-3 rounded-full bg-accent shadow-glow-sm"></span>
-        </div>
-        <div class="glass rounded-2xl p-5 -mt-2">
-          <div class="font-heading font-bold text-lg text-gradient">Сегодня</div>
-          <p class="text-steel-light mt-1 text-sm">Собственная нефтебаза и круглосуточная АЗС в Шымкенте, рейтинг 4.8 на 2ГИС.</p>
-        </div>
+      <div class="rounded-xl border border-slate-200 p-5">
+        <i data-lucide="hard-hat" class="w-7 h-7 text-leaf mb-3"></i>
+        <div class="font-bold text-navy text-sm">Безопасность</div>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-5">
+        <i data-lucide="handshake" class="w-7 h-7 text-leaf mb-3"></i>
+        <div class="font-bold text-navy text-sm">Честное партнёрство</div>
+      </div>
+      <div class="sm:col-span-2 rounded-xl bg-slate-50 border border-slate-200 p-5">
+        <div class="text-xs uppercase tracking-wide text-steel mb-1">Регистрационные данные</div>
+        <div class="font-semibold text-navy text-sm">ТОО «АЗК АЛМАЗ» · БИН 011240001881</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- НЕФТЕБАЗА -->
-<section id="neftebaza" class="py-20 md:py-28 relative overflow-hidden bg-white/[0.015]">
-  <div class="absolute inset-0 bg-grid opacity-40"></div>
-  <div class="mesh right-0 bottom-0 w-[480px] h-[480px] bg-accent/15"></div>
-  <div class="relative max-w-6xl mx-auto px-5 lg:px-8">
-    <div class="reveal grid lg:grid-cols-2 gap-12 items-center mb-16">
-      <div class="max-w-xl">
-        <span class="text-accent font-heading font-semibold text-sm uppercase tracking-wide">Ключевое преимущество</span>
-      <span class="stripe w-10 h-1 rounded-full mt-2 mb-1"><span class="bg-accent"></span><span class="bg-mviolet"></span><span class="bg-mred"></span></span>
-        <h2 class="font-heading font-bold text-3xl md:text-4xl mt-3 mb-6 leading-tight">
-          Собственная нефтебаза — наша гарантия качества
-        </h2>
-        <p class="text-steel-light leading-relaxed">
-          Мы контролируем топливо на каждом этапе — от приёмки до заправки в
-          бак, без лишних посредников. Это позволяет обеспечивать стабильные
-          поставки и предсказуемое качество дизельного топлива.
-        </p>
-      </div>
-      <!-- иллюстративное фото (Unsplash) — заменить на реальное фото нефтебазы, когда появится -->
-      <div class="relative h-64 md:h-80 rounded-3xl overflow-hidden border border-white/10">
-        <img src="https://images.unsplash.com/photo-1780882899461-0b158f457b44?auto=format&fit=crop&w=1200&q=70"
-             alt="Резервуары для хранения топлива"
-             class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-graphite/60"></div>
-      </div>
+<!-- СТРУКТУРА КОМПАНИИ -->
+<section id="structure" class="py-16 md:py-24 bg-slate-50 border-y border-slate-200">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="reveal max-w-2xl mb-10">
+      <span class="text-accent-dark font-semibold text-sm uppercase tracking-wide">Структура компании</span>
+      <h2 class="font-extrabold text-2xl md:text-3xl text-navy mt-2 leading-tight">Четыре подразделения — один результат</h2>
     </div>
 
-    <div class="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <span class="hidden lg:flex stripe absolute top-9 left-[12.5%] right-[12.5%] h-[3px] rounded-full opacity-40">
-        <span class="bg-accent"></span><span class="bg-mviolet"></span><span class="bg-mred"></span>
-      </span>
-
-      <div class="reveal glass glass-hover rounded-2xl p-6 relative">
-        <div class="w-12 h-12 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center mb-5 font-heading font-bold text-accent">
-          <i data-lucide="truck" class="w-5 h-5"></i>
-        </div>
-        <div class="font-heading font-semibold mb-2 text-sm text-accent">Шаг 1</div>
-        <div class="font-heading font-semibold mb-2">Приёмка топлива</div>
-        <p class="text-sm text-steel-light leading-relaxed">Входной контроль каждой партии дизельного топлива.</p>
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-white rounded-xl border border-slate-200 p-6">
+        <i data-lucide="warehouse" class="w-8 h-8 text-navy mb-4"></i>
+        <h3 class="font-bold text-navy mb-2">Нефтебаза</h3>
+        <p class="text-steel text-sm leading-relaxed">Приём, хранение, контроль качества и отпуск нефтепродуктов с соблюдением требований промышленной и пожарной безопасности.</p>
       </div>
-      <div class="reveal glass glass-hover rounded-2xl p-6 relative">
-        <div class="w-12 h-12 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center mb-5 font-heading font-bold text-accent">
-          <i data-lucide="warehouse" class="w-5 h-5"></i>
-        </div>
-        <div class="font-heading font-semibold mb-2 text-sm text-accent">Шаг 2</div>
-        <div class="font-heading font-semibold mb-2">Хранение на нефтебазе</div>
-        <p class="text-sm text-steel-light leading-relaxed">Собственные резервуары и инфраструктура хранения.</p>
+      <div class="bg-white rounded-xl border border-slate-200 p-6">
+        <i data-lucide="fuel" class="w-8 h-8 text-navy mb-4"></i>
+        <h3 class="font-bold text-navy mb-2">Сеть АЗС</h3>
+        <p class="text-steel text-sm leading-relaxed">Розничная реализация бензина и дизельного топлива, качественное обслуживание и надёжный сервис для клиентов.</p>
       </div>
-      <div class="reveal glass glass-hover rounded-2xl p-6 relative">
-        <div class="w-12 h-12 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center mb-5 font-heading font-bold text-accent">
-          <i data-lucide="flask-conical" class="w-5 h-5"></i>
-        </div>
-        <div class="font-heading font-semibold mb-2 text-sm text-accent">Шаг 3</div>
-        <div class="font-heading font-semibold mb-2">Контроль качества</div>
-        <p class="text-sm text-steel-light leading-relaxed">Проверка топлива перед отпуском на АЗС.</p>
+      <div class="bg-white rounded-xl border border-slate-200 p-6">
+        <i data-lucide="truck" class="w-8 h-8 text-navy mb-4"></i>
+        <h3 class="font-bold text-navy mb-2">Отдел оптовых продаж</h3>
+        <p class="text-steel text-sm leading-relaxed">Поставки нефтепродуктов корпоративным клиентам, промышленным предприятиям, сельхозорганизациям и госучреждениям.</p>
       </div>
-      <div class="reveal glass glass-hover rounded-2xl p-6 relative">
-        <div class="w-12 h-12 rounded-xl bg-accent/15 border border-accent/30 flex items-center justify-center mb-5 font-heading font-bold text-accent">
-          <i data-lucide="fuel" class="w-5 h-5"></i>
-        </div>
-        <div class="font-heading font-semibold mb-2 text-sm text-accent">Шаг 4</div>
-        <div class="font-heading font-semibold mb-2">Заправка на АЗС</div>
-        <p class="text-sm text-steel-light leading-relaxed">Круглосуточная выдача топлива с заправщиком.</p>
+      <div class="bg-white rounded-xl border border-slate-200 p-6">
+        <i data-lucide="clipboard-list" class="w-8 h-8 text-navy mb-4"></i>
+        <h3 class="font-bold text-navy mb-2">Логистика и администрация</h3>
+        <p class="text-steel text-sm leading-relaxed">Координация работы подразделений, сопровождение поставок, документооборот и взаимодействие с партнёрами.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ТОПЛИВО И УСЛУГИ -->
-<section id="fuel" class="py-20 md:py-28 relative">
+<section id="fuel" class="py-16 md:py-24">
   <div class="max-w-6xl mx-auto px-5 lg:px-8">
-    <div class="reveal max-w-2xl mb-14">
-      <span class="text-accent font-heading font-semibold text-sm uppercase tracking-wide">Топливо и услуги</span>
-      <span class="stripe w-10 h-1 rounded-full mt-2 mb-1"><span class="bg-accent"></span><span class="bg-mviolet"></span><span class="bg-mred"></span></span>
-      <h2 class="font-heading font-bold text-3xl md:text-4xl mt-3 leading-tight">Что мы предлагаем на АЗС</h2>
+    <div class="reveal max-w-2xl mb-10">
+      <span class="text-accent-dark font-semibold text-sm uppercase tracking-wide">Продукция и услуги</span>
+      <h2 class="font-extrabold text-2xl md:text-3xl text-navy mt-2 leading-tight">Что мы предлагаем</h2>
     </div>
 
-    <div class="grid lg:grid-cols-3 gap-6">
-      <div class="reveal glass-hover lg:col-span-2 rounded-3xl p-8 md:p-10 flex flex-col justify-between min-h-[260px] relative overflow-hidden border border-accent/25">
-        <!-- иллюстративное фото (Unsplash) -->
-        <img src="https://images.unsplash.com/photo-1635627529674-912a0176c6cc?auto=format&fit=crop&w=1400&q=60"
-             alt="Заправка дизельным топливом"
-             class="absolute inset-0 w-full h-full object-cover opacity-25">
-        <div class="absolute inset-0" style="background: rgba(10,10,10,0.8);"></div>
-        <div class="mesh -right-10 -bottom-16 w-64 h-64 bg-accent/25"></div>
-        <div class="relative">
-          <div class="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mb-6 shadow-glow-sm">
-            <i data-lucide="fuel" class="w-7 h-7 text-white"></i>
-          </div>
-          <h3 class="font-heading font-bold text-2xl mb-3">Дизельное топливо (ДТ)</h3>
-          <p class="text-steel-light leading-relaxed max-w-md">
-            Основной профиль компании — оптовые и розничные поставки
-            дизельного топлива со собственной нефтебазы в Шымкенте.
-          </p>
+    <div class="reveal grid sm:grid-cols-3 gap-5 mb-6">
+      <div class="rounded-xl border border-slate-200 p-6">
+        <div class="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-4">
+          <i data-lucide="fuel" class="w-6 h-6 text-navy"></i>
         </div>
-        <span class="relative mt-8 inline-flex w-fit items-center gap-2 text-accent font-heading font-semibold text-sm">
-          Основной профиль компании
-        </span>
+        <h3 class="font-bold text-navy text-lg mb-1">Дизельное топливо</h3>
+        <p class="text-steel text-sm leading-relaxed">Оптовые и розничные поставки дизельного топлива со собственной нефтебазы.</p>
       </div>
-
-      <div class="reveal glass glass-hover rounded-3xl p-8 flex flex-col justify-between min-h-[260px]">
-        <div>
-          <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
-            <i data-lucide="droplet" class="w-7 h-7 text-accent"></i>
-          </div>
-          <h3 class="font-heading font-bold text-2xl mb-3">Бензин АИ-92</h3>
-          <p class="text-steel-light leading-relaxed">Реализация бензина АИ-92 на АЗС в Шымкенте.</p>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <div class="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-4">
+          <i data-lucide="droplet" class="w-6 h-6 text-navy"></i>
         </div>
+        <h3 class="font-bold text-navy text-lg mb-1">Бензин АИ-92</h3>
+        <p class="text-steel text-sm leading-relaxed">Реализация бензина марки АИ-92 через сеть АЗС.</p>
       </div>
-
-      <div class="reveal glass glass-hover rounded-3xl p-8">
-        <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
-          <i data-lucide="clock" class="w-7 h-7 text-accent"></i>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <div class="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-4">
+          <i data-lucide="droplets" class="w-6 h-6 text-navy"></i>
         </div>
-        <h3 class="font-heading font-bold text-2xl mb-3">Круглосуточно</h3>
-        <p class="text-steel-light leading-relaxed">АЗС работает 24/7, без выходных и перерывов.</p>
+        <h3 class="font-bold text-navy text-lg mb-1">Бензин АИ-95</h3>
+        <p class="text-steel text-sm leading-relaxed">Реализация бензина марки АИ-95 через сеть АЗС.</p>
       </div>
+    </div>
+    <p class="reveal text-steel text-sm mb-10">Вся реализуемая продукция соответствует установленным требованиям качества и сопровождается необходимой документацией.</p>
 
-      <div class="reveal glass glass-hover lg:col-span-2 rounded-3xl p-8 flex items-center gap-6">
-        <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-          <i data-lucide="user-check" class="w-7 h-7 text-accent"></i>
-        </div>
-        <div>
-          <h3 class="font-heading font-bold text-2xl mb-2">Заправка с заправщиком</h3>
-          <p class="text-steel-light leading-relaxed">Полный сервис — заправка выполняется сотрудником АЗС, без самообслуживания.</p>
-        </div>
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="rounded-xl border border-slate-200 p-6">
+        <i data-lucide="truck" class="w-7 h-7 text-leaf mb-3"></i>
+        <h4 class="font-bold text-navy mb-1.5">Оптовая реализация</h4>
+        <p class="text-steel text-sm leading-relaxed">Поставка топлива корпоративным клиентам, предприятиям, сельхозорганизациям и госучреждениям.</p>
       </div>
-
-      <div class="reveal glass glass-hover lg:col-span-3 rounded-3xl p-8 flex items-center gap-6">
-        <div class="shrink-0">
-          <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-3">
-            <i data-lucide="coffee" class="w-7 h-7 text-accent"></i>
-          </div>
-          <h3 class="font-heading font-bold text-2xl mb-2">Магазин и кофе на АЗС</h3>
-          <p class="text-steel-light leading-relaxed max-w-md">Кофе и напитки прямо на заправке — удобно, пока заправляется автомобиль.</p>
-        </div>
-        <!-- иллюстративное фото (Unsplash) -->
-        <div class="hidden sm:block ml-auto shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border border-white/10">
-          <img src="https://images.unsplash.com/photo-1696960741206-63a41bb798ad?auto=format&fit=crop&w=400&q=70"
-               alt="Кофе на заправке" class="w-full h-full object-cover">
-        </div>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <i data-lucide="store" class="w-7 h-7 text-leaf mb-3"></i>
+        <h4 class="font-bold text-navy mb-1.5">Розничная реализация</h4>
+        <p class="text-steel text-sm leading-relaxed">Продажа бензина и дизельного топлива через собственную сеть АЗС.</p>
       </div>
-
-      <div class="reveal glass glass-hover rounded-3xl p-7">
-        <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
-          <i data-lucide="car" class="w-7 h-7 text-accent"></i>
-        </div>
-        <h3 class="font-heading font-bold text-xl mb-2">Автомойка</h3>
-        <p class="text-steel-light text-sm leading-relaxed">Автомойка на территории АЗС.</p>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <i data-lucide="warehouse" class="w-7 h-7 text-leaf mb-3"></i>
+        <h4 class="font-bold text-navy mb-1.5">Хранение нефтепродуктов</h4>
+        <p class="text-steel text-sm leading-relaxed">Приём, безопасное хранение и отпуск топлива с соблюдением требований безопасности.</p>
       </div>
-
-      <div class="reveal glass glass-hover rounded-3xl p-7">
-        <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
-          <i data-lucide="wrench" class="w-7 h-7 text-accent"></i>
-        </div>
-        <h3 class="font-heading font-bold text-xl mb-2">Замена масла</h3>
-        <p class="text-steel-light text-sm leading-relaxed">Пункт замены масла на АЗС.</p>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <i data-lucide="shield-check" class="w-7 h-7 text-leaf mb-3"></i>
+        <h4 class="font-bold text-navy mb-1.5">Контроль качества</h4>
+        <p class="text-steel text-sm leading-relaxed">Контроль качества нефтепродуктов на всех этапах приёма, хранения и реализации.</p>
       </div>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <i data-lucide="credit-card" class="w-7 h-7 text-leaf mb-3"></i>
+        <h4 class="font-bold text-navy mb-1.5">Топливные карты и талоны</h4>
+        <p class="text-steel text-sm leading-relaxed">Безналичный расчёт по картам и талонам для компаний и автопарков.</p>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <i data-lucide="users" class="w-7 h-7 text-leaf mb-3"></i>
+        <h4 class="font-bold text-navy mb-1.5">Индивидуальный подход</h4>
+        <p class="text-steel text-sm leading-relaxed">Оперативное сопровождение сделок, гибкие условия и долгосрочное партнёрство.</p>
+      </div>
+    </div>
 
-      <div class="reveal glass glass-hover rounded-3xl p-7">
-        <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
-          <i data-lucide="credit-card" class="w-7 h-7 text-accent"></i>
-        </div>
-        <h3 class="font-heading font-bold text-xl mb-2">Топливные карты для юрлиц</h3>
-        <p class="text-steel-light text-sm leading-relaxed">Безналичный расчёт по картам и талонам для компаний и автопарков.</p>
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
+      <div class="rounded-xl border border-slate-200 p-5 text-center">
+        <i data-lucide="clock" class="w-6 h-6 text-navy mb-2 mx-auto"></i>
+        <div class="font-semibold text-navy text-sm">Круглосуточно</div>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-5 text-center">
+        <i data-lucide="user-check" class="w-6 h-6 text-navy mb-2 mx-auto"></i>
+        <div class="font-semibold text-navy text-sm">Заправка с заправщиком</div>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-5 text-center">
+        <i data-lucide="coffee" class="w-6 h-6 text-navy mb-2 mx-auto"></i>
+        <div class="font-semibold text-navy text-sm">Магазин и кофе на АЗС</div>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-5 text-center">
+        <i data-lucide="car" class="w-6 h-6 text-navy mb-2 mx-auto"></i>
+        <div class="font-semibold text-navy text-sm">Автомойка</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ПРЕИМУЩЕСТВА (BENTO) -->
-<section id="advantages" class="py-20 md:py-28 relative bg-white/[0.015]">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8">
-    <div class="reveal max-w-2xl mb-14">
-      <span class="text-accent font-heading font-semibold text-sm uppercase tracking-wide">Почему выбирают нас</span>
-      <span class="stripe w-10 h-1 rounded-full mt-2 mb-1"><span class="bg-accent"></span><span class="bg-mviolet"></span><span class="bg-mred"></span></span>
-      <h2 class="font-heading font-bold text-3xl md:text-4xl mt-3 leading-tight">Преимущества АЗК АЛМАЗ</h2>
+<!-- ГЕОГРАФИЯ -->
+<section id="geo" class="py-16 md:py-24 bg-navy text-white">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <span class="text-accent font-semibold text-sm uppercase tracking-wide">География</span>
+      <h2 class="font-extrabold text-2xl md:text-3xl mt-2 mb-5 leading-tight">Работаем по всему югу Казахстана</h2>
+      <p class="text-slate-300 leading-relaxed mb-4">
+        Основным регионом присутствия компании являются город Шымкент и
+        Туркестанская область, где расположены собственная нефтебаза и сеть
+        автозаправочных станций.
+      </p>
+      <p class="text-slate-300 leading-relaxed">
+        Поставки нефтепродуктов осуществляются клиентам во все южные регионы
+        Республики Казахстан. Расчёты производятся любым законным способом в
+        соответствии с действующим законодательством РК и условиями договора.
+      </p>
     </div>
+    <div class="reveal grid gap-3">
+      <div class="rounded-xl bg-white/5 border border-white/10 p-5">
+        <div class="font-bold mb-1">АЗС-1</div>
+        <p class="text-slate-300 text-sm">г. Шымкент, район Тұран, трасса Алматы — Термез, А2, 858 км, справа по дороге на г. Ташкент</p>
+      </div>
+      <div class="rounded-xl bg-white/5 border border-white/10 p-5">
+        <div class="font-bold mb-1">АЗС-2</div>
+        <p class="text-slate-300 text-sm">г. Шымкент, Абайский район, жилой массив Кайнарбулак, участок 349, справа на г. Тараз</p>
+      </div>
+      <div class="rounded-xl bg-white/5 border border-white/10 p-5">
+        <div class="font-bold mb-1">АЗС-3</div>
+        <p class="text-slate-300 text-sm">Туркестанская обл., Сайрамский район, Кайнарбулакский с/о, с. Касымбек Датка, квартал 219, справа на г. Туркестан</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="reveal glass-hover lg:col-span-2 rounded-3xl p-7 flex flex-col justify-between relative overflow-hidden border border-white/10">
-        <!-- иллюстративное фото (Unsplash) -->
-        <img src="https://images.unsplash.com/photo-1760127831098-6a75c69ee79c?auto=format&fit=crop&w=1200&q=60"
-             alt="Дизельный грузовик на трассе ночью" class="absolute inset-0 w-full h-full object-cover opacity-30">
-        <div class="absolute inset-0" style="background: rgba(10,10,10,0.55);"></div>
-        <div class="relative">
-          <i data-lucide="shield-check" class="w-9 h-9 text-accent mb-5"></i>
-          <h3 class="font-heading font-semibold text-xl mb-2">Контроль качества на каждом этапе</h3>
-          <p class="text-steel-light text-sm leading-relaxed max-w-sm">От нефтебазы до бака — приёмка, хранение, проверка и выдача под собственным контролем.</p>
+<!-- КАК МЫ РАБОТАЕМ -->
+<section class="py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal order-2 lg:order-1 rounded-2xl overflow-hidden border border-slate-200">
+      <!-- иллюстративное фото (Unsplash) -->
+      <img src="https://images.unsplash.com/photo-1758519288905-38b7b00c1023?auto=format&fit=crop&w=1000&q=70"
+           alt="Оформление договора на поставку нефтепродуктов" class="w-full h-[360px] object-cover">
+    </div>
+    <div class="reveal order-1 lg:order-2">
+      <span class="text-accent-dark font-semibold text-sm uppercase tracking-wide">Как мы работаем</span>
+      <h2 class="font-extrabold text-2xl md:text-3xl text-navy mt-2 mb-6 leading-tight">Пять шагов до поставки</h2>
+      <ol class="space-y-4">
+        <li class="flex gap-4">
+          <span class="shrink-0 w-8 h-8 rounded-full bg-navy text-white text-sm font-bold flex items-center justify-center">1</span>
+          <div><span class="font-semibold text-navy">Обращение клиента.</span> <span class="text-steel">По телефону, email, через сайт или мессенджеры — предоставляем информацию о продукции, условиях и стоимости.</span></div>
+        </li>
+        <li class="flex gap-4">
+          <span class="shrink-0 w-8 h-8 rounded-full bg-navy text-white text-sm font-bold flex items-center justify-center">2</span>
+          <div><span class="font-semibold text-navy">Подбор условий сотрудничества.</span> <span class="text-steel">Определяем объёмы и сроки поставки, предлагаем выгодные условия под ваши задачи.</span></div>
+        </li>
+        <li class="flex gap-4">
+          <span class="shrink-0 w-8 h-8 rounded-full bg-navy text-white text-sm font-bold flex items-center justify-center">3</span>
+          <div><span class="font-semibold text-navy">Оформление заказа и документов.</span> <span class="text-steel">Согласовываем условия, оформляем документацию и подтверждаем объём поставки.</span></div>
+        </li>
+        <li class="flex gap-4">
+          <span class="shrink-0 w-8 h-8 rounded-full bg-navy text-white text-sm font-bold flex items-center justify-center">4</span>
+          <div><span class="font-semibold text-navy">Отгрузка и реализация топлива.</span> <span class="text-steel">Отпуск продукции с соблюдением требований качества и безопасности, точно в срок.</span></div>
+        </li>
+        <li class="flex gap-4">
+          <span class="shrink-0 w-8 h-8 rounded-full bg-navy text-white text-sm font-bold flex items-center justify-center">5</span>
+          <div><span class="font-semibold text-navy">Сопровождение и обратная связь.</span> <span class="text-steel">Поддерживаем связь с клиентами и оперативно решаем любые вопросы.</span></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ПРЕИМУЩЕСТВА / УТП -->
+<section class="py-16 md:py-24 bg-slate-50 border-y border-slate-200">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="reveal max-w-2xl mb-10">
+      <span class="text-accent-dark font-semibold text-sm uppercase tracking-wide">Почему выбирают нас</span>
+      <h2 class="font-extrabold text-2xl md:text-3xl text-navy mt-2 leading-tight">Одни из самых выгодных цен на рынке</h2>
+      <p class="text-steel mt-3 leading-relaxed">Нашу продукцию и услуги выбирают за надёжность, качество и выгодные условия сотрудничества.</p>
+    </div>
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-white rounded-xl border border-slate-200 p-6">
+        <i data-lucide="tag" class="w-7 h-7 text-accent-dark mb-3"></i>
+        <h3 class="font-bold text-navy mb-1.5">Выгодные цены</h3>
+        <p class="text-steel text-sm leading-relaxed">Конкурентоспособные цены на нефтепродукты.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6">
+        <i data-lucide="award" class="w-7 h-7 text-accent-dark mb-3"></i>
+        <h3 class="font-bold text-navy mb-1.5">Высокое качество</h3>
+        <p class="text-steel text-sm leading-relaxed">Топливо соответствует требованиям качества, документы — на каждую партию.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6">
+        <i data-lucide="heart-handshake" class="w-7 h-7 text-accent-dark mb-3"></i>
+        <h3 class="font-bold text-navy mb-1.5">Клиентоориентированность</h3>
+        <p class="text-steel text-sm leading-relaxed">Высокий уровень сервиса и индивидуальный подход к каждому клиенту.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-6">
+        <i data-lucide="zap" class="w-7 h-7 text-accent-dark mb-3"></i>
+        <h3 class="font-bold text-navy mb-1.5">Оперативная связь</h3>
+        <p class="text-steel text-sm leading-relaxed">Быстрое решение вопросов клиентов на всех этапах сотрудничества.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- РЕЙТИНГ -->
+<section class="py-16 md:py-20">
+  <div class="max-w-5xl mx-auto px-5 lg:px-8">
+    <div class="reveal rounded-2xl border border-slate-200 p-8 md:p-10 grid md:grid-cols-[auto_1fr_auto] gap-8 items-center text-center md:text-left">
+      <div>
+        <div class="font-extrabold text-5xl text-navy leading-none">4.8</div>
+        <div class="flex justify-center md:justify-start gap-1 mt-2">
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
         </div>
       </div>
-      <div class="reveal glass glass-hover rounded-3xl p-7">
-        <i data-lucide="clock" class="w-8 h-8 text-accent mb-5"></i>
-        <h3 class="font-heading font-semibold text-lg mb-2">Работаем 24/7</h3>
-        <p class="text-steel-light text-sm leading-relaxed">Круглосуточно, без выходных.</p>
+      <div>
+        <h3 class="font-bold text-navy text-lg mb-1">Оценка на 2ГИС — 4.8 из 5</h3>
+        <p class="text-steel text-sm leading-relaxed">Рейтинг АЗС в Абайском районе Шымкента по отзывам клиентов на 2ГИС.</p>
       </div>
-      <div class="reveal glass glass-hover rounded-3xl p-7">
-        <i data-lucide="user-check" class="w-8 h-8 text-accent mb-5"></i>
-        <h3 class="font-heading font-semibold text-lg mb-2">Полный сервис</h3>
-        <p class="text-steel-light text-sm leading-relaxed">Заправка выполняется заправщиком.</p>
-      </div>
-
-      <div class="reveal glass glass-hover lg:col-span-2 rounded-3xl p-7 flex flex-col justify-between">
-        <div>
-          <i data-lucide="warehouse" class="w-9 h-9 text-accent mb-5"></i>
-          <h3 class="font-heading font-semibold text-xl mb-2">Собственная нефтебаза</h3>
-          <p class="text-steel-light text-sm leading-relaxed max-w-sm">Стабильные поставки без лишних посредников и предсказуемое качество топлива.</p>
-        </div>
-      </div>
-      <div class="reveal glass glass-hover rounded-3xl p-7">
-        <i data-lucide="award" class="w-8 h-8 text-accent mb-5"></i>
-        <h3 class="font-heading font-semibold text-lg mb-2">Более 24 лет на рынке</h3>
-        <p class="text-steel-light text-sm leading-relaxed">С 2001 года в Шымкенте.</p>
-      </div>
-      <div class="reveal glass glass-hover rounded-3xl p-7">
-        <i data-lucide="file-check" class="w-8 h-8 text-accent mb-5"></i>
-        <h3 class="font-heading font-semibold text-lg mb-2">Прозрачная работа</h3>
-        <p class="text-steel-light text-sm leading-relaxed">Плательщик НДС, работаем с юрлицами.</p>
-      </div>
+      <a href="https://2gis.kz/shymkent/firm/70000001067526224" target="_blank" rel="noopener"
+         class="btn-accent inline-flex items-center justify-center gap-2 rounded-lg font-semibold px-6 py-3 cursor-pointer whitespace-nowrap">
+        Смотреть на 2ГИС <i data-lucide="external-link" class="w-4 h-4"></i>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="py-20 md:py-28 relative">
+<section id="faq" class="py-16 md:py-24 bg-slate-50 border-y border-slate-200">
   <div class="max-w-3xl mx-auto px-5 lg:px-8">
-    <div class="reveal max-w-2xl mb-12">
-      <span class="text-accent font-heading font-semibold text-sm uppercase tracking-wide">Частые вопросы</span>
-      <span class="stripe w-10 h-1 rounded-full mt-2 mb-1"><span class="bg-accent"></span><span class="bg-mviolet"></span><span class="bg-mred"></span></span>
-      <h2 class="font-heading font-bold text-3xl md:text-4xl mt-3 leading-tight">Отвечаем на вопросы клиентов</h2>
+    <div class="reveal max-w-2xl mb-8">
+      <span class="text-accent-dark font-semibold text-sm uppercase tracking-wide">Частые вопросы</span>
+      <h2 class="font-extrabold text-2xl md:text-3xl text-navy mt-2 leading-tight">Отвечаем на вопросы клиентов</h2>
     </div>
 
     <div class="reveal space-y-3">
-      <details class="glass glass-hover rounded-2xl group open:bg-white/[0.07]">
-        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 py-5 font-heading font-semibold">
-          Как контролируется качество топлива?
-          <i data-lucide="chevron-down" class="w-5 h-5 text-accent shrink-0 transition-transform group-open:rotate-180"></i>
-        </summary>
-        <p class="px-6 pb-5 text-steel-light text-sm leading-relaxed">
-          Топливо проходит контроль на каждом этапе — от приёмки на собственную нефтебазу до отпуска на АЗС, без посредников.
-        </p>
-      </details>
-
-      <details class="glass glass-hover rounded-2xl group open:bg-white/[0.07]">
-        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 py-5 font-heading font-semibold">
-          Работаете ли вы с юридическими лицами?
-          <i data-lucide="chevron-down" class="w-5 h-5 text-accent shrink-0 transition-transform group-open:rotate-180"></i>
-        </summary>
-        <p class="px-6 pb-5 text-steel-light text-sm leading-relaxed">
-          Да, ТОО «АЗК АЛМАЗ» является плательщиком НДС и работает как с частными клиентами, так и с юридическими лицами на прозрачных условиях.
-        </p>
-      </details>
-
-      <details class="glass glass-hover rounded-2xl group open:bg-white/[0.07]">
-        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 py-5 font-heading font-semibold">
-          Какой режим работы АЗС?
-          <i data-lucide="chevron-down" class="w-5 h-5 text-accent shrink-0 transition-transform group-open:rotate-180"></i>
-        </summary>
-        <p class="px-6 pb-5 text-steel-light text-sm leading-relaxed">
-          АЗС в Абайском районе Шымкента работает круглосуточно, без выходных.
-        </p>
-      </details>
-
-      <details class="glass glass-hover rounded-2xl group open:bg-white/[0.07]">
-        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 py-5 font-heading font-semibold">
-          Какое топливо есть на заправке?
-          <i data-lucide="chevron-down" class="w-5 h-5 text-accent shrink-0 transition-transform group-open:rotate-180"></i>
-        </summary>
-        <p class="px-6 pb-5 text-steel-light text-sm leading-relaxed">
-          Дизельное топливо (ДТ) — основной профиль компании, а также бензин АИ-92.
-        </p>
-      </details>
-
-      <details class="glass glass-hover rounded-2xl group open:bg-white/[0.07]">
-        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 py-5 font-heading font-semibold">
-          Заправка самообслуживанием или с заправщиком?
-          <i data-lucide="chevron-down" class="w-5 h-5 text-accent shrink-0 transition-transform group-open:rotate-180"></i>
-        </summary>
-        <p class="px-6 pb-5 text-steel-light text-sm leading-relaxed">
-          С заправщиком — заправку выполняет сотрудник АЗС, полный сервис без самообслуживания.
-        </p>
-      </details>
-
-      <details class="glass glass-hover rounded-2xl group open:bg-white/[0.07]">
-        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 px-6 py-5 font-heading font-semibold">
+      <details class="bg-white rounded-xl border border-slate-200">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-6 py-4 font-semibold text-navy">
           С какого года работает компания?
-          <i data-lucide="chevron-down" class="w-5 h-5 text-accent shrink-0 transition-transform group-open:rotate-180"></i>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-steel shrink-0"></i>
         </summary>
-        <p class="px-6 pb-5 text-steel-light text-sm leading-relaxed">
-          ТОО «АЗК АЛМАЗ» зарегистрировано в Шымкенте 11.12.2001 (БИН 011240001881) и работает на рынке более 24 лет.
-        </p>
+        <p class="px-6 pb-4 text-steel text-sm leading-relaxed">ТОО «АЗК Алмаз» работает на рынке нефтепродуктов с 1998 года — более 25 лет.</p>
       </details>
-    </div>
-  </div>
-</section>
-
-<!-- РЕЙТИНГ / РЕПУТАЦИЯ -->
-<section class="py-20 md:py-28 relative overflow-hidden">
-  <div class="max-w-5xl mx-auto px-5 lg:px-8">
-    <div class="reveal glass rounded-3xl p-10 md:p-14 grid md:grid-cols-[auto_1fr_auto] gap-10 items-center text-center md:text-left relative overflow-hidden">
-      <div class="mesh left-8 top-1/2 -translate-y-1/2 w-48 h-48 bg-accent/25"></div>
-      <div class="relative">
-        <div class="font-heading font-black text-6xl text-gradient leading-none">4.8</div>
-        <div class="flex justify-center md:justify-start gap-1 mt-3">
-          <i data-lucide="star" class="w-5 h-5 text-accent fill-accent"></i>
-          <i data-lucide="star" class="w-5 h-5 text-accent fill-accent"></i>
-          <i data-lucide="star" class="w-5 h-5 text-accent fill-accent"></i>
-          <i data-lucide="star" class="w-5 h-5 text-accent fill-accent"></i>
-          <i data-lucide="star" class="w-5 h-5 text-accent fill-accent"></i>
-        </div>
-      </div>
-      <div class="relative">
-        <h3 class="font-heading font-bold text-xl mb-2">Оценка на 2ГИС — 4.8 из 5</h3>
-        <p class="text-steel-light leading-relaxed">
-          Реальные оценки и отзывы клиентов о нашей АЗС в Шымкенте собраны
-          на 2ГИС — крупнейшем городском справочнике Казахстана.
-        </p>
-      </div>
-      <a href="https://2gis.kz/shymkent/firm/70000001067526224" target="_blank" rel="noopener"
-         class="btn-primary relative inline-flex items-center justify-center gap-2 rounded-full text-graphite-deep font-heading font-semibold px-6 py-3.5 cursor-pointer whitespace-nowrap">
-        Смотреть отзывы <i data-lucide="external-link" class="w-4 h-4"></i>
-      </a>
+      <details class="bg-white rounded-xl border border-slate-200">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-6 py-4 font-semibold text-navy">
+          Какие виды топлива вы реализуете?
+          <i data-lucide="chevron-down" class="w-5 h-5 text-steel shrink-0"></i>
+        </summary>
+        <p class="px-6 pb-4 text-steel text-sm leading-relaxed">Бензин АИ-92, АИ-95 и дизельное топливо — вся продукция соответствует требованиям качества и сопровождается документацией.</p>
+      </details>
+      <details class="bg-white rounded-xl border border-slate-200">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-6 py-4 font-semibold text-navy">
+          Работаете ли вы с юридическими лицами?
+          <i data-lucide="chevron-down" class="w-5 h-5 text-steel shrink-0"></i>
+        </summary>
+        <p class="px-6 pb-4 text-steel text-sm leading-relaxed">Да, оптовая реализация — одно из основных направлений: поставки корпоративным клиентам, промышленным предприятиям, сельхозорганизациям и госучреждениям, включая топливные карты и талоны.</p>
+      </details>
+      <details class="bg-white rounded-xl border border-slate-200">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-6 py-4 font-semibold text-navy">
+          Как оплатить поставку?
+          <i data-lucide="chevron-down" class="w-5 h-5 text-steel shrink-0"></i>
+        </summary>
+        <p class="px-6 pb-4 text-steel text-sm leading-relaxed">Расчёты осуществляются любым законным способом в соответствии с действующим законодательством РК и условиями заключённого договора.</p>
+      </details>
+      <details class="bg-white rounded-xl border border-slate-200">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-6 py-4 font-semibold text-navy">
+          Что делать при вопросах по качеству или количеству топлива?
+          <i data-lucide="chevron-down" class="w-5 h-5 text-steel shrink-0"></i>
+        </summary>
+        <p class="px-6 pb-4 text-steel text-sm leading-relaxed">Обратитесь в компанию — каждое обращение рассматривается индивидуально, с проверкой и анализом сопроводительной документации.</p>
+      </details>
+      <details class="bg-white rounded-xl border border-slate-200">
+        <summary class="cursor-pointer flex items-center justify-between gap-4 px-6 py-4 font-semibold text-navy">
+          В каких регионах вы работаете?
+          <i data-lucide="chevron-down" class="w-5 h-5 text-steel shrink-0"></i>
+        </summary>
+        <p class="px-6 pb-4 text-steel text-sm leading-relaxed">Нефтебаза и сеть АЗС расположены в Шымкенте и Туркестанской области, поставки осуществляются во все южные регионы Казахстана.</p>
+      </details>
     </div>
   </div>
 </section>
 
 <!-- КОНТАКТЫ -->
-<section id="contacts" class="py-20 md:py-28 relative bg-white/[0.015]">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-16">
-    <div class="reveal">
-      <span class="text-accent font-heading font-semibold text-sm uppercase tracking-wide">Контакты</span>
-      <span class="stripe w-10 h-1 rounded-full mt-2 mb-1"><span class="bg-accent"></span><span class="bg-mviolet"></span><span class="bg-mred"></span></span>
-      <h2 class="font-heading font-bold text-3xl md:text-4xl mt-3 mb-8 leading-tight">Как нас найти</h2>
-
-      <div class="space-y-4">
-        <div class="glass glass-hover rounded-2xl p-4 flex gap-4">
-          <div class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-            <i data-lucide="map-pin" class="w-5 h-5 text-accent"></i>
-          </div>
-          <div>
-            <div class="font-heading font-semibold">АЗС «АЗК Алмаз»</div>
-            <p class="text-steel-light text-sm">Абайский район, г. Шымкент</p>
-          </div>
-        </div>
-        <div class="glass glass-hover rounded-2xl p-4 flex gap-4">
-          <div class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-            <i data-lucide="building-2" class="w-5 h-5 text-accent"></i>
-          </div>
-          <div>
-            <div class="font-heading font-semibold">Юридический адрес</div>
-            <p class="text-steel-light text-sm">г. Шымкент, район Туран, проспект Абая, 1а</p>
-          </div>
-        </div>
-        <div class="glass glass-hover rounded-2xl p-4 flex gap-4">
-          <div class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-            <i data-lucide="clock" class="w-5 h-5 text-accent"></i>
-          </div>
-          <div>
-            <div class="font-heading font-semibold">Режим работы</div>
-            <p class="text-steel-light text-sm">Круглосуточно, без выходных</p>
-          </div>
-        </div>
-        <div class="glass glass-hover rounded-2xl p-4 flex gap-4">
-          <div class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-            <i data-lucide="file-text" class="w-5 h-5 text-accent"></i>
-          </div>
-          <div>
-            <div class="font-heading font-semibold">Реквизиты</div>
-            <p class="text-steel-light text-sm">ТОО «АЗК АЛМАЗ» · БИН 011240001881</p>
-          </div>
-        </div>
-      </div>
-
-      <a href="https://2gis.kz/shymkent/firm/70000001067526224" target="_blank" rel="noopener"
-         class="btn-primary mt-8 inline-flex items-center gap-2 rounded-full text-graphite-deep font-heading font-semibold px-6 py-3.5 cursor-pointer">
-        Построить маршрут на 2ГИС <i data-lucide="arrow-right" class="w-4 h-4"></i>
-      </a>
+<section id="contacts" class="py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="reveal max-w-2xl mb-10">
+      <span class="text-accent-dark font-semibold text-sm uppercase tracking-wide">Контакты</span>
+      <h2 class="font-extrabold text-2xl md:text-3xl text-navy mt-2 leading-tight">Свяжитесь с нами</h2>
     </div>
 
-    <div class="reveal glass rounded-3xl overflow-hidden min-h-[380px] relative">
-      <!-- иллюстративное фото (Unsplash) — заменить на реальное фото АЗС, когда появится -->
-      <img src="https://images.unsplash.com/photo-1678903434882-d8bc7782b953?auto=format&fit=crop&w=1200&q=65"
-           alt="Автозаправочная станция днём" class="absolute inset-0 w-full h-full object-cover opacity-35">
-      <div class="absolute inset-0 bg-graphite/70"></div>
-      <div class="absolute inset-0 bg-grid opacity-30"></div>
-      <div class="mesh right-0 top-0 w-64 h-64 bg-accent/15"></div>
-      <div class="relative h-full flex flex-col items-center justify-center text-center p-10">
-        <span class="relative flex h-4 w-4 mb-5">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"></span>
-          <span class="relative inline-flex rounded-full h-4 w-4 bg-accent"></span>
-        </span>
-        <p class="text-steel-light max-w-xs mb-6">
-          Точное расположение, маршрут и телефон АЗС — на карте 2ГИС.
-        </p>
-        <a href="https://2gis.kz/shymkent/firm/70000001067526224" target="_blank" rel="noopener"
-           class="btn-glass inline-flex items-center gap-2 rounded-full font-heading font-semibold px-5 py-3 cursor-pointer">
-          Открыть карту <i data-lucide="external-link" class="w-4 h-4"></i>
+    <div class="reveal grid lg:grid-cols-2 gap-10 mb-10">
+      <div class="rounded-xl border border-slate-200 p-6">
+        <div class="text-xs uppercase tracking-wide text-steel mb-2">По вопросам оптовой покупки</div>
+        <a href="tel:+87077294051" class="flex items-center gap-3 font-bold text-navy text-lg">
+          <i data-lucide="phone" class="w-5 h-5 text-accent-dark"></i> +7 707 729 4051
         </a>
       </div>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <div class="text-xs uppercase tracking-wide text-steel mb-2">Розничная покупка на АЗС (талоны, карты)</div>
+        <a href="tel:+87758653737" class="flex items-center gap-3 font-bold text-navy text-lg">
+          <i data-lucide="phone" class="w-5 h-5 text-accent-dark"></i> +7 775 865 3737
+        </a>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <div class="text-xs uppercase tracking-wide text-steel mb-2">По всем остальным вопросам</div>
+        <a href="tel:+87252357444" class="flex items-center gap-3 font-bold text-navy text-lg">
+          <i data-lucide="phone" class="w-5 h-5 text-accent-dark"></i> 8 (7252) 357-444
+        </a>
+        <a href="tel:+87710611066" class="flex items-center gap-3 font-bold text-navy text-lg mt-1">
+          <i data-lucide="phone" class="w-5 h-5 text-accent-dark"></i> +7 771 061 10 66
+        </a>
+      </div>
+      <div class="rounded-xl border border-slate-200 p-6">
+        <div class="text-xs uppercase tracking-wide text-steel mb-2">Офис компании</div>
+        <div class="flex items-start gap-3 font-semibold text-navy">
+          <i data-lucide="map-pin" class="w-5 h-5 text-accent-dark mt-0.5 shrink-0"></i>
+          Республика Казахстан, г. Шымкент, район Туран, проспект Абая, 1А
+        </div>
+      </div>
     </div>
+
+    <h3 class="reveal font-bold text-navy text-lg mb-4">Адреса АЗС</h3>
+    <div class="reveal grid sm:grid-cols-3 gap-5 mb-8">
+      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5">
+        <div class="font-bold text-navy mb-1">АЗС-1</div>
+        <p class="text-steel text-sm">г. Шымкент, район Тұран, трасса Алматы — Термез, А2, 858 км, справа по дороге на г. Ташкент</p>
+      </div>
+      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5">
+        <div class="font-bold text-navy mb-1">АЗС-2</div>
+        <p class="text-steel text-sm">г. Шымкент, Абайский район, жилой массив Кайнарбулак, участок 349, справа на г. Тараз</p>
+        <a href="https://2gis.kz/shymkent/firm/70000001067526224" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-accent-dark text-sm font-semibold mt-2">
+          Открыть на 2ГИС <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5">
+        <div class="font-bold text-navy mb-1">АЗС-3</div>
+        <p class="text-steel text-sm">Туркестанская обл., Сайрамский район, Кайнарбулакский с/о, с. Касымбек Датка, квартал 219, справа на г. Туркестан</p>
+      </div>
+    </div>
+
+    <a href="https://2gis.kz/shymkent/firm/70000001067526224" target="_blank" rel="noopener"
+       class="reveal btn-accent inline-flex items-center gap-2 rounded-lg font-semibold px-6 py-3.5 cursor-pointer">
+      Построить маршрут на 2ГИС <i data-lucide="arrow-right" class="w-4 h-4"></i>
+    </a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="border-t border-white/5 py-10">
+<footer class="bg-navy-dark text-slate-400 py-10">
   <div class="max-w-6xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
     <div class="flex items-center gap-3">
-      <span class="w-8 h-8 rounded-lg bg-accent flex items-center justify-center font-heading font-black text-white text-sm">А</span>
-      <span class="stripe w-5 h-6 rounded-sm shrink-0 gap-px"><span class="bg-accent"></span><span class="bg-mviolet"></span><span class="bg-mred"></span></span>
-      <span class="text-steel-light">ТОО «АЗК АЛМАЗ» · БИН 011240001881</span>
+      <span class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center font-extrabold text-accent text-sm">А</span>
+      <span>ТОО «АЗК АЛМАЗ» · БИН 011240001881</span>
     </div>
-    <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-steel-light">
+    <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
       <a href="#about" class="hover:text-white transition-colors">О компании</a>
-      <a href="#neftebaza" class="hover:text-white transition-colors">Нефтебаза</a>
-      <a href="#fuel" class="hover:text-white transition-colors">Топливо</a>
-      <a href="#faq" class="hover:text-white transition-colors">Вопросы</a>
+      <a href="#structure" class="hover:text-white transition-colors">Структура</a>
+      <a href="#fuel" class="hover:text-white transition-colors">Услуги</a>
       <a href="#contacts" class="hover:text-white transition-colors">Контакты</a>
     </nav>
-    <div class="text-steel">© 2026 АЗК АЛМАЗ. Все права защищены.</div>
+    <div>© 2026 АЗК АЛМАЗ. Все права защищены.</div>
   </div>
 </footer>
 
@@ -810,7 +605,6 @@
     menu.classList.toggle('hidden');
     menu.classList.toggle('flex');
   });
-
   document.querySelectorAll('#mobile-menu a').forEach(a => {
     a.addEventListener('click', () => {
       document.getElementById('mobile-menu').classList.add('hidden');
@@ -819,61 +613,19 @@
   });
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (!prefersReducedMotion && window.gsap && window.ScrollTrigger) {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray('.reveal').forEach((el, i) => {
-      gsap.to(el, {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: 'power2.out',
-        delay: (i % 4) * 0.05,
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
-      });
-    });
-
-    document.querySelectorAll('[data-counter]').forEach((el) => {
-      const end = parseFloat(el.dataset.counter);
-      const decimals = parseInt(el.dataset.decimals || '0', 10);
-      const suffix = el.dataset.suffix || '';
-      const obj = { val: 0 };
-      gsap.to(obj, {
-        val: end,
-        duration: 1.6,
-        ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' },
-        onUpdate: () => { el.textContent = obj.val.toFixed(decimals) + suffix; },
-      });
-    });
-
-    function catchUpReveals() {
-      ScrollTrigger.getAll().forEach((st) => {
-        if (st.isActive && st.animation && st.animation.progress() < 1) {
-          st.animation.progress(1);
+  const revealEls = document.querySelectorAll('.reveal');
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
         }
       });
-    }
-
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(() => { ScrollTrigger.refresh(); catchUpReveals(); });
-    }
-    window.addEventListener('load', () => { ScrollTrigger.refresh(); catchUpReveals(); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => {
-      el.style.opacity = 1;
-      el.style.transform = 'none';
-    });
-    document.querySelectorAll('[data-counter]').forEach((el) => {
-      const end = parseFloat(el.dataset.counter);
-      const decimals = parseInt(el.dataset.decimals || '0', 10);
-      el.textContent = end.toFixed(decimals) + (el.dataset.suffix || '');
-    });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
   }
 </script>
 
