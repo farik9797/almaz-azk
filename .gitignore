@@ -1,0 +1,6 @@
+
+# secrets — never commit
+password.md
+
+# local tooling config
+.claude/
