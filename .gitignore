@@ -4,3 +4,9 @@ password.md
 
 # local tooling config
 .claude/
+
+# local WordPress test environment (WP core + SQLite db) — not part of the theme deliverable
+wordpress-theme/wp-local/
+
+# build artifact — regenerate with: cd wordpress-theme && zip -qr azk-almaz.zip azk-almaz
+wordpress-theme/azk-almaz.zip

@@ -1,0 +1,7 @@
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F8FAFC; color: #2B2F36; }
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+.tab-btn.active { background: #0F2A47; color: #F5B301; }
+.station-card.active { border-color: #0F2A47; box-shadow: 0 0 0 2px rgba(15, 42, 71, 0.1); }
+.marker.active { transform: translate(-50%, -50%) scale(1.2); z-index: 20; }
