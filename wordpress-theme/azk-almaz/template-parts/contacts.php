@@ -1,9 +1,9 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
 $title = azk_field('contacts_title', 'Контактная информация и отделы');
-$address_full  = azk_setting('address_full', 'г. Шымкент, район Туран, проспект Абая, 1А');
-$hours_office  = azk_setting('hours_office', 'Пн - Пт: 09:00 - 18:00 (Офис)');
-$hours_depot   = azk_setting('hours_depot', 'Пн - Сб: 08:00 - 20:00 (Нефтебаза)');
+$address_full  = azk_setting('address_full', 'г. Шымкент, район Тұран, проспект Абая, 1А');
+$hours_office  = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00 (Офис)');
+$hours_depot   = azk_setting('hours_depot', 'Круглосуточно, 24/7');
 $bin           = azk_setting('bin', '011240001881');
 $legal_entity  = azk_setting('legal_entity', 'ТОО «АЗК Алмаз»');
 
@@ -44,7 +44,7 @@ if (!$cards) $cards = azk_default('phone_cards');
         <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-lg bg-accent text-navy flex items-center justify-center"><i data-lucide="building" class="w-5 h-5"></i></div><div><span class="text-xs text-slate-300 uppercase tracking-wider block font-medium">Центральный офис</span><h3 class="text-lg font-bold"><?php echo esc_html($legal_entity); ?></h3></div></div>
         <div class="space-y-4 text-sm">
           <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="map-pin" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold">Адрес головного офиса:</span><span class="font-bold"><?php echo esc_html($address_full); ?></span></div></div>
-          <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="clock" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold">Режим работы офиса:</span><span class="font-bold"><?php echo esc_html($hours_office); ?></span><p class="text-xs text-slate-300 mt-0.5"><?php echo esc_html($hours_depot); ?></p></div></div>
+          <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="clock" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold">Режим работы офиса:</span><span class="font-bold"><?php echo esc_html($hours_office); ?></span><p class="text-xs text-slate-300 mt-0.5">АЗС: <?php echo esc_html($hours_depot); ?></p></div></div>
         </div>
         <div class="pt-2 text-xs text-slate-400 border-t border-slate-700/80 flex justify-between"><span>БИН: <?php echo esc_html($bin); ?></span><span>г. Шымкент</span></div>
       </div>

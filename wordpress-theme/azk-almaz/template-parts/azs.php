@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
-$phone_retail = azk_setting('phone_retail', '8 775 865 3737');
-$title    = azk_field('azs_title', 'Фирменная сеть АЗС «Алмаз»');
+$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
+$title    = azk_field('azs_title', 'Фирменная сеть АЗС ALMAZ');
 $subtitle = azk_field('azs_subtitle', 'Современные автозаправочные комплексы на ключевых магистралях Шымкента и Туркестанской области. Круглосуточный точный налив и высокий сервис.');
 $map_image = azk_image('azs_map_image', 'canopy.jpg');
 
@@ -74,7 +74,7 @@ foreach ($stations as $s) {
         </div>
 
         <div class="relative p-5 bg-navy-light border-t border-slate-800 text-white space-y-3 overflow-hidden" id="station-detail">
-          <img src="<?php echo esc_url($map_image); ?>" alt="АЗС Алмаз" class="absolute inset-0 w-full h-full object-cover object-center opacity-20">
+          <img src="<?php echo esc_url($map_image); ?>" alt="АЗС ALMAZ" class="absolute inset-0 w-full h-full object-cover object-center opacity-20">
           <div class="absolute inset-0 bg-gradient-to-r from-navy-light via-navy-light/95 to-navy/90"></div>
           <div class="relative z-10 flex justify-between items-start">
             <div>

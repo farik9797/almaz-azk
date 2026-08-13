@@ -4,6 +4,7 @@
 <head>
 <meta charset="<?php bloginfo('charset'); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ALMAZ — сеть АЗС и оптовые поставки нефтепродуктов в Шымкенте и Туркестанской области: бензин АИ-92, АИ-95 и дизельное топливо оптом и в розницу, с доставкой. Топливные карты, талоны и карта лояльности на АЗС ALMAZ рядом с вами.">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230F2A47'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='800' font-size='56' fill='%23F5B301' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 
@@ -31,12 +32,11 @@
 <?php wp_body_open(); ?>
 
 <?php
-$phone_wholesale = azk_setting('phone_wholesale', '8 707 729 4051');
-$phone_retail    = azk_setting('phone_retail', '8 775 865 3737');
-$phone_general   = azk_setting('phone_general', '8 (7252) 357-444');
-$address_short   = azk_setting('address_short', 'г. Шымкент, проспект Абая, 1А');
-$hours_office    = azk_setting('hours_office', 'Пн-Пт: 09:00 - 18:00');
-$years_count     = azk_setting('years_count', '25+');
+$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
+$phone_general     = azk_setting('phone_general', '8 (7252) 357-444');
+$address_short     = azk_setting('address_short', 'г. Шымкент, проспект Абая, 1А');
+$hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00 (Офис)');
+$years_count       = azk_setting('years_count', '25+');
 ?>
 
 <header class="sticky top-0 z-40 w-full">
@@ -80,7 +80,7 @@ $years_count     = azk_setting('years_count', '25+');
       </nav>
 
       <div class="hidden sm:flex items-center space-x-3">
-        <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="text-xs font-bold text-slate-300 hover:text-white px-3 py-2 rounded border border-slate-700 hover:border-slate-500 transition-colors">Расчёт опта</a>
+        <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="text-xs font-bold text-slate-300 hover:text-white px-3 py-2 rounded border border-slate-700 hover:border-slate-500 transition-colors">Расчёт опта</a>
         <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="bg-accent hover:bg-accent-dark text-navy font-bold text-sm px-4 py-2.5 rounded-md shadow-md transition-all flex items-center space-x-2">
           <i data-lucide="phone" class="w-4 h-4"></i><span>Связаться</span>
         </a>
@@ -105,8 +105,8 @@ $years_count     = azk_setting('years_count', '25+');
       <a href="#contacts" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-white/10 hover:text-accent">Контакты <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i></a>
     </div>
     <div class="pt-3 border-t border-slate-800 space-y-2">
-      <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="flex items-center justify-between p-3 rounded bg-slate-900/80 border border-slate-800 text-sm font-semibold text-white">
-        <span class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4 text-accent"></i><span>Опт: <?php echo esc_html($phone_wholesale); ?></span></span>
+      <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="flex items-center justify-between p-3 rounded bg-slate-900/80 border border-slate-800 text-sm font-semibold text-white">
+        <span class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4 text-accent"></i><span>Опт и сотрудничество: <?php echo esc_html($phone_cooperation); ?></span></span>
         <span class="text-xs text-accent">Позвонить</span>
       </a>
       <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="mobile-link w-full block bg-accent text-navy font-bold py-3 rounded-md text-center text-sm shadow-md">Позвонить нам</a>

@@ -1,6 +1,6 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
-$phone_retail = azk_setting('phone_retail', '8 775 865 3737');
+$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
 $title = azk_field('promo_title', 'Выгодные акции и бонусные программы на АЗС');
 
 $cards = [];
@@ -15,10 +15,10 @@ if (!$cards) $cards = azk_default('promo_cards');
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-700/80 pb-6">
       <div class="space-y-1">
-        <div class="inline-flex items-center space-x-2 text-accent text-xs font-bold uppercase tracking-wider"><i data-lucide="gift" class="w-4 h-4"></i><span>Программы лояльности АЗК Алмаз</span></div>
+        <div class="inline-flex items-center space-x-2 text-accent text-xs font-bold uppercase tracking-wider"><i data-lucide="gift" class="w-4 h-4"></i><span>Программы лояльности ALMAZ</span></div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight"><?php echo esc_html($title); ?></h2>
       </div>
-      <a href="tel:<?php echo esc_attr(azk_tel($phone_retail)); ?>" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3 rounded-lg shadow flex items-center justify-center space-x-2 self-start md:self-auto"><span>Оформить топливную карту</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3 rounded-lg shadow flex items-center justify-center space-x-2 self-start md:self-auto"><span>Оформить топливную карту</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <?php foreach ($cards as $c): ?>

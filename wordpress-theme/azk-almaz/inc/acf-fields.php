@@ -16,7 +16,7 @@ function azk_icon_choices() {
         'trending-down' => 'trending-down', 'shield-check' => 'shield-check', 'user-check' => 'user-check', 'clock' => 'clock',
         'building-2' => 'building-2', 'truck' => 'truck', 'microscope' => 'microscope', 'fuel' => 'fuel',
         'navigation' => 'navigation', 'warehouse' => 'warehouse', 'credit-card' => 'credit-card',
-        'percent' => 'percent', 'sparkles' => 'sparkles', 'phone-call' => 'phone-call',
+        'percent' => 'percent', 'sparkles' => 'sparkles', 'phone-call' => 'phone-call', 'briefcase' => 'briefcase',
     ];
 }
 
@@ -35,14 +35,13 @@ function azk_acf_options() {
         'key'    => 'group_azk_options',
         'title'  => 'Глобальные настройки — контакты и реквизиты',
         'fields' => [
-            ['key' => 'field_azk_opt_phone_wholesale', 'name' => 'phone_wholesale', 'label' => 'Телефон: оптовый отдел', 'type' => 'text', 'default_value' => '8 707 729 4051'],
-            ['key' => 'field_azk_opt_phone_retail', 'name' => 'phone_retail', 'label' => 'Телефон: сеть АЗС / горячая линия', 'type' => 'text', 'default_value' => '8 775 865 3737'],
-            ['key' => 'field_azk_opt_phone_general', 'name' => 'phone_general', 'label' => 'Телефон: приёмная', 'type' => 'text', 'default_value' => '8 (7252) 357-444'],
-            ['key' => 'field_azk_opt_phone_general2', 'name' => 'phone_general2', 'label' => 'Телефон: приёмная (доп.)', 'type' => 'text', 'default_value' => '8 771 061 10 66'],
+            ['key' => 'field_azk_opt_phone_cooperation', 'name' => 'phone_cooperation', 'label' => 'Телефон: по вопросам сотрудничества (опт, розница, АЗС)', 'type' => 'text', 'default_value' => '8 775 865 3737'],
+            ['key' => 'field_azk_opt_phone_general', 'name' => 'phone_general', 'label' => 'Телефон: офис', 'type' => 'text', 'default_value' => '8 (7252) 357-444'],
+            ['key' => 'field_azk_opt_phone_accounting', 'name' => 'phone_accounting', 'label' => 'Телефон: бухгалтерия', 'type' => 'text', 'default_value' => '8 771 061 10 66'],
             ['key' => 'field_azk_opt_address_short', 'name' => 'address_short', 'label' => 'Адрес (кратко, для топбара)', 'type' => 'text', 'default_value' => 'г. Шымкент, проспект Абая, 1А'],
-            ['key' => 'field_azk_opt_address_full', 'name' => 'address_full', 'label' => 'Адрес офиса (полный)', 'type' => 'text', 'default_value' => 'г. Шымкент, район Туран, проспект Абая, 1А'],
-            ['key' => 'field_azk_opt_hours_office', 'name' => 'hours_office', 'label' => 'Режим работы офиса', 'type' => 'text', 'default_value' => 'Пн - Пт: 09:00 - 18:00 (Офис)'],
-            ['key' => 'field_azk_opt_hours_depot', 'name' => 'hours_depot', 'label' => 'Режим работы нефтебазы', 'type' => 'text', 'default_value' => 'Пн - Сб: 08:00 - 20:00 (Нефтебаза)'],
+            ['key' => 'field_azk_opt_address_full', 'name' => 'address_full', 'label' => 'Адрес офиса (полный)', 'type' => 'text', 'default_value' => 'г. Шымкент, район Тұран, проспект Абая, 1А'],
+            ['key' => 'field_azk_opt_hours_office', 'name' => 'hours_office', 'label' => 'Режим работы офиса', 'type' => 'text', 'default_value' => 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00 (Офис)'],
+            ['key' => 'field_azk_opt_hours_depot', 'name' => 'hours_depot', 'label' => 'Режим работы АЗС', 'type' => 'text', 'default_value' => 'Круглосуточно, 24/7'],
             ['key' => 'field_azk_opt_bin', 'name' => 'bin', 'label' => 'БИН компании', 'type' => 'text', 'default_value' => '011240001881'],
             ['key' => 'field_azk_opt_legal_entity', 'name' => 'legal_entity', 'label' => 'Юридическое наименование', 'type' => 'text', 'default_value' => 'ТОО «АЗК Алмаз»'],
             ['key' => 'field_azk_opt_founding_year', 'name' => 'founding_year', 'label' => 'Год основания', 'type' => 'text', 'default_value' => '1998'],
@@ -192,7 +191,7 @@ function azk_acf_home() {
 
             // --- AZS network ---
             ['key' => 'field_azk_azs_tab', 'name' => 'azs_tab', 'label' => 'Сеть АЗС', 'type' => 'tab'],
-            ['key' => 'field_azk_azs_title', 'name' => 'azs_title', 'label' => 'Заголовок секции', 'type' => 'text', 'default_value' => 'Фирменная сеть АЗС «Алмаз»'],
+            ['key' => 'field_azk_azs_title', 'name' => 'azs_title', 'label' => 'Заголовок секции', 'type' => 'text', 'default_value' => 'Фирменная сеть АЗС ALMAZ'],
             ['key' => 'field_azk_azs_subtitle', 'name' => 'azs_subtitle', 'label' => 'Подзаголовок секции', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Современные автозаправочные комплексы на ключевых магистралях Шымкента и Туркестанской области. Круглосуточный точный налив и высокий сервис.'],
             ['key' => 'field_azk_azs_map_image', 'name' => 'azs_map_image', 'label' => 'Фон детальной карточки станции (canopy)', 'type' => 'image', 'return_format' => 'url'],
             [

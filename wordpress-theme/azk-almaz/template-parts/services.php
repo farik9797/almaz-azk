@@ -1,6 +1,6 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
-$phone_wholesale = azk_setting('phone_wholesale', '8 707 729 4051');
+$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
 $title    = azk_field('services_title', 'Полный спектр услуг на рынке нефтепродуктов');
 $subtitle = azk_field('services_subtitle', 'Обеспечиваем надёжное решение задач любой сложности — от разовых оптовых отгрузок до долгосрочного контрактного обслуживания и хранения.');
 $fleet_image = azk_image('fleet_image', 'fleet.jpg');
@@ -29,7 +29,7 @@ if (!$services) $services = azk_default('services');
             <p class="text-sm font-medium text-slate-800 mb-2"><?php echo esc_html($s['description']); ?></p>
             <p class="text-xs text-slate-500 leading-relaxed mb-4"><?php echo esc_html($s['details']); ?></p>
           </div>
-          <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group">Позвонить по этой услуге<i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+          <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group">Позвонить по этой услуге<i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
         </div>
       <?php endforeach; ?>
     </div>
@@ -43,8 +43,8 @@ if (!$services) $services = azk_default('services');
         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">Каждый бензовоз оснащён калиброванными секциями, насосами, счётчиками и спутниковым GPS-трекингом для контроля местоположения и сохранности топлива в пути.</p>
       </div>
       <div class="relative z-10 md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-3 justify-center">
-        <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3.5 rounded-xl shadow flex items-center justify-center space-x-2 text-center"><span>Заказать перевозку</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
-        <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-5 py-3.5 rounded-xl border border-white/20 flex items-center justify-center space-x-2 text-center backdrop-blur"><i data-lucide="phone-call" class="w-4 h-4 text-accent"></i><span><?php echo esc_html($phone_wholesale); ?></span></a>
+        <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3.5 rounded-xl shadow flex items-center justify-center space-x-2 text-center"><span>Заказать перевозку</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+        <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-5 py-3.5 rounded-xl border border-white/20 flex items-center justify-center space-x-2 text-center backdrop-blur"><i data-lucide="phone-call" class="w-4 h-4 text-accent"></i><span><?php echo esc_html($phone_cooperation); ?></span></a>
       </div>
     </div>
   </div>
