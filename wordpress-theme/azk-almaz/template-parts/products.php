@@ -38,7 +38,7 @@ foreach ($calc_products as $p) {
       <p class="mt-3 text-slate-600 text-base"><?php echo esc_html($subtitle); ?></p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <?php foreach ($products as $p): ?>
         <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
           <div>

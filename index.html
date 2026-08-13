@@ -271,18 +271,18 @@
       <!-- Photo gallery tabs -->
       <div class="space-y-3">
         <div class="flex items-center justify-between bg-white p-1.5 rounded-xl border border-slate-200 shadow-sm text-xs font-bold gap-1 overflow-x-auto" id="gallery-tabs">
-          <button data-gallery="0" class="tab-btn active flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap"><i data-lucide="building-2" class="w-4 h-4"></i><span>Ключевой хаб</span></button>
+          <button data-gallery="0" class="tab-btn active flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap"><i data-lucide="store" class="w-4 h-4"></i><span>Минимаркет</span></button>
           <button data-gallery="1" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="truck" class="w-4 h-4"></i><span>Логистика</span></button>
           <button data-gallery="2" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="microscope" class="w-4 h-4"></i><span>ГОСТ &amp; Евро-5</span></button>
           <button data-gallery="3" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="fuel" class="w-4 h-4"></i><span>Розница</span></button>
         </div>
 
         <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-navy h-80 sm:h-96">
-          <img id="gallery-img" src="assets/images/about-gas-station.jpg" alt="Собственная нефтебаза" class="w-full h-full object-cover object-center transition-opacity duration-300">
+          <img id="gallery-img" src="assets/images/about-gas-station.jpg" alt="Фирменный минимаркет на АЗС ALMAZ" class="w-full h-full object-cover object-center transition-opacity duration-300">
           <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0A1E36] via-[#0A1E36]/85 to-transparent p-6 text-white">
-            <div class="flex items-center space-x-2 text-accent text-xs font-bold uppercase tracking-wider mb-1"><i data-lucide="award" class="w-4 h-4"></i><span id="gallery-badge">Ключевой хаб</span></div>
-            <h4 id="gallery-title" class="text-base font-bold text-white">Собственная Нефтебаза</h4>
-            <p id="gallery-subtitle" class="text-xs text-slate-300 mt-1">г. Шымкент, р-н Тұран, пр. Абая, 1А</p>
+            <div class="flex items-center space-x-2 text-accent text-xs font-bold uppercase tracking-wider mb-1"><i data-lucide="award" class="w-4 h-4"></i><span id="gallery-badge">Минимаркет</span></div>
+            <h4 id="gallery-title" class="text-base font-bold text-white">Фирменный минимаркет на АЗС</h4>
+            <p id="gallery-subtitle" class="text-xs text-slate-300 mt-1">Товары в дорогу и повседневные покупки на АЗС ALMAZ</p>
           </div>
         </div>
       </div>
@@ -309,7 +309,7 @@
       <p class="mt-3 text-slate-600 text-base">Все марки топлива поставляются напрямую с ведущих НПЗ и проходят обязательный лабораторный контроль с выдачей Паспорта качества.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
         <div>
           <div class="bg-navy text-white p-6">
@@ -906,7 +906,7 @@
 
   // About gallery tabs
   const galleryData = [
-    { img: 'assets/images/about-gas-station.jpg', badge: 'Ключевой хаб', title: 'Собственная Нефтебаза', subtitle: 'г. Шымкент, р-н Тұран, пр. Абая, 1А' },
+    { img: 'assets/images/about-gas-station.jpg', badge: 'Минимаркет', title: 'Фирменный минимаркет на АЗС', subtitle: 'Товары в дорогу и повседневные покупки на АЗС ALMAZ' },
     { img: 'assets/images/fleet.jpg', badge: 'Логистика', title: 'Парк Бензовозов Евро-5', subtitle: 'Оперативная доставка от 5,000 л по региону' },
     { img: 'assets/images/lab.jpg', badge: 'ГОСТ & Евро-5', title: 'Лаборатория Контроля Качества', subtitle: 'Проверка каждой партии топлива перед отгрузкой' },
     { img: 'assets/images/canopy.jpg', badge: 'Розница', title: 'Сеть АЗС ALMAZ', subtitle: 'Современные комплексы 24/7 в Шымкенте и Туркестанской обл.' },

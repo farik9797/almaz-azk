@@ -16,7 +16,7 @@ function azk_icon_choices() {
         'trending-down' => 'trending-down', 'shield-check' => 'shield-check', 'user-check' => 'user-check', 'clock' => 'clock',
         'building-2' => 'building-2', 'truck' => 'truck', 'microscope' => 'microscope', 'fuel' => 'fuel',
         'navigation' => 'navigation', 'warehouse' => 'warehouse', 'credit-card' => 'credit-card',
-        'percent' => 'percent', 'sparkles' => 'sparkles', 'phone-call' => 'phone-call', 'briefcase' => 'briefcase',
+        'percent' => 'percent', 'sparkles' => 'sparkles', 'phone-call' => 'phone-call', 'briefcase' => 'briefcase', 'store' => 'store',
     ];
 }
 

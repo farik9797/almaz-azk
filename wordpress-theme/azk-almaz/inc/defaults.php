@@ -24,7 +24,7 @@ function azk_default($key) {
         ],
 
         'gallery_tabs' => [
-            ['icon' => 'building-2', 'tab_label' => 'Ключевой хаб', 'image' => 'about-gas-station.jpg', 'badge' => 'Ключевой хаб', 'title' => 'Собственная Нефтебаза', 'subtitle' => 'г. Шымкент, р-н Тұран, пр. Абая, 1А'],
+            ['icon' => 'store', 'tab_label' => 'Минимаркет', 'image' => 'about-gas-station.jpg', 'badge' => 'Минимаркет', 'title' => 'Фирменный минимаркет на АЗС', 'subtitle' => 'Товары в дорогу и повседневные покупки на АЗС ALMAZ'],
             ['icon' => 'truck', 'tab_label' => 'Логистика', 'image' => 'fleet.jpg', 'badge' => 'Логистика', 'title' => 'Парк Бензовозов Евро-5', 'subtitle' => 'Оперативная доставка от 5,000 л по региону'],
             ['icon' => 'microscope', 'tab_label' => 'ГОСТ & Евро-5', 'image' => 'lab.jpg', 'badge' => 'ГОСТ & Евро-5', 'title' => 'Лаборатория Контроля Качества', 'subtitle' => 'Проверка каждой партии топлива перед отгрузкой'],
             ['icon' => 'fuel', 'tab_label' => 'Розница', 'image' => 'canopy.jpg', 'badge' => 'Розница', 'title' => 'Сеть АЗС ALMAZ', 'subtitle' => 'Современные комплексы 24/7 в Шымкенте и Туркестанской обл.'],
