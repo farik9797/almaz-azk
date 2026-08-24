@@ -133,10 +133,12 @@
       });
     });
 
-    /* FAQ chevron rotation */
+    /* FAQ chevron rotation
+       Lucide swaps the original <i data-lucide="chevron-down"> for an <svg> on init,
+       so the icon must be looked up as svg (or i, before Lucide has run) — not just i. */
     document.querySelectorAll('#faq details').forEach(function (d) {
       d.addEventListener('toggle', function () {
-        var icon = d.querySelector('summary i');
+        var icon = d.querySelector('summary svg, summary i');
         if (icon) icon.style.transform = d.open ? 'rotate(180deg)' : 'none';
       });
     });
