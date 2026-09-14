@@ -33,7 +33,7 @@ foreach ($calc_products as $p) {
 <section id="products" class="py-16 bg-white border-t border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
     <div class="text-center max-w-3xl mx-auto">
-      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Продукция Евро-5</div>
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Продукция Евро-4</div>
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight"><?php echo esc_html($title); ?></h2>
       <p class="mt-3 text-slate-600 text-base"><?php echo esc_html($subtitle); ?></p>
     </div>

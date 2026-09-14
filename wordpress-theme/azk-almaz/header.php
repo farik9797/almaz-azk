@@ -44,7 +44,7 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center space-x-6">
         <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span><?php echo esc_html($address_short); ?></span></div>
-        <div class="flex items-center space-x-2"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span>Официальные поставки Евро-5 с 1998 года</span></div>
+        <div class="flex items-center space-x-2"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span>Официальные поставки Евро-4 с 1998 года</span></div>
       </div>
       <div class="flex items-center space-x-6">
         <span class="text-slate-400">Офис и нефтебаза: <?php echo esc_html($hours_office); ?> | АЗС 24/7</span>

@@ -16,7 +16,7 @@ $founding_year     = azk_setting('founding_year', '1998');
           <img src="<?php echo esc_url(AZK_THEME_URI . '/assets/images/logo/logo-horizontal.png'); ?>" alt="ALMAZ" class="h-9 w-auto">
           <p class="text-[10px] text-slate-400 font-bold uppercase">ТОО «АЗК Алмаз» • Светлые нефтепродукты • с <?php echo esc_html($founding_year); ?> года</p>
         </div>
-        <p class="text-xs text-slate-400 leading-relaxed">Надёжные оптовые и розничные поставки высококачественного бензина (АИ-92, АИ-95) и дизельного топлива Евро-5 в Шымкенте и Туркестанской области.</p>
+        <p class="text-xs text-slate-400 leading-relaxed">Надёжные оптовые и розничные поставки высококачественного бензина (АИ-92, АИ-95) и дизельного топлива Евро-4 в Шымкенте и Туркестанской области.</p>
         <div class="text-xs text-slate-400"><div class="flex items-center space-x-2 text-white font-semibold"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span><?php echo esc_html($address_full); ?></span></div></div>
       </div>
       <div class="lg:col-span-3 space-y-3">
@@ -24,7 +24,7 @@ $founding_year     = azk_setting('founding_year', '1998');
         <ul class="space-y-2 text-xs">
           <li><a href="#about" class="hover:text-accent transition-colors">О компании</a></li>
           <li><a href="#services" class="hover:text-accent transition-colors">Услуги</a></li>
-          <li><a href="#products" class="hover:text-accent transition-colors">Продукция (Евро-5)</a></li>
+          <li><a href="#products" class="hover:text-accent transition-colors">Продукция (Евро-4)</a></li>
           <li><a href="#azs" class="hover:text-accent transition-colors">Сеть АЗС</a></li>
           <li><a href="#faq" class="hover:text-accent transition-colors">Частые вопросы</a></li>
           <li><a href="#contacts" class="hover:text-accent transition-colors">Контакты</a></li>

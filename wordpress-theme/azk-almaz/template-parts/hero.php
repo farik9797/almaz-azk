@@ -7,7 +7,7 @@ $address_full      = azk_setting('address_full', 'г. Шымкент, район
 $badge         = azk_field('hero_badge', 'ТОО «АЗК Алмаз» • 25+ лет стабильной работы');
 $title         = azk_field('hero_title', 'Надёжные поставки нефтепродуктов');
 $title_accent  = azk_field('hero_title_accent', 'с 1998 года');
-$subtitle      = azk_field('hero_subtitle', 'Оптовая и розничная реализация высококачественного бензина (АИ-92, АИ-95) и дизельного топлива стандарта Евро-5. Собственная нефтебаза в г. Шымкент, автопарк бензовозов и сеть современных АЗС.');
+$subtitle      = azk_field('hero_subtitle', 'Оптовая и розничная реализация высококачественного бензина (АИ-92, АИ-95) и дизельного топлива стандарта Евро-4. Собственная нефтебаза в г. Шымкент, автопарк бензовозов и сеть современных АЗС.');
 $hero_image    = azk_image('hero_image', 'hero-depot.jpg');
 ?>
 <section id="top" class="relative bg-navy-dark text-white pt-8 pb-16 md:pt-16 md:pb-24 overflow-hidden">
@@ -42,7 +42,7 @@ $hero_image    = azk_image('hero_image', 'hero-depot.jpg');
         <div class="pt-6 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm text-slate-300">
           <div class="flex items-center space-x-2.5">
             <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-leaf shrink-0"><i data-lucide="shield-check" class="w-4 h-4"></i></div>
-            <div><div class="font-bold text-white">Стандарт Евро-5</div><div class="text-slate-400 text-[11px]">100% соответствие ГОСТ</div></div>
+            <div><div class="font-bold text-white">Стандарт Евро-4</div><div class="text-slate-400 text-[11px]">100% соответствие ГОСТ</div></div>
           </div>
           <div class="flex items-center space-x-2.5">
             <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0"><i data-lucide="truck" class="w-4 h-4"></i></div>

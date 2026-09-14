@@ -63,7 +63,7 @@ function azk_acf_home() {
             ['key' => 'field_azk_hero_badge', 'name' => 'hero_badge', 'label' => 'Бейдж над заголовком', 'type' => 'text', 'default_value' => 'ТОО «АЗК Алмаз» • 25+ лет стабильной работы'],
             ['key' => 'field_azk_hero_title', 'name' => 'hero_title', 'label' => 'Заголовок (H1)', 'type' => 'text', 'default_value' => 'Надёжные поставки нефтепродуктов'],
             ['key' => 'field_azk_hero_title_accent', 'name' => 'hero_title_accent', 'label' => 'Заголовок — акцентная часть (жёлтая)', 'type' => 'text', 'default_value' => 'с 1998 года'],
-            ['key' => 'field_azk_hero_subtitle', 'name' => 'hero_subtitle', 'label' => 'Подзаголовок', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Оптовая и розничная реализация высококачественного бензина (АИ-92, АИ-95) и дизельного топлива стандарта Евро-5. Собственная нефтебаза в г. Шымкент, автопарк бензовозов и сеть современных АЗС.'],
+            ['key' => 'field_azk_hero_subtitle', 'name' => 'hero_subtitle', 'label' => 'Подзаголовок', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Оптовая и розничная реализация высококачественного бензина (АИ-92, АИ-95) и дизельного топлива стандарта Евро-4. Собственная нефтебаза в г. Шымкент, автопарк бензовозов и сеть современных АЗС.'],
             ['key' => 'field_azk_hero_image', 'name' => 'hero_image', 'label' => 'Фоновое изображение', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'],
 
             // --- Advantages ---
