@@ -40,7 +40,7 @@ function azk_acf_options() {
             ['key' => 'field_azk_opt_phone_accounting', 'name' => 'phone_accounting', 'label' => 'Телефон: бухгалтерия', 'type' => 'text', 'default_value' => '8 771 061 10 66'],
             ['key' => 'field_azk_opt_address_short', 'name' => 'address_short', 'label' => 'Адрес (кратко, для топбара)', 'type' => 'text', 'default_value' => 'г. Шымкент, проспект Абая, 1А'],
             ['key' => 'field_azk_opt_address_full', 'name' => 'address_full', 'label' => 'Адрес офиса (полный)', 'type' => 'text', 'default_value' => 'г. Шымкент, район Тұран, проспект Абая, 1А'],
-            ['key' => 'field_azk_opt_hours_office', 'name' => 'hours_office', 'label' => 'Режим работы офиса', 'type' => 'text', 'default_value' => 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00 (Офис)'],
+            ['key' => 'field_azk_opt_hours_office', 'name' => 'hours_office', 'label' => 'Режим работы офиса и нефтебазы', 'type' => 'text', 'default_value' => 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00'],
             ['key' => 'field_azk_opt_hours_depot', 'name' => 'hours_depot', 'label' => 'Режим работы АЗС', 'type' => 'text', 'default_value' => 'Круглосуточно, 24/7'],
             ['key' => 'field_azk_opt_bin', 'name' => 'bin', 'label' => 'БИН компании', 'type' => 'text', 'default_value' => '011240001881'],
             ['key' => 'field_azk_opt_legal_entity', 'name' => 'legal_entity', 'label' => 'Юридическое наименование', 'type' => 'text', 'default_value' => 'ТОО «АЗК Алмаз»'],

@@ -14,7 +14,7 @@ $founding_year     = azk_setting('founding_year', '1998');
       <div class="lg:col-span-5 space-y-4">
         <div class="flex items-center space-x-3">
           <img src="<?php echo esc_url(AZK_THEME_URI . '/assets/images/logo/logo-horizontal.png'); ?>" alt="ALMAZ" class="h-9 w-auto">
-          <p class="text-[10px] text-slate-400 font-bold uppercase">ТОО «АЗК Алмаз» • с <?php echo esc_html($founding_year); ?> года</p>
+          <p class="text-[10px] text-slate-400 font-bold uppercase">ТОО «АЗК Алмаз» • Светлые нефтепродукты • с <?php echo esc_html($founding_year); ?> года</p>
         </div>
         <p class="text-xs text-slate-400 leading-relaxed">Надёжные оптовые и розничные поставки высококачественного бензина (АИ-92, АИ-95) и дизельного топлива Евро-5 в Шымкенте и Туркестанской области.</p>
         <div class="text-xs text-slate-400"><div class="flex items-center space-x-2 text-white font-semibold"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span><?php echo esc_html($address_full); ?></span></div></div>

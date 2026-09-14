@@ -36,7 +36,7 @@
 $phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
 $phone_general     = azk_setting('phone_general', '8 (7252) 357-444');
 $address_short     = azk_setting('address_short', 'г. Шымкент, проспект Абая, 1А');
-$hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00 (Офис)');
+$hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00');
 ?>
 
 <header class="sticky top-0 z-40 w-full">
@@ -47,9 +47,12 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
         <div class="flex items-center space-x-2"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span>Официальные поставки Евро-5 с 1998 года</span></div>
       </div>
       <div class="flex items-center space-x-6">
-        <span class="text-slate-400"><?php echo esc_html($hours_office); ?> | АЗС 24/7</span>
+        <span class="text-slate-400">Офис и нефтебаза: <?php echo esc_html($hours_office); ?> | АЗС 24/7</span>
         <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i><span><?php echo esc_html($phone_general); ?></span>
+        </a>
+        <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i><span><?php echo esc_html($phone_cooperation); ?></span>
         </a>
       </div>
     </div>

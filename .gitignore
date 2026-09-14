@@ -10,3 +10,6 @@ wordpress-theme/wp-local/
 
 # build artifact — regenerate with: cd wordpress-theme && zip -qr azk-almaz.zip azk-almaz
 wordpress-theme/azk-almaz.zip
+
+# firecrawl local cache
+.firecrawl/
