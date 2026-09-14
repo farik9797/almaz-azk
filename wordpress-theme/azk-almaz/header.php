@@ -60,11 +60,11 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
 
   <div class="w-full bg-white py-4 border-b border-slate-200 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-      <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center space-x-3">
-        <img src="<?php echo esc_url(AZK_THEME_URI . '/assets/images/logo/logo-horizontal.png'); ?>" alt="ALMAZ" class="h-8 sm:h-9 w-auto">
+      <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center space-x-3 shrink-0">
+        <img src="<?php echo esc_url(AZK_THEME_URI . '/assets/images/logo/logo-horizontal.png'); ?>" alt="ALMAZ" class="h-8 sm:h-9 w-auto max-w-none">
       </a>
 
-      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-navy">
+      <nav class="hidden lg:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-navy">
         <a href="#about" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">О компании</a>
         <a href="#services" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">Услуги</a>
         <a href="#products" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">Продукция</a>
@@ -80,13 +80,13 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
         </a>
       </div>
 
-      <button id="menu-btn" class="md:hidden text-navy p-2 rounded-md hover:bg-slate-100" aria-label="Открыть меню">
+      <button id="menu-btn" class="lg:hidden text-navy p-2 rounded-md hover:bg-slate-100" aria-label="Открыть меню">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
     </div>
   </div>
 
-  <nav id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 shadow-md text-navy px-4 pt-3 pb-6 space-y-3">
+  <nav id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 shadow-md text-navy px-4 pt-3 pb-6 space-y-3">
     <div class="text-xs text-slate-500 pb-2 border-b border-slate-200 flex justify-between items-center">
       <span><?php echo esc_html($address_short); ?></span><span class="text-accent-dark font-semibold">АЗС 24/7</span>
     </div>

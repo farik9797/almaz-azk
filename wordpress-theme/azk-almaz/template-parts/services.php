@@ -25,7 +25,7 @@ if (!$services) $services = azk_default('services');
       <?php foreach ($services as $i => $s): ?>
         <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
           <div>
-            <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="<?php echo esc_attr($s['icon']); ?>" class="w-6 h-6 text-accent"></i></div><div><span class="text-xs font-bold text-slate-400 block">Услуга <?php echo esc_html(sprintf('%02d', $i + 1)); ?></span><h3 class="text-lg font-bold text-navy"><?php echo esc_html($s['title']); ?></h3></div></div>
+            <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="<?php echo esc_attr($s['icon']); ?>" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy"><?php echo esc_html($s['title']); ?></h3></div></div>
             <p class="text-sm font-medium text-slate-800 mb-2"><?php echo esc_html($s['description']); ?></p>
             <p class="text-xs text-slate-500 leading-relaxed mb-4"><?php echo esc_html($s['details']); ?></p>
           </div>
@@ -39,7 +39,7 @@ if (!$services) $services = azk_default('services');
       <div class="absolute inset-0 bg-gradient-to-r from-[#0A1E36] via-navy/95 to-navy-light/85"></div>
       <div class="relative z-10 md:col-span-8 space-y-3">
         <div class="inline-flex items-center space-x-2 bg-accent/20 text-accent border border-accent/40 px-3 py-1 rounded-full text-xs font-extrabold"><i data-lucide="shield-check" class="w-4 h-4"></i><span>Собственный автопарк спецтранспорта Евро-5</span></div>
-        <h3 class="text-xl sm:text-2xl font-black">Гарантированная транспортировка от 5 000 до 40 000 литров по региону</h3>
+        <h3 class="text-xl sm:text-2xl font-black">Гарантированная транспортировка от 2 000 до 40 000 литров по региону</h3>
         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">Каждый бензовоз оснащён калиброванными секциями, насосами, счётчиками и спутниковым GPS-трекингом для контроля местоположения и сохранности топлива в пути.</p>
       </div>
       <div class="relative z-10 md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-3 justify-center">

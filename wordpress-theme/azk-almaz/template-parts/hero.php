@@ -46,7 +46,7 @@ $hero_image    = azk_image('hero_image', 'hero-depot.jpg');
           </div>
           <div class="flex items-center space-x-2.5">
             <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0"><i data-lucide="truck" class="w-4 h-4"></i></div>
-            <div><div class="font-bold text-white">Собственные бензовозы</div><div class="text-slate-400 text-[11px]">Доставка от 5,000 литров</div></div>
+            <div><div class="font-bold text-white">Собственные бензовозы</div><div class="text-slate-400 text-[11px]">Доставка от 2,000 литров</div></div>
           </div>
           <div class="col-span-2 sm:col-span-1 flex items-center space-x-2.5">
             <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0"><i data-lucide="award" class="w-4 h-4"></i></div>
