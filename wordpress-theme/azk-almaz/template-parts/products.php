@@ -120,8 +120,8 @@ foreach ($calc_products as $p) {
               <div class="text-[11px] text-slate-400 mt-1">Минимальный оптовый заказ: 1 000 литров</div>
             </div>
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">3. Базис поставки / Пункт назначения:</label>
-              <select id="calc-destination" class="w-full bg-navy-light border border-slate-700 text-white font-medium text-sm px-3 py-3 rounded-lg focus:outline-none focus:border-accent">
+              <label class="flex items-center h-[26px] text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">3. Базис поставки / Пункт назначения:</label>
+              <select id="calc-destination" class="w-full bg-navy-light border border-slate-700 text-white font-medium text-sm px-3 py-3.5 rounded-lg focus:outline-none focus:border-accent">
                 <option>г. Шымкент (в пределах города)</option>
                 <option>Самовывоз с нефтебазы (г. Шымкент)</option>
                 <option>г. Туркестан (доставка бензовозом)</option>
