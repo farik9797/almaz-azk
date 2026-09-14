@@ -88,9 +88,9 @@ if (!$stats) $stats = azk_default('stats');
     </div>
 
     <div class="bg-navy rounded-2xl p-8 border border-slate-800 shadow-xl text-white">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
         <?php foreach ($stats as $i => $s): ?>
-          <div class="pt-4 md:pt-0<?php echo $i > 0 ? ' md:pl-6' : ''; ?>">
+          <div class="pt-4 md:pt-0">
             <div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight"><?php echo esc_html($s['value']); ?></div>
             <div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide"><?php echo esc_html($s['label']); ?></div>
           </div>
