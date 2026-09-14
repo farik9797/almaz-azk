@@ -25,7 +25,7 @@ $hero_image    = azk_image('hero_image', 'hero-depot.jpg');
         </div>
 
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
-          <?php echo esc_html($title); ?> <span class="text-accent"><?php echo esc_html($title_accent); ?></span>
+          <?php echo esc_html($title); ?> <span class="text-accent whitespace-nowrap"><?php echo esc_html($title_accent); ?></span>
         </h1>
 
         <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed"><?php echo esc_html($subtitle); ?></p>
