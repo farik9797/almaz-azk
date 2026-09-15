@@ -1,6 +1,7 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
 $phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
+$phone_wholesale   = azk_setting('phone_wholesale', '8 707 729 4051');
 $phone_general     = azk_setting('phone_general', '8 (7252) 357-444');
 $phone_accounting  = azk_setting('phone_accounting', '8 771 061 10 66');
 $address_full      = azk_setting('address_full', 'г. Шымкент, район Тұран, проспект Абая, 1А');
@@ -33,8 +34,9 @@ $founding_year     = azk_setting('founding_year', '1998');
       <div class="lg:col-span-4 space-y-3">
         <div class="text-xs font-bold text-white uppercase tracking-wider">Телефоны отделов</div>
         <div class="space-y-2 text-xs">
-          <div><span class="text-slate-400 block text-[11px]">Офис:</span><a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_general); ?></a></div>
-          <div><span class="text-slate-400 block text-[11px]">По вопросам сотрудничества:</span><a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_cooperation); ?></a></div>
+          <div><span class="text-slate-400 block text-[11px]">По вопросам оптовой реализации:</span><a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_wholesale); ?></a></div>
+          <div><span class="text-slate-400 block text-[11px]">По вопросам розничной реализации через сеть АЗС:</span><a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_cooperation); ?></a></div>
+          <div><span class="text-slate-400 block text-[11px]">По общим вопросам:</span><a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_general); ?></a></div>
           <div><span class="text-slate-400 block text-[11px]">Бухгалтерия:</span><a href="tel:<?php echo esc_attr(azk_tel($phone_accounting)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_accounting); ?></a></div>
         </div>
       </div>

@@ -35,7 +35,8 @@ function azk_acf_options() {
         'key'    => 'group_azk_options',
         'title'  => 'Глобальные настройки — контакты и реквизиты',
         'fields' => [
-            ['key' => 'field_azk_opt_phone_cooperation', 'name' => 'phone_cooperation', 'label' => 'Телефон: по вопросам сотрудничества (опт, розница, АЗС)', 'type' => 'text', 'default_value' => '8 775 865 3737'],
+            ['key' => 'field_azk_opt_phone_wholesale', 'name' => 'phone_wholesale', 'label' => 'Телефон: по вопросам оптовой реализации', 'type' => 'text', 'default_value' => '8 707 729 4051'],
+            ['key' => 'field_azk_opt_phone_cooperation', 'name' => 'phone_cooperation', 'label' => 'Телефон: по вопросам розничной реализации через сеть АЗС', 'type' => 'text', 'default_value' => '8 775 865 3737'],
             ['key' => 'field_azk_opt_phone_general', 'name' => 'phone_general', 'label' => 'Телефон: офис', 'type' => 'text', 'default_value' => '8 (7252) 357-444'],
             ['key' => 'field_azk_opt_phone_accounting', 'name' => 'phone_accounting', 'label' => 'Телефон: бухгалтерия', 'type' => 'text', 'default_value' => '8 771 061 10 66'],
             ['key' => 'field_azk_opt_address_short', 'name' => 'address_short', 'label' => 'Адрес (кратко, для топбара)', 'type' => 'text', 'default_value' => 'г. Шымкент, проспект Абая, 1А'],

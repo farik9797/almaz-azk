@@ -1,6 +1,7 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
 $phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
+$phone_wholesale   = azk_setting('phone_wholesale', '8 707 729 4051');
 $title    = azk_field('products_title', 'Качественные нефтепродукты');
 $subtitle = azk_field('products_subtitle', 'Все марки топлива поставляются напрямую с ведущих НПЗ и проходят обязательный лабораторный контроль с выдачей Паспорта качества.');
 $lab_image = azk_image('lab_image', 'lab.jpg');
@@ -66,7 +67,7 @@ foreach ($calc_products as $p) {
             </div>
           </div>
           <div class="p-6 pt-0 space-y-2">
-            <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span>Запросить оптовую цену</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+            <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span>Запросить оптовую цену</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
             <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span>Запросить Паспорт качества</span></a>
           </div>
         </div>

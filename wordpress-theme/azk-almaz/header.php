@@ -34,6 +34,7 @@
 
 <?php
 $phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
+$phone_wholesale   = azk_setting('phone_wholesale', '8 707 729 4051');
 $phone_general     = azk_setting('phone_general', '8 (7252) 357-444');
 $address_short     = azk_setting('address_short', 'г. Шымкент, проспект Абая, 1А');
 $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00');
@@ -74,7 +75,7 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
       </nav>
 
       <div class="hidden sm:flex items-center space-x-3">
-        <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="text-xs font-bold text-navy hover:text-white hover:bg-navy px-3 py-2 rounded border border-slate-300 hover:border-navy transition-colors">Расчёт опта</a>
+        <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="text-xs font-bold text-navy hover:text-white hover:bg-navy px-3 py-2 rounded border border-slate-300 hover:border-navy transition-colors">Оптовые цены</a>
         <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="bg-accent hover:bg-accent-dark text-navy font-bold text-sm px-4 py-2.5 rounded-md shadow-md transition-all flex items-center space-x-2">
           <i data-lucide="phone" class="w-4 h-4"></i><span>Связаться</span>
         </a>
@@ -99,8 +100,8 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
       <a href="#contacts" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark">Контакты <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
     </div>
     <div class="pt-3 border-t border-slate-200 space-y-2">
-      <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="flex items-center justify-between p-3 rounded bg-navy text-sm font-semibold text-white">
-        <span class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4 text-accent"></i><span>Опт и сотрудничество: <?php echo esc_html($phone_cooperation); ?></span></span>
+      <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="flex items-center justify-between p-3 rounded bg-navy text-sm font-semibold text-white">
+        <span class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4 text-accent"></i><span>Оптовая реализация: <?php echo esc_html($phone_wholesale); ?></span></span>
         <span class="text-xs text-accent">Позвонить</span>
       </a>
       <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="mobile-link w-full block bg-accent text-navy font-bold py-3 rounded-md text-center text-sm shadow-md">Позвонить нам</a>

@@ -1,6 +1,7 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
 $phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
+$phone_wholesale   = azk_setting('phone_wholesale', '8 707 729 4051');
 $phone_general     = azk_setting('phone_general', '8 (7252) 357-444');
 $address_full      = azk_setting('address_full', 'г. Шымкент, район Тұран, проспект Абая, 1А');
 
@@ -31,7 +32,7 @@ $hero_image    = azk_image('hero_image', 'hero-depot.jpg');
         <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed"><?php echo esc_html($subtitle); ?></p>
 
         <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-          <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-base px-6 py-4 rounded-md shadow-lg transition-colors flex items-center justify-center space-x-2 border border-accent">
+          <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-base px-6 py-4 rounded-md shadow-lg transition-colors flex items-center justify-center space-x-2 border border-accent">
             <i data-lucide="truck" class="w-5 h-5 stroke-[2.5]"></i><span>Оптовые поставки</span><i data-lucide="arrow-right" class="w-5 h-5"></i>
           </a>
           <a href="#azs" class="bg-transparent hover:bg-white/10 text-white border-2 border-slate-400 hover:border-white font-bold text-base px-6 py-3.5 rounded-md transition-colors flex items-center justify-center space-x-2">
@@ -62,11 +63,15 @@ $hero_image    = azk_image('hero_image', 'hero-depot.jpg');
         </div>
         <div class="space-y-3 text-sm">
           <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-accent/50 transition-colors">
-            <div class="text-xs text-slate-400 mb-0.5">Опт, розница, поставки на АЗС:</div>
-            <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="text-lg font-black text-accent hover:underline"><?php echo esc_html($phone_cooperation); ?></a>
+            <div class="text-xs text-slate-400 mb-0.5">По вопросам оптовой реализации:</div>
+            <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="text-lg font-black text-accent hover:underline"><?php echo esc_html($phone_wholesale); ?></a>
           </div>
           <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-slate-600 transition-colors">
-            <div class="text-xs text-slate-400 mb-0.5">Офис:</div>
+            <div class="text-xs text-slate-400 mb-0.5">По вопросам розничной реализации через сеть АЗС:</div>
+            <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="text-lg font-black text-white hover:text-accent"><?php echo esc_html($phone_cooperation); ?></a>
+          </div>
+          <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-slate-600 transition-colors">
+            <div class="text-xs text-slate-400 mb-0.5">По общим вопросам:</div>
             <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="text-lg font-black text-white hover:text-accent"><?php echo esc_html($phone_general); ?></a>
           </div>
           <div class="p-3 rounded-lg bg-navy border border-slate-800 flex items-start space-x-2.5 text-xs text-slate-300">
