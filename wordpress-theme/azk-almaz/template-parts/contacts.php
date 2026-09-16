@@ -28,7 +28,7 @@ if (!$cards) $cards = azk_default('phone_cards');
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <?php foreach ($cards as $c): ?>
         <div class="bg-white rounded-2xl p-6 border-2 border-slate-200/90 shadow-sm hover:border-navy transition-all flex flex-col justify-between space-y-4">
-          <div>
+          <div class="flex-1 flex flex-col justify-between">
             <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="<?php echo esc_attr($c['icon']); ?>" class="w-5 h-5 text-accent"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block"><?php echo esc_html($c['department']); ?></span><h3 class="text-base font-bold text-navy leading-snug"><?php echo esc_html($c['title']); ?></h3></div></div>
             <div class="space-y-2 pt-2">
               <?php foreach ($c['phones'] as $p): ?><a href="tel:<?php echo esc_attr(azk_tel($p)); ?>" class="text-xl font-black text-navy hover:text-accent block tracking-tight"><?php echo esc_html($p); ?></a><?php endforeach; ?>
