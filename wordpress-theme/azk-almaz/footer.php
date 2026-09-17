@@ -1,9 +1,9 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
-$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
-$phone_wholesale   = azk_setting('phone_wholesale', '8 707 729 4051');
-$phone_general     = azk_setting('phone_general', '8 (7252) 357-444');
-$phone_accounting  = azk_setting('phone_accounting', '8 771 061 10 66');
+$phone_cooperation = azk_setting('phone_cooperation', '+7 (775) 865-37-37');
+$phone_wholesale   = azk_setting('phone_wholesale', '+7 (707) 729-40-51');
+$phone_general     = azk_setting('phone_general', '+7 (7252) 357-444');
+$phone_accounting  = azk_setting('phone_accounting', '+7 (771) 061-10-66');
 $address_full      = azk_setting('address_full', 'г. Шымкент, район Тұран, проспект Абая, 1А');
 $bin               = azk_setting('bin', '011240001881');
 $founding_year     = azk_setting('founding_year', '1998');

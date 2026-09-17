@@ -1,6 +1,6 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
-$phone_general = azk_setting('phone_general', '8 (7252) 357-444');
+$phone_general = azk_setting('phone_general', '+7 (7252) 357-444');
 $title = azk_field('faq_title', 'Частые вопросы');
 
 $items = [];

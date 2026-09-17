@@ -1,6 +1,6 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
-$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
+$phone_cooperation = azk_setting('phone_cooperation', '+7 (775) 865-37-37');
 $title    = azk_field('azs_title', 'Фирменная сеть АЗС ALMAZ');
 $subtitle = azk_field('azs_subtitle', 'Современные автозаправочные комплексы на ключевых магистралях Шымкента и Туркестанской области. Круглосуточный точный налив и высокий сервис.');
 $map_image = azk_image('azs_map_image', 'canopy.jpg');
@@ -65,7 +65,7 @@ foreach ($stations as $s) {
           </svg>
           <?php foreach ($stations as $i => $s): ?>
             <button data-station="<?php echo esc_attr($s['slug']); ?>" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:<?php echo esc_attr($s['marker_top']); ?>%; left:<?php echo esc_attr($s['marker_left']); ?>%;">
-              <span class="w-9 h-9 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 <?php echo $i === 0 ? 'bg-accent text-navy border-white' : 'bg-navy text-white border-accent'; ?>"><?php echo esc_html($s['label']); ?></span>
+              <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 <?php echo $i === 0 ? 'bg-accent text-navy border-white' : 'bg-navy text-white border-accent'; ?>"><?php echo esc_html($s['label']); ?></span>
             </button>
           <?php endforeach; ?>
           <div class="absolute bottom-3 left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300">

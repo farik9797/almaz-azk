@@ -1,6 +1,6 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
-$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
+$phone_cooperation = azk_setting('phone_cooperation', '+7 (775) 865-37-37');
 $title = azk_field('promo_title', 'Выгодные акции и бонусные программы на АЗС');
 
 $cards = [];

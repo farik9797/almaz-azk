@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>АЗК Алмаз — Поставки нефтепродуктов и сеть АЗС с 1998 года</title>
-<meta name="description" content="ALMAZ — сеть АЗС и оптовые поставки нефтепродуктов в Шымкенте и Туркестанской области: бензин АИ-92, АИ-95 и дизельное топливо оптом и в розницу, с доставкой. Топливные карты, талоны и карта лояльности на АЗС ALMAZ рядом с вами.">
+<title data-i18n="misc.1">АЗК Алмаз — Поставки нефтепродуктов и сеть АЗС с 1998 года</title>
+<meta name="description" content="ALMAZ — сеть АЗС и оптовые поставки нефтепродуктов в Шымкенте и Туркестанской области: бензин АИ-92, АИ-95 и дизельное топливо оптом и в розницу, с доставкой. Топливные карты, талоны и карта лояльности на АЗС ALMAZ рядом с вами." data-i18n-content="misc-attr.1">
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/favicon-180.png">
@@ -31,9 +31,24 @@
 </script>
 <script src="https://unpkg.com/lucide@latest"></script>
 
+<script>
+  // Если выбран не русский, прячем страницу до применения перевода — иначе видно мигание.
+  (function () {
+    try {
+      var m = /[?&]lang=([a-zA-Z-]+)/.exec(location.search);
+      var l = (m && m[1]) || localStorage.getItem('azk_lang') || 'ru';
+      if (l.toLowerCase().indexOf('ru') !== 0) document.documentElement.classList.add('i18n-pending');
+    } catch (e) {}
+  })();
+</script>
+<script src="assets/js/i18n.js?v=1"></script>
+
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F8FAFC; color: #2B2F36; }
+  /* CJK-шрифты только для китайской версии: в них кириллица полноширинная и ломает метрики. */
+  html[lang^="zh"] body { font-family: 'Plus Jakarta Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; }
+  .i18n-pending body { visibility: hidden; }
   details > summary { list-style: none; cursor: pointer; }
   details > summary::-webkit-details-marker { display: none; }
   .tab-btn.active { background: #0F2A47; color: #F5B301; }
@@ -46,19 +61,19 @@
 
 <!-- HEADER -->
 <header class="sticky top-0 z-40 w-full">
-  <div class="bg-[#0A1E36] text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden lg:block">
+  <div class="bg-[#0A1E36] text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden xl:block">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center space-x-6">
-        <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span>г. Шымкент, проспект Абая, 1А</span></div>
-        <div class="flex items-center space-x-2"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span>Официальные поставки Евро-4 с 1998 года</span></div>
+        <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="header.1">г. Шымкент, проспект Абая, 1А</span></div>
+        <div class="flex items-center space-x-2"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span data-i18n="header.2">Официальные поставки Евро-4 с 1998 года</span></div>
       </div>
       <div class="flex items-center space-x-6">
-        <span class="text-slate-400">Офис и нефтебаза: Пн - Пт 08:00 - 17:00, Сб 08:00 - 13:00 | АЗС 24/7</span>
-        <a href="tel:87252357444" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
-          <i data-lucide="phone" class="w-3.5 h-3.5"></i><span>8 (7252) 357-444</span>
+        <span class="text-slate-400" data-i18n="header.3">Офис и нефтебаза: Пн - Пт 08:00 - 17:00, Сб 08:00 - 13:00 | АЗС 24/7</span>
+        <a href="tel:+77252357444" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (7252) 357-444</span>
         </a>
-        <a href="tel:87758653737" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
-          <i data-lucide="phone" class="w-3.5 h-3.5"></i><span>8 775 865 3737</span>
+        <a href="tel:+77758653737" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (775) 865-37-37</span>
         </a>
       </div>
     </div>
@@ -70,46 +85,73 @@
         <img src="assets/images/logo/logo-horizontal.png" alt="ALMAZ" class="h-8 sm:h-9 w-auto max-w-none">
       </a>
 
-      <nav class="hidden lg:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-navy">
-        <a href="#about" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">О компании</a>
-        <a href="#services" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">Услуги</a>
-        <a href="#products" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">Продукция</a>
-        <a href="#azs" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">Сеть АЗС</a>
-        <a href="#faq" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">Вопросы</a>
-        <a href="#contacts" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">Контакты</a>
+      <nav class="hidden xl:flex items-center space-x-1 xl:space-x-2 text-sm font-semibold text-navy">
+        <a href="#about" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.4">О компании</a>
+        <a href="#services" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.5">Услуги</a>
+        <a href="#products" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.6">Продукция</a>
+        <a href="#azs" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.7">Сеть АЗС</a>
+        <a href="#faq" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.8">Вопросы</a>
+        <a href="#contacts" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.9">Контакты</a>
       </nav>
 
-      <div class="hidden sm:flex items-center space-x-3">
-        <a href="tel:87077294051" class="text-xs font-bold text-navy hover:text-white hover:bg-navy px-3 py-2 rounded border border-slate-300 hover:border-navy transition-colors">Оптовые цены</a>
-        <a href="tel:87252357444" class="bg-accent hover:bg-accent-dark text-navy font-bold text-sm px-4 py-2.5 rounded-md shadow-md transition-all flex items-center space-x-2">
-          <i data-lucide="phone" class="w-4 h-4"></i><span>Связаться</span>
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+
+        <div class="relative shrink-0">
+          <button id="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Язык сайта" data-i18n-aria-label="header-attr.2"
+                  class="flex items-center gap-1.5 px-2.5 py-2 rounded-md border border-slate-300 text-navy text-xs font-bold hover:border-navy hover:bg-slate-50 transition-colors cursor-pointer">
+            <i data-lucide="globe" class="w-4 h-4 text-slate-500"></i>
+            <span id="lang-current">RU</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400"></i>
+          </button>
+          <ul id="lang-menu" role="listbox" class="hidden absolute right-0 mt-1.5 w-36 bg-white border border-slate-200 rounded-md shadow-lg py-1 z-50">
+            <li><button type="button" role="option" data-lang="ru" class="lang-opt w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 cursor-pointer">Русский</button></li>
+            <li><button type="button" role="option" data-lang="en" class="lang-opt w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 cursor-pointer">English</button></li>
+            <li><button type="button" role="option" data-lang="kk" class="lang-opt w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 cursor-pointer">Қазақша</button></li>
+            <li><button type="button" role="option" data-lang="zh" class="lang-opt w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 cursor-pointer">中文</button></li>
+          </ul>
+        </div>
+
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="tel:+77077294051" class="text-xs font-bold text-navy hover:text-white hover:bg-navy px-3 py-2 rounded border border-slate-300 hover:border-navy transition-colors" data-i18n="header.10">Оптовые цены</a>
+        <a href="tel:+77252357444" class="bg-accent hover:bg-accent-dark text-navy font-bold text-sm px-4 py-2.5 rounded-md shadow-md transition-all flex items-center space-x-2">
+          <i data-lucide="phone" class="w-4 h-4"></i><span data-i18n="header.11">Связаться</span>
         </a>
       </div>
 
-      <button id="menu-btn" class="lg:hidden text-navy p-2 rounded-md hover:bg-slate-100" aria-label="Открыть меню">
+      <button id="menu-btn" class="xl:hidden text-navy p-2 rounded-md hover:bg-slate-100" aria-label="Открыть меню" data-i18n-aria-label="header-attr.1">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
+      </div>
     </div>
   </div>
 
-  <nav id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 shadow-md text-navy px-4 pt-3 pb-6 space-y-3">
+  <nav id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 shadow-md text-navy px-4 pt-3 pb-6 space-y-3">
     <div class="text-xs text-slate-500 pb-2 border-b border-slate-200 flex justify-between items-center">
-      <span>г. Шымкент, проспект Абая, 1А</span><span class="text-accent-dark font-semibold">АЗС 24/7</span>
+      <span data-i18n="header.12">г. Шымкент, проспект Абая, 1А</span><span class="text-accent-dark font-semibold" data-i18n="header.13">АЗС 24/7</span>
     </div>
     <div class="flex flex-col space-y-1 pt-1">
-      <a href="#about" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark">О компании <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
-      <a href="#services" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark">Услуги <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
-      <a href="#products" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark">Продукция <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
-      <a href="#azs" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark">Сеть АЗС <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
-      <a href="#faq" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark">Вопросы <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
-      <a href="#contacts" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark">Контакты <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#about" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.14">О компании</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#services" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.15">Услуги</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#products" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.16">Продукция</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#azs" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.17">Сеть АЗС</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#faq" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.18">Вопросы</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#contacts" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.19">Контакты</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
     </div>
     <div class="pt-3 border-t border-slate-200 space-y-2">
-      <a href="tel:87077294051" class="flex items-center justify-between p-3 rounded bg-navy text-sm font-semibold text-white">
-        <span class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4 text-accent"></i><span>Оптовая реализация: 8 707 729 4051</span></span>
-        <span class="text-xs text-accent">Позвонить</span>
+      <a href="tel:+77077294051" class="flex items-center justify-between p-3 rounded bg-navy text-sm font-semibold text-white">
+        <span class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4 text-accent"></i><span data-i18n="header.20">Оптовая реализация: +7 (707) 729-40-51</span></span>
+        <span class="text-xs text-accent" data-i18n="header.21">Позвонить</span>
       </a>
-      <a href="tel:87252357444" class="mobile-link w-full block bg-accent text-navy font-bold py-3 rounded-md text-center text-sm shadow-md">Позвонить нам</a>
+      <a href="tel:+77252357444" class="mobile-link w-full block bg-accent text-navy font-bold py-3 rounded-md text-center text-sm shadow-md" data-i18n="header.22">Позвонить нам</a>
+    </div>
+    <div class="pt-3 border-t border-slate-200">
+      <div class="text-xs font-semibold text-slate-500 mb-2" data-i18n="header.23">Язык сайта</div>
+      <div class="grid grid-cols-4 gap-2">
+        <button type="button" data-lang="ru" class="lang-opt py-2 rounded border border-slate-300 text-xs font-bold text-slate-600 hover:border-navy cursor-pointer">Русский</button>
+        <button type="button" data-lang="en" class="lang-opt py-2 rounded border border-slate-300 text-xs font-bold text-slate-600 hover:border-navy cursor-pointer">English</button>
+        <button type="button" data-lang="kk" class="lang-opt py-2 rounded border border-slate-300 text-xs font-bold text-slate-600 hover:border-navy cursor-pointer">Қазақша</button>
+        <button type="button" data-lang="zh" class="lang-opt py-2 rounded border border-slate-300 text-xs font-bold text-slate-600 hover:border-navy cursor-pointer">中文</button>
+      </div>
     </div>
   </nav>
 </header>
@@ -117,7 +159,7 @@
 <!-- HERO -->
 <section id="top" class="relative bg-navy-dark text-white pt-8 pb-16 md:pt-16 md:pb-24 overflow-hidden">
   <div class="absolute inset-0 z-0">
-    <img src="assets/images/hero-depot.jpg" alt="АЗС ALMAZ" class="w-full h-full object-cover object-center opacity-70">
+    <img src="assets/images/hero-depot.jpg" alt="АЗС ALMAZ" class="w-full h-full object-cover object-center opacity-70" data-i18n-alt="hero-attr.1">
     <div class="absolute inset-0 bg-gradient-to-r from-[#0A1E36]/85 via-[#0F2A47]/70 to-[#13315C]/40"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-[#0A1E36]/90 via-transparent to-transparent"></div>
   </div>
@@ -127,66 +169,66 @@
       <div class="lg:col-span-8 space-y-6">
         <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 text-xs sm:text-sm font-semibold text-accent">
           <span class="w-2 h-2 rounded-full bg-leaf"></span>
-          <span>ТОО «АЗК Алмаз» • 25+ лет стабильной работы</span>
+          <span data-i18n="hero.1">ТОО «АЗК Алмаз» • 25+ лет стабильной работы</span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
-          Надёжные поставки нефтепродуктов <span class="text-accent whitespace-nowrap">с 1998 года</span>
+          <span data-i18n="hero.2">Надёжные поставки нефтепродуктов</span> <span class="text-accent whitespace-nowrap" data-i18n="hero.3">с 1998 года</span>
         </h1>
 
-        <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed">
+        <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed" data-i18n="hero.4">
           Оптовая и розничная реализация высококачественного бензина (АИ-92, АИ-95) и дизельного топлива стандарта Евро-4. Собственная нефтебаза в г. Шымкент, автопарк бензовозов и сеть современных АЗС.
         </p>
 
         <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-          <a href="tel:87077294051" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-base px-6 py-4 rounded-md shadow-lg transition-colors flex items-center justify-center space-x-2 border border-accent">
-            <i data-lucide="truck" class="w-5 h-5 stroke-[2.5]"></i><span>Оптовые поставки</span><i data-lucide="arrow-right" class="w-5 h-5"></i>
+          <a href="tel:+77077294051" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-base px-6 py-4 rounded-md shadow-lg transition-colors flex items-center justify-center space-x-2 border border-accent">
+            <i data-lucide="truck" class="w-5 h-5 stroke-[2.5]"></i><span data-i18n="hero.5">Оптовые поставки</span><i data-lucide="arrow-right" class="w-5 h-5"></i>
           </a>
           <a href="#azs" class="bg-transparent hover:bg-white/10 text-white border-2 border-slate-400 hover:border-white font-bold text-base px-6 py-3.5 rounded-md transition-colors flex items-center justify-center space-x-2">
-            <i data-lucide="fuel" class="w-5 h-5 text-accent"></i><span>АЗС и розница</span>
+            <i data-lucide="fuel" class="w-5 h-5 text-accent"></i><span data-i18n="hero.6">АЗС и розница</span>
           </a>
         </div>
 
         <div class="mt-6 p-4 rounded-xl bg-[#0A1E36]/70 backdrop-blur-sm border border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm text-slate-300">
           <div class="flex items-center space-x-2.5">
             <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-leaf shrink-0"><i data-lucide="shield-check" class="w-4 h-4"></i></div>
-            <div><div class="font-bold text-white">Стандарт Евро-4</div><div class="text-slate-300 text-[11px]">100% соответствие ГОСТ</div></div>
+            <div><div class="font-bold text-white" data-i18n="hero.7">Стандарт Евро-4</div><div class="text-slate-300 text-[11px]" data-i18n="hero.8">100% соответствие ГОСТ</div></div>
           </div>
           <div class="flex items-center space-x-2.5">
             <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0"><i data-lucide="truck" class="w-4 h-4"></i></div>
-            <div><div class="font-bold text-white">Собственные бензовозы</div><div class="text-slate-300 text-[11px]">Доставка от 2,000 литров</div></div>
+            <div><div class="font-bold text-white" data-i18n="hero.9">Собственные бензовозы</div><div class="text-slate-300 text-[11px]" data-i18n="hero.10">Доставка от 2,000 литров</div></div>
           </div>
           <div class="col-span-2 sm:col-span-1 flex items-center space-x-2.5">
             <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0"><i data-lucide="award" class="w-4 h-4"></i></div>
-            <div><div class="font-bold text-white">Собственная нефтебаза</div><div class="text-slate-300 text-[11px]">г. Шымкент, р-н Тұран</div></div>
+            <div><div class="font-bold text-white" data-i18n="hero.11">Собственная нефтебаза</div><div class="text-slate-300 text-[11px]" data-i18n="hero.12">г. Шымкент, р-н Тұран</div></div>
           </div>
         </div>
       </div>
 
       <div class="lg:col-span-4 bg-navy-light/90 backdrop-blur-md rounded-xl p-6 border border-slate-700/80 shadow-2xl space-y-5">
         <div class="flex items-center justify-between border-b border-slate-700/80 pb-4">
-          <div><h3 class="text-lg font-bold uppercase tracking-wider">Прямой контакт</h3><p class="text-xs text-slate-300">Отдел продаж нефтепродуктов</p></div>
-          <div class="px-2.5 py-1 rounded bg-leaf/20 text-leaf text-xs font-bold border border-leaf/30">На связи</div>
+          <div><h3 class="text-lg font-bold uppercase tracking-wider" data-i18n="hero.13">Прямой контакт</h3><p class="text-xs text-slate-300" data-i18n="hero.14">Отдел продаж нефтепродуктов</p></div>
+          <div class="px-2.5 py-1 rounded bg-leaf/20 text-leaf text-xs font-bold border border-leaf/30" data-i18n="hero.15">На связи</div>
         </div>
         <div class="space-y-3 text-sm">
           <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-accent/50 transition-colors">
-            <div class="text-xs text-slate-400 mb-0.5">По вопросам оптовой реализации:</div>
-            <a href="tel:87077294051" class="text-lg font-black text-accent hover:underline">8 707 729 4051</a>
+            <div class="text-xs text-slate-400 mb-0.5" data-i18n="hero.16">По вопросам оптовой реализации:</div>
+            <a href="tel:+77077294051" class="text-lg font-black text-accent hover:underline">+7 (707) 729-40-51</a>
           </div>
           <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-slate-600 transition-colors">
-            <div class="text-xs text-slate-400 mb-0.5">По вопросам розничной реализации через сеть АЗС:</div>
-            <a href="tel:87758653737" class="text-lg font-black text-white hover:text-accent">8 775 865 3737</a>
+            <div class="text-xs text-slate-400 mb-0.5" data-i18n="hero.17">По вопросам розничной реализации через сеть АЗС:</div>
+            <a href="tel:+77758653737" class="text-lg font-black text-white hover:text-accent">+7 (775) 865-37-37</a>
           </div>
           <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-slate-600 transition-colors">
-            <div class="text-xs text-slate-400 mb-0.5">По общим вопросам:</div>
-            <a href="tel:87252357444" class="text-lg font-black text-white hover:text-accent">8 (7252) 357-444</a>
+            <div class="text-xs text-slate-400 mb-0.5" data-i18n="hero.18">По общим вопросам:</div>
+            <a href="tel:+77252357444" class="text-lg font-black text-white hover:text-accent">+7 (7252) 357-444</a>
           </div>
           <div class="p-3 rounded-lg bg-navy border border-slate-800 flex items-start space-x-2.5 text-xs text-slate-300">
             <i data-lucide="map-pin" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
-            <div><span class="font-semibold text-white block">Офис ТОО «АЗК Алмаз»:</span><span>г. Шымкент, район Тұран, проспект Абая, 1А</span></div>
+            <div><span class="font-semibold text-white block" data-i18n="hero.19">Офис ТОО «АЗК Алмаз»:</span><span data-i18n="hero.20">г. Шымкент, район Тұран, проспект Абая, 1А</span></div>
           </div>
         </div>
-        <a href="tel:87758653737" class="w-full text-xs text-slate-300 hover:text-white underline text-center block pt-1 font-medium">Позвонить и запросить паспорта качества ГОСТ</a>
+        <a href="tel:+77758653737" class="w-full text-xs text-slate-300 hover:text-white underline text-center block pt-1 font-medium" data-i18n="hero.21">Позвонить и запросить паспорта качества ГОСТ</a>
       </div>
     </div>
   </div>
@@ -196,38 +238,38 @@
 <section class="py-16 bg-white border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-12">
-      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Наши преимущества</div>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight">Почему выбирают ТОО «АЗК Алмаз»</h2>
-      <p class="mt-3 text-slate-600 text-base">За 25+ лет работы на рынке нефтепродуктов мы выстроили безупречную систему поставок, контроля качества и сервиса.</p>
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="advantages.1">Наши преимущества</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="advantages.2">Почему выбирают ТОО «АЗК Алмаз»</h2>
+      <p class="mt-3 text-slate-600 text-base" data-i18n="advantages.3">За 25+ лет работы на рынке нефтепродуктов мы выстроили безупречную систему поставок, контроля качества и сервиса.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="bg-[#F8FAFC] p-6 rounded-xl border border-slate-200/80 hover:border-accent/60 hover:shadow-md transition-all">
         <div class="w-14 h-14 rounded-lg bg-white border border-slate-200 flex items-center justify-center mb-5 shadow-sm"><i data-lucide="trending-down" class="w-8 h-8 text-accent"></i></div>
         <div class="text-xs font-bold text-slate-400 mb-1">01</div>
-        <h3 class="text-xl font-bold text-navy mb-3">Выгодные цены</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">Прямые контракты с крупнейшими НПЗ Казахстана и оптимизированная логистика позволяют предлагать лучшие оптовые и розничные цены.</p>
-        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span>Гарантия АЗК Алмаз</div>
+        <h3 class="text-xl font-bold text-navy mb-3" data-i18n="advantages.4">Выгодные цены</h3>
+        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="advantages.5">Прямые контракты с крупнейшими НПЗ Казахстана и оптимизированная логистика позволяют предлагать лучшие оптовые и розничные цены.</p>
+        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span><span data-i18n="advantages.6">Гарантия АЗК Алмаз</span></div>
       </div>
       <div class="bg-[#F8FAFC] p-6 rounded-xl border border-slate-200/80 hover:border-accent/60 hover:shadow-md transition-all">
         <div class="w-14 h-14 rounded-lg bg-white border border-slate-200 flex items-center justify-center mb-5 shadow-sm"><i data-lucide="shield-check" class="w-8 h-8 text-leaf"></i></div>
         <div class="text-xs font-bold text-slate-400 mb-1">02</div>
-        <h3 class="text-xl font-bold text-navy mb-3">Высокое качество топлива</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">Каждая партия нефтепродуктов проходит многоступенчатый лабораторный контроль и полностью соответствует стандарту Евро-4 (ГОСТ).</p>
-        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span>Гарантия АЗК Алмаз</div>
+        <h3 class="text-xl font-bold text-navy mb-3" data-i18n="advantages.7">Высокое качество топлива</h3>
+        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="advantages.8">Каждая партия нефтепродуктов проходит многоступенчатый лабораторный контроль и полностью соответствует стандарту Евро-4 (ГОСТ).</p>
+        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span><span data-i18n="advantages.9">Гарантия АЗК Алмаз</span></div>
       </div>
       <div class="bg-[#F8FAFC] p-6 rounded-xl border border-slate-200/80 hover:border-accent/60 hover:shadow-md transition-all">
         <div class="w-14 h-14 rounded-lg bg-white border border-slate-200 flex items-center justify-center mb-5 shadow-sm"><i data-lucide="user-check" class="w-8 h-8 text-accent"></i></div>
         <div class="text-xs font-bold text-slate-400 mb-1">03</div>
-        <h3 class="text-xl font-bold text-navy mb-3">Клиентоориентированный сервис</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">Персональный менеджер для каждого оптового покупателя, гибкие схемы оплаты и оперативный документооборот.</p>
-        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span>Гарантия АЗК Алмаз</div>
+        <h3 class="text-xl font-bold text-navy mb-3" data-i18n="advantages.10">Клиентоориентированный сервис</h3>
+        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="advantages.11">Персональный менеджер для каждого оптового покупателя, гибкие схемы оплаты и оперативный документооборот.</p>
+        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span><span data-i18n="advantages.12">Гарантия АЗК Алмаз</span></div>
       </div>
       <div class="bg-[#F8FAFC] p-6 rounded-xl border border-slate-200/80 hover:border-accent/60 hover:shadow-md transition-all">
         <div class="w-14 h-14 rounded-lg bg-white border border-slate-200 flex items-center justify-center mb-5 shadow-sm"><i data-lucide="clock" class="w-8 h-8 text-navy"></i></div>
         <div class="text-xs font-bold text-slate-400 mb-1">04</div>
-        <h3 class="text-xl font-bold text-navy mb-3">Оперативная обратная связь</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">Быстрый расчёт стоимости коммерческих заявок, оперативное решение вопросов и круглосуточная поддержка клиентов.</p>
-        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span>Гарантия АЗК Алмаз</div>
+        <h3 class="text-xl font-bold text-navy mb-3" data-i18n="advantages.13">Оперативная обратная связь</h3>
+        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="advantages.14">Быстрый расчёт стоимости коммерческих заявок, оперативное решение вопросов и круглосуточная поддержка клиентов.</p>
+        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span><span data-i18n="advantages.15">Гарантия АЗК Алмаз</span></div>
       </div>
     </div>
   </div>
@@ -239,30 +281,30 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
       <div class="space-y-6">
         <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider">
-          <i data-lucide="building-2" class="w-3.5 h-3.5"></i><span>О компании</span>
+          <i data-lucide="building-2" class="w-3.5 h-3.5"></i><span data-i18n="advantages.16">О компании</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight leading-tight">ТОО «АЗК Алмаз» — устойчивое развитие и глубокий опыт с 1998 года</h2>
-        <p class="text-slate-700 text-base leading-relaxed">Более 25 лет ТОО «АЗК Алмаз» является ключевым участником рынка нефтепродуктов Южного Казахстана. Мы специализируемся на поставках качественного топлива: АИ-92, АИ-95, ДТ — для промышленных, сельскохозяйственных, транспортных предприятий и розничных автовладельцев.</p>
-        <p class="text-slate-600 text-sm leading-relaxed">Наличие <strong class="text-navy">собственной современной нефтебазы в г. Шымкент</strong>, химической лаборатории и автопарка спецтранспорта позволяет гарантировать непрерывность поставок, точный учёт объёмов и строгое соблюдение всех технических стандартов.</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight leading-tight" data-i18n="advantages.17">ТОО «АЗК Алмаз» — устойчивое развитие и глубокий опыт с 1998 года</h2>
+        <p class="text-slate-700 text-base leading-relaxed" data-i18n="advantages.18">Более 25 лет ТОО «АЗК Алмаз» является ключевым участником рынка нефтепродуктов Южного Казахстана. Мы специализируемся на поставках качественного топлива: АИ-92, АИ-95, ДТ — для промышленных, сельскохозяйственных, транспортных предприятий и розничных автовладельцев.</p>
+        <p class="text-slate-600 text-sm leading-relaxed"><span data-i18n="advantages.19">Наличие</span> <strong class="text-navy" data-i18n="advantages.20">собственной современной нефтебазы в г. Шымкент</strong><span data-i18n="advantages.21">, химической лаборатории и автопарка спецтранспорта позволяет гарантировать непрерывность поставок, точный учёт объёмов и строгое соблюдение всех технических стандартов.</span></p>
 
         <div class="pt-2">
-          <h3 class="text-sm font-bold text-navy uppercase tracking-wider mb-3">Фундаментальные принципы компании:</h3>
+          <h3 class="text-sm font-bold text-navy uppercase tracking-wider mb-3" data-i18n="advantages.22">Фундаментальные принципы компании:</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
             <div class="flex items-start space-x-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-navy transition-colors">
               <i data-lucide="check-circle-2" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i>
-              <div><span class="font-bold text-navy block">Надёжность</span><span class="text-xs text-slate-500">Точное выполнение контрактных обязательств</span></div>
+              <div><span class="font-bold text-navy block" data-i18n="advantages.23">Надёжность</span><span class="text-xs text-slate-500" data-i18n="advantages.24">Точное выполнение контрактных обязательств</span></div>
             </div>
             <div class="flex items-start space-x-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-navy transition-colors">
               <i data-lucide="check-circle-2" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i>
-              <div><span class="font-bold text-navy block">Качество</span><span class="text-xs text-slate-500">Топливо Евро-4 с лабораторией контроля</span></div>
+              <div><span class="font-bold text-navy block" data-i18n="advantages.25">Качество</span><span class="text-xs text-slate-500" data-i18n="advantages.26">Топливо Евро-4 с лабораторией контроля</span></div>
             </div>
             <div class="flex items-start space-x-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-navy transition-colors">
               <i data-lucide="check-circle-2" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i>
-              <div><span class="font-bold text-navy block">Безопасность</span><span class="text-xs text-slate-500">Строгие экологические нормы и охрана труда</span></div>
+              <div><span class="font-bold text-navy block" data-i18n="advantages.27">Безопасность</span><span class="text-xs text-slate-500" data-i18n="advantages.28">Строгие экологические нормы и охрана труда</span></div>
             </div>
             <div class="flex items-start space-x-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-navy transition-colors">
               <i data-lucide="check-circle-2" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i>
-              <div><span class="font-bold text-navy block">Честное партнёрство</span><span class="text-xs text-slate-500">Прозрачное ценообразование и гибкие условия</span></div>
+              <div><span class="font-bold text-navy block" data-i18n="advantages.29">Честное партнёрство</span><span class="text-xs text-slate-500" data-i18n="advantages.30">Прозрачное ценообразование и гибкие условия</span></div>
             </div>
           </div>
         </div>
@@ -271,18 +313,18 @@
       <!-- Photo gallery tabs -->
       <div class="space-y-3">
         <div class="flex items-center justify-between bg-white p-1.5 rounded-xl border border-slate-200 shadow-sm text-xs font-bold gap-1 overflow-x-auto" id="gallery-tabs">
-          <button data-gallery="0" class="tab-btn active flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap"><i data-lucide="store" class="w-4 h-4"></i><span>Минимаркет</span></button>
-          <button data-gallery="1" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="truck" class="w-4 h-4"></i><span>Логистика</span></button>
-          <button data-gallery="2" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="microscope" class="w-4 h-4"></i><span>ГОСТ &amp; Евро-4</span></button>
-          <button data-gallery="3" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="fuel" class="w-4 h-4"></i><span>Розница</span></button>
+          <button data-gallery="0" class="tab-btn active flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap"><i data-lucide="store" class="w-4 h-4"></i><span data-i18n="advantages.31">Минимаркет</span></button>
+          <button data-gallery="1" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="truck" class="w-4 h-4"></i><span data-i18n="advantages.32">Логистика</span></button>
+          <button data-gallery="2" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="microscope" class="w-4 h-4"></i><span data-i18n="advantages.33">ГОСТ &amp; Евро-4</span></button>
+          <button data-gallery="3" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="fuel" class="w-4 h-4"></i><span data-i18n="advantages.34">Розница</span></button>
         </div>
 
         <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-navy h-80 sm:h-96">
-          <img id="gallery-img" src="assets/images/about-gas-station.jpg" alt="Фирменный минимаркет на АЗС ALMAZ" class="w-full h-full object-cover object-center transition-opacity duration-300">
+          <img id="gallery-img" src="assets/images/about-gas-station.jpg" alt="Фирменный минимаркет на АЗС ALMAZ" class="w-full h-full object-cover object-center transition-opacity duration-300" data-i18n-alt="advantages-attr.1">
           <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0A1E36] via-[#0A1E36]/85 to-transparent p-6 text-white">
-            <div class="flex items-center space-x-2 text-accent text-xs font-bold uppercase tracking-wider mb-1"><i data-lucide="award" class="w-4 h-4"></i><span id="gallery-badge">Минимаркет</span></div>
-            <h4 id="gallery-title" class="text-base font-bold text-white">Фирменный минимаркет на АЗС</h4>
-            <p id="gallery-subtitle" class="text-xs text-slate-300 mt-1">Товары в дорогу и повседневные покупки на АЗС ALMAZ</p>
+            <div class="flex items-center space-x-2 text-accent text-xs font-bold uppercase tracking-wider mb-1"><i data-lucide="award" class="w-4 h-4"></i><span id="gallery-badge" data-i18n="advantages.35">Минимаркет</span></div>
+            <h4 id="gallery-title" class="text-base font-bold text-white" data-i18n="advantages.36">Фирменный минимаркет на АЗС</h4>
+            <p id="gallery-subtitle" class="text-xs text-slate-300 mt-1" data-i18n="advantages.37">Товары в дорогу и повседневные покупки на АЗС ALMAZ</p>
           </div>
         </div>
       </div>
@@ -291,10 +333,10 @@
     <!-- Stats band -->
     <div class="bg-navy rounded-2xl p-8 border border-slate-800 shadow-xl text-white">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
-        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight">1998</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide">Год основания</div></div>
-        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight">25+</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide">Лет на рынке</div></div>
-        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight">Собственная</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide">Нефтебаза в Шымкенте</div></div>
-        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight">Сеть</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide">Современных АЗС</div></div>
+        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight">1998</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide" data-i18n="advantages.38">Год основания</div></div>
+        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight">25+</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide" data-i18n="advantages.39">Лет на рынке</div></div>
+        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight" data-i18n="advantages.40">Собственная</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide" data-i18n="advantages.41">Нефтебаза в Шымкенте</div></div>
+        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight" data-i18n="advantages.42">Сеть</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide" data-i18n="advantages.43">Современных АЗС</div></div>
       </div>
     </div>
   </div>
@@ -304,112 +346,112 @@
 <section id="products" class="py-16 bg-white border-t border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
     <div class="text-center max-w-3xl mx-auto">
-      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Продукция Евро-4</div>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight">Качественные нефтепродукты</h2>
-      <p class="mt-3 text-slate-600 text-base">Все марки топлива поставляются напрямую с ведущих НПЗ и проходят обязательный лабораторный контроль с выдачей Паспорта качества.</p>
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="products.1">Продукция Евро-4</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="products.2">Качественные нефтепродукты</h2>
+      <p class="mt-3 text-slate-600 text-base" data-i18n="products.3">Все марки топлива поставляются напрямую с ведущих НПЗ и проходят обязательный лабораторный контроль с выдачей Паспорта качества.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
         <div>
           <div class="bg-navy text-white p-6">
-            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent">АИ-92</span><span class="text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono">ГОСТ 32513-2013</span></div>
-            <div class="inline-flex items-center space-x-1.5 bg-leaf/20 border border-leaf/50 px-3 py-1 rounded text-xs font-bold text-leaf mt-1"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span>Соответствует требованиям качества</span></div>
+            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent" data-i18n="products.4">АИ-92</span><span class="text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono" data-i18n="products.5">ГОСТ 32513-2013</span></div>
+            <div class="inline-flex items-center space-x-1.5 bg-leaf/20 border border-leaf/50 px-3 py-1 rounded text-xs font-bold text-leaf mt-1"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span data-i18n="products.6">Соответствует требованиям качества</span></div>
           </div>
           <div class="p-6 space-y-4">
-            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]">Неэтилированный бензин экологического класса К4 (Евро-4). Предназначен для использования в качестве топлива для бензиновых двигателей автотранспорта.</p>
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]" data-i18n="products.7">Неэтилированный бензин экологического класса К4 (Евро-4). Предназначен для использования в качестве топлива для бензиновых двигателей автотранспорта.</p>
             <div class="space-y-2 pt-2 border-t border-slate-200">
-              <div class="text-xs font-bold text-navy uppercase tracking-wider">Технические характеристики:</div>
-              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500">Октановое число (исслед.)</span><span class="font-bold text-slate-800">не менее 92.0</span></div>
-              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500">Экологический класс</span><span class="font-bold text-slate-800">К4 (Евро-4)</span></div>
-              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500">Содержание серы</span><span class="font-bold text-slate-800">не более 50 мг/кг</span></div>
-              <div class="flex justify-between items-center text-xs py-1"><span class="text-slate-500">Плотность при 15°C</span><span class="font-bold text-slate-800">740 - 755 кг/м³</span></div>
+              <div class="text-xs font-bold text-navy uppercase tracking-wider" data-i18n="products.8">Технические характеристики:</div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.9">Октановое число (исслед.)</span><span class="font-bold text-slate-800" data-i18n="products.10">не менее 92.0</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.11">Экологический класс</span><span class="font-bold text-slate-800" data-i18n="products.12">К4 (Евро-4)</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.13">Содержание серы</span><span class="font-bold text-slate-800" data-i18n="products.14">не более 50 мг/кг</span></div>
+              <div class="flex justify-between items-center text-xs py-1"><span class="text-slate-500" data-i18n="products.15">Плотность при 15°C</span><span class="font-bold text-slate-800" data-i18n="products.16">740 - 755 кг/м³</span></div>
             </div>
             <div class="space-y-1.5 pt-2">
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Стабильный пуск двигателя</span></div>
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Защита элементов топливной системы</span></div>
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Соответствие жёстким экологическим нормам</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.17">Стабильный пуск двигателя</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.18">Защита элементов топливной системы</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.19">Соответствие жёстким экологическим нормам</span></div>
             </div>
           </div>
         </div>
         <div class="p-6 pt-0 space-y-2">
-          <a href="tel:87077294051" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span>Запросить оптовую цену</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
-          <a href="tel:87758653737" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span>Запросить Паспорт качества</span></a>
+          <a href="tel:+77077294051" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span data-i18n="products.20">Запросить оптовую цену</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+          <a href="tel:+77758653737" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span data-i18n="products.21">Запросить Паспорт качества</span></a>
         </div>
       </div>
 
       <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
         <div>
           <div class="bg-navy text-white p-6">
-            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent">АИ-95</span><span class="text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono">ГОСТ 32513-2013</span></div>
-            <div class="inline-flex items-center space-x-1.5 bg-leaf/20 border border-leaf/50 px-3 py-1 rounded text-xs font-bold text-leaf mt-1"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span>Соответствует требованиям качества</span></div>
+            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent" data-i18n="products.22">АИ-95</span><span class="text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono" data-i18n="products.23">ГОСТ 32513-2013</span></div>
+            <div class="inline-flex items-center space-x-1.5 bg-leaf/20 border border-leaf/50 px-3 py-1 rounded text-xs font-bold text-leaf mt-1"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span data-i18n="products.24">Соответствует требованиям качества</span></div>
           </div>
           <div class="p-6 space-y-4">
-            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]">Высокооктановый неэтилированный бензин премиального уровня. Обеспечивает максимальную мощность двигателя и чистоту инжекторов.</p>
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]" data-i18n="products.25">Высокооктановый неэтилированный бензин премиального уровня. Обеспечивает максимальную мощность двигателя и чистоту инжекторов.</p>
             <div class="space-y-2 pt-2 border-t border-slate-200">
-              <div class="text-xs font-bold text-navy uppercase tracking-wider">Технические характеристики:</div>
-              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500">Октановое число (исслед.)</span><span class="font-bold text-slate-800">не менее 95.0</span></div>
-              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500">Экологический класс</span><span class="font-bold text-slate-800">К4 (Евро-4)</span></div>
-              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500">Содержание серы</span><span class="font-bold text-slate-800">не более 50 мг/кг</span></div>
-              <div class="flex justify-between items-center text-xs py-1"><span class="text-slate-500">Плотность при 15°C</span><span class="font-bold text-slate-800">745 - 760 кг/м³</span></div>
+              <div class="text-xs font-bold text-navy uppercase tracking-wider" data-i18n="products.26">Технические характеристики:</div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.27">Октановое число (исслед.)</span><span class="font-bold text-slate-800" data-i18n="products.28">не менее 95.0</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.29">Экологический класс</span><span class="font-bold text-slate-800" data-i18n="products.30">К4 (Евро-4)</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.31">Содержание серы</span><span class="font-bold text-slate-800" data-i18n="products.32">не более 50 мг/кг</span></div>
+              <div class="flex justify-between items-center text-xs py-1"><span class="text-slate-500" data-i18n="products.33">Плотность при 15°C</span><span class="font-bold text-slate-800" data-i18n="products.34">745 - 760 кг/м³</span></div>
             </div>
             <div class="space-y-1.5 pt-2">
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Повышенная динамика и плавность хода</span></div>
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Антидетонационная стойкость</span></div>
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Уменьшенный расход топлива на трассе</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.35">Повышенная динамика и плавность хода</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.36">Антидетонационная стойкость</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.37">Уменьшенный расход топлива на трассе</span></div>
             </div>
           </div>
         </div>
         <div class="p-6 pt-0 space-y-2">
-          <a href="tel:87077294051" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span>Запросить оптовую цену</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
-          <a href="tel:87758653737" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span>Запросить Паспорт качества</span></a>
+          <a href="tel:+77077294051" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span data-i18n="products.38">Запросить оптовую цену</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+          <a href="tel:+77758653737" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span data-i18n="products.39">Запросить Паспорт качества</span></a>
         </div>
       </div>
 
       <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
         <div>
           <div class="bg-navy text-white p-6">
-            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent">Дизельное топливо</span></div>
-            <span class="text-[11px] bg-white/10 text-slate-300 px-2 py-1 rounded border border-white/20 font-mono block w-fit mb-1">ГОСТ 32511-2013 / Евро-4</span>
-            <div class="inline-flex items-center space-x-1.5 bg-leaf/20 border border-leaf/50 px-3 py-1 rounded text-xs font-bold text-leaf mt-1"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span>Соответствует требованиям качества</span></div>
+            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent" data-i18n="products.40">Дизельное топливо</span></div>
+            <span class="text-[11px] bg-white/10 text-slate-300 px-2 py-1 rounded border border-white/20 font-mono block w-fit mb-1" data-i18n="products.41">ГОСТ 32511-2013 / Евро-4</span>
+            <div class="inline-flex items-center space-x-1.5 bg-leaf/20 border border-leaf/50 px-3 py-1 rounded text-xs font-bold text-leaf mt-1"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span data-i18n="products.42">Соответствует требованиям качества</span></div>
           </div>
           <div class="p-6 space-y-4">
-            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]">Дизельное топливо (Летнее / Зимнее) для современных дизельных двигателей грузового, легкового и специального автотранспорта.</p>
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]" data-i18n="products.43">Дизельное топливо (Летнее / Зимнее) для современных дизельных двигателей грузового, легкового и специального автотранспорта.</p>
             <div class="space-y-2 pt-2 border-t border-slate-200">
-              <div class="text-xs font-bold text-navy uppercase tracking-wider">Технические характеристики:</div>
-              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500">Цетановое число</span><span class="font-bold text-slate-800">не менее 51.0</span></div>
-              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500">Экологический класс</span><span class="font-bold text-slate-800">К4 (Евро-4)</span></div>
-              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500">Температура вспышки</span><span class="font-bold text-slate-800">не ниже 55 °C</span></div>
-              <div class="flex justify-between items-center text-xs py-1"><span class="text-slate-500">Содержание серы</span><span class="font-bold text-slate-800">не более 50 мг/кг</span></div>
+              <div class="text-xs font-bold text-navy uppercase tracking-wider" data-i18n="products.44">Технические характеристики:</div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.45">Цетановое число</span><span class="font-bold text-slate-800" data-i18n="products.46">не менее 51.0</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.47">Экологический класс</span><span class="font-bold text-slate-800" data-i18n="products.48">К4 (Евро-4)</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.49">Температура вспышки</span><span class="font-bold text-slate-800" data-i18n="products.50">не ниже 55 °C</span></div>
+              <div class="flex justify-between items-center text-xs py-1"><span class="text-slate-500" data-i18n="products.51">Содержание серы</span><span class="font-bold text-slate-800" data-i18n="products.52">не более 50 мг/кг</span></div>
             </div>
             <div class="space-y-1.5 pt-2">
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Высокое цетановое число</span></div>
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Отличные смазывающие свойства</span></div>
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Минимальное нагарообразование</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.53">Высокое цетановое число</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.54">Отличные смазывающие свойства</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.55">Минимальное нагарообразование</span></div>
             </div>
           </div>
         </div>
         <div class="p-6 pt-0 space-y-2">
-          <a href="tel:87077294051" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span>Запросить оптовую цену</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
-          <a href="tel:87758653737" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span>Запросить Паспорт качества</span></a>
+          <a href="tel:+77077294051" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span data-i18n="products.56">Запросить оптовую цену</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+          <a href="tel:+77758653737" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span data-i18n="products.57">Запросить Паспорт качества</span></a>
         </div>
       </div>
 
       <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
         <div>
           <div class="bg-navy text-white p-6">
-            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent">Газ (автогаз)</span><span class="text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono">СУГ</span></div>
+            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent" data-i18n="products.58">Газ (автогаз)</span><span class="text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono" data-i18n="products.59">СУГ</span></div>
           </div>
           <div class="p-6 space-y-4">
-            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]">Сжиженный углеводородный газ (пропан-бутан) для автомобилей с газобаллонным оборудованием. Доступен на заправочных комплексах сети АЗС ALMAZ.</p>
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]" data-i18n="products.60">Сжиженный углеводородный газ (пропан-бутан) для автомобилей с газобаллонным оборудованием. Доступен на заправочных комплексах сети АЗС ALMAZ.</p>
             <div class="space-y-1.5 pt-2">
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Экономичная альтернатива бензину</span></div>
-              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span>Доступно на станциях сети ALMAZ</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.61">Экономичная альтернатива бензину</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.62">Доступно на станциях сети ALMAZ</span></div>
             </div>
           </div>
         </div>
         <div class="p-6 pt-0 space-y-2">
-          <a href="tel:87758653737" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span>Уточнить наличие и цену</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+          <a href="tel:+77758653737" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span data-i18n="products.63">Уточнить наличие и цену</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
         </div>
       </div>
     </div>
@@ -417,15 +459,15 @@
     <!-- Quality banner -->
     <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-gradient-to-r from-navy via-navy-light to-navy-dark text-white p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
       <div class="md:col-span-8 space-y-3">
-        <div class="inline-flex items-center space-x-2 bg-leaf/20 text-leaf border border-leaf/40 px-3 py-1 rounded-full text-xs font-extrabold"><i data-lucide="microscope" class="w-4 h-4"></i><span>100% Входной &amp; Выходной Лабораторный Контроль</span></div>
-        <h3 class="text-xl sm:text-2xl font-black">Каждая партия сопровождается химическим анализом и Паспортом Качества</h3>
-        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">Топливо проходит многоступенчатую проверку плотности, октанового/цетанового числа, отсутствия механических примесей и воды на оборудовании собственного лабораторного комплекса.</p>
-        <div class="pt-2"><a href="tel:87758653737" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-xs px-4 py-2.5 rounded-lg shadow inline-flex items-center space-x-2"><span>Позвонить за паспортами качества</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
+        <div class="inline-flex items-center space-x-2 bg-leaf/20 text-leaf border border-leaf/40 px-3 py-1 rounded-full text-xs font-extrabold"><i data-lucide="microscope" class="w-4 h-4"></i><span data-i18n="products.64">100% Входной &amp; Выходной Лабораторный Контроль</span></div>
+        <h3 class="text-xl sm:text-2xl font-black" data-i18n="products.65">Каждая партия сопровождается химическим анализом и Паспортом Качества</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl" data-i18n="products.66">Топливо проходит многоступенчатую проверку плотности, октанового/цетанового числа, отсутствия механических примесей и воды на оборудовании собственного лабораторного комплекса.</p>
+        <div class="pt-2"><a href="tel:+77758653737" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-xs px-4 py-2.5 rounded-lg shadow inline-flex items-center space-x-2"><span data-i18n="products.67">Позвонить за паспортами качества</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
       </div>
       <div class="md:col-span-4 h-48 md:h-full min-h-[160px] rounded-xl overflow-hidden border border-slate-700/80 relative">
-        <img src="assets/images/lab.jpg" alt="Лаборатория контроля качества" class="w-full h-full object-cover object-center">
+        <img src="assets/images/lab.jpg" alt="Лаборатория контроля качества" class="w-full h-full object-cover object-center" data-i18n-alt="products-attr.1">
         <div class="absolute inset-0 bg-gradient-to-t from-[#0A1E36]/80 via-transparent to-transparent"></div>
-        <div class="absolute bottom-2 left-3 text-[11px] font-bold text-white bg-navy/80 px-2 py-0.5 rounded backdrop-blur">Лаборатория АЗК Алмаз</div>
+        <div class="absolute bottom-2 left-3 text-[11px] font-bold text-white bg-navy/80 px-2 py-0.5 rounded backdrop-blur" data-i18n="products.68">Лаборатория АЗК Алмаз</div>
       </div>
     </div>
 
@@ -434,43 +476,43 @@
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
         <div class="flex items-center space-x-3">
           <div class="w-12 h-12 rounded-xl bg-accent text-navy flex items-center justify-center shadow-md"><i data-lucide="calculator" class="w-6 h-6 stroke-[2.5]"></i></div>
-          <div><h3 class="text-xl font-bold">Калькулятор оптовой стоимости топлива</h3><p class="text-xs text-slate-300">Быстрый ориентировочный расчёт объёма и логистики для юрлиц и ИП</p></div>
+          <div><h3 class="text-xl font-bold" data-i18n="products.69">Калькулятор оптовой стоимости топлива</h3><p class="text-xs text-slate-300" data-i18n="products.70">Быстрый ориентировочный расчёт объёма и логистики для юрлиц и ИП</p></div>
         </div>
-        <div class="text-xs bg-white/10 px-3 py-1.5 rounded-md border border-white/15 text-slate-300 flex items-center space-x-2"><i data-lucide="info" class="w-4 h-4 text-accent"></i><span>Окончательная цена зависит от объёма и базиса отгрузки</span></div>
+        <div class="text-xs bg-white/10 px-3 py-1.5 rounded-md border border-white/15 text-slate-300 flex items-center space-x-2"><i data-lucide="info" class="w-4 h-4 text-accent"></i><span data-i18n="products.71">Окончательная цена зависит от объёма и базиса отгрузки</span></div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div class="lg:col-span-7 space-y-4">
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">1. Выберите марку топлива:</label>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="products.72">1. Выберите марку топлива:</label>
             <div class="grid grid-cols-3 gap-2" id="calc-fuel-buttons">
-              <button data-fuel="ai92" data-price="205" data-name="АИ-92" data-code="ГОСТ 32513-2013" class="calc-fuel-btn py-2.5 px-3 rounded-lg text-sm font-bold border text-center bg-accent text-navy border-accent shadow">АИ-92</button>
-              <button data-fuel="ai95" data-price="255" data-name="АИ-95" data-code="ГОСТ 32513-2013" class="calc-fuel-btn py-2.5 px-3 rounded-lg text-sm font-bold border text-center bg-navy-light text-slate-200 border-slate-700 hover:border-slate-500">АИ-95</button>
-              <button data-fuel="dt" data-price="295" data-name="Дизельное топливо" data-code="ГОСТ 32511-2013" class="calc-fuel-btn py-2.5 px-3 rounded-lg text-sm font-bold border text-center bg-navy-light text-slate-200 border-slate-700 hover:border-slate-500">Дизельное топливо</button>
+              <button data-fuel="ai92" data-price="205" data-name="АИ-92" data-code="ГОСТ 32513-2013" class="calc-fuel-btn py-2.5 px-3 rounded-lg text-sm font-bold border text-center bg-accent text-navy border-accent shadow" data-i18n="products.73">АИ-92</button>
+              <button data-fuel="ai95" data-price="255" data-name="АИ-95" data-code="ГОСТ 32513-2013" class="calc-fuel-btn py-2.5 px-3 rounded-lg text-sm font-bold border text-center bg-navy-light text-slate-200 border-slate-700 hover:border-slate-500" data-i18n="products.74">АИ-95</button>
+              <button data-fuel="dt" data-price="295" data-name="Дизельное топливо" data-code="ГОСТ 32511-2013" class="calc-fuel-btn py-2.5 px-3 rounded-lg text-sm font-bold border text-center bg-navy-light text-slate-200 border-slate-700 hover:border-slate-500" data-i18n="products.75">Дизельное топливо</button>
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <div class="flex justify-between items-center mb-2">
-                <label class="text-xs font-bold uppercase tracking-wider text-slate-300">2. Объём партии:</label>
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="products.76">2. Объём партии:</label>
                 <div class="inline-flex rounded border border-slate-700 p-0.5 bg-navy-dark">
-                  <button id="unit-liters" class="px-2 py-0.5 text-xs font-bold rounded bg-accent text-navy">Литры</button>
-                  <button id="unit-tons" class="px-2 py-0.5 text-xs font-bold rounded text-slate-400">Тонны</button>
+                  <button id="unit-liters" class="px-2 py-0.5 text-xs font-bold rounded bg-accent text-navy" data-i18n="products.77">Литры</button>
+                  <button id="unit-tons" class="px-2 py-0.5 text-xs font-bold rounded text-slate-400" data-i18n="products.78">Тонны</button>
                 </div>
               </div>
               <input type="number" id="calc-volume" min="1000" step="1000" value="10000" class="w-full bg-navy-light border border-slate-700 text-white font-bold text-lg px-4 py-2.5 rounded-lg focus:outline-none focus:border-accent">
-              <div class="text-[11px] text-slate-400 mt-1">Минимальный оптовый заказ: 1 000 литров</div>
+              <div class="text-[11px] text-slate-400 mt-1" data-i18n="products.79">Минимальный оптовый заказ: 1 000 литров</div>
             </div>
             <div>
-              <label class="flex items-center h-[26px] text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">3. Базис поставки / Пункт назначения:</label>
+              <label class="flex items-center h-[26px] text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="products.80">3. Базис поставки / Пункт назначения:</label>
               <select id="calc-destination" class="w-full bg-navy-light border border-slate-700 text-white font-medium text-sm px-3 py-3.5 rounded-lg focus:outline-none focus:border-accent">
-                <option>г. Шымкент (в пределах города)</option>
-                <option>Самовывоз с нефтебазы (г. Шымкент)</option>
-                <option>г. Туркестан (доставка бензовозом)</option>
-                <option>Сайрамский район</option>
-                <option>г. Кентау / г. Арыс</option>
-                <option>Другой район Туркестанской области</option>
+                <option data-i18n="products.81">г. Шымкент (в пределах города)</option>
+                <option data-i18n="products.82">Самовывоз с нефтебазы (г. Шымкент)</option>
+                <option data-i18n="products.83">г. Туркестан (доставка бензовозом)</option>
+                <option data-i18n="products.84">Сайрамский район</option>
+                <option data-i18n="products.85">г. Кентау / г. Арыс</option>
+                <option data-i18n="products.86">Другой район Туркестанской области</option>
               </select>
             </div>
           </div>
@@ -478,16 +520,16 @@
 
         <div class="lg:col-span-5 bg-navy-light rounded-xl p-6 border border-slate-700 flex flex-col justify-between space-y-4">
           <div class="space-y-3">
-            <div class="text-xs text-slate-400 font-bold uppercase tracking-wider">Предварительный расчёт:</div>
-            <div class="flex justify-between items-baseline py-1 border-b border-slate-700/80"><span class="text-xs text-slate-300">Продукт:</span><span id="calc-out-product" class="text-sm font-bold text-white">АИ-92 (ГОСТ 32513-2013)</span></div>
-            <div class="flex justify-between items-baseline py-1 border-b border-slate-700/80"><span class="text-xs text-slate-300">Расчётный объём:</span><span id="calc-out-volume" class="text-sm font-bold text-white">10 000 л (7.45 тонн)</span></div>
+            <div class="text-xs text-slate-400 font-bold uppercase tracking-wider" data-i18n="products.87">Предварительный расчёт:</div>
+            <div class="flex justify-between items-baseline py-1 border-b border-slate-700/80"><span class="text-xs text-slate-300" data-i18n="products.88">Продукт:</span><span id="calc-out-product" class="text-sm font-bold text-white" data-i18n="products.89">АИ-92 (ГОСТ 32513-2013)</span></div>
+            <div class="flex justify-between items-baseline py-1 border-b border-slate-700/80"><span class="text-xs text-slate-300" data-i18n="products.90">Расчётный объём:</span><span id="calc-out-volume" class="text-sm font-bold text-white" data-i18n="products.91">10 000 л (7.45 тонн)</span></div>
             <div class="pt-2">
-              <div class="text-xs text-slate-400 mb-0.5">Ориентировочная сумма:</div>
+              <div class="text-xs text-slate-400 mb-0.5" data-i18n="products.92">Ориентировочная сумма:</div>
               <div id="calc-out-total" class="text-3xl font-black text-accent">~ 2 050 000 ₸</div>
-              <div id="calc-out-rate" class="text-[11px] text-slate-400 mt-1">Базовый тариф ~ 205 ₸/литр с НДС</div>
+              <div id="calc-out-rate" class="text-[11px] text-slate-400 mt-1" data-i18n="products.93">Базовый тариф ~ 205 ₸/литр с НДС</div>
             </div>
           </div>
-          <a href="tel:87077294051" class="w-full bg-accent hover:bg-accent-dark text-navy font-extrabold py-3.5 px-4 rounded-lg text-sm shadow flex items-center justify-center space-x-2"><span>Оформить заявку на этот объём</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <a href="tel:+77077294051" class="w-full bg-accent hover:bg-accent-dark text-navy font-extrabold py-3.5 px-4 rounded-lg text-sm shadow flex items-center justify-center space-x-2"><span data-i18n="products.94">Оформить заявку на этот объём</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
       </div>
     </div>
@@ -498,74 +540,74 @@
 <section id="services" class="py-16 bg-[#F8FAFC]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
     <div class="text-center max-w-3xl mx-auto">
-      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Наши услуги</div>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight">Полный спектр услуг на рынке нефтепродуктов</h2>
-      <p class="mt-3 text-slate-600 text-base">Обеспечиваем надёжное решение задач любой сложности — от разовых оптовых отгрузок до долгосрочного контрактного обслуживания и хранения.</p>
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="services.1">Наши услуги</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="services.2">Полный спектр услуг на рынке нефтепродуктов</h2>
+      <p class="mt-3 text-slate-600 text-base" data-i18n="services.3">Обеспечиваем надёжное решение задач любой сложности — от разовых оптовых отгрузок до долгосрочного контрактного обслуживания и хранения.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
         <div>
-          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="truck" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy">Оптовая реализация</h3></div></div>
-          <p class="text-sm font-medium text-slate-800 mb-2">Крупнооптовые и мелкооптовые поставки высококачественного бензина и дизельного топлива для предприятий, агрокомплексов и независимых АЗС.</p>
-          <p class="text-xs text-slate-500 leading-relaxed mb-4">Отгрузка осуществляется собственным автопарком бензовозов (от 2 000 до 40 000 л) или самовывозом с нашей нефтебазы.</p>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="truck" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.4">Оптовая реализация</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.5">Крупнооптовые и мелкооптовые поставки высококачественного бензина и дизельного топлива для предприятий, агрокомплексов и независимых АЗС.</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.6">Отгрузка осуществляется собственным автопарком бензовозов (от 2 000 до 40 000 л) или самовывозом с нашей нефтебазы.</p>
         </div>
-        <a href="tel:87758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group">Позвонить по этой услуге<i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.7">Позвонить по этой услуге</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
       </div>
       <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
         <div>
-          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="fuel" class="w-6 h-6 text-leaf"></i></div><div><h3 class="text-lg font-bold text-navy">Розничная реализация</h3></div></div>
-          <p class="text-sm font-medium text-slate-800 mb-2">Безупречное качество топлива, точный налив и высокий уровень сервиса на собственной фирменной сети АЗС ALMAZ.</p>
-          <p class="text-xs text-slate-500 leading-relaxed mb-4">Круглосуточное обслуживание 24/7, стоянка для грузовых ТС, приём всех видов оплат, топливораздаточные колонки с высокой скоростью налива, комфортный минимаркет, современный кофе-аппарат.</p>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="fuel" class="w-6 h-6 text-leaf"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.8">Розничная реализация</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.9">Безупречное качество топлива, точный налив и высокий уровень сервиса на собственной фирменной сети АЗС ALMAZ.</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.10">Круглосуточное обслуживание 24/7, стоянка для грузовых ТС, приём всех видов оплат, топливораздаточные колонки с высокой скоростью налива, комфортный минимаркет, современный кофе-аппарат.</p>
         </div>
-        <a href="tel:87758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group">Позвонить по этой услуге<i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.11">Позвонить по этой услуге</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
       </div>
       <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
         <div>
-          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="navigation" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy">Доставка и логистика</h3></div></div>
-          <p class="text-sm font-medium text-slate-800 mb-2">Оперативная транспортировка нефтепродуктов собственным парком бензовозов Евро-4 по Шымкенту и Туркестанской области.</p>
-          <p class="text-xs text-slate-500 leading-relaxed mb-4">Каждая машина оборудована GPS-трекингом, калиброванными секциями, насосами и счётчиками с выездом точно в срок.</p>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="navigation" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.12">Доставка и логистика</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.13">Оперативная транспортировка нефтепродуктов собственным парком бензовозов Евро-4 по Шымкенту и Туркестанской области.</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.14">Каждая машина оборудована GPS-трекингом, калиброванными секциями, насосами и счётчиками с выездом точно в срок.</p>
         </div>
-        <a href="tel:87758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group">Позвонить по этой услуге<i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.15">Позвонить по этой услуге</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
       </div>
       <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
         <div>
-          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="warehouse" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy">Хранение нефтепродуктов</h3></div></div>
-          <p class="text-sm font-medium text-slate-800 mb-2">Услуги ответственного хранения светлых нефтепродуктов на собственной современной нефтебазе в г. Шымкент.</p>
-          <p class="text-xs text-slate-500 leading-relaxed mb-4">Резервуарный парк оборудован автоматизированными системами учёта, современными средствами безопасности и контроля.</p>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="warehouse" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.16">Хранение нефтепродуктов</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.17">Услуги ответственного хранения светлых нефтепродуктов на собственной современной нефтебазе в г. Шымкент.</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.18">Резервуарный парк оборудован автоматизированными системами учёта, современными средствами безопасности и контроля.</p>
         </div>
-        <a href="tel:87758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group">Позвонить по этой услуге<i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.19">Позвонить по этой услуге</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
       </div>
       <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
         <div>
-          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="microscope" class="w-6 h-6 text-leaf"></i></div><div><h3 class="text-lg font-bold text-navy">Контроль качества</h3></div></div>
-          <p class="text-sm font-medium text-slate-800 mb-2">Многоуровневый лабораторный контроль состава и характеристик топлива на всех этапах приёмки, хранения и отгрузки.</p>
-          <p class="text-xs text-slate-500 leading-relaxed mb-4">Каждая партия сопровождается официальным Паспортом качества, выданным аккредитованной химической лабораторией.</p>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="microscope" class="w-6 h-6 text-leaf"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.20">Контроль качества</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.21">Многоуровневый лабораторный контроль состава и характеристик топлива на всех этапах приёмки, хранения и отгрузки.</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.22">Каждая партия сопровождается официальным Паспортом качества, выданным аккредитованной химической лабораторией.</p>
         </div>
-        <a href="tel:87758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group">Позвонить по этой услуге<i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.23">Позвонить по этой услуге</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
       </div>
       <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
         <div>
-          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="credit-card" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy">B2B &amp; Топливные карты</h3></div></div>
-          <p class="text-sm font-medium text-slate-800 mb-2">Гибкие условия работы для корпоративных парков, отсрочка платежа, личный кабинет и единый топливный счёт.</p>
-          <p class="text-xs text-slate-500 leading-relaxed mb-4">Персональный менеджер, детальная аналитика расходов по каждому автомобилю и оперативный электронный документооборот (ЭСФ).</p>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="credit-card" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.24">B2B &amp; Топливные карты</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.25">Гибкие условия работы для корпоративных парков, отсрочка платежа, личный кабинет и единый топливный счёт.</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.26">Персональный менеджер, детальная аналитика расходов по каждому автомобилю и оперативный электронный документооборот (ЭСФ).</p>
         </div>
-        <a href="tel:87758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group">Позвонить по этой услуге<i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.27">Позвонить по этой услуге</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
       </div>
     </div>
 
     <!-- Fleet banner -->
     <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-navy text-white p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-      <img src="assets/images/fleet.jpg" alt="Автопарк бензовозов" class="absolute inset-0 w-full h-full object-cover object-center opacity-25">
+      <img src="assets/images/fleet.jpg" alt="Автопарк бензовозов" class="absolute inset-0 w-full h-full object-cover object-center opacity-25" data-i18n-alt="services-attr.1">
       <div class="absolute inset-0 bg-gradient-to-r from-[#0A1E36] via-navy/95 to-navy-light/85"></div>
       <div class="relative z-10 md:col-span-8 space-y-3">
-        <div class="inline-flex items-center space-x-2 bg-accent/20 text-accent border border-accent/40 px-3 py-1 rounded-full text-xs font-extrabold"><i data-lucide="shield-check" class="w-4 h-4"></i><span>Собственный автопарк спецтранспорта Евро-4</span></div>
-        <h3 class="text-xl sm:text-2xl font-black">Гарантированная транспортировка от 2 000 до 40 000 литров по региону</h3>
-        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">Каждый бензовоз оснащён калиброванными секциями, насосами, счётчиками и спутниковым GPS-трекингом для контроля местоположения и сохранности топлива в пути.</p>
+        <div class="inline-flex items-center space-x-2 bg-accent/20 text-accent border border-accent/40 px-3 py-1 rounded-full text-xs font-extrabold"><i data-lucide="shield-check" class="w-4 h-4"></i><span data-i18n="services.28">Собственный автопарк спецтранспорта Евро-4</span></div>
+        <h3 class="text-xl sm:text-2xl font-black" data-i18n="services.29">Гарантированная транспортировка от 2 000 до 40 000 литров по региону</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl" data-i18n="services.30">Каждый бензовоз оснащён калиброванными секциями, насосами, счётчиками и спутниковым GPS-трекингом для контроля местоположения и сохранности топлива в пути.</p>
       </div>
       <div class="relative z-10 md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-3 justify-center">
-        <a href="tel:87758653737" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3.5 rounded-xl shadow flex items-center justify-center space-x-2 text-center"><span>Заказать перевозку</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
-        <a href="tel:87758653737" class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-5 py-3.5 rounded-xl border border-white/20 flex items-center justify-center space-x-2 text-center backdrop-blur"><i data-lucide="phone-call" class="w-4 h-4 text-accent"></i><span>8 775 865 3737</span></a>
+        <a href="tel:+77758653737" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3.5 rounded-xl shadow flex items-center justify-center space-x-2 text-center"><span data-i18n="services.31">Заказать перевозку</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+        <a href="tel:+77758653737" class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-5 py-3.5 rounded-xl border border-white/20 flex items-center justify-center space-x-2 text-center backdrop-blur"><i data-lucide="phone-call" class="w-4 h-4 text-accent"></i><span>+7 (775) 865-37-37</span></a>
       </div>
     </div>
   </div>
@@ -575,40 +617,40 @@
 <section class="py-16 bg-white border-t border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
     <div class="text-center max-w-3xl mx-auto">
-      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Схема сотрудничества</div>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight">5 шагов до успешной отгрузки</h2>
-      <p class="mt-3 text-slate-600 text-base">Прозрачный и отлаженный процесс работы от первого обращения до полного документооборота.</p>
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="process-timeline.1">Схема сотрудничества</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="process-timeline.2">5 шагов до успешной отгрузки</h2>
+      <p class="mt-3 text-slate-600 text-base" data-i18n="process-timeline.3">Прозрачный и отлаженный процесс работы от первого обращения до полного документооборота.</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
       <div class="bg-[#F8FAFC] rounded-xl p-5 border border-slate-200/90 shadow-sm hover:border-navy transition-all">
         <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-lg bg-navy text-accent font-black text-lg flex items-center justify-center shadow-sm">01</div><i data-lucide="arrow-right" class="w-5 h-5 text-slate-300 hidden lg:block"></i></div>
-        <h3 class="text-base font-bold text-navy mb-1">Обращение</h3>
-        <div class="text-xs font-semibold text-navy-light mb-2">Заявка на сайте или звонок менеджеру</div>
-        <p class="text-xs text-slate-500 leading-relaxed">Вы связываетесь с нами по телефону. Менеджер уточняет ваши потребности в объёме и марке топлива.</p>
+        <h3 class="text-base font-bold text-navy mb-1" data-i18n="process-timeline.4">Обращение</h3>
+        <div class="text-xs font-semibold text-navy-light mb-2" data-i18n="process-timeline.5">Заявка на сайте или звонок менеджеру</div>
+        <p class="text-xs text-slate-500 leading-relaxed" data-i18n="process-timeline.6">Вы связываетесь с нами по телефону. Менеджер уточняет ваши потребности в объёме и марке топлива.</p>
       </div>
       <div class="bg-[#F8FAFC] rounded-xl p-5 border border-slate-200/90 shadow-sm hover:border-navy transition-all">
         <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-lg bg-navy text-accent font-black text-lg flex items-center justify-center shadow-sm">02</div><i data-lucide="arrow-right" class="w-5 h-5 text-slate-300 hidden lg:block"></i></div>
-        <h3 class="text-base font-bold text-navy mb-1">Подбор условий</h3>
-        <div class="text-xs font-semibold text-navy-light mb-2">Расчёт объёма и согласование цены</div>
-        <p class="text-xs text-slate-500 leading-relaxed">Формируем индивидуальное коммерческое предложение с учётом объёма отгрузки, базиса поставки и формы расчёта.</p>
+        <h3 class="text-base font-bold text-navy mb-1" data-i18n="process-timeline.7">Подбор условий</h3>
+        <div class="text-xs font-semibold text-navy-light mb-2" data-i18n="process-timeline.8">Расчёт объёма и согласование цены</div>
+        <p class="text-xs text-slate-500 leading-relaxed" data-i18n="process-timeline.9">Формируем индивидуальное коммерческое предложение с учётом объёма отгрузки, базиса поставки и формы расчёта.</p>
       </div>
       <div class="bg-[#F8FAFC] rounded-xl p-5 border border-slate-200/90 shadow-sm hover:border-navy transition-all">
         <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-lg bg-navy text-accent font-black text-lg flex items-center justify-center shadow-sm">03</div><i data-lucide="arrow-right" class="w-5 h-5 text-slate-300 hidden lg:block"></i></div>
-        <h3 class="text-base font-bold text-navy mb-1">Оформление</h3>
-        <div class="text-xs font-semibold text-navy-light mb-2">Заключение договора и выписка документов</div>
-        <p class="text-xs text-slate-500 leading-relaxed">Согласовываем и подписываем договор поставки, выставляем счёт на оплату и планируем график отгрузки.</p>
+        <h3 class="text-base font-bold text-navy mb-1" data-i18n="process-timeline.10">Оформление</h3>
+        <div class="text-xs font-semibold text-navy-light mb-2" data-i18n="process-timeline.11">Заключение договора и выписка документов</div>
+        <p class="text-xs text-slate-500 leading-relaxed" data-i18n="process-timeline.12">Согласовываем и подписываем договор поставки, выставляем счёт на оплату и планируем график отгрузки.</p>
       </div>
       <div class="bg-[#F8FAFC] rounded-xl p-5 border border-slate-200/90 shadow-sm hover:border-navy transition-all">
         <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-lg bg-navy text-accent font-black text-lg flex items-center justify-center shadow-sm">04</div><i data-lucide="arrow-right" class="w-5 h-5 text-slate-300 hidden lg:block"></i></div>
-        <h3 class="text-base font-bold text-navy mb-1">Отгрузка</h3>
-        <div class="text-xs font-semibold text-navy-light mb-2">Самовывоз или доставка бензовозами</div>
-        <p class="text-xs text-slate-500 leading-relaxed">Производим точный налив на нефтебазе в ваши автоцистерны или доставляем топливо нашим специализированным автотранспортом.</p>
+        <h3 class="text-base font-bold text-navy mb-1" data-i18n="process-timeline.13">Отгрузка</h3>
+        <div class="text-xs font-semibold text-navy-light mb-2" data-i18n="process-timeline.14">Самовывоз или доставка бензовозами</div>
+        <p class="text-xs text-slate-500 leading-relaxed" data-i18n="process-timeline.15">Производим точный налив на нефтебазе в ваши автоцистерны или доставляем топливо нашим специализированным автотранспортом.</p>
       </div>
       <div class="bg-[#F8FAFC] rounded-xl p-5 border border-slate-200/90 shadow-sm hover:border-navy transition-all">
         <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-lg bg-navy text-accent font-black text-lg flex items-center justify-center shadow-sm">05</div></div>
-        <h3 class="text-base font-bold text-navy mb-1">Сопровождение</h3>
-        <div class="text-xs font-semibold text-navy-light mb-2">Паспорт качества и полная документация</div>
-        <p class="text-xs text-slate-500 leading-relaxed">Предоставляем полный комплект закрывающих бухгалтерских документов и Паспорт качества на каждую отгруженную партию.</p>
+        <h3 class="text-base font-bold text-navy mb-1" data-i18n="process-timeline.16">Сопровождение</h3>
+        <div class="text-xs font-semibold text-navy-light mb-2" data-i18n="process-timeline.17">Паспорт качества и полная документация</div>
+        <p class="text-xs text-slate-500 leading-relaxed" data-i18n="process-timeline.18">Предоставляем полный комплект закрывающих бухгалтерских документов и Паспорт качества на каждую отгруженную партию.</p>
       </div>
     </div>
   </div>
@@ -619,14 +661,14 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
       <div>
-        <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Розница и обслуживание</div>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight">Фирменная сеть АЗС ALMAZ</h2>
-        <p class="mt-2 text-slate-600 text-sm max-w-2xl">Современные автозаправочные комплексы на ключевых магистралях Шымкента и Туркестанской области. Круглосуточный точный налив и высокий сервис.</p>
+        <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="azs-network.1">Розница и обслуживание</div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="azs-network.2">Фирменная сеть АЗС ALMAZ</h2>
+        <p class="mt-2 text-slate-600 text-sm max-w-2xl" data-i18n="azs-network.3">Современные автозаправочные комплексы на ключевых магистралях Шымкента и Туркестанской области. Круглосуточный точный налив и высокий сервис.</p>
       </div>
       <div class="flex items-center space-x-2 bg-white p-1 rounded-lg border border-slate-200 text-xs font-bold" id="azs-filters">
-        <button data-filter="all" class="azs-filter-btn px-3 py-1.5 rounded-md bg-navy text-white">Все АЗС (4)</button>
-        <button data-filter="г. Шымкент" class="azs-filter-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-navy">Шымкент (3)</button>
-        <button data-filter="Туркестанская область" class="azs-filter-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-navy">Туркестанская обл. (1)</button>
+        <button data-filter="all" class="azs-filter-btn px-3 py-1.5 rounded-md bg-navy text-white" data-i18n="azs-network.4">Все АЗС (4)</button>
+        <button data-filter="г. Шымкент" class="azs-filter-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-navy" data-i18n="azs-network.5">Шымкент (3)</button>
+        <button data-filter="Туркестанская область" class="azs-filter-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-navy" data-i18n="azs-network.6">Туркестанская обл. (1)</button>
       </div>
     </div>
 
@@ -634,8 +676,8 @@
       <!-- Map -->
       <div class="lg:col-span-6 bg-navy rounded-2xl overflow-hidden border border-slate-800 shadow-xl relative min-h-[420px] flex flex-col justify-between">
         <div class="p-4 bg-navy-dark border-b border-slate-800 flex items-center justify-between text-xs text-slate-300">
-          <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i><span class="font-bold text-white">Шымкент &amp; Туркестанская область</span></div>
-          <span class="text-leaf font-semibold flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-leaf"></span><span>Все станции работают 24/7</span></span>
+          <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i><span class="font-bold text-white" data-i18n="azs-network.7">Шымкент &amp; Туркестанская область</span></div>
+          <span class="text-leaf font-semibold flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-leaf"></span><span data-i18n="azs-network.8">Все станции работают 24/7</span></span>
         </div>
         <div class="relative w-full h-[320px] bg-navy-dark p-6 overflow-hidden">
           <svg class="absolute inset-0 w-full h-full stroke-slate-700/60 stroke-2 fill-none" xmlns="http://www.w3.org/2000/svg">
@@ -644,34 +686,34 @@
             <path d="M 200 180 Q 150 100 80 40" />
           </svg>
           <button data-station="azs-1" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:62%; left:38%;">
-            <span class="w-9 h-9 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent">АЗС-1</span>
+            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.9">АЗС-1</span>
           </button>
           <button data-station="azs-2" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:38%; left:55%;">
-            <span class="w-9 h-9 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent">АЗС-2</span>
+            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.10">АЗС-2</span>
           </button>
           <button data-station="azs-3" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:53%; left:67%;">
-            <span class="w-9 h-9 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent">АЗС-3</span>
+            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.11">АЗС-3</span>
           </button>
           <button data-station="azs-4" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:27%; left:24%;">
-            <span class="w-9 h-9 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent">АЗС-4</span>
+            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.12">АЗС-4</span>
           </button>
           <div class="absolute bottom-3 left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300">
-            <span class="font-bold text-white block mb-0.5">Кликните по маркеру АЗС:</span><span>чтобы увидеть адрес и проложить маршрут</span>
+            <span class="font-bold text-white block mb-0.5" data-i18n="azs-network.13">Кликните по маркеру АЗС:</span><span data-i18n="azs-network.14">чтобы увидеть адрес и проложить маршрут</span>
           </div>
         </div>
 
         <div class="relative p-5 bg-navy-light border-t border-slate-800 text-white space-y-3 overflow-hidden" id="station-detail">
-          <img src="assets/images/canopy.jpg" alt="АЗС Алмаз" class="absolute inset-0 w-full h-full object-cover object-center opacity-20">
+          <img src="assets/images/canopy.jpg" alt="АЗС Алмаз" class="absolute inset-0 w-full h-full object-cover object-center opacity-20" data-i18n-alt="azs-network-attr.1">
           <div class="absolute inset-0 bg-gradient-to-r from-navy-light via-navy-light/95 to-navy/90"></div>
           <div class="relative z-10 flex justify-between items-start">
             <div>
-              <span class="text-[10px] bg-accent text-navy px-2 py-0.5 rounded font-black uppercase">Выбрана на карте</span>
-              <h4 id="station-name" class="text-base font-bold text-white mt-1">АЗС-1 ALMAZ</h4>
-              <p id="station-address" class="text-xs text-slate-300">г. Шымкент, район Тұран, трасса Алматы–Термез А2, 858 км</p>
-              <p id="station-direction" class="text-xs text-accent font-semibold mt-0.5">Справа по направлению на г. Ташкент</p>
+              <span class="text-[10px] bg-accent text-navy px-2 py-0.5 rounded font-black uppercase" data-i18n="azs-network.15">Выбрана на карте</span>
+              <h4 id="station-name" class="text-base font-bold text-white mt-1" data-i18n="azs-network.16">АЗС-1 ALMAZ</h4>
+              <p id="station-address" class="text-xs text-slate-300" data-i18n="azs-network.17">г. Шымкент, район Тұран, трасса Алматы–Термез А2, 858 км</p>
+              <p id="station-direction" class="text-xs text-accent font-semibold mt-0.5" data-i18n="azs-network.18">Справа по направлению на г. Ташкент</p>
             </div>
             <a id="station-route" href="#" target="_blank" rel="noopener" class="bg-accent hover:bg-accent-dark text-navy text-xs font-bold px-3 py-2 rounded flex items-center space-x-1 shadow shrink-0">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i><span>Маршрут</span><i data-lucide="external-link" class="w-3 h-3"></i>
+              <i data-lucide="navigation" class="w-3.5 h-3.5"></i><span data-i18n="azs-network.19">Маршрут</span><i data-lucide="external-link" class="w-3 h-3"></i>
             </a>
           </div>
           <div id="station-amenities" class="relative z-10 flex flex-wrap gap-1.5 pt-1 text-xs"></div>
@@ -682,49 +724,49 @@
       <div class="lg:col-span-6 space-y-4" id="station-cards">
         <div class="station-card active cursor-pointer rounded-2xl p-6 transition-all border-2 shadow-sm bg-white border-navy" data-station="azs-1" data-region="г. Шымкент">
           <div class="flex items-start justify-between gap-3 mb-3">
-            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-navy text-accent">АЗС-1</div><div><h3 class="text-lg font-bold text-navy">АЗС-1 ALMAZ</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded">г. Шымкент</span></div></div>
-            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span>Круглосуточно (24/7)</span></span>
+            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-navy text-accent" data-i18n="azs-network.20">АЗС-1</div><div><h3 class="text-lg font-bold text-navy" data-i18n="azs-network.21">АЗС-1 ALMAZ</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded" data-i18n="azs-network.22">г. Шымкент</span></div></div>
+            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="azs-network.23">Круглосуточно (24/7)</span></span>
           </div>
-          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900">г. Шымкент, район Тұран, трасса Алматы–Термез А2, 858 км</span><p class="text-slate-500 font-medium">Справа по направлению на г. Ташкент</p></div></div>
+          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900" data-i18n="azs-network.24">г. Шымкент, район Тұран, трасса Алматы–Термез А2, 858 км</span><p class="text-slate-500 font-medium" data-i18n="azs-network.25">Справа по направлению на г. Ташкент</p></div></div>
           <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
-            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700">Топливо:</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">АИ-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">ДТ</span></div></div>
-            <a href="tel:87758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>8 775 865 3737</span></a>
+            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700" data-i18n="azs-network.26">Топливо:</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.27">АИ-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.28">ДТ</span></div></div>
+            <a href="tel:+77758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (775) 865-37-37</span></a>
           </div>
         </div>
 
         <div class="station-card cursor-pointer rounded-2xl p-6 transition-all border-2 shadow-sm bg-white border-slate-200 hover:border-slate-400" data-station="azs-2" data-region="г. Шымкент">
           <div class="flex items-start justify-between gap-3 mb-3">
-            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-slate-100 text-navy">АЗС-2</div><div><h3 class="text-lg font-bold text-navy">АЗС-2 ALMAZ</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded">г. Шымкент</span></div></div>
-            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span>Круглосуточно (24/7)</span></span>
+            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-slate-100 text-navy" data-i18n="azs-network.29">АЗС-2</div><div><h3 class="text-lg font-bold text-navy" data-i18n="azs-network.30">АЗС-2 ALMAZ</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded" data-i18n="azs-network.31">г. Шымкент</span></div></div>
+            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="azs-network.32">Круглосуточно (24/7)</span></span>
           </div>
-          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900">г. Шымкент, Абайский район, ж/м Кайнарбулак, участок 349</span><p class="text-slate-500 font-medium">Справа по направлению на г. Тараз</p></div></div>
+          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900" data-i18n="azs-network.33">г. Шымкент, Абайский район, ж/м Кайнарбулак, участок 349</span><p class="text-slate-500 font-medium" data-i18n="azs-network.34">Справа по направлению на г. Тараз</p></div></div>
           <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
-            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700">Топливо:</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">АИ-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">АИ-95</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">ДТ</span></div></div>
-            <a href="tel:87758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>8 775 865 3737</span></a>
+            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700" data-i18n="azs-network.35">Топливо:</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.36">АИ-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.37">АИ-95</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.38">ДТ</span></div></div>
+            <a href="tel:+77758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (775) 865-37-37</span></a>
           </div>
         </div>
 
         <div class="station-card cursor-pointer rounded-2xl p-6 transition-all border-2 shadow-sm bg-white border-slate-200 hover:border-slate-400" data-station="azs-3" data-region="Туркестанская область">
           <div class="flex items-start justify-between gap-3 mb-3">
-            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-slate-100 text-navy">АЗС-3</div><div><h3 class="text-lg font-bold text-navy">АЗС-3 ALMAZ</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded">Туркестанская область</span></div></div>
-            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span>Круглосуточно (24/7)</span></span>
+            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-slate-100 text-navy" data-i18n="azs-network.39">АЗС-3</div><div><h3 class="text-lg font-bold text-navy" data-i18n="azs-network.40">АЗС-3 ALMAZ</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded" data-i18n="azs-network.41">Туркестанская область</span></div></div>
+            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="azs-network.42">Круглосуточно (24/7)</span></span>
           </div>
-          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900">Туркестанская обл., Сайрамский район, Кайнарбулакский с/о, с. Касымбек Датка, квартал 219</span><p class="text-slate-500 font-medium">Справа по направлению на г. Туркестан</p></div></div>
+          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900" data-i18n="azs-network.43">Туркестанская обл., Сайрамский район, Кайнарбулакский с/о, с. Касымбек Датка, квартал 219</span><p class="text-slate-500 font-medium" data-i18n="azs-network.44">Справа по направлению на г. Туркестан</p></div></div>
           <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
-            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700">Топливо:</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">АИ-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">АИ-95</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">ДТ</span></div></div>
-            <a href="tel:87758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>8 775 865 3737</span></a>
+            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700" data-i18n="azs-network.45">Топливо:</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.46">АИ-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.47">АИ-95</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.48">ДТ</span></div></div>
+            <a href="tel:+77758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (775) 865-37-37</span></a>
           </div>
         </div>
 
         <div class="station-card cursor-pointer rounded-2xl p-6 transition-all border-2 shadow-sm bg-white border-slate-200 hover:border-slate-400" data-station="azs-4" data-region="г. Шымкент">
           <div class="flex items-start justify-between gap-3 mb-3">
-            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-slate-100 text-navy">АЗС-4</div><div><h3 class="text-lg font-bold text-navy">АЗС-4 ALMAZ</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded">г. Шымкент</span></div></div>
-            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span>Круглосуточно (24/7)</span></span>
+            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-slate-100 text-navy" data-i18n="azs-network.49">АЗС-4</div><div><h3 class="text-lg font-bold text-navy" data-i18n="azs-network.50">АЗС-4 ALMAZ</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded" data-i18n="azs-network.51">г. Шымкент</span></div></div>
+            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="azs-network.52">Круглосуточно (24/7)</span></span>
           </div>
-          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900">г. Шымкент, Каратауский район, квартал 223, здание 8</span><p class="text-slate-500 font-medium">Справа по направлению на г. Алматы</p></div></div>
+          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900" data-i18n="azs-network.53">г. Шымкент, Каратауский район, квартал 223, здание 8</span><p class="text-slate-500 font-medium" data-i18n="azs-network.54">Справа по направлению на г. Алматы</p></div></div>
           <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
-            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700">Топливо:</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">АИ-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">АИ-95</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded">ДТ</span></div></div>
-            <a href="tel:87758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>8 775 865 3737</span></a>
+            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700" data-i18n="azs-network.55">Топливо:</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.56">АИ-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.57">АИ-95</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.58">ДТ</span></div></div>
+            <a href="tel:+77758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (775) 865-37-37</span></a>
           </div>
         </div>
       </div>
@@ -737,29 +779,29 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-700/80 pb-6">
       <div class="space-y-1">
-        <div class="inline-flex items-center space-x-2 text-accent text-xs font-bold uppercase tracking-wider"><i data-lucide="gift" class="w-4 h-4"></i><span>Программы лояльности ALMAZ</span></div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Выгодные акции и бонусные программы на АЗС</h2>
+        <div class="inline-flex items-center space-x-2 text-accent text-xs font-bold uppercase tracking-wider"><i data-lucide="gift" class="w-4 h-4"></i><span data-i18n="promo-band.1">Программы лояльности ALMAZ</span></div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight" data-i18n="promo-band.2">Выгодные акции и бонусные программы на АЗС</h2>
       </div>
-      <a href="tel:87758653737" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3 rounded-lg shadow flex items-center justify-center space-x-2 self-start md:self-auto"><span>Оформить топливную карту</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      <a href="tel:+77758653737" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3 rounded-lg shadow flex items-center justify-center space-x-2 self-start md:self-auto"><span data-i18n="promo-band.3">Оформить топливную карту</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 space-y-3 hover:border-accent/60 transition-colors">
         <div class="w-10 h-10 rounded-lg bg-accent/20 text-accent flex items-center justify-center"><i data-lucide="credit-card" class="w-5 h-5"></i></div>
-        <h3 class="text-lg font-bold">Бонусная карта «Любимый клиент»</h3>
-        <p class="text-xs text-slate-300 leading-relaxed">Накапливайте бонусы за заправки на всех АЗС ALMAZ и оплачивайте ими покупки в минимаркетах.</p>
-        <div class="pt-2 text-xs font-bold text-accent">Уточняйте условия на АЗС</div>
+        <h3 class="text-lg font-bold" data-i18n="promo-band.4">Бонусная карта «Любимый клиент»</h3>
+        <p class="text-xs text-slate-300 leading-relaxed" data-i18n="promo-band.5">Накапливайте бонусы за заправки на всех АЗС ALMAZ и оплачивайте ими покупки в минимаркетах.</p>
+        <div class="pt-2 text-xs font-bold text-accent" data-i18n="promo-band.6">Уточняйте условия на АЗС</div>
       </div>
       <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 space-y-3 hover:border-accent/60 transition-colors">
         <div class="w-10 h-10 rounded-lg bg-leaf/20 text-leaf flex items-center justify-center"><i data-lucide="percent" class="w-5 h-5"></i></div>
-        <h3 class="text-lg font-bold">Скидки при полной заправке</h3>
-        <p class="text-xs text-slate-300 leading-relaxed">На АЗС ALMAZ периодически действуют скидки на бензин АИ-92 и АИ-95 при полной заправке бака.</p>
-        <div class="pt-2 text-xs font-bold text-leaf">Актуальные условия — на АЗС</div>
+        <h3 class="text-lg font-bold" data-i18n="promo-band.7">Скидки при полной заправке</h3>
+        <p class="text-xs text-slate-300 leading-relaxed" data-i18n="promo-band.8">На АЗС ALMAZ периодически действуют скидки на бензин АИ-92 и АИ-95 при полной заправке бака.</p>
+        <div class="pt-2 text-xs font-bold text-leaf" data-i18n="promo-band.9">Актуальные условия — на АЗС</div>
       </div>
       <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 space-y-3 hover:border-accent/60 transition-colors">
         <div class="w-10 h-10 rounded-lg bg-accent/20 text-accent flex items-center justify-center"><i data-lucide="sparkles" class="w-5 h-5"></i></div>
-        <h3 class="text-lg font-bold">Топливные карты для юридических лиц</h3>
-        <p class="text-xs text-slate-300 leading-relaxed">Контроль расходов автопарка, электронные закрывающие документы и удобный документооборот для бухгалтерии.</p>
-        <div class="pt-2 text-xs font-bold text-accent">Единый счёт по всей сети АЗС</div>
+        <h3 class="text-lg font-bold" data-i18n="promo-band.10">Топливные карты для юридических лиц</h3>
+        <p class="text-xs text-slate-300 leading-relaxed" data-i18n="promo-band.11">Контроль расходов автопарка, электронные закрывающие документы и удобный документооборот для бухгалтерии.</p>
+        <div class="pt-2 text-xs font-bold text-accent" data-i18n="promo-band.12">Единый счёт по всей сети АЗС</div>
       </div>
     </div>
   </div>
@@ -769,41 +811,41 @@
 <section id="faq" class="py-16 bg-white border-t border-slate-200/80">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
     <div class="text-center space-y-3">
-      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-navy/10 text-navy text-xs font-black uppercase tracking-wider"><i data-lucide="help-circle" class="w-4 h-4 text-accent"></i><span>Вопросы и ответы</span></div>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-navy">Частые вопросы</h2>
-      <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">Отвечаем на вопросы клиентов</p>
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-navy/10 text-navy text-xs font-black uppercase tracking-wider"><i data-lucide="help-circle" class="w-4 h-4 text-accent"></i><span data-i18n="faq.1">Вопросы и ответы</span></div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-navy" data-i18n="faq.2">Частые вопросы</h2>
+      <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto" data-i18n="faq.3">Отвечаем на вопросы клиентов</p>
     </div>
 
     <div class="space-y-4">
       <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden" open>
-        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg">С какого года работает компания?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
-        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3">ТОО «АЗК Алмаз» работает на рынке нефтепродуктов с 1998 года — более 25 лет.</p></div>
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.4">С какого года работает компания?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.5">ТОО «АЗК Алмаз» работает на рынке нефтепродуктов с 1998 года — более 25 лет.</p></div>
       </details>
       <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden">
-        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg">Какие виды топлива вы реализуете?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
-        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3">Бензин АИ-92, АИ-95 и дизельное топливо — вся продукция соответствует требованиям качества и сопровождается документацией.</p></div>
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.6">Какие виды топлива вы реализуете?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.7">Бензин АИ-92, АИ-95 и дизельное топливо — вся продукция соответствует требованиям качества и сопровождается документацией.</p></div>
       </details>
       <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden">
-        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg">Работаете ли вы с юридическими лицами?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
-        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3">Да, оптовая реализация — одно из основных направлений: поставки корпоративным клиентам, промышленным предприятиям, сельхозорганизациям и госучреждениям, включая топливные карты и талоны.</p></div>
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.8">Работаете ли вы с юридическими лицами?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.9">Да, оптовая реализация — одно из основных направлений: поставки корпоративным клиентам, промышленным предприятиям, сельхозорганизациям и госучреждениям, включая топливные карты и талоны.</p></div>
       </details>
       <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden">
-        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg">Как оплатить поставку?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
-        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3">Расчёты осуществляются любым законным способом в соответствии с действующим законодательством РК и условиями заключённого договора.</p></div>
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.10">Как оплатить поставку?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.11">Расчёты осуществляются любым законным способом в соответствии с действующим законодательством РК и условиями заключённого договора.</p></div>
       </details>
       <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden">
-        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg">Что делать при вопросах по качеству или количеству топлива?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
-        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3">Обратитесь в компанию — каждое обращение рассматривается индивидуально, с проверкой и анализом сопроводительной документации.</p></div>
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.12">Что делать при вопросах по качеству или количеству топлива?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.13">Обратитесь в компанию — каждое обращение рассматривается индивидуально, с проверкой и анализом сопроводительной документации.</p></div>
       </details>
       <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden">
-        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg">В каких регионах вы работаете?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
-        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3">Нефтебаза и сеть АЗС расположены в Шымкенте и Туркестанской области, поставки осуществляются во все южные регионы Казахстана.</p></div>
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.14">В каких регионах вы работаете?</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.15">Нефтебаза и сеть АЗС расположены в Шымкенте и Туркестанской области, поставки осуществляются во все южные регионы Казахстана.</p></div>
       </details>
     </div>
 
     <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="space-y-1 text-center sm:text-left"><h4 class="font-extrabold text-navy text-base sm:text-lg">Остались другие вопросы?</h4><p class="text-xs sm:text-sm text-slate-600">Свяжитесь с отделом продаж ТОО «АЗК Алмаз» для консультации.</p></div>
-      <a href="tel:87252357444" class="inline-flex items-center space-x-2 bg-navy hover:bg-navy-light text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl"><i data-lucide="phone-call" class="w-4 h-4 text-accent"></i><span>8 (7252) 357-444</span></a>
+      <div class="space-y-1 text-center sm:text-left"><h4 class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.16">Остались другие вопросы?</h4><p class="text-xs sm:text-sm text-slate-600" data-i18n="faq.17">Свяжитесь с отделом продаж ТОО «АЗК Алмаз» для консультации.</p></div>
+      <a href="tel:+77252357444" class="inline-flex items-center space-x-2 bg-navy hover:bg-navy-light text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl"><i data-lucide="phone-call" class="w-4 h-4 text-accent"></i><span>+7 (7252) 357-444</span></a>
     </div>
   </div>
 </section>
@@ -812,54 +854,54 @@
 <section id="contacts" class="py-16 bg-[#F8FAFC]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
     <div class="text-center max-w-3xl mx-auto">
-      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Связь с нами</div>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight">Контактная информация и отделы</h2>
-      <p class="mt-3 text-slate-600 text-base">Выберите нужный отдел и позвоните напрямую — ответим на все вопросы.</p>
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="contacts.1">Связь с нами</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="contacts.2">Контактная информация и отделы</h2>
+      <p class="mt-3 text-slate-600 text-base" data-i18n="contacts.3">Выберите нужный отдел и позвоните напрямую — ответим на все вопросы.</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="bg-white rounded-2xl p-6 border-2 border-slate-200/90 shadow-sm hover:border-navy transition-all flex flex-col justify-between space-y-4">
         <div class="flex-1 flex flex-col justify-between">
-          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="phone-call" class="w-5 h-5 text-accent"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Офис</span><h3 class="text-base font-bold text-navy leading-snug">По общим вопросам</h3></div></div>
-          <div class="space-y-2 pt-2"><a href="tel:87252357444" class="text-xl font-black text-navy hover:text-accent block tracking-tight">8 (7252) 357-444</a></div>
+          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="phone-call" class="w-5 h-5 text-accent"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="contacts.4">Офис</span><h3 class="text-base font-bold text-navy leading-snug" data-i18n="contacts.5">По общим вопросам</h3></div></div>
+          <div class="space-y-2 pt-2"><a href="tel:+77252357444" class="text-xl font-black text-navy hover:text-accent block tracking-tight">+7 (7252) 357-444</a></div>
         </div>
-        <a href="tel:87252357444" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block">Позвонить в отдел</a>
+        <a href="tel:+77252357444" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block" data-i18n="contacts.6">Позвонить в отдел</a>
       </div>
       <div class="bg-white rounded-2xl p-6 border-2 border-slate-200/90 shadow-sm hover:border-navy transition-all flex flex-col justify-between space-y-4">
         <div class="flex-1 flex flex-col justify-between">
-          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="briefcase" class="w-5 h-5 text-leaf"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Оптовый отдел</span><h3 class="text-base font-bold text-navy leading-snug">По вопросам оптовой реализации</h3></div></div>
-          <div class="space-y-2 pt-2"><a href="tel:87077294051" class="text-xl font-black text-navy hover:text-accent block tracking-tight">8 707 729 4051</a></div>
+          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="briefcase" class="w-5 h-5 text-leaf"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="contacts.7">Оптовый отдел</span><h3 class="text-base font-bold text-navy leading-snug" data-i18n="contacts.8">По вопросам оптовой реализации</h3></div></div>
+          <div class="space-y-2 pt-2"><a href="tel:+77077294051" class="text-xl font-black text-navy hover:text-accent block tracking-tight">+7 (707) 729-40-51</a></div>
         </div>
-        <a href="tel:87077294051" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block">Позвонить в отдел</a>
+        <a href="tel:+77077294051" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block" data-i18n="contacts.9">Позвонить в отдел</a>
       </div>
       <div class="bg-white rounded-2xl p-6 border-2 border-slate-200/90 shadow-sm hover:border-navy transition-all flex flex-col justify-between space-y-4">
         <div class="flex-1 flex flex-col justify-between">
-          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="fuel" class="w-5 h-5 text-leaf"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Розничный отдел</span><h3 class="text-base font-bold text-navy leading-snug">По вопросам розничной реализации через сеть АЗС</h3></div></div>
+          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="fuel" class="w-5 h-5 text-leaf"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="contacts.10">Розничный отдел</span><h3 class="text-base font-bold text-navy leading-snug" data-i18n="contacts.11">По вопросам розничной реализации через сеть АЗС</h3></div></div>
           <div class="space-y-2 pt-2">
-            <a href="tel:87758653737" class="text-xl font-black text-navy hover:text-accent block tracking-tight">8 775 865 3737</a>
+            <a href="tel:+77758653737" class="text-xl font-black text-navy hover:text-accent block tracking-tight">+7 (775) 865-37-37</a>
           </div>
         </div>
-        <a href="tel:87758653737" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block">Позвонить в отдел</a>
+        <a href="tel:+77758653737" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block" data-i18n="contacts.12">Позвонить в отдел</a>
       </div>
       <div class="bg-white rounded-2xl p-6 border-2 border-slate-200/90 shadow-sm hover:border-navy transition-all flex flex-col justify-between space-y-4">
         <div class="flex-1 flex flex-col justify-between">
-          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="credit-card" class="w-5 h-5 text-navy-light"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Бухгалтерия</span><h3 class="text-base font-bold text-navy leading-snug">Документы и расчёты</h3></div></div>
+          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="credit-card" class="w-5 h-5 text-navy-light"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="contacts.13">Бухгалтерия</span><h3 class="text-base font-bold text-navy leading-snug" data-i18n="contacts.14">Документы и расчёты</h3></div></div>
           <div class="space-y-2 pt-2">
-            <a href="tel:87710611066" class="text-xl font-black text-navy hover:text-accent block tracking-tight">8 771 061 10 66</a>
+            <a href="tel:+77710611066" class="text-xl font-black text-navy hover:text-accent block tracking-tight">+7 (771) 061-10-66</a>
           </div>
         </div>
-        <a href="tel:87710611066" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block">Позвонить в отдел</a>
+        <a href="tel:+77710611066" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block" data-i18n="contacts.15">Позвонить в отдел</a>
       </div>
     </div>
 
     <div class="pt-6 border-t border-slate-200">
       <div class="max-w-2xl mx-auto bg-navy text-white rounded-2xl p-8 space-y-6 shadow-xl">
-        <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-lg bg-accent text-navy flex items-center justify-center"><i data-lucide="building" class="w-5 h-5"></i></div><div><span class="text-xs text-slate-300 uppercase tracking-wider block font-medium">Центральный офис</span><h3 class="text-lg font-bold">ТОО «АЗК Алмаз»</h3></div></div>
+        <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-lg bg-accent text-navy flex items-center justify-center"><i data-lucide="building" class="w-5 h-5"></i></div><div><span class="text-xs text-slate-300 uppercase tracking-wider block font-medium" data-i18n="contacts.16">Центральный офис</span><h3 class="text-lg font-bold" data-i18n="contacts.17">ТОО «АЗК Алмаз»</h3></div></div>
         <div class="space-y-4 text-sm">
-          <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="map-pin" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold">Адрес головного офиса:</span><span class="font-bold">г. Шымкент, район Тұран, проспект Абая, 1А</span></div></div>
-          <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="clock" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold">Режим работы офиса и нефтебазы:</span><span class="font-bold">Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00</span><p class="text-xs text-slate-300 mt-0.5">АЗС: Круглосуточно, 24/7</p></div></div>
+          <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="map-pin" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold" data-i18n="contacts.18">Адрес головного офиса:</span><span class="font-bold" data-i18n="contacts.19">г. Шымкент, район Тұран, проспект Абая, 1А</span></div></div>
+          <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="clock" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold" data-i18n="contacts.20">Режим работы офиса и нефтебазы:</span><span class="font-bold" data-i18n="contacts.21">Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00</span><p class="text-xs text-slate-300 mt-0.5" data-i18n="contacts.22">АЗС: Круглосуточно, 24/7</p></div></div>
         </div>
-        <div class="pt-2 text-xs text-slate-400 border-t border-slate-700/80 flex justify-between"><span>БИН: 011240001881</span><span>г. Шымкент</span></div>
+        <div class="pt-2 text-xs text-slate-400 border-t border-slate-700/80 flex justify-between"><span data-i18n="contacts.23">БИН: 011240001881</span><span data-i18n="contacts.24">г. Шымкент</span></div>
       </div>
     </div>
   </div>
@@ -872,37 +914,37 @@
       <div class="lg:col-span-5 space-y-4">
         <div class="flex items-center space-x-3">
           <img src="assets/images/logo/logo-horizontal.png" alt="ALMAZ" class="h-9 w-auto">
-          <p class="text-[10px] text-slate-400 font-bold uppercase">ТОО «АЗК Алмаз» • Светлые нефтепродукты • с 1998 года</p>
+          <p class="text-[10px] text-slate-400 font-bold uppercase" data-i18n="footer.1">ТОО «АЗК Алмаз» • Светлые нефтепродукты • с 1998 года</p>
         </div>
-        <p class="text-xs text-slate-400 leading-relaxed">Надёжные оптовые и розничные поставки высококачественного бензина (АИ-92, АИ-95) и дизельного топлива Евро-4 в Шымкенте и Туркестанской области.</p>
-        <div class="text-xs text-slate-400"><div class="flex items-center space-x-2 text-white font-semibold"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span>г. Шымкент, район Тұран, проспект Абая, 1А</span></div></div>
+        <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer.2">Надёжные оптовые и розничные поставки высококачественного бензина (АИ-92, АИ-95) и дизельного топлива Евро-4 в Шымкенте и Туркестанской области.</p>
+        <div class="text-xs text-slate-400"><div class="flex items-center space-x-2 text-white font-semibold"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="footer.3">г. Шымкент, район Тұран, проспект Абая, 1А</span></div></div>
       </div>
       <div class="lg:col-span-3 space-y-3">
-        <div class="text-xs font-bold text-white uppercase tracking-wider">Навигация</div>
+        <div class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="footer.4">Навигация</div>
         <ul class="space-y-2 text-xs">
-          <li><a href="#about" class="hover:text-accent transition-colors">О компании</a></li>
-          <li><a href="#services" class="hover:text-accent transition-colors">Услуги</a></li>
-          <li><a href="#products" class="hover:text-accent transition-colors">Продукция (Евро-4)</a></li>
-          <li><a href="#azs" class="hover:text-accent transition-colors">Сеть АЗС</a></li>
-          <li><a href="#faq" class="hover:text-accent transition-colors">Частые вопросы</a></li>
-          <li><a href="#contacts" class="hover:text-accent transition-colors">Контакты</a></li>
+          <li><a href="#about" class="hover:text-accent transition-colors" data-i18n="footer.5">О компании</a></li>
+          <li><a href="#services" class="hover:text-accent transition-colors" data-i18n="footer.6">Услуги</a></li>
+          <li><a href="#products" class="hover:text-accent transition-colors" data-i18n="footer.7">Продукция (Евро-4)</a></li>
+          <li><a href="#azs" class="hover:text-accent transition-colors" data-i18n="footer.8">Сеть АЗС</a></li>
+          <li><a href="#faq" class="hover:text-accent transition-colors" data-i18n="footer.9">Частые вопросы</a></li>
+          <li><a href="#contacts" class="hover:text-accent transition-colors" data-i18n="footer.10">Контакты</a></li>
         </ul>
       </div>
       <div class="lg:col-span-4 space-y-3">
-        <div class="text-xs font-bold text-white uppercase tracking-wider">Телефоны отделов</div>
+        <div class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="footer.11">Телефоны отделов</div>
         <div class="space-y-2 text-xs">
-          <div><span class="text-slate-400 block text-[11px]">По вопросам оптовой реализации:</span><a href="tel:87077294051" class="font-bold text-white hover:text-accent">8 707 729 4051</a></div>
-          <div><span class="text-slate-400 block text-[11px]">По вопросам розничной реализации через сеть АЗС:</span><a href="tel:87758653737" class="font-bold text-white hover:text-accent">8 775 865 3737</a></div>
-          <div><span class="text-slate-400 block text-[11px]">По общим вопросам:</span><a href="tel:87252357444" class="font-bold text-white hover:text-accent">8 (7252) 357-444</a></div>
-          <div><span class="text-slate-400 block text-[11px]">Бухгалтерия:</span><a href="tel:87710611066" class="font-bold text-white hover:text-accent">8 771 061 10 66</a></div>
+          <div><span class="text-slate-400 block text-[11px]" data-i18n="footer.12">По вопросам оптовой реализации:</span><a href="tel:+77077294051" class="font-bold text-white hover:text-accent">+7 (707) 729-40-51</a></div>
+          <div><span class="text-slate-400 block text-[11px]" data-i18n="footer.13">По вопросам розничной реализации через сеть АЗС:</span><a href="tel:+77758653737" class="font-bold text-white hover:text-accent">+7 (775) 865-37-37</a></div>
+          <div><span class="text-slate-400 block text-[11px]" data-i18n="footer.14">По общим вопросам:</span><a href="tel:+77252357444" class="font-bold text-white hover:text-accent">+7 (7252) 357-444</a></div>
+          <div><span class="text-slate-400 block text-[11px]" data-i18n="footer.15">Бухгалтерия:</span><a href="tel:+77710611066" class="font-bold text-white hover:text-accent">+7 (771) 061-10-66</a></div>
         </div>
       </div>
     </div>
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-      <div class="flex items-center space-x-4"><span class="font-semibold">© 1998 - 2026 ТОО «АЗК Алмаз». Все права защищены.</span><span class="hidden sm:inline">|</span><span class="hidden sm:inline text-slate-500">БИН 011240001881</span></div>
+      <div class="flex items-center space-x-4"><span class="font-semibold" data-i18n="footer.16">© 1998 - 2026 ТОО «АЗК Алмаз». Все права защищены.</span><span class="hidden sm:inline">|</span><span class="hidden sm:inline text-slate-500" data-i18n="footer.17">БИН 011240001881</span></div>
       <div class="flex items-center space-x-6">
-        <button data-policy="privacy" class="policy-btn hover:text-white transition-colors">Политика конфиденциальности</button>
-        <button data-policy="terms" class="policy-btn hover:text-white transition-colors">Условия использования</button>
+        <button data-policy="privacy" class="policy-btn hover:text-white transition-colors" data-i18n="footer.18">Политика конфиденциальности</button>
+        <button data-policy="terms" class="policy-btn hover:text-white transition-colors" data-i18n="footer.19">Условия использования</button>
       </div>
     </div>
   </div>
@@ -912,11 +954,11 @@
 <div id="policy-modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
   <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200 relative space-y-4 max-h-[85vh] flex flex-col">
     <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-      <div class="flex items-center space-x-2 text-navy"><i data-lucide="lock" class="w-5 h-5 text-accent"></i><h3 id="policy-title" class="text-lg font-bold">Политика конфиденциальности</h3></div>
+      <div class="flex items-center space-x-2 text-navy"><i data-lucide="lock" class="w-5 h-5 text-accent"></i><h3 id="policy-title" class="text-lg font-bold" data-i18n="policy-modal.1">Политика конфиденциальности</h3></div>
       <button id="policy-close" class="text-slate-400 hover:text-slate-600 p-1"><i data-lucide="x" class="w-5 h-5"></i></button>
     </div>
     <div id="policy-body" class="overflow-y-auto text-xs text-slate-600 space-y-3 leading-relaxed pr-2"></div>
-    <button id="policy-close-2" class="w-full bg-navy text-white font-bold py-2.5 rounded-lg text-xs">Понятно / Закрыть</button>
+    <button id="policy-close-2" class="w-full bg-navy text-white font-bold py-2.5 rounded-lg text-xs" data-i18n="policy-modal.2">Понятно / Закрыть</button>
   </div>
 </div>
 
@@ -936,15 +978,20 @@
     { img: 'assets/images/lab.jpg', badge: 'ГОСТ & Евро-4', title: 'Лаборатория Контроля Качества', subtitle: 'Проверка каждой партии топлива перед отгрузкой' },
     { img: 'assets/images/canopy.jpg', badge: 'Розница', title: 'Сеть АЗС ALMAZ', subtitle: 'Современные комплексы 24/7 в Шымкенте и Туркестанской обл.' },
   ];
+  let currentGallery = 0;
+  function renderGallery(i) {
+    currentGallery = i;
+    const d = galleryData[i];
+    document.getElementById('gallery-img').src = d.img;
+    document.getElementById('gallery-badge').textContent = AZK.t(`gallery.${i}.badge`, d.badge);
+    document.getElementById('gallery-title').textContent = AZK.t(`gallery.${i}.title`, d.title);
+    document.getElementById('gallery-subtitle').textContent = AZK.t(`gallery.${i}.subtitle`, d.subtitle);
+  }
   document.querySelectorAll('#gallery-tabs .tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('#gallery-tabs .tab-btn').forEach(b => { b.classList.remove('active'); b.classList.add('text-slate-600'); });
       btn.classList.add('active'); btn.classList.remove('text-slate-600');
-      const d = galleryData[+btn.dataset.gallery];
-      document.getElementById('gallery-img').src = d.img;
-      document.getElementById('gallery-badge').textContent = d.badge;
-      document.getElementById('gallery-title').textContent = d.title;
-      document.getElementById('gallery-subtitle').textContent = d.subtitle;
+      renderGallery(+btn.dataset.gallery);
     });
   });
 
@@ -954,16 +1001,16 @@
   function recalcCalculator() {
     const activeBtn = document.querySelector('.calc-fuel-btn.bg-accent');
     const price = +activeBtn.dataset.price;
-    const name = activeBtn.dataset.name;
-    const code = activeBtn.dataset.code;
     const fuel = activeBtn.dataset.fuel;
+    const name = activeBtn.textContent.trim();                      // подпись кнопки уже переведена
+    const code = AZK.t('calc.code.' + fuel, activeBtn.dataset.code);
     let volumeInput = +document.getElementById('calc-volume').value || 0;
     const liters = calcUnit === 'tons' ? Math.round(volumeInput / density[fuel]) : volumeInput;
     const total = Math.round(liters * price);
     document.getElementById('calc-out-product').textContent = `${name} (${code})`;
-    document.getElementById('calc-out-volume').textContent = `${liters.toLocaleString('ru-RU')} л (${(liters * density[fuel] / 1000).toFixed(2)} тонн)`;
-    document.getElementById('calc-out-total').textContent = `~ ${total.toLocaleString('ru-RU')} ₸`;
-    document.getElementById('calc-out-rate').textContent = `Базовый тариф ~ ${price} ₸/литр с НДС`;
+    document.getElementById('calc-out-volume').textContent = `${liters.toLocaleString(AZK.locale)} ${AZK.t('calc.unit.l', 'л')} (${(liters * density[fuel] / 1000).toFixed(2)} ${AZK.t('calc.unit.t', 'тонн')})`;
+    document.getElementById('calc-out-total').textContent = `~ ${total.toLocaleString(AZK.locale)} ₸`;
+    document.getElementById('calc-out-rate').textContent = AZK.t('calc.rate', 'Базовый тариф ~ {price} ₸/литр с НДС').replace('{price}', price);
   }
   document.querySelectorAll('.calc-fuel-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -993,13 +1040,16 @@
     'azs-3': { name: 'АЗС-3 ALMAZ', address: 'Туркестанская обл., Сайрамский район, Кайнарбулакский с/о, с. Касымбек Датка, квартал 219', direction: 'Справа по направлению на г. Туркестан', amenities: ['Минимаркет','Быстрый налив грузовых авто','Подкачка шин','Топливные карты'] },
     'azs-4': { name: 'АЗС-4 ALMAZ', address: 'г. Шымкент, Каратауский район, квартал 223, здание 8', direction: 'Справа по направлению на г. Алматы', amenities: ['Минимаркет','Стоянка для грузовых ТС','Приём всех видов оплат','Топливные карты','Кофе-аппарат'] },
   };
+  let currentStation = 'azs-1';
   function selectStation(id) {
+    currentStation = id;
     const s = stations[id];
-    document.getElementById('station-name').textContent = s.name;
-    document.getElementById('station-address').textContent = s.address;
-    document.getElementById('station-direction').textContent = s.direction;
+    document.getElementById('station-name').textContent = AZK.t(`station.${id}.name`, s.name);
+    document.getElementById('station-address').textContent = AZK.t(`station.${id}.address`, s.address);
+    document.getElementById('station-direction').textContent = AZK.t(`station.${id}.direction`, s.direction);
+    // В ссылку на карту всегда подставляем русский адрес — по переведённому геокодер Яндекса точку не находит.
     document.getElementById('station-route').href = `https://yandex.ru/maps/?text=${encodeURIComponent(s.address)}`;
-    document.getElementById('station-amenities').innerHTML = s.amenities.map(a => `<span class="bg-navy/90 text-slate-200 px-2 py-1 rounded border border-slate-700">${a}</span>`).join('');
+    document.getElementById('station-amenities').innerHTML = AZK.tList(`station.${id}.amenities`, s.amenities).map(a => `<span class="bg-navy/90 text-slate-200 px-2 py-1 rounded border border-slate-700">${a}</span>`).join('');
     document.querySelectorAll('.marker span').forEach(m => m.classList.remove('active'));
     document.querySelectorAll('.marker').forEach(m => { if (m.dataset.station === id) m.querySelector('span').classList.add('active'); });
     document.querySelectorAll('.station-card').forEach(c => {
@@ -1059,8 +1109,8 @@
   document.querySelectorAll('.policy-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const c = policyContent[btn.dataset.policy];
-      document.getElementById('policy-title').textContent = c.title;
-      document.getElementById('policy-body').innerHTML = c.body;
+      document.getElementById('policy-title').textContent = AZK.t(`policy.${btn.dataset.policy}.title`, c.title);
+      document.getElementById('policy-body').innerHTML = AZK.t(`policy.${btn.dataset.policy}.body`, c.body);
       policyModal.classList.remove('hidden'); policyModal.classList.add('flex');
     });
   });
@@ -1068,6 +1118,15 @@
   document.getElementById('policy-close').addEventListener('click', closePolicy);
   document.getElementById('policy-close-2').addEventListener('click', closePolicy);
   policyModal.addEventListener('click', (e) => { if (e.target === policyModal) closePolicy(); });
+
+  // Блоки, которые рисует JS, общий проход движка вернул бы к значениям из разметки —
+  // поэтому после смены языка перерисовываем их с текущим состоянием.
+  document.addEventListener('azk:langchange', (e) => {
+    if (e.detail.initial) return;
+    renderGallery(currentGallery);
+    recalcCalculator();
+    selectStation(currentStation);
+  });
 
   // Active nav link highlight on scroll
   const sections = ['about','services','products','azs','faq','contacts'];

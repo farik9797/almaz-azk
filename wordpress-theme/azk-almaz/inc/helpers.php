@@ -38,7 +38,11 @@ function azk_setting($key, $default = '') {
  * tel:-ссылка из отображаемого номера телефона.
  */
 function azk_tel($phone) {
-    return preg_replace('/\D/', '', (string) $phone);
+    $phone  = (string) $phone;
+    $digits = preg_replace('/\D/', '', $phone);
+    // Номера на сайте записаны в международном формате — плюс нужно сохранить,
+    // иначе с иностранного телефона ссылка tel: не наберётся.
+    return strpos($phone, '+') === 0 ? '+' . $digits : $digits;
 }
 
 /**

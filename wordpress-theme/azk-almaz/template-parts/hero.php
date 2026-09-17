@@ -1,8 +1,8 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
-$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
-$phone_wholesale   = azk_setting('phone_wholesale', '8 707 729 4051');
-$phone_general     = azk_setting('phone_general', '8 (7252) 357-444');
+$phone_cooperation = azk_setting('phone_cooperation', '+7 (775) 865-37-37');
+$phone_wholesale   = azk_setting('phone_wholesale', '+7 (707) 729-40-51');
+$phone_general     = azk_setting('phone_general', '+7 (7252) 357-444');
 $address_full      = azk_setting('address_full', 'г. Шымкент, район Тұран, проспект Абая, 1А');
 
 $badge         = azk_field('hero_badge', 'ТОО «АЗК Алмаз» • 25+ лет стабильной работы');

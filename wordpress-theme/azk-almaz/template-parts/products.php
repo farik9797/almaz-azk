@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
-$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
-$phone_wholesale   = azk_setting('phone_wholesale', '8 707 729 4051');
+$phone_cooperation = azk_setting('phone_cooperation', '+7 (775) 865-37-37');
+$phone_wholesale   = azk_setting('phone_wholesale', '+7 (707) 729-40-51');
 $title    = azk_field('products_title', 'Качественные нефтепродукты');
 $subtitle = azk_field('products_subtitle', 'Все марки топлива поставляются напрямую с ведущих НПЗ и проходят обязательный лабораторный контроль с выдачей Паспорта качества.');
 $lab_image = azk_image('lab_image', 'lab.jpg');

@@ -1,6 +1,6 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 <?php
-$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
+$phone_cooperation = azk_setting('phone_cooperation', '+7 (775) 865-37-37');
 $title    = azk_field('services_title', 'Полный спектр услуг на рынке нефтепродуктов');
 $subtitle = azk_field('services_subtitle', 'Обеспечиваем надёжное решение задач любой сложности — от разовых оптовых отгрузок до долгосрочного контрактного обслуживания и хранения.');
 $fleet_image = azk_image('fleet_image', 'fleet.jpg');

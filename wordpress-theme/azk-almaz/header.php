@@ -33,9 +33,9 @@
 <?php wp_body_open(); ?>
 
 <?php
-$phone_cooperation = azk_setting('phone_cooperation', '8 775 865 3737');
-$phone_wholesale   = azk_setting('phone_wholesale', '8 707 729 4051');
-$phone_general     = azk_setting('phone_general', '8 (7252) 357-444');
+$phone_cooperation = azk_setting('phone_cooperation', '+7 (775) 865-37-37');
+$phone_wholesale   = azk_setting('phone_wholesale', '+7 (707) 729-40-51');
+$phone_general     = azk_setting('phone_general', '+7 (7252) 357-444');
 $address_short     = azk_setting('address_short', 'г. Шымкент, проспект Абая, 1А');
 $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00');
 ?>
