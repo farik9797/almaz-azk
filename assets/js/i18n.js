@@ -22,13 +22,14 @@
 
   window.AZK_I18N = window.AZK_I18N || {};
 
-  // Версию берём из собственного тега <script src="...i18n.js?v=N"> и вешаем на словари,
-  // чтобы после деплоя браузер не подсунул старый перевод к новой разметке.
-  var VER = (function () {
-    var el = document.currentScript;
-    var m = el && /\?v=([^&]+)/.exec(el.src || '');
-    return m ? '?v=' + m[1] : '';
-  })();
+  // Адрес собственного тега <script src=".../assets/js/i18n.js?v=N"> даёт сразу две вещи:
+  // версию (чтобы после деплоя не подтянулся старый словарь) и путь к словарям —
+  // он не зависит от того, лежит страница в корне или в /en/, /kz/, /zh/.
+  var SELF = (document.currentScript && document.currentScript.src) || '';
+  var VER = (function () { var m = /\?v=([^&]+)/.exec(SELF); return m ? '?v=' + m[1] : ''; })();
+  var DICT_BASE = /js\/i18n\.js/.test(SELF)
+    ? SELF.replace(/js\/i18n\.js(\?.*)?$/, 'i18n/')
+    : 'assets/i18n/';
 
   function normalize(l) {
     if (!l) return null;
@@ -41,11 +42,20 @@
     try { return normalize(localStorage.getItem(STORE_KEY)); } catch (e) { return null; }
   }
 
+  // Язык из адреса страницы: /almaz-azk/en/, /kz/, /zh/ (в том числе с /index.html на конце).
+  function pathLang() {
+    var p = location.pathname.replace(/\/index\.html?$/i, '/');
+    var m = /\/(en|kz|kk|zh)\/?$/.exec(p);
+    return m ? normalize(m[1]) : null;
+  }
+
   function initialLang() {
-    var m = /[?&]lang=([a-zA-Z-]+)/.exec(location.search);
+    var q = /[?&]lang=([a-zA-Z-]+)/.exec(location.search);
+    // Адрес страницы важнее сохранённого выбора: на /en/ должен быть английский,
+    // даже если в прошлый раз человек смотрел китайскую версию.
     // Язык браузера намеренно не учитываем: у большинства местных посетителей
     // системный язык английский, а сайт для них должен открываться по-русски.
-    return (m && normalize(m[1])) || stored() || DEFAULT;
+    return pathLang() || (q && normalize(q[1])) || stored() || DEFAULT;
   }
 
   var current = initialLang();
@@ -59,7 +69,7 @@
   function load(lang, cb) {
     if (lang === DEFAULT || dict(lang)) return cb(true);
     var s = document.createElement('script');
-    s.src = 'assets/i18n/' + lang + '.js' + VER;
+    s.src = DICT_BASE + lang + '.js' + VER;
     s.onload = function () { cb(!!dict(lang)); };
     s.onerror = function () { cb(false); };
     (document.head || document.documentElement).appendChild(s);
@@ -133,7 +143,7 @@
     lang = normalize(lang) || DEFAULT;
     current = lang;
     try { localStorage.setItem(STORE_KEY, lang); } catch (e) {}
-    if (!(opts && opts.keepUrl)) {
+    if (!(opts && opts.keepUrl) && !pathLang()) {
       var url = new URL(location.href);
       if (lang === DEFAULT) url.searchParams.delete('lang');
       else url.searchParams.set('lang', lang);
@@ -158,8 +168,13 @@
       if (!menu.contains(e.target) && e.target !== btn) close();
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-    document.querySelectorAll('.lang-opt').forEach(function (b) {
-      b.addEventListener('click', function () { close(); setLang(b.dataset.lang); });
+    // Пункты переключателя — обычные ссылки на /en/, /kz/, /zh/: переход делает браузер,
+    // нам остаётся запомнить выбор, чтобы корневой адрес потом открылся на том же языке.
+    document.querySelectorAll('.lang-opt').forEach(function (a) {
+      a.addEventListener('click', function () {
+        try { localStorage.setItem(STORE_KEY, normalize(a.dataset.lang) || DEFAULT); } catch (e) {}
+        close();
+      });
     });
   }
 

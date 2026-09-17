@@ -1,0 +1,1161 @@
+<!-- Сгенерировано tools/i18n-build.py из index.html. Руками не править. -->
+<!DOCTYPE html>
+<html lang="zh-Hans" data-i18n-baked="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="misc.1">AZK Almaz — 自1998年起从事石油产品供应与加油站网络经营</title>
+<meta name="description" content="ALMAZ — 奇姆肯特市及突厥斯坦州的加油站网络与石油产品批发供应：AI-92、AI-95 汽油和柴油，批发零售兼营，可配送。ALMAZ 加油站提供加油卡、油票和会员卡。" data-i18n-content="misc-attr.1">
+
+<link rel="canonical" href="https://farik9797.github.io/almaz-azk/zh/">
+<link rel="alternate" hreflang="ru" href="https://farik9797.github.io/almaz-azk/">
+<link rel="alternate" hreflang="en" href="https://farik9797.github.io/almaz-azk/en/">
+<link rel="alternate" hreflang="kk" href="https://farik9797.github.io/almaz-azk/kz/">
+<link rel="alternate" hreflang="zh-Hans" href="https://farik9797.github.io/almaz-azk/zh/">
+<link rel="alternate" hreflang="x-default" href="https://farik9797.github.io/almaz-azk/">
+
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/images/logo/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/images/logo/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+        colors: {
+          navy: { DEFAULT: '#0F2A47', dark: '#0A1E36', light: '#13315C' },
+          accent: { DEFAULT: '#F5B301', dark: '#e0a300' },
+          leaf: '#2E9E5B',
+          ink: '#2B2F36',
+        },
+      },
+    },
+  };
+</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+  // Прячем страницу, только если движок будет менять язык относительно того,
+  // что уже свёрстано в файле (data-i18n-baked) — иначе на /en/ и /zh/ было бы лишнее мигание.
+  (function () {
+    try {
+      var baked = document.documentElement.getAttribute('data-i18n-baked') || 'ru';
+      var p = /\/(en|kz|kk|zh)\/?$/.exec(location.pathname);
+      var q = /[?&]lang=([a-zA-Z-]+)/.exec(location.search);
+      var l = (p && p[1]) || (q && q[1]) || localStorage.getItem('azk_lang') || 'ru';
+      l = l.toLowerCase().split('-')[0]; if (l === 'kz') l = 'kk';
+      if (l !== baked) document.documentElement.classList.add('i18n-pending');
+    } catch (e) {}
+  })();
+</script>
+<script src="../assets/js/i18n.js?v=1"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F8FAFC; color: #2B2F36; }
+  /* CJK-шрифты только для китайской версии: в них кириллица полноширинная и ломает метрики. */
+  html[lang^="zh"] body { font-family: 'Plus Jakarta Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; }
+  .i18n-pending body { visibility: hidden; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  .tab-btn.active { background: #0F2A47; color: #F5B301; }
+  .station-card.active { border-color: #0F2A47; box-shadow: 0 0 0 2px rgba(15,42,71,0.1); }
+  .marker.active { background: #F5B301; color: #0F2A47; border-color: #fff; transform: translate(-50%,-50%) scale(1.2); z-index: 20; }
+</style>
+</head>
+
+<body class="antialiased">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-40 w-full">
+  <div class="bg-[#0A1E36] text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden xl:block">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-6">
+        <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="header.1">奇姆肯特市阿拜大街1A号</span></div>
+        <div class="flex items-center space-x-2"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span data-i18n="header.2">自1998年起正规供应欧4燃油</span></div>
+      </div>
+      <div class="flex items-center space-x-6">
+        <span class="text-slate-400" data-i18n="header.3">办公室及油库：周一至周五 08:00 - 17:00，周六 08:00 - 13:00 | 加油站 24/7</span>
+        <a href="tel:+77252357444" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (7252) 357-444</span>
+        </a>
+        <a href="tel:+77758653737" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (775) 865-37-37</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-white py-4 border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="#top" class="flex items-center space-x-3 shrink-0">
+        <img src="../assets/images/logo/logo-horizontal.png" alt="ALMAZ" class="h-8 sm:h-9 w-auto max-w-none">
+      </a>
+
+      <nav class="hidden xl:flex items-center space-x-1 xl:space-x-2 text-sm font-semibold text-navy">
+        <a href="#about" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.4">关于我们</a>
+        <a href="#services" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.5">服务</a>
+        <a href="#products" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.6">产品</a>
+        <a href="#azs" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.7">加油站</a>
+        <a href="#faq" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.8">常见问题</a>
+        <a href="#contacts" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors" data-i18n="header.9">联系方式</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+
+        <div class="relative shrink-0">
+          <button id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="网站语言" data-i18n-aria-label="header-attr.2"
+                  class="flex items-center gap-1.5 px-2.5 py-2 rounded-md border border-slate-300 text-navy text-xs font-bold hover:border-navy hover:bg-slate-50 transition-colors cursor-pointer">
+            <i data-lucide="globe" class="w-4 h-4 text-slate-500"></i>
+            <span id="lang-current">RU</span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400"></i>
+          </button>
+          <ul id="lang-menu" class="hidden absolute right-0 mt-1.5 w-36 bg-white border border-slate-200 rounded-md shadow-lg py-1 z-50">
+            <li><a href="../" data-langlink data-lang="ru" class="lang-opt block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 cursor-pointer">Русский</a></li>
+            <li><a href="../en/" data-langlink data-lang="en" class="lang-opt block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 cursor-pointer">English</a></li>
+            <li><a href="../kz/" data-langlink data-lang="kk" class="lang-opt block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 cursor-pointer">Қазақша</a></li>
+            <li><a href="../zh/" data-langlink data-lang="zh" class="lang-opt block w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-100 cursor-pointer">中文</a></li>
+          </ul>
+        </div>
+
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="tel:+77077294051" class="text-xs font-bold text-navy hover:text-white hover:bg-navy px-3 py-2 rounded border border-slate-300 hover:border-navy transition-colors" data-i18n="header.10">批发价格</a>
+        <a href="tel:+77252357444" class="bg-accent hover:bg-accent-dark text-navy font-bold text-sm px-4 py-2.5 rounded-md shadow-md transition-all flex items-center space-x-2">
+          <i data-lucide="phone" class="w-4 h-4"></i><span data-i18n="header.11">联系我们</span>
+        </a>
+      </div>
+
+      <button id="menu-btn" class="xl:hidden text-navy p-2 rounded-md hover:bg-slate-100" aria-label="打开菜单" data-i18n-aria-label="header-attr.1">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+      </div>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 shadow-md text-navy px-4 pt-3 pb-6 space-y-3">
+    <div class="text-xs text-slate-500 pb-2 border-b border-slate-200 flex justify-between items-center">
+      <span data-i18n="header.12">奇姆肯特市阿拜大街1A号</span><span class="text-accent-dark font-semibold" data-i18n="header.13">加油站 24/7</span>
+    </div>
+    <div class="flex flex-col space-y-1 pt-1">
+      <a href="#about" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.14">关于我们</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#services" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.15">服务</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#products" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.16">产品</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#azs" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.17">加油站网络</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#faq" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.18">常见问题</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#contacts" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><span data-i18n="header.19">联系方式</span> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+    </div>
+    <div class="pt-3 border-t border-slate-200 space-y-2">
+      <a href="tel:+77077294051" class="flex items-center justify-between p-3 rounded bg-navy text-sm font-semibold text-white">
+        <span class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4 text-accent"></i><span data-i18n="header.20">批发销售：+7 (707) 729-40-51</span></span>
+        <span class="text-xs text-accent" data-i18n="header.21">拨打电话</span>
+      </a>
+      <a href="tel:+77252357444" class="mobile-link w-full block bg-accent text-navy font-bold py-3 rounded-md text-center text-sm shadow-md" data-i18n="header.22">拨打我们的电话</a>
+    </div>
+    <div class="pt-3 border-t border-slate-200">
+      <div class="text-xs font-semibold text-slate-500 mb-2" data-i18n="header.23">网站语言</div>
+      <div class="grid grid-cols-4 gap-2">
+        <a href="../" data-langlink data-lang="ru" class="lang-opt py-2 rounded border border-slate-300 text-xs font-bold text-slate-600 hover:border-navy cursor-pointer text-center">Русский</a>
+        <a href="../en/" data-langlink data-lang="en" class="lang-opt py-2 rounded border border-slate-300 text-xs font-bold text-slate-600 hover:border-navy cursor-pointer text-center">English</a>
+        <a href="../kz/" data-langlink data-lang="kk" class="lang-opt py-2 rounded border border-slate-300 text-xs font-bold text-slate-600 hover:border-navy cursor-pointer text-center">Қазақша</a>
+        <a href="../zh/" data-langlink data-lang="zh" class="lang-opt py-2 rounded border border-slate-300 text-xs font-bold text-slate-600 hover:border-navy cursor-pointer text-center">中文</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="top" class="relative bg-navy-dark text-white pt-8 pb-16 md:pt-16 md:pb-24 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img src="../assets/images/hero-depot.jpg" alt="ALMAZ 加油站" class="w-full h-full object-cover object-center opacity-70" data-i18n-alt="hero-attr.1">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0A1E36]/85 via-[#0F2A47]/70 to-[#13315C]/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0A1E36]/90 via-transparent to-transparent"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-8 space-y-6">
+        <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 text-xs sm:text-sm font-semibold text-accent">
+          <span class="w-2 h-2 rounded-full bg-leaf"></span>
+          <span data-i18n="hero.1">AZK Almaz 有限责任公司 • 25年以上稳健经营</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
+          <span data-i18n="hero.2">可靠的石油产品供应</span> <span class="text-accent whitespace-nowrap" data-i18n="hero.3">自1998年起</span>
+        </h1>
+
+        <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed" data-i18n="hero.4">
+          批发及零售高品质汽油（AI-92、AI-95）和符合欧4标准的柴油。在奇姆肯特市拥有自有油库、油罐车队和现代化加油站网络。
+        </p>
+
+        <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+          <a href="tel:+77077294051" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-base px-6 py-4 rounded-md shadow-lg transition-colors flex items-center justify-center space-x-2 border border-accent">
+            <i data-lucide="truck" class="w-5 h-5 stroke-[2.5]"></i><span data-i18n="hero.5">批发供应</span><i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          <a href="#azs" class="bg-transparent hover:bg-white/10 text-white border-2 border-slate-400 hover:border-white font-bold text-base px-6 py-3.5 rounded-md transition-colors flex items-center justify-center space-x-2">
+            <i data-lucide="fuel" class="w-5 h-5 text-accent"></i><span data-i18n="hero.6">加油站与零售</span>
+          </a>
+        </div>
+
+        <div class="mt-6 p-4 rounded-xl bg-[#0A1E36]/70 backdrop-blur-sm border border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm text-slate-300">
+          <div class="flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-leaf shrink-0"><i data-lucide="shield-check" class="w-4 h-4"></i></div>
+            <div><div class="font-bold text-white" data-i18n="hero.7">欧4标准</div><div class="text-slate-300 text-[11px]" data-i18n="hero.8">100% 符合 GOST 标准</div></div>
+          </div>
+          <div class="flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0"><i data-lucide="truck" class="w-4 h-4"></i></div>
+            <div><div class="font-bold text-white" data-i18n="hero.9">自有油罐车</div><div class="text-slate-300 text-[11px]" data-i18n="hero.10">2,000 升起配送</div></div>
+          </div>
+          <div class="col-span-2 sm:col-span-1 flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0"><i data-lucide="award" class="w-4 h-4"></i></div>
+            <div><div class="font-bold text-white" data-i18n="hero.11">自有油库</div><div class="text-slate-300 text-[11px]" data-i18n="hero.12">奇姆肯特市图兰区</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 bg-navy-light/90 backdrop-blur-md rounded-xl p-6 border border-slate-700/80 shadow-2xl space-y-5">
+        <div class="flex items-center justify-between border-b border-slate-700/80 pb-4">
+          <div><h3 class="text-lg font-bold uppercase tracking-wider" data-i18n="hero.13">直接联系</h3><p class="text-xs text-slate-300" data-i18n="hero.14">石油产品销售部</p></div>
+          <div class="px-2.5 py-1 rounded bg-leaf/20 text-leaf text-xs font-bold border border-leaf/30" data-i18n="hero.15">在线</div>
+        </div>
+        <div class="space-y-3 text-sm">
+          <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-accent/50 transition-colors">
+            <div class="text-xs text-slate-400 mb-0.5" data-i18n="hero.16">批发业务咨询：</div>
+            <a href="tel:+77077294051" class="text-lg font-black text-accent hover:underline">+7 (707) 729-40-51</a>
+          </div>
+          <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-slate-600 transition-colors">
+            <div class="text-xs text-slate-400 mb-0.5" data-i18n="hero.17">通过加油站网络的零售业务咨询：</div>
+            <a href="tel:+77758653737" class="text-lg font-black text-white hover:text-accent">+7 (775) 865-37-37</a>
+          </div>
+          <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-slate-600 transition-colors">
+            <div class="text-xs text-slate-400 mb-0.5" data-i18n="hero.18">一般咨询：</div>
+            <a href="tel:+77252357444" class="text-lg font-black text-white hover:text-accent">+7 (7252) 357-444</a>
+          </div>
+          <div class="p-3 rounded-lg bg-navy border border-slate-800 flex items-start space-x-2.5 text-xs text-slate-300">
+            <i data-lucide="map-pin" class="w-4 h-4 text-accent mt-0.5 shrink-0"></i>
+            <div><span class="font-semibold text-white block" data-i18n="hero.19">AZK Almaz 有限责任公司办公室：</span><span data-i18n="hero.20">奇姆肯特市图兰区阿拜大街1A号</span></div>
+          </div>
+        </div>
+        <a href="tel:+77758653737" class="w-full text-xs text-slate-300 hover:text-white underline text-center block pt-1 font-medium" data-i18n="hero.21">致电索取 GOST 质量合格证</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="py-16 bg-white border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="advantages.1">我们的优势</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="advantages.2">客户为何选择 AZK Almaz 有限责任公司</h2>
+      <p class="mt-3 text-slate-600 text-base" data-i18n="advantages.3">在石油产品市场深耕25年以上，我们建立了完善的供应、质量控制与服务体系。</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-[#F8FAFC] p-6 rounded-xl border border-slate-200/80 hover:border-accent/60 hover:shadow-md transition-all">
+        <div class="w-14 h-14 rounded-lg bg-white border border-slate-200 flex items-center justify-center mb-5 shadow-sm"><i data-lucide="trending-down" class="w-8 h-8 text-accent"></i></div>
+        <div class="text-xs font-bold text-slate-400 mb-1">01</div>
+        <h3 class="text-xl font-bold text-navy mb-3" data-i18n="advantages.4">价格优惠</h3>
+        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="advantages.5">与哈萨克斯坦大型炼油厂直接签约，加上优化的物流，使我们能够提供最优的批发和零售价格。</p>
+        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span><span data-i18n="advantages.6">AZK Almaz 品质保证</span></div>
+      </div>
+      <div class="bg-[#F8FAFC] p-6 rounded-xl border border-slate-200/80 hover:border-accent/60 hover:shadow-md transition-all">
+        <div class="w-14 h-14 rounded-lg bg-white border border-slate-200 flex items-center justify-center mb-5 shadow-sm"><i data-lucide="shield-check" class="w-8 h-8 text-leaf"></i></div>
+        <div class="text-xs font-bold text-slate-400 mb-1">02</div>
+        <h3 class="text-xl font-bold text-navy mb-3" data-i18n="advantages.7">燃油品质优良</h3>
+        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="advantages.8">每批石油产品均经过多级化验室检测，完全符合欧4（GOST）标准。</p>
+        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span><span data-i18n="advantages.9">AZK Almaz 品质保证</span></div>
+      </div>
+      <div class="bg-[#F8FAFC] p-6 rounded-xl border border-slate-200/80 hover:border-accent/60 hover:shadow-md transition-all">
+        <div class="w-14 h-14 rounded-lg bg-white border border-slate-200 flex items-center justify-center mb-5 shadow-sm"><i data-lucide="user-check" class="w-8 h-8 text-accent"></i></div>
+        <div class="text-xs font-bold text-slate-400 mb-1">03</div>
+        <h3 class="text-xl font-bold text-navy mb-3" data-i18n="advantages.10">以客户为中心的服务</h3>
+        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="advantages.11">为每一位批发客户配备专属经理，提供灵活的付款方式和高效的单据流转。</p>
+        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span><span data-i18n="advantages.12">AZK Almaz 品质保证</span></div>
+      </div>
+      <div class="bg-[#F8FAFC] p-6 rounded-xl border border-slate-200/80 hover:border-accent/60 hover:shadow-md transition-all">
+        <div class="w-14 h-14 rounded-lg bg-white border border-slate-200 flex items-center justify-center mb-5 shadow-sm"><i data-lucide="clock" class="w-8 h-8 text-navy"></i></div>
+        <div class="text-xs font-bold text-slate-400 mb-1">04</div>
+        <h3 class="text-xl font-bold text-navy mb-3" data-i18n="advantages.13">响应迅速</h3>
+        <p class="text-sm text-slate-600 leading-relaxed" data-i18n="advantages.14">快速核算商务询价、及时解决问题，并提供全天候客户支持。</p>
+        <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span><span data-i18n="advantages.15">AZK Almaz 品质保证</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + STATS -->
+<section id="about" class="py-16 bg-[#F8FAFC]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div class="space-y-6">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider">
+          <i data-lucide="building-2" class="w-3.5 h-3.5"></i><span data-i18n="advantages.16">关于公司</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight leading-tight" data-i18n="advantages.17">AZK Almaz 有限责任公司——自1998年起稳健发展，经验深厚</h2>
+        <p class="text-slate-700 text-base leading-relaxed" data-i18n="advantages.18">25年多来，AZK Almaz 有限责任公司一直是哈萨克斯坦南部石油产品市场的重要参与者。我们专注于为工业、农业、运输企业及零售车主供应优质燃油：AI-92、AI-95 和柴油。</p>
+        <p class="text-slate-600 text-sm leading-relaxed"><span data-i18n="advantages.19">公司拥有</span> <strong class="text-navy" data-i18n="advantages.20">位于奇姆肯特市的自有现代化油库</strong><span data-i18n="advantages.21">、化验室和专用车队，可确保供应不间断、计量准确，并严格遵守各项技术标准。</span></p>
+
+        <div class="pt-2">
+          <h3 class="text-sm font-bold text-navy uppercase tracking-wider mb-3" data-i18n="advantages.22">公司的基本原则：</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div class="flex items-start space-x-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-navy transition-colors">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i>
+              <div><span class="font-bold text-navy block" data-i18n="advantages.23">可靠</span><span class="text-xs text-slate-500" data-i18n="advantages.24">严格履行合同义务</span></div>
+            </div>
+            <div class="flex items-start space-x-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-navy transition-colors">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i>
+              <div><span class="font-bold text-navy block" data-i18n="advantages.25">品质</span><span class="text-xs text-slate-500" data-i18n="advantages.26">配备检测化验室的欧4燃油</span></div>
+            </div>
+            <div class="flex items-start space-x-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-navy transition-colors">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i>
+              <div><span class="font-bold text-navy block" data-i18n="advantages.27">安全</span><span class="text-xs text-slate-500" data-i18n="advantages.28">严格的环保规范与劳动保护</span></div>
+            </div>
+            <div class="flex items-start space-x-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-navy transition-colors">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i>
+              <div><span class="font-bold text-navy block" data-i18n="advantages.29">诚信合作</span><span class="text-xs text-slate-500" data-i18n="advantages.30">价格透明、条件灵活</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo gallery tabs -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between bg-white p-1.5 rounded-xl border border-slate-200 shadow-sm text-xs font-bold gap-1 overflow-x-auto" id="gallery-tabs">
+          <button data-gallery="0" class="tab-btn active flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap"><i data-lucide="store" class="w-4 h-4"></i><span data-i18n="advantages.31">便利店</span></button>
+          <button data-gallery="1" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="truck" class="w-4 h-4"></i><span data-i18n="advantages.32">物流</span></button>
+          <button data-gallery="2" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="microscope" class="w-4 h-4"></i><span data-i18n="advantages.33">GOST &amp; 欧4</span></button>
+          <button data-gallery="3" class="tab-btn flex items-center space-x-1.5 px-3 py-2 rounded-lg whitespace-nowrap text-slate-600 hover:text-navy hover:bg-slate-100"><i data-lucide="fuel" class="w-4 h-4"></i><span data-i18n="advantages.34">零售</span></button>
+        </div>
+
+        <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-navy h-80 sm:h-96">
+          <img id="gallery-img" src="../assets/images/about-gas-station.jpg" alt="ALMAZ 加油站的自营便利店" class="w-full h-full object-cover object-center transition-opacity duration-300" data-i18n-alt="advantages-attr.1">
+          <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0A1E36] via-[#0A1E36]/85 to-transparent p-6 text-white">
+            <div class="flex items-center space-x-2 text-accent text-xs font-bold uppercase tracking-wider mb-1"><i data-lucide="award" class="w-4 h-4"></i><span id="gallery-badge" data-i18n="advantages.35">便利店</span></div>
+            <h4 id="gallery-title" class="text-base font-bold text-white" data-i18n="advantages.36">加油站自营便利店</h4>
+            <p id="gallery-subtitle" class="text-xs text-slate-300 mt-1" data-i18n="advantages.37">在 ALMAZ 加油站购买旅途用品和日常商品</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats band -->
+    <div class="bg-navy rounded-2xl p-8 border border-slate-800 shadow-xl text-white">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight">1998</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide" data-i18n="advantages.38">成立年份</div></div>
+        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight">25+</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide" data-i18n="advantages.39">从业年数</div></div>
+        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight" data-i18n="advantages.40">自有</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide" data-i18n="advantages.41">奇姆肯特市油库</div></div>
+        <div class="pt-4 md:pt-0"><div class="text-3xl sm:text-4xl lg:text-5xl font-black text-accent tracking-tight" data-i18n="advantages.42">网络</div><div class="mt-2 text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-wide" data-i18n="advantages.43">现代化加油站</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="py-16 bg-white border-t border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="text-center max-w-3xl mx-auto">
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="products.1">欧4产品</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="products.2">优质石油产品</h2>
+      <p class="mt-3 text-slate-600 text-base" data-i18n="products.3">所有牌号燃油均直接从主要炼油厂供应，并经过强制化验室检测，出具质量合格证。</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
+        <div>
+          <div class="bg-navy text-white p-6">
+            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent" data-i18n="products.4">AI-92</span><span class="text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono" data-i18n="products.5">GOST 32513-2013</span></div>
+            <div class="inline-flex items-center space-x-1.5 bg-leaf/20 border border-leaf/50 px-3 py-1 rounded text-xs font-bold text-leaf mt-1"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span data-i18n="products.6">符合质量要求</span></div>
+          </div>
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]" data-i18n="products.7">环保等级 K4（欧4）的无铅汽油。适用于机动车汽油发动机。</p>
+            <div class="space-y-2 pt-2 border-t border-slate-200">
+              <div class="text-xs font-bold text-navy uppercase tracking-wider" data-i18n="products.8">技术参数：</div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.9">辛烷值（研究法）</span><span class="font-bold text-slate-800" data-i18n="products.10">不低于 92.0</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.11">环保等级</span><span class="font-bold text-slate-800" data-i18n="products.12">K4（欧4）</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.13">硫含量</span><span class="font-bold text-slate-800" data-i18n="products.14">不高于 50 毫克/千克</span></div>
+              <div class="flex justify-between items-center text-xs py-1"><span class="text-slate-500" data-i18n="products.15">15°C 时密度</span><span class="font-bold text-slate-800" data-i18n="products.16">740 - 755 千克/立方米</span></div>
+            </div>
+            <div class="space-y-1.5 pt-2">
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.17">发动机启动稳定</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.18">保护燃油系统部件</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.19">符合严格的环保规范</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-2">
+          <a href="tel:+77077294051" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span data-i18n="products.20">索取批发价格</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+          <a href="tel:+77758653737" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span data-i18n="products.21">索取质量合格证</span></a>
+        </div>
+      </div>
+
+      <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
+        <div>
+          <div class="bg-navy text-white p-6">
+            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent" data-i18n="products.22">AI-95</span><span class="text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono" data-i18n="products.23">GOST 32513-2013</span></div>
+            <div class="inline-flex items-center space-x-1.5 bg-leaf/20 border border-leaf/50 px-3 py-1 rounded text-xs font-bold text-leaf mt-1"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span data-i18n="products.24">符合质量要求</span></div>
+          </div>
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]" data-i18n="products.25">高标号无铅汽油，属优质产品。可提供最大发动机功率并保持喷油嘴清洁。</p>
+            <div class="space-y-2 pt-2 border-t border-slate-200">
+              <div class="text-xs font-bold text-navy uppercase tracking-wider" data-i18n="products.26">技术参数：</div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.27">辛烷值（研究法）</span><span class="font-bold text-slate-800" data-i18n="products.28">不低于 95.0</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.29">环保等级</span><span class="font-bold text-slate-800" data-i18n="products.30">K4（欧4）</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.31">硫含量</span><span class="font-bold text-slate-800" data-i18n="products.32">不高于 50 毫克/千克</span></div>
+              <div class="flex justify-between items-center text-xs py-1"><span class="text-slate-500" data-i18n="products.33">15°C 时密度</span><span class="font-bold text-slate-800" data-i18n="products.34">745 - 760 千克/立方米</span></div>
+            </div>
+            <div class="space-y-1.5 pt-2">
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.35">动力更强，行驶更平顺</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.36">抗爆性好</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.37">高速公路油耗更低</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-2">
+          <a href="tel:+77077294051" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span data-i18n="products.38">索取批发价格</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+          <a href="tel:+77758653737" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span data-i18n="products.39">索取质量合格证</span></a>
+        </div>
+      </div>
+
+      <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
+        <div>
+          <div class="bg-navy text-white p-6">
+            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent" data-i18n="products.40">柴油</span></div>
+            <span class="text-[11px] bg-white/10 text-slate-300 px-2 py-1 rounded border border-white/20 font-mono block w-fit mb-1" data-i18n="products.41">GOST 32511-2013 / 欧4</span>
+            <div class="inline-flex items-center space-x-1.5 bg-leaf/20 border border-leaf/50 px-3 py-1 rounded text-xs font-bold text-leaf mt-1"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span data-i18n="products.42">符合质量要求</span></div>
+          </div>
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]" data-i18n="products.43">柴油（夏季 / 冬季牌号），适用于货车、轿车和专用车辆的现代柴油发动机。</p>
+            <div class="space-y-2 pt-2 border-t border-slate-200">
+              <div class="text-xs font-bold text-navy uppercase tracking-wider" data-i18n="products.44">技术参数：</div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.45">十六烷值</span><span class="font-bold text-slate-800" data-i18n="products.46">不低于 51.0</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.47">环保等级</span><span class="font-bold text-slate-800" data-i18n="products.48">K4（欧4）</span></div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-slate-100"><span class="text-slate-500" data-i18n="products.49">闪点</span><span class="font-bold text-slate-800" data-i18n="products.50">不低于 55 °C</span></div>
+              <div class="flex justify-between items-center text-xs py-1"><span class="text-slate-500" data-i18n="products.51">硫含量</span><span class="font-bold text-slate-800" data-i18n="products.52">不高于 50 毫克/千克</span></div>
+            </div>
+            <div class="space-y-1.5 pt-2">
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.53">十六烷值高</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.54">润滑性能优异</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.55">积碳极少</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-2">
+          <a href="tel:+77077294051" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span data-i18n="products.56">索取批发价格</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+          <a href="tel:+77758653737" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span data-i18n="products.57">索取质量合格证</span></a>
+        </div>
+      </div>
+
+      <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
+        <div>
+          <div class="bg-navy text-white p-6">
+            <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent" data-i18n="products.58">车用液化石油气</span><span class="text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono" data-i18n="products.59">LPG</span></div>
+          </div>
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[60px]" data-i18n="products.60">供加装燃气设备的车辆使用的液化石油气（丙丁烷）。在 ALMAZ 加油站网络的加注站点可以加气。</p>
+            <div class="space-y-1.5 pt-2">
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.61">比汽油更经济的选择</span></div>
+              <div class="flex items-center space-x-2 text-xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-leaf shrink-0"></i><span data-i18n="products.62">ALMAZ 网络加油站有售</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 pt-0 space-y-2">
+          <a href="tel:+77758653737" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span data-i18n="products.63">咨询供应情况与价格</span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quality banner -->
+    <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-gradient-to-r from-navy via-navy-light to-navy-dark text-white p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+      <div class="md:col-span-8 space-y-3">
+        <div class="inline-flex items-center space-x-2 bg-leaf/20 text-leaf border border-leaf/40 px-3 py-1 rounded-full text-xs font-extrabold"><i data-lucide="microscope" class="w-4 h-4"></i><span data-i18n="products.64">100% 进货与出货化验室检测</span></div>
+        <h3 class="text-xl sm:text-2xl font-black" data-i18n="products.65">每批产品均附有化学分析报告和质量合格证</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl" data-i18n="products.66">燃油在我们自有化验室的设备上，经过密度、辛烷值/十六烷值以及机械杂质和水分含量的多级检测。</p>
+        <div class="pt-2"><a href="tel:+77758653737" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-xs px-4 py-2.5 rounded-lg shadow inline-flex items-center space-x-2"><span data-i18n="products.67">致电索取质量合格证</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
+      </div>
+      <div class="md:col-span-4 h-48 md:h-full min-h-[160px] rounded-xl overflow-hidden border border-slate-700/80 relative">
+        <img src="../assets/images/lab.jpg" alt="质量控制化验室" class="w-full h-full object-cover object-center" data-i18n-alt="products-attr.1">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A1E36]/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-2 left-3 text-[11px] font-bold text-white bg-navy/80 px-2 py-0.5 rounded backdrop-blur" data-i18n="products.68">AZK Almaz 化验室</div>
+      </div>
+    </div>
+
+    <!-- Calculator -->
+    <div class="bg-navy text-white rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 rounded-xl bg-accent text-navy flex items-center justify-center shadow-md"><i data-lucide="calculator" class="w-6 h-6 stroke-[2.5]"></i></div>
+          <div><h3 class="text-xl font-bold" data-i18n="products.69">燃油批发费用计算器</h3><p class="text-xs text-slate-300" data-i18n="products.70">为企业和个体工商户快速估算数量与物流</p></div>
+        </div>
+        <div class="text-xs bg-white/10 px-3 py-1.5 rounded-md border border-white/15 text-slate-300 flex items-center space-x-2"><i data-lucide="info" class="w-4 h-4 text-accent"></i><span data-i18n="products.71">最终价格取决于数量和交货基准</span></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-7 space-y-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="products.72">1. 选择燃油牌号：</label>
+            <div class="grid grid-cols-3 gap-2" id="calc-fuel-buttons">
+              <button data-fuel="ai92" data-price="205" data-name="АИ-92" data-code="ГОСТ 32513-2013" class="calc-fuel-btn py-2.5 px-3 rounded-lg text-sm font-bold border text-center bg-accent text-navy border-accent shadow" data-i18n="products.73">AI-92</button>
+              <button data-fuel="ai95" data-price="255" data-name="АИ-95" data-code="ГОСТ 32513-2013" class="calc-fuel-btn py-2.5 px-3 rounded-lg text-sm font-bold border text-center bg-navy-light text-slate-200 border-slate-700 hover:border-slate-500" data-i18n="products.74">AI-95</button>
+              <button data-fuel="dt" data-price="295" data-name="Дизельное топливо" data-code="ГОСТ 32511-2013" class="calc-fuel-btn py-2.5 px-3 rounded-lg text-sm font-bold border text-center bg-navy-light text-slate-200 border-slate-700 hover:border-slate-500" data-i18n="products.75">柴油</button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="products.76">2. 批量：</label>
+                <div class="inline-flex rounded border border-slate-700 p-0.5 bg-navy-dark">
+                  <button id="unit-liters" class="px-2 py-0.5 text-xs font-bold rounded bg-accent text-navy" data-i18n="products.77">升</button>
+                  <button id="unit-tons" class="px-2 py-0.5 text-xs font-bold rounded text-slate-400" data-i18n="products.78">吨</button>
+                </div>
+              </div>
+              <input type="number" id="calc-volume" min="1000" step="1000" value="10000" class="w-full bg-navy-light border border-slate-700 text-white font-bold text-lg px-4 py-2.5 rounded-lg focus:outline-none focus:border-accent">
+              <div class="text-[11px] text-slate-400 mt-1" data-i18n="products.79">最低批发订购量：1,000 升</div>
+            </div>
+            <div>
+              <label class="flex items-center h-[26px] text-xs font-bold uppercase tracking-wider text-slate-300 mb-2" data-i18n="products.80">3. 交货基准 / 目的地：</label>
+              <select id="calc-destination" class="w-full bg-navy-light border border-slate-700 text-white font-medium text-sm px-3 py-3.5 rounded-lg focus:outline-none focus:border-accent">
+                <option data-i18n="products.81">奇姆肯特市（市区内）</option>
+                <option data-i18n="products.82">自提（奇姆肯特市油库）</option>
+                <option data-i18n="products.83">突厥斯坦市（油罐车配送）</option>
+                <option data-i18n="products.84">赛拉姆区</option>
+                <option data-i18n="products.85">肯陶市 / 阿雷斯市</option>
+                <option data-i18n="products.86">突厥斯坦州其他地区</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-navy-light rounded-xl p-6 border border-slate-700 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="text-xs text-slate-400 font-bold uppercase tracking-wider" data-i18n="products.87">初步估算：</div>
+            <div class="flex justify-between items-baseline py-1 border-b border-slate-700/80"><span class="text-xs text-slate-300" data-i18n="products.88">产品：</span><span id="calc-out-product" class="text-sm font-bold text-white" data-i18n="products.89">AI-92（GOST 32513-2013）</span></div>
+            <div class="flex justify-between items-baseline py-1 border-b border-slate-700/80"><span class="text-xs text-slate-300" data-i18n="products.90">估算数量：</span><span id="calc-out-volume" class="text-sm font-bold text-white" data-i18n="products.91">10,000 升（7.45 吨）</span></div>
+            <div class="pt-2">
+              <div class="text-xs text-slate-400 mb-0.5" data-i18n="products.92">估算金额：</div>
+              <div id="calc-out-total" class="text-3xl font-black text-accent">~ 2 050 000 ₸</div>
+              <div id="calc-out-rate" class="text-[11px] text-slate-400 mt-1" data-i18n="products.93">基准价约 205 ₸/升（含增值税）</div>
+            </div>
+          </div>
+          <a href="tel:+77077294051" class="w-full bg-accent hover:bg-accent-dark text-navy font-extrabold py-3.5 px-4 rounded-lg text-sm shadow flex items-center justify-center space-x-2"><span data-i18n="products.94">按此数量提交申请</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-16 bg-[#F8FAFC]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="text-center max-w-3xl mx-auto">
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="services.1">我们的服务</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="services.2">石油产品市场的全方位服务</h2>
+      <p class="mt-3 text-slate-600 text-base" data-i18n="services.3">我们为各种复杂程度的需求提供可靠方案——从一次性批发发货到长期合同服务与仓储。</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="truck" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.4">批发销售</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.5">为企业、农业综合体和独立加油站提供大宗及小批量的优质汽油和柴油批发供应。</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.6">由我们自有的油罐车队发货（2,000 至 40,000 升），或由客户自提于我们的油库。</p>
+        </div>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.7">致电咨询此项服务</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="fuel" class="w-6 h-6 text-leaf"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.8">零售销售</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.9">在自营的 ALMAZ 品牌加油站网络，提供无可挑剔的燃油品质、精准加注和高水平服务。</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.10">24/7 全天候服务、货车停车位、支持各类支付方式、高流量加油机、舒适的便利店和现代化咖啡机。</p>
+        </div>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.11">致电咨询此项服务</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="navigation" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.12">配送与物流</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.13">由自有欧4油罐车队在奇姆肯特市及突厥斯坦州范围内快速运输石油产品。</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.14">每辆车均配备 GPS 定位、经校准的舱室、油泵和流量计，准时出车。</p>
+        </div>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.15">致电咨询此项服务</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="warehouse" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.16">石油产品仓储</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.17">在奇姆肯特市自有的现代化油库提供轻质油品的代保管服务。</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.18">罐区配备自动计量系统以及现代化的安全与监控设施。</p>
+        </div>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.19">致电咨询此项服务</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="microscope" class="w-6 h-6 text-leaf"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.20">质量控制</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.21">在收货、储存和发货的各个环节，对燃油成分和性能进行多级化验室检测。</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.22">每批产品均附有经认可的化学化验室出具的正式质量合格证。</p>
+        </div>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.23">致电咨询此项服务</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
+        <div>
+          <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="credit-card" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy" data-i18n="services.24">B2B 与加油卡</h3></div></div>
+          <p class="text-sm font-medium text-slate-800 mb-2" data-i18n="services.25">为企业车队提供灵活的合作条件、延期付款、个人账户和统一加油账户。</p>
+          <p class="text-xs text-slate-500 leading-relaxed mb-4" data-i18n="services.26">专属经理、每辆车的详细费用分析以及高效的电子单据流转（电子发票）。</p>
+        </div>
+        <a href="tel:+77758653737" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><span data-i18n="services.27">致电咨询此项服务</span><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+      </div>
+    </div>
+
+    <!-- Fleet banner -->
+    <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-xl bg-navy text-white p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+      <img src="../assets/images/fleet.jpg" alt="油罐车队" class="absolute inset-0 w-full h-full object-cover object-center opacity-25" data-i18n-alt="services-attr.1">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0A1E36] via-navy/95 to-navy-light/85"></div>
+      <div class="relative z-10 md:col-span-8 space-y-3">
+        <div class="inline-flex items-center space-x-2 bg-accent/20 text-accent border border-accent/40 px-3 py-1 rounded-full text-xs font-extrabold"><i data-lucide="shield-check" class="w-4 h-4"></i><span data-i18n="services.28">自有欧4专用车队</span></div>
+        <h3 class="text-xl sm:text-2xl font-black" data-i18n="services.29">保障在本地区运输 2,000 至 40,000 升</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl" data-i18n="services.30">每辆油罐车均配有经校准的舱室、油泵、流量计和卫星 GPS 定位，可在途中监控位置并保障燃油安全。</p>
+      </div>
+      <div class="relative z-10 md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-3 justify-center">
+        <a href="tel:+77758653737" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3.5 rounded-xl shadow flex items-center justify-center space-x-2 text-center"><span data-i18n="services.31">预订运输</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+        <a href="tel:+77758653737" class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-5 py-3.5 rounded-xl border border-white/20 flex items-center justify-center space-x-2 text-center backdrop-blur"><i data-lucide="phone-call" class="w-4 h-4 text-accent"></i><span>+7 (775) 865-37-37</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS TIMELINE -->
+<section class="py-16 bg-white border-t border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="text-center max-w-3xl mx-auto">
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="process-timeline.1">合作流程</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="process-timeline.2">成功发货的5个步骤</h2>
+      <p class="mt-3 text-slate-600 text-base" data-i18n="process-timeline.3">从首次咨询到完整单据，流程透明、运转顺畅。</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="bg-[#F8FAFC] rounded-xl p-5 border border-slate-200/90 shadow-sm hover:border-navy transition-all">
+        <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-lg bg-navy text-accent font-black text-lg flex items-center justify-center shadow-sm">01</div><i data-lucide="arrow-right" class="w-5 h-5 text-slate-300 hidden lg:block"></i></div>
+        <h3 class="text-base font-bold text-navy mb-1" data-i18n="process-timeline.4">咨询</h3>
+        <div class="text-xs font-semibold text-navy-light mb-2" data-i18n="process-timeline.5">在网站提交申请或致电经理</div>
+        <p class="text-xs text-slate-500 leading-relaxed" data-i18n="process-timeline.6">您通过电话与我们联系。经理会确认您对数量和燃油牌号的需求。</p>
+      </div>
+      <div class="bg-[#F8FAFC] rounded-xl p-5 border border-slate-200/90 shadow-sm hover:border-navy transition-all">
+        <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-lg bg-navy text-accent font-black text-lg flex items-center justify-center shadow-sm">02</div><i data-lucide="arrow-right" class="w-5 h-5 text-slate-300 hidden lg:block"></i></div>
+        <h3 class="text-base font-bold text-navy mb-1" data-i18n="process-timeline.7">确定条件</h3>
+        <div class="text-xs font-semibold text-navy-light mb-2" data-i18n="process-timeline.8">核算数量并商定价格</div>
+        <p class="text-xs text-slate-500 leading-relaxed" data-i18n="process-timeline.9">我们会结合发货量、交货基准和结算方式，制定专属的商务报价。</p>
+      </div>
+      <div class="bg-[#F8FAFC] rounded-xl p-5 border border-slate-200/90 shadow-sm hover:border-navy transition-all">
+        <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-lg bg-navy text-accent font-black text-lg flex items-center justify-center shadow-sm">03</div><i data-lucide="arrow-right" class="w-5 h-5 text-slate-300 hidden lg:block"></i></div>
+        <h3 class="text-base font-bold text-navy mb-1" data-i18n="process-timeline.10">签约</h3>
+        <div class="text-xs font-semibold text-navy-light mb-2" data-i18n="process-timeline.11">签订合同并出具单据</div>
+        <p class="text-xs text-slate-500 leading-relaxed" data-i18n="process-timeline.12">我们商定并签署供货合同，开具付款发票，并安排发货计划。</p>
+      </div>
+      <div class="bg-[#F8FAFC] rounded-xl p-5 border border-slate-200/90 shadow-sm hover:border-navy transition-all">
+        <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-lg bg-navy text-accent font-black text-lg flex items-center justify-center shadow-sm">04</div><i data-lucide="arrow-right" class="w-5 h-5 text-slate-300 hidden lg:block"></i></div>
+        <h3 class="text-base font-bold text-navy mb-1" data-i18n="process-timeline.13">发货</h3>
+        <div class="text-xs font-semibold text-navy-light mb-2" data-i18n="process-timeline.14">自提或由油罐车配送</div>
+        <p class="text-xs text-slate-500 leading-relaxed" data-i18n="process-timeline.15">在油库向您的运输罐车精准加注，或由我们的专用车辆配送燃油。</p>
+      </div>
+      <div class="bg-[#F8FAFC] rounded-xl p-5 border border-slate-200/90 shadow-sm hover:border-navy transition-all">
+        <div class="flex items-center justify-between mb-3"><div class="w-10 h-10 rounded-lg bg-navy text-accent font-black text-lg flex items-center justify-center shadow-sm">05</div></div>
+        <h3 class="text-base font-bold text-navy mb-1" data-i18n="process-timeline.16">后续服务</h3>
+        <div class="text-xs font-semibold text-navy-light mb-2" data-i18n="process-timeline.17">质量合格证与完整单据</div>
+        <p class="text-xs text-slate-500 leading-relaxed" data-i18n="process-timeline.18">我们为每一批发出的货物提供完整的结算会计单据和质量合格证。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AZS NETWORK -->
+<section id="azs" class="py-16 bg-[#F8FAFC]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
+      <div>
+        <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="azs-network.1">零售与服务</div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="azs-network.2">ALMAZ 品牌加油站网络</h2>
+        <p class="mt-2 text-slate-600 text-sm max-w-2xl" data-i18n="azs-network.3">位于奇姆肯特市和突厥斯坦州主要干道上的现代化加油综合站。全天候精准加注，服务水平高。</p>
+      </div>
+      <div class="flex items-center space-x-2 bg-white p-1 rounded-lg border border-slate-200 text-xs font-bold" id="azs-filters">
+        <button data-filter="all" class="azs-filter-btn px-3 py-1.5 rounded-md bg-navy text-white" data-i18n="azs-network.4">全部加油站（4座）</button>
+        <button data-filter="г. Шымкент" class="azs-filter-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-navy" data-i18n="azs-network.5">奇姆肯特（3座）</button>
+        <button data-filter="Туркестанская область" class="azs-filter-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-navy" data-i18n="azs-network.6">突厥斯坦州（1座）</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Map -->
+      <div class="lg:col-span-6 bg-navy rounded-2xl overflow-hidden border border-slate-800 shadow-xl relative min-h-[420px] flex flex-col justify-between">
+        <div class="p-4 bg-navy-dark border-b border-slate-800 flex items-center justify-between text-xs text-slate-300">
+          <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i><span class="font-bold text-white" data-i18n="azs-network.7">奇姆肯特 &amp; 突厥斯坦州</span></div>
+          <span class="text-leaf font-semibold flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-leaf"></span><span data-i18n="azs-network.8">所有站点 24/7 营业</span></span>
+        </div>
+        <div class="relative w-full h-[320px] bg-navy-dark p-6 overflow-hidden">
+          <svg class="absolute inset-0 w-full h-full stroke-slate-700/60 stroke-2 fill-none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 50 280 Q 200 180 450 80" stroke="rgba(245,179,1,0.4)" stroke-width="3"/>
+            <path d="M 200 180 Q 320 220 480 250" />
+            <path d="M 200 180 Q 150 100 80 40" />
+          </svg>
+          <button data-station="azs-1" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:62%; left:38%;">
+            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.9">1号</span>
+          </button>
+          <button data-station="azs-2" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:38%; left:55%;">
+            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.10">2号</span>
+          </button>
+          <button data-station="azs-3" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:53%; left:67%;">
+            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.11">3号</span>
+          </button>
+          <button data-station="azs-4" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:27%; left:24%;">
+            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.12">4号</span>
+          </button>
+          <div class="absolute bottom-3 left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300">
+            <span class="font-bold text-white block mb-0.5" data-i18n="azs-network.13">点击加油站标记：</span><span data-i18n="azs-network.14">即可查看地址并规划路线</span>
+          </div>
+        </div>
+
+        <div class="relative p-5 bg-navy-light border-t border-slate-800 text-white space-y-3 overflow-hidden" id="station-detail">
+          <img src="../assets/images/canopy.jpg" alt="Almaz 加油站" class="absolute inset-0 w-full h-full object-cover object-center opacity-20" data-i18n-alt="azs-network-attr.1">
+          <div class="absolute inset-0 bg-gradient-to-r from-navy-light via-navy-light/95 to-navy/90"></div>
+          <div class="relative z-10 flex justify-between items-start">
+            <div>
+              <span class="text-[10px] bg-accent text-navy px-2 py-0.5 rounded font-black uppercase" data-i18n="azs-network.15">已在地图上选中</span>
+              <h4 id="station-name" class="text-base font-bold text-white mt-1" data-i18n="azs-network.16">ALMAZ 1号加油站</h4>
+              <p id="station-address" class="text-xs text-slate-300" data-i18n="azs-network.17">奇姆肯特市图兰区，阿拉木图—铁尔梅兹 A2 公路 858 公里处</p>
+              <p id="station-direction" class="text-xs text-accent font-semibold mt-0.5" data-i18n="azs-network.18">开往塔什干方向，位于右侧</p>
+            </div>
+            <a id="station-route" href="#" target="_blank" rel="noopener" class="bg-accent hover:bg-accent-dark text-navy text-xs font-bold px-3 py-2 rounded flex items-center space-x-1 shadow shrink-0">
+              <i data-lucide="navigation" class="w-3.5 h-3.5"></i><span data-i18n="azs-network.19">路线</span><i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </div>
+          <div id="station-amenities" class="relative z-10 flex flex-wrap gap-1.5 pt-1 text-xs"></div>
+        </div>
+      </div>
+
+      <!-- Station cards -->
+      <div class="lg:col-span-6 space-y-4" id="station-cards">
+        <div class="station-card active cursor-pointer rounded-2xl p-6 transition-all border-2 shadow-sm bg-white border-navy" data-station="azs-1" data-region="г. Шымкент">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-navy text-accent" data-i18n="azs-network.20">1号站</div><div><h3 class="text-lg font-bold text-navy" data-i18n="azs-network.21">ALMAZ 1号加油站</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded" data-i18n="azs-network.22">奇姆肯特市</span></div></div>
+            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="azs-network.23">全天候（24/7）</span></span>
+          </div>
+          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900" data-i18n="azs-network.24">奇姆肯特市图兰区，阿拉木图—铁尔梅兹 A2 公路 858 公里处</span><p class="text-slate-500 font-medium" data-i18n="azs-network.25">开往塔什干方向，位于右侧</p></div></div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
+            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700" data-i18n="azs-network.26">燃油：</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.27">AI-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.28">柴油</span></div></div>
+            <a href="tel:+77758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (775) 865-37-37</span></a>
+          </div>
+        </div>
+
+        <div class="station-card cursor-pointer rounded-2xl p-6 transition-all border-2 shadow-sm bg-white border-slate-200 hover:border-slate-400" data-station="azs-2" data-region="г. Шымкент">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-slate-100 text-navy" data-i18n="azs-network.29">2号站</div><div><h3 class="text-lg font-bold text-navy" data-i18n="azs-network.30">ALMAZ 2号加油站</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded" data-i18n="azs-network.31">奇姆肯特市</span></div></div>
+            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="azs-network.32">全天候（24/7）</span></span>
+          </div>
+          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900" data-i18n="azs-network.33">奇姆肯特市阿拜区，卡伊纳尔布拉克居住区 349 号地块</span><p class="text-slate-500 font-medium" data-i18n="azs-network.34">开往塔拉兹方向，位于右侧</p></div></div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
+            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700" data-i18n="azs-network.35">燃油：</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.36">AI-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.37">AI-95</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.38">柴油</span></div></div>
+            <a href="tel:+77758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (775) 865-37-37</span></a>
+          </div>
+        </div>
+
+        <div class="station-card cursor-pointer rounded-2xl p-6 transition-all border-2 shadow-sm bg-white border-slate-200 hover:border-slate-400" data-station="azs-3" data-region="Туркестанская область">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-slate-100 text-navy" data-i18n="azs-network.39">3号站</div><div><h3 class="text-lg font-bold text-navy" data-i18n="azs-network.40">ALMAZ 3号加油站</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded" data-i18n="azs-network.41">突厥斯坦州</span></div></div>
+            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="azs-network.42">全天候（24/7）</span></span>
+          </div>
+          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900" data-i18n="azs-network.43">突厥斯坦州赛拉姆区卡伊纳尔布拉克乡，卡瑟姆别克·达特卡村 219 街区</span><p class="text-slate-500 font-medium" data-i18n="azs-network.44">开往突厥斯坦方向，位于右侧</p></div></div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
+            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700" data-i18n="azs-network.45">燃油：</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.46">AI-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.47">AI-95</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.48">柴油</span></div></div>
+            <a href="tel:+77758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (775) 865-37-37</span></a>
+          </div>
+        </div>
+
+        <div class="station-card cursor-pointer rounded-2xl p-6 transition-all border-2 shadow-sm bg-white border-slate-200 hover:border-slate-400" data-station="azs-4" data-region="г. Шымкент">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-xl font-black text-sm flex items-center justify-center shadow-sm bg-slate-100 text-navy" data-i18n="azs-network.49">4号站</div><div><h3 class="text-lg font-bold text-navy" data-i18n="azs-network.50">ALMAZ 4号加油站</h3><span class="text-xs font-bold text-leaf bg-leaf/10 px-2 py-0.5 rounded" data-i18n="azs-network.51">奇姆肯特市</span></div></div>
+            <span class="text-xs text-slate-500 font-semibold flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="azs-network.52">全天候（24/7）</span></span>
+          </div>
+          <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900" data-i18n="azs-network.53">奇姆肯特市卡拉套区 223 街区 8 号楼</span><p class="text-slate-500 font-medium" data-i18n="azs-network.54">开往阿拉木图方向，位于右侧</p></div></div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
+            <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700" data-i18n="azs-network.55">燃油：</span><div class="flex space-x-1"><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.56">AI-92</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.57">AI-95</span><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded" data-i18n="azs-network.58">柴油</span></div></div>
+            <a href="tel:+77758653737" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (775) 865-37-37</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO BAND -->
+<section class="py-12 bg-gradient-to-r from-navy via-navy-light to-navy-dark text-white border-t border-b border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-700/80 pb-6">
+      <div class="space-y-1">
+        <div class="inline-flex items-center space-x-2 text-accent text-xs font-bold uppercase tracking-wider"><i data-lucide="gift" class="w-4 h-4"></i><span data-i18n="promo-band.1">ALMAZ 会员计划</span></div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight" data-i18n="promo-band.2">加油站的优惠活动与积分计划</h2>
+      </div>
+      <a href="tel:+77758653737" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3 rounded-lg shadow flex items-center justify-center space-x-2 self-start md:self-auto"><span data-i18n="promo-band.3">办理加油卡</span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 space-y-3 hover:border-accent/60 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-accent/20 text-accent flex items-center justify-center"><i data-lucide="credit-card" class="w-5 h-5"></i></div>
+        <h3 class="text-lg font-bold" data-i18n="promo-band.4">「常客」积分卡</h3>
+        <p class="text-xs text-slate-300 leading-relaxed" data-i18n="promo-band.5">在所有 ALMAZ 加油站加油即可累积积分，并用于便利店消费。</p>
+        <div class="pt-2 text-xs font-bold text-accent" data-i18n="promo-band.6">详情请在加油站咨询</div>
+      </div>
+      <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 space-y-3 hover:border-accent/60 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-leaf/20 text-leaf flex items-center justify-center"><i data-lucide="percent" class="w-5 h-5"></i></div>
+        <h3 class="text-lg font-bold" data-i18n="promo-band.7">加满油箱享折扣</h3>
+        <p class="text-xs text-slate-300 leading-relaxed" data-i18n="promo-band.8">ALMAZ 加油站不定期为加满油箱的 AI-92 和 AI-95 汽油提供折扣。</p>
+        <div class="pt-2 text-xs font-bold text-leaf" data-i18n="promo-band.9">最新优惠条件请在加油站查询</div>
+      </div>
+      <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 space-y-3 hover:border-accent/60 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-accent/20 text-accent flex items-center justify-center"><i data-lucide="sparkles" class="w-5 h-5"></i></div>
+        <h3 class="text-lg font-bold" data-i18n="promo-band.10">企业加油卡</h3>
+        <p class="text-xs text-slate-300 leading-relaxed" data-i18n="promo-band.11">车队费用管控、电子结算单据，为财务部门提供便捷的单据流转。</p>
+        <div class="pt-2 text-xs font-bold text-accent" data-i18n="promo-band.12">全网络统一账户</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-16 bg-white border-t border-slate-200/80">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <div class="text-center space-y-3">
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-navy/10 text-navy text-xs font-black uppercase tracking-wider"><i data-lucide="help-circle" class="w-4 h-4 text-accent"></i><span data-i18n="faq.1">问与答</span></div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-navy" data-i18n="faq.2">常见问题</h2>
+      <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto" data-i18n="faq.3">解答客户的疑问</p>
+    </div>
+
+    <div class="space-y-4">
+      <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden" open>
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.4">公司从哪一年开始经营？</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.5">AZK Almaz 有限责任公司自1998年起进入石油产品市场，至今已有25年以上。</p></div>
+      </details>
+      <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden">
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.6">你们销售哪些类型的燃油？</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.7">AI-92、AI-95 汽油和柴油——所有产品均符合质量要求并附有相关单据。</p></div>
+      </details>
+      <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden">
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.8">你们与企业客户合作吗？</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.9">是的，批发是我们的主营方向之一：为企业客户、工业企业、农业组织和公共机构供货，并提供加油卡和油票。</p></div>
+      </details>
+      <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden">
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.10">如何支付货款？</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.11">可按照哈萨克斯坦共和国现行法律和已签合同的条款，以任何合法方式结算。</p></div>
+      </details>
+      <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden">
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.12">对燃油质量或数量有疑问时该怎么办？</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.13">请联系公司——每一件咨询都会单独处理，并核查、分析随附单据。</p></div>
+      </details>
+      <details class="rounded-2xl border border-slate-200 bg-white hover:border-slate-300 shadow-sm overflow-hidden">
+        <summary class="p-5 sm:p-6 flex items-center justify-between gap-4"><span class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.14">你们在哪些地区开展业务？</span><i data-lucide="chevron-down" class="w-5 h-5 shrink-0 transition-transform"></i></summary>
+        <div class="px-5 pb-5 sm:px-6 sm:pb-6 pt-0 text-slate-700 text-sm sm:text-base leading-relaxed border-t border-slate-200/60 mt-1"><p class="pt-3" data-i18n="faq.15">油库和加油站网络位于奇姆肯特市和突厥斯坦州，供货覆盖哈萨克斯坦南部所有地区。</p></div>
+      </details>
+    </div>
+
+    <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center sm:text-left"><h4 class="font-extrabold text-navy text-base sm:text-lg" data-i18n="faq.16">还有其他问题？</h4><p class="text-xs sm:text-sm text-slate-600" data-i18n="faq.17">请联系 AZK Almaz 有限责任公司销售部咨询。</p></div>
+      <a href="tel:+77252357444" class="inline-flex items-center space-x-2 bg-navy hover:bg-navy-light text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl"><i data-lucide="phone-call" class="w-4 h-4 text-accent"></i><span>+7 (7252) 357-444</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts" class="py-16 bg-[#F8FAFC]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="text-center max-w-3xl mx-auto">
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2" data-i18n="contacts.1">与我们联系</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight" data-i18n="contacts.2">联系方式与各部门</h2>
+      <p class="mt-3 text-slate-600 text-base" data-i18n="contacts.3">选择您需要的部门直接致电——我们会解答所有问题。</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white rounded-2xl p-6 border-2 border-slate-200/90 shadow-sm hover:border-navy transition-all flex flex-col justify-between space-y-4">
+        <div class="flex-1 flex flex-col justify-between">
+          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="phone-call" class="w-5 h-5 text-accent"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="contacts.4">办公室</span><h3 class="text-base font-bold text-navy leading-snug" data-i18n="contacts.5">一般咨询</h3></div></div>
+          <div class="space-y-2 pt-2"><a href="tel:+77252357444" class="text-xl font-black text-navy hover:text-accent block tracking-tight">+7 (7252) 357-444</a></div>
+        </div>
+        <a href="tel:+77252357444" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block" data-i18n="contacts.6">致电该部门</a>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border-2 border-slate-200/90 shadow-sm hover:border-navy transition-all flex flex-col justify-between space-y-4">
+        <div class="flex-1 flex flex-col justify-between">
+          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="briefcase" class="w-5 h-5 text-leaf"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="contacts.7">批发部</span><h3 class="text-base font-bold text-navy leading-snug" data-i18n="contacts.8">批发业务咨询</h3></div></div>
+          <div class="space-y-2 pt-2"><a href="tel:+77077294051" class="text-xl font-black text-navy hover:text-accent block tracking-tight">+7 (707) 729-40-51</a></div>
+        </div>
+        <a href="tel:+77077294051" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block" data-i18n="contacts.9">致电该部门</a>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border-2 border-slate-200/90 shadow-sm hover:border-navy transition-all flex flex-col justify-between space-y-4">
+        <div class="flex-1 flex flex-col justify-between">
+          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="fuel" class="w-5 h-5 text-leaf"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="contacts.10">零售部</span><h3 class="text-base font-bold text-navy leading-snug" data-i18n="contacts.11">通过加油站网络的零售业务咨询</h3></div></div>
+          <div class="space-y-2 pt-2">
+            <a href="tel:+77758653737" class="text-xl font-black text-navy hover:text-accent block tracking-tight">+7 (775) 865-37-37</a>
+          </div>
+        </div>
+        <a href="tel:+77758653737" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block" data-i18n="contacts.12">致电该部门</a>
+      </div>
+      <div class="bg-white rounded-2xl p-6 border-2 border-slate-200/90 shadow-sm hover:border-navy transition-all flex flex-col justify-between space-y-4">
+        <div class="flex-1 flex flex-col justify-between">
+          <div class="flex items-center space-x-3 mb-3"><div class="w-10 h-10 rounded-xl bg-navy flex items-center justify-center shrink-0"><i data-lucide="credit-card" class="w-5 h-5 text-navy-light"></i></div><div><span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block" data-i18n="contacts.13">财务部</span><h3 class="text-base font-bold text-navy leading-snug" data-i18n="contacts.14">单据与结算</h3></div></div>
+          <div class="space-y-2 pt-2">
+            <a href="tel:+77710611066" class="text-xl font-black text-navy hover:text-accent block tracking-tight">+7 (771) 061-10-66</a>
+          </div>
+        </div>
+        <a href="tel:+77710611066" class="w-full bg-navy hover:bg-navy-light text-white text-xs font-bold py-2.5 rounded-lg text-center block" data-i18n="contacts.15">致电该部门</a>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-slate-200">
+      <div class="max-w-2xl mx-auto bg-navy text-white rounded-2xl p-8 space-y-6 shadow-xl">
+        <div class="flex items-center space-x-3"><div class="w-10 h-10 rounded-lg bg-accent text-navy flex items-center justify-center"><i data-lucide="building" class="w-5 h-5"></i></div><div><span class="text-xs text-slate-300 uppercase tracking-wider block font-medium" data-i18n="contacts.16">总部办公室</span><h3 class="text-lg font-bold" data-i18n="contacts.17">AZK Almaz 有限责任公司</h3></div></div>
+        <div class="space-y-4 text-sm">
+          <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="map-pin" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold" data-i18n="contacts.18">总部地址：</span><span class="font-bold" data-i18n="contacts.19">奇姆肯特市图兰区阿拜大街1A号</span></div></div>
+          <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="clock" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold" data-i18n="contacts.20">办公室及油库工作时间：</span><span class="font-bold" data-i18n="contacts.21">周一至周五：08:00 - 17:00，周六：08:00 - 13:00</span><p class="text-xs text-slate-300 mt-0.5" data-i18n="contacts.22">加油站：全天候 24/7</p></div></div>
+        </div>
+        <div class="pt-2 text-xs text-slate-400 border-t border-slate-700/80 flex justify-between"><span data-i18n="contacts.23">企业识别号（BIN）：011240001881</span><span data-i18n="contacts.24">奇姆肯特市</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy-dark text-slate-300 border-t border-slate-800 pt-12 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-slate-800">
+      <div class="lg:col-span-5 space-y-4">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/images/logo/logo-horizontal.png" alt="ALMAZ" class="h-9 w-auto">
+          <p class="text-[10px] text-slate-400 font-bold uppercase" data-i18n="footer.1">AZK Almaz 有限责任公司 • 轻质油品 • 自1998年起</p>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed" data-i18n="footer.2">在奇姆肯特市和突厥斯坦州可靠地批发及零售供应高品质汽油（AI-92、AI-95）和欧4柴油。</p>
+        <div class="text-xs text-slate-400"><div class="flex items-center space-x-2 text-white font-semibold"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span data-i18n="footer.3">奇姆肯特市图兰区阿拜大街1A号</span></div></div>
+      </div>
+      <div class="lg:col-span-3 space-y-3">
+        <div class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="footer.4">导航</div>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#about" class="hover:text-accent transition-colors" data-i18n="footer.5">关于公司</a></li>
+          <li><a href="#services" class="hover:text-accent transition-colors" data-i18n="footer.6">服务</a></li>
+          <li><a href="#products" class="hover:text-accent transition-colors" data-i18n="footer.7">产品（欧4）</a></li>
+          <li><a href="#azs" class="hover:text-accent transition-colors" data-i18n="footer.8">加油站网络</a></li>
+          <li><a href="#faq" class="hover:text-accent transition-colors" data-i18n="footer.9">常见问题</a></li>
+          <li><a href="#contacts" class="hover:text-accent transition-colors" data-i18n="footer.10">联系方式</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-4 space-y-3">
+        <div class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="footer.11">各部门电话</div>
+        <div class="space-y-2 text-xs">
+          <div><span class="text-slate-400 block text-[11px]" data-i18n="footer.12">批发业务咨询：</span><a href="tel:+77077294051" class="font-bold text-white hover:text-accent">+7 (707) 729-40-51</a></div>
+          <div><span class="text-slate-400 block text-[11px]" data-i18n="footer.13">通过加油站网络的零售业务咨询：</span><a href="tel:+77758653737" class="font-bold text-white hover:text-accent">+7 (775) 865-37-37</a></div>
+          <div><span class="text-slate-400 block text-[11px]" data-i18n="footer.14">一般咨询：</span><a href="tel:+77252357444" class="font-bold text-white hover:text-accent">+7 (7252) 357-444</a></div>
+          <div><span class="text-slate-400 block text-[11px]" data-i18n="footer.15">财务部：</span><a href="tel:+77710611066" class="font-bold text-white hover:text-accent">+7 (771) 061-10-66</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div class="flex items-center space-x-4"><span class="font-semibold" data-i18n="footer.16">© 1998 - 2026 AZK Almaz 有限责任公司。保留所有权利。</span><span class="hidden sm:inline">|</span><span class="hidden sm:inline text-slate-500" data-i18n="footer.17">企业识别号（BIN）011240001881</span></div>
+      <div class="flex items-center space-x-6">
+        <button data-policy="privacy" class="policy-btn hover:text-white transition-colors" data-i18n="footer.18">隐私政策</button>
+        <button data-policy="terms" class="policy-btn hover:text-white transition-colors" data-i18n="footer.19">使用条款</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- POLICY MODAL -->
+<div id="policy-modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+  <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200 relative space-y-4 max-h-[85vh] flex flex-col">
+    <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+      <div class="flex items-center space-x-2 text-navy"><i data-lucide="lock" class="w-5 h-5 text-accent"></i><h3 id="policy-title" class="text-lg font-bold" data-i18n="policy-modal.1">隐私政策</h3></div>
+      <button id="policy-close" class="text-slate-400 hover:text-slate-600 p-1"><i data-lucide="x" class="w-5 h-5"></i></button>
+    </div>
+    <div id="policy-body" class="overflow-y-auto text-xs text-slate-600 space-y-3 leading-relaxed pr-2"></div>
+    <button id="policy-close-2" class="w-full bg-navy text-white font-bold py-2.5 rounded-lg text-xs" data-i18n="policy-modal.2">明白 / 关闭</button>
+  </div>
+</div>
+
+<script>
+  lucide.createIcons();
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  document.querySelectorAll('.mobile-link').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // About gallery tabs
+  const galleryData = [
+    { img: '../assets/images/about-gas-station.jpg', badge: 'Минимаркет', title: 'Фирменный минимаркет на АЗС', subtitle: 'Товары в дорогу и повседневные покупки на АЗС ALMAZ' },
+    { img: '../assets/images/fleet.jpg', badge: 'Логистика', title: 'Парк Бензовозов Евро-4', subtitle: 'Оперативная доставка от 2,000 л по региону' },
+    { img: '../assets/images/lab.jpg', badge: 'ГОСТ & Евро-4', title: 'Лаборатория Контроля Качества', subtitle: 'Проверка каждой партии топлива перед отгрузкой' },
+    { img: '../assets/images/canopy.jpg', badge: 'Розница', title: 'Сеть АЗС ALMAZ', subtitle: 'Современные комплексы 24/7 в Шымкенте и Туркестанской обл.' },
+  ];
+  let currentGallery = 0;
+  function renderGallery(i) {
+    currentGallery = i;
+    const d = galleryData[i];
+    document.getElementById('gallery-img').src = d.img;
+    document.getElementById('gallery-badge').textContent = AZK.t(`gallery.${i}.badge`, d.badge);
+    document.getElementById('gallery-title').textContent = AZK.t(`gallery.${i}.title`, d.title);
+    document.getElementById('gallery-subtitle').textContent = AZK.t(`gallery.${i}.subtitle`, d.subtitle);
+  }
+  document.querySelectorAll('#gallery-tabs .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#gallery-tabs .tab-btn').forEach(b => { b.classList.remove('active'); b.classList.add('text-slate-600'); });
+      btn.classList.add('active'); btn.classList.remove('text-slate-600');
+      renderGallery(+btn.dataset.gallery);
+    });
+  });
+
+  // Wholesale calculator
+  const density = { ai92: 0.745, ai95: 0.750, dt: 0.835 };
+  let calcUnit = 'liters';
+  function recalcCalculator() {
+    const activeBtn = document.querySelector('.calc-fuel-btn.bg-accent');
+    const price = +activeBtn.dataset.price;
+    const fuel = activeBtn.dataset.fuel;
+    const name = activeBtn.textContent.trim();                      // подпись кнопки уже переведена
+    const code = AZK.t('calc.code.' + fuel, activeBtn.dataset.code);
+    let volumeInput = +document.getElementById('calc-volume').value || 0;
+    const liters = calcUnit === 'tons' ? Math.round(volumeInput / density[fuel]) : volumeInput;
+    const total = Math.round(liters * price);
+    document.getElementById('calc-out-product').textContent = `${name} (${code})`;
+    document.getElementById('calc-out-volume').textContent = `${liters.toLocaleString(AZK.locale)} ${AZK.t('calc.unit.l', 'л')} (${(liters * density[fuel] / 1000).toFixed(2)} ${AZK.t('calc.unit.t', 'тонн')})`;
+    document.getElementById('calc-out-total').textContent = `~ ${total.toLocaleString(AZK.locale)} ₸`;
+    document.getElementById('calc-out-rate').textContent = AZK.t('calc.rate', 'Базовый тариф ~ {price} ₸/литр с НДС').replace('{price}', price);
+  }
+  document.querySelectorAll('.calc-fuel-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.calc-fuel-btn').forEach(b => { b.classList.remove('bg-accent','text-navy','border-accent','shadow'); b.classList.add('bg-navy-light','text-slate-200','border-slate-700'); });
+      btn.classList.add('bg-accent','text-navy','border-accent','shadow'); btn.classList.remove('bg-navy-light','text-slate-200','border-slate-700');
+      recalcCalculator();
+    });
+  });
+  document.getElementById('calc-volume').addEventListener('input', recalcCalculator);
+  document.getElementById('unit-liters').addEventListener('click', () => {
+    calcUnit = 'liters';
+    document.getElementById('unit-liters').classList.add('bg-accent','text-navy'); document.getElementById('unit-liters').classList.remove('text-slate-400');
+    document.getElementById('unit-tons').classList.remove('bg-accent','text-navy'); document.getElementById('unit-tons').classList.add('text-slate-400');
+    recalcCalculator();
+  });
+  document.getElementById('unit-tons').addEventListener('click', () => {
+    calcUnit = 'tons';
+    document.getElementById('unit-tons').classList.add('bg-accent','text-navy'); document.getElementById('unit-tons').classList.remove('text-slate-400');
+    document.getElementById('unit-liters').classList.remove('bg-accent','text-navy'); document.getElementById('unit-liters').classList.add('text-slate-400');
+    recalcCalculator();
+  });
+
+  // AZS stations
+  const stations = {
+    'azs-1': { name: 'АЗС-1 ALMAZ', address: 'г. Шымкент, район Тұран, трасса Алматы–Термез А2, 858 км', direction: 'Справа по направлению на г. Ташкент', amenities: ['Минимаркет','Кофе и выпечка','Подкачка шин','Топливные карты','Терминал оплаты','Санузел'] },
+    'azs-2': { name: 'АЗС-2 ALMAZ', address: 'г. Шымкент, Абайский район, ж/м Кайнарбулак, участок 349', direction: 'Справа по направлению на г. Тараз', amenities: ['Минимаркет','Зона отдыха водителя','Подкачка шин','Безналичный расчёт','Парковка'] },
+    'azs-3': { name: 'АЗС-3 ALMAZ', address: 'Туркестанская обл., Сайрамский район, Кайнарбулакский с/о, с. Касымбек Датка, квартал 219', direction: 'Справа по направлению на г. Туркестан', amenities: ['Минимаркет','Быстрый налив грузовых авто','Подкачка шин','Топливные карты'] },
+    'azs-4': { name: 'АЗС-4 ALMAZ', address: 'г. Шымкент, Каратауский район, квартал 223, здание 8', direction: 'Справа по направлению на г. Алматы', amenities: ['Минимаркет','Стоянка для грузовых ТС','Приём всех видов оплат','Топливные карты','Кофе-аппарат'] },
+  };
+  let currentStation = 'azs-1';
+  function selectStation(id) {
+    currentStation = id;
+    const s = stations[id];
+    document.getElementById('station-name').textContent = AZK.t(`station.${id}.name`, s.name);
+    document.getElementById('station-address').textContent = AZK.t(`station.${id}.address`, s.address);
+    document.getElementById('station-direction').textContent = AZK.t(`station.${id}.direction`, s.direction);
+    // В ссылку на карту всегда подставляем русский адрес — по переведённому геокодер Яндекса точку не находит.
+    document.getElementById('station-route').href = `https://yandex.ru/maps/?text=${encodeURIComponent(s.address)}`;
+    document.getElementById('station-amenities').innerHTML = AZK.tList(`station.${id}.amenities`, s.amenities).map(a => `<span class="bg-navy/90 text-slate-200 px-2 py-1 rounded border border-slate-700">${a}</span>`).join('');
+    document.querySelectorAll('.marker span').forEach(m => m.classList.remove('active'));
+    document.querySelectorAll('.marker').forEach(m => { if (m.dataset.station === id) m.querySelector('span').classList.add('active'); });
+    document.querySelectorAll('.station-card').forEach(c => {
+      if (c.dataset.station === id) { c.classList.add('active','border-navy'); c.classList.remove('border-slate-200'); }
+      else { c.classList.remove('active','border-navy'); c.classList.add('border-slate-200'); }
+    });
+  }
+  document.querySelectorAll('.marker, .station-card').forEach(el => el.addEventListener('click', () => selectStation(el.dataset.station)));
+
+  document.querySelectorAll('.azs-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.azs-filter-btn').forEach(b => { b.classList.remove('bg-navy','text-white'); b.classList.add('text-slate-600'); });
+      btn.classList.add('bg-navy','text-white'); btn.classList.remove('text-slate-600');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.station-card').forEach(c => {
+        c.style.display = (filter === 'all' || c.dataset.region === filter) ? '' : 'none';
+      });
+    });
+  });
+
+  // FAQ chevron rotation
+  // Lucide swaps the original <i data-lucide="chevron-down"> for an <svg> on init,
+  // so the icon must be looked up as svg (or i, before Lucide has run) — not just i.
+  document.querySelectorAll('#faq details').forEach(d => {
+    d.addEventListener('toggle', () => {
+      const icon = d.querySelector('summary svg, summary i');
+      if (icon) icon.style.transform = d.open ? 'rotate(180deg)' : 'none';
+    });
+  });
+
+  // Policy modal
+  const policyContent = {
+    privacy: {
+      title: 'Политика конфиденциальности ТОО «АЗК Алмаз»',
+      body: `<p class="font-bold text-navy">ТОО «АЗК Алмаз» (БИН 011240001881, г. Шымкент)</p>
+        <p>Настоящий документ определяет политику ТОО «АЗК Алмаз» в отношении обработки и защиты персональных данных пользователей официального веб-сайта компании.</p>
+        <h4 class="font-bold text-navy pt-1">1. Сбор информации</h4>
+        <p>Мы собираем только ту персональную информацию (имя, номер телефона), которую пользователь добровольно предоставляет при обращении по телефону, указанному на сайте.</p>
+        <h4 class="font-bold text-navy pt-1">2. Использование данных</h4>
+        <p>Предоставленные данные используются исключительно для связи с клиентом, выписки коммерческих предложений, организации доставки нефтепродуктов и предоставления услуг сети АЗС.</p>
+        <h4 class="font-bold text-navy pt-1">3. Защита информации</h4>
+        <p>ТОО «АЗК Алмаз» предпринимает все необходимые организационные и технические меры для защиты персональных данных клиентов от несанкционированного доступа, изменения или разглашения.</p>`
+    },
+    terms: {
+      title: 'Условия использования и публичная оферта',
+      body: `<p class="font-bold text-navy">ТОО «АЗК Алмаз» (БИН 011240001881, г. Шымкент)</p>
+        <p>Информация на сайте носит справочный характер и не является публичной офертой в значении статьи 395 Гражданского кодекса Республики Казахстан, если иное прямо не указано.</p>
+        <h4 class="font-bold text-navy pt-1">1. Использование сайта</h4>
+        <p>Материалы сайта предназначены для ознакомления с продукцией и услугами ТОО «АЗК Алмаз». Точные цены, объёмы и условия поставки согласовываются индивидуально по телефону или при заключении договора.</p>
+        <h4 class="font-bold text-navy pt-1">2. Ответственность</h4>
+        <p>Компания стремится поддерживать актуальность информации на сайте, но не несёт ответственности за возможные технические неточности. Все существенные условия сотрудничества фиксируются в договоре поставки.</p>
+        <h4 class="font-bold text-navy pt-1">3. Контакты</h4>
+        <p>По всем вопросам, связанным с содержанием сайта, обращайтесь по телефонам, указанным в разделе «Контакты».</p>`
+    }
+  };
+  const policyModal = document.getElementById('policy-modal');
+  document.querySelectorAll('.policy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const c = policyContent[btn.dataset.policy];
+      document.getElementById('policy-title').textContent = AZK.t(`policy.${btn.dataset.policy}.title`, c.title);
+      document.getElementById('policy-body').innerHTML = AZK.t(`policy.${btn.dataset.policy}.body`, c.body);
+      policyModal.classList.remove('hidden'); policyModal.classList.add('flex');
+    });
+  });
+  function closePolicy() { policyModal.classList.add('hidden'); policyModal.classList.remove('flex'); }
+  document.getElementById('policy-close').addEventListener('click', closePolicy);
+  document.getElementById('policy-close-2').addEventListener('click', closePolicy);
+  policyModal.addEventListener('click', (e) => { if (e.target === policyModal) closePolicy(); });
+
+  // Блоки, которые рисует JS, общий проход движка вернул бы к значениям из разметки —
+  // поэтому после смены языка перерисовываем их с текущим состоянием.
+  document.addEventListener('azk:langchange', (e) => {
+    if (e.detail.initial) return;
+    renderGallery(currentGallery);
+    recalcCalculator();
+    selectStation(currentStation);
+  });
+
+  // Active nav link highlight on scroll
+  const sections = ['about','services','products','azs','faq','contacts'];
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    const pos = window.scrollY + 140;
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && pos >= el.offsetTop && pos < el.offsetTop + el.offsetHeight) current = id;
+    });
+    navLinks.forEach(a => {
+      if (a.getAttribute('href') === '#' + current) { a.classList.add('text-accent'); }
+      else { a.classList.remove('text-accent'); }
+    });
+  });
+</script>
+
+</body>
+</html>

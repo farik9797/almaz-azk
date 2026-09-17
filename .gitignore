@@ -13,3 +13,5 @@ wordpress-theme/azk-almaz.zip
 
 # firecrawl local cache
 .firecrawl/
+
+__pycache__/
