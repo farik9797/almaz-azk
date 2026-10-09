@@ -27,60 +27,6 @@
       });
     });
 
-    /* Wholesale calculator */
-    var calcBlock = document.querySelector('[data-calc-products]');
-    if (calcBlock) {
-      var products = {};
-      try { products = JSON.parse(calcBlock.dataset.calcProducts || '{}'); } catch (e) { products = {}; }
-      var calcUnit = 'liters';
-
-      function recalcCalculator() {
-        var activeBtn = document.querySelector('.calc-fuel-btn.bg-accent');
-        if (!activeBtn) return;
-        var p = products[activeBtn.dataset.fuel];
-        if (!p) return;
-        var volumeInput = +document.getElementById('calc-volume').value || 0;
-        var liters = calcUnit === 'tons' ? Math.round(volumeInput / p.density) : volumeInput;
-        var total = Math.round(liters * p.price);
-        document.getElementById('calc-out-product').textContent = p.name + ' (' + p.code + ')';
-        document.getElementById('calc-out-volume').textContent = liters.toLocaleString('ru-RU') + ' л (' + (liters * p.density / 1000).toFixed(2) + ' тонн)';
-        document.getElementById('calc-out-total').textContent = '~ ' + total.toLocaleString('ru-RU') + ' ₸';
-        document.getElementById('calc-out-rate').textContent = 'Базовый тариф ~ ' + p.price + ' ₸/литр с НДС';
-      }
-
-      document.querySelectorAll('.calc-fuel-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          document.querySelectorAll('.calc-fuel-btn').forEach(function (b) {
-            b.classList.remove('bg-accent', 'text-navy', 'border-accent', 'shadow');
-            b.classList.add('bg-navy-light', 'text-slate-200', 'border-slate-700');
-          });
-          btn.classList.add('bg-accent', 'text-navy', 'border-accent', 'shadow');
-          btn.classList.remove('bg-navy-light', 'text-slate-200', 'border-slate-700');
-          recalcCalculator();
-        });
-      });
-      var volumeInputEl = document.getElementById('calc-volume');
-      if (volumeInputEl) volumeInputEl.addEventListener('input', recalcCalculator);
-
-      var unitLiters = document.getElementById('unit-liters');
-      var unitTons = document.getElementById('unit-tons');
-      if (unitLiters && unitTons) {
-        unitLiters.addEventListener('click', function () {
-          calcUnit = 'liters';
-          unitLiters.classList.add('bg-accent', 'text-navy'); unitLiters.classList.remove('text-slate-400');
-          unitTons.classList.remove('bg-accent', 'text-navy'); unitTons.classList.add('text-slate-400');
-          recalcCalculator();
-        });
-        unitTons.addEventListener('click', function () {
-          calcUnit = 'tons';
-          unitTons.classList.add('bg-accent', 'text-navy'); unitTons.classList.remove('text-slate-400');
-          unitLiters.classList.remove('bg-accent', 'text-navy'); unitLiters.classList.add('text-slate-400');
-          recalcCalculator();
-        });
-      }
-      recalcCalculator();
-    }
-
     /* AZS stations */
     var stationsDataEl = document.getElementById('azk-stations-data');
     var stations = {};

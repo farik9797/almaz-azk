@@ -4,7 +4,7 @@
 <head>
 <meta charset="<?php bloginfo('charset'); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ALMAZ — сеть АЗС и оптовые поставки нефтепродуктов в Шымкенте и Туркестанской области: бензин АИ-92, АИ-95 и дизельное топливо оптом и в розницу, с доставкой. Топливные карты, талоны и карта лояльности на АЗС ALMAZ рядом с вами.">
+<meta name="description" content="ALMAZ — сеть АЗС и оптовые поставки нефтепродуктов в Шымкенте и Туркестанской области: бензин АИ-92, АИ-95 и дизельное топливо оптом и в розницу. Топливные карты, талоны и карта лояльности на АЗС ALMAZ рядом с вами.">
 
 <link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url(AZK_THEME_URI . '/assets/images/logo/favicon-32.png'); ?>">
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(AZK_THEME_URI . '/assets/images/logo/favicon-180.png'); ?>">
@@ -43,12 +43,13 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
 <header class="sticky top-0 z-40 w-full">
   <div class="bg-[#0A1E36] text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden lg:block">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center space-x-6">
-        <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span><?php echo esc_html($address_short); ?></span></div>
-        <div class="flex items-center space-x-2"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span>Официальные поставки Евро-4 с 1998 года</span></div>
+      <div class="flex items-center space-x-3">
+        <div class="flex items-center space-x-2 whitespace-nowrap"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span><?php echo esc_html($address_short); ?></span></div>
+        <div class="flex items-center space-x-2 whitespace-nowrap"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span>Официальные поставки Евро-4 с 1998 года</span></div>
       </div>
-      <div class="flex items-center space-x-6">
-        <span class="text-slate-400">Офис и нефтебаза: <?php echo esc_html($hours_office); ?> | АЗС 24/7</span>
+      <div class="flex items-center space-x-3">
+        <span class="text-slate-400 whitespace-nowrap">Офис и нефтебаза: <?php echo esc_html($hours_office); ?></span>
+        <span class="inline-flex items-center shrink-0 whitespace-nowrap space-x-1.5 px-2 py-0.5 rounded bg-leaf/20 text-leaf border border-leaf/40 font-bold"><i data-lucide="clock" class="w-3.5 h-3.5"></i><span>АЗС 24/7</span></span>
         <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i><span><?php echo esc_html($phone_general); ?></span>
         </a>

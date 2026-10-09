@@ -64,7 +64,7 @@ function azk_acf_home() {
             ['key' => 'field_azk_hero_badge', 'name' => 'hero_badge', 'label' => 'Бейдж над заголовком', 'type' => 'text', 'default_value' => 'ТОО «АЗК Алмаз» • 25+ лет стабильной работы'],
             ['key' => 'field_azk_hero_title', 'name' => 'hero_title', 'label' => 'Заголовок (H1)', 'type' => 'text', 'default_value' => 'Надёжные поставки нефтепродуктов'],
             ['key' => 'field_azk_hero_title_accent', 'name' => 'hero_title_accent', 'label' => 'Заголовок — акцентная часть (жёлтая)', 'type' => 'text', 'default_value' => 'с 1998 года'],
-            ['key' => 'field_azk_hero_subtitle', 'name' => 'hero_subtitle', 'label' => 'Подзаголовок', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Оптовая и розничная реализация высококачественного бензина (АИ-92, АИ-95) и дизельного топлива стандарта Евро-4. Собственная нефтебаза в г. Шымкент, автопарк бензовозов и сеть современных АЗС.'],
+            ['key' => 'field_azk_hero_subtitle', 'name' => 'hero_subtitle', 'label' => 'Подзаголовок', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Оптовая и розничная реализация высококачественного бензина (АИ-92, АИ-95) и дизельного топлива стандарта Евро-4. Собственная нефтебаза в г. Шымкент и сеть современных АЗС.'],
             ['key' => 'field_azk_hero_image', 'name' => 'hero_image', 'label' => 'Фоновое изображение', 'type' => 'image', 'return_format' => 'url', 'preview_size' => 'medium'],
 
             // --- Advantages ---
@@ -87,7 +87,7 @@ function azk_acf_home() {
             ['key' => 'field_azk_about_tab', 'name' => 'about_tab', 'label' => 'О компании', 'type' => 'tab'],
             ['key' => 'field_azk_about_title', 'name' => 'about_title', 'label' => 'Заголовок', 'type' => 'text', 'default_value' => 'ТОО «АЗК Алмаз» — устойчивое развитие и глубокий опыт с 1998 года'],
             ['key' => 'field_azk_about_text1', 'name' => 'about_text1', 'label' => 'Абзац 1', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Более 25 лет ТОО «АЗК Алмаз» является ключевым участником рынка нефтепродуктов Южного Казахстана. Мы специализируемся на поставках качественного топлива: АИ-92, АИ-95, ДТ — для промышленных, сельскохозяйственных, транспортных предприятий и розничных автовладельцев.'],
-            ['key' => 'field_azk_about_text2', 'name' => 'about_text2', 'label' => 'Абзац 2', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Наличие собственной современной нефтебазы в г. Шымкент, химической лаборатории и автопарка спецтранспорта позволяет гарантировать непрерывность поставок, точный учёт объёмов и строгое соблюдение всех технических стандартов.'],
+            ['key' => 'field_azk_about_text2', 'name' => 'about_text2', 'label' => 'Абзац 2', 'type' => 'textarea', 'rows' => 3, 'default_value' => 'Наличие собственной современной нефтебазы в г. Шымкент позволяет гарантировать непрерывность поставок, точный учёт объёмов и строгое соблюдение всех технических стандартов.'],
             [
                 'key' => 'field_azk_principles', 'name' => 'principles', 'label' => 'Фундаментальные принципы',
                 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Добавить принцип',
@@ -126,7 +126,7 @@ function azk_acf_home() {
             // --- Products ---
             ['key' => 'field_azk_products_tab', 'name' => 'products_tab', 'label' => 'Продукция', 'type' => 'tab'],
             ['key' => 'field_azk_products_title', 'name' => 'products_title', 'label' => 'Заголовок секции', 'type' => 'text', 'default_value' => 'Качественные нефтепродукты'],
-            ['key' => 'field_azk_products_subtitle', 'name' => 'products_subtitle', 'label' => 'Подзаголовок секции', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Все марки топлива поставляются напрямую с ведущих НПЗ и проходят обязательный лабораторный контроль с выдачей Паспорта качества.'],
+            ['key' => 'field_azk_products_subtitle', 'name' => 'products_subtitle', 'label' => 'Подзаголовок секции', 'type' => 'textarea', 'rows' => 2, 'default_value' => 'Топливо поставляется напрямую с Шымкентского НПЗ — ТОО «ПетроКазахстан Ойл Продактс» — с паспортом качества завода-изготовителя на каждую партию.'],
             [
                 'key' => 'field_azk_products', 'name' => 'products', 'label' => 'Карточки продукции',
                 'type' => 'repeater', 'layout' => 'block', 'button_label' => 'Добавить продукт',
@@ -155,7 +155,6 @@ function azk_acf_home() {
                     ['key' => 'field_azk_p_density', 'name' => 'density', 'label' => 'Плотность, кг/л (для калькулятора)', 'type' => 'number', 'step' => '0.001'],
                 ],
             ],
-            ['key' => 'field_azk_lab_image', 'name' => 'lab_image', 'label' => 'Фото лаборатории (баннер качества)', 'type' => 'image', 'return_format' => 'url'],
 
             // --- Services ---
             ['key' => 'field_azk_services_tab', 'name' => 'services_tab', 'label' => 'Услуги', 'type' => 'tab'],
@@ -172,7 +171,6 @@ function azk_acf_home() {
                     ['key' => 'field_azk_s_details', 'name' => 'details', 'label' => 'Подробности', 'type' => 'textarea', 'rows' => 2],
                 ],
             ],
-            ['key' => 'field_azk_fleet_image', 'name' => 'fleet_image', 'label' => 'Фото автопарка (баннер логистики)', 'type' => 'image', 'return_format' => 'url'],
 
             // --- Timeline ---
             ['key' => 'field_azk_timeline_tab', 'name' => 'timeline_tab', 'label' => 'Схема сотрудничества', 'type' => 'tab'],
