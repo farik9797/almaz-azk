@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://farik9797.github.io/almaz-azk/sitemap.xml
+Sitemap: https://azkalmaz.kz/sitemap.xml

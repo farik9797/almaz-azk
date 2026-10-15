@@ -23,12 +23,34 @@ SRC = os.path.join(ROOT, 'index.html')
 # Единственное место, где живёт адрес сайта. Он идёт в canonical, hreflang,
 # robots.txt и sitemap.xml. При переезде на боевой домен меняется только здесь
 # (и дальше `python3 tools/i18n-build.py`).
-SITE = 'https://farik9797.github.io/almaz-azk/'
+SITE = 'https://azkalmaz.kz/'
 # код языка -> папка. У казахского папка kz: так привычнее посетителям, код остаётся kk.
 DIRS = {'en': 'en', 'kk': 'kz', 'zh': 'zh'}
 
 spec = importlib.util.spec_from_file_location('extract', os.path.join(HERE, 'i18n-extract.py'))
 extract = importlib.util.module_from_spec(spec); spec.loader.exec_module(extract)
+
+
+def head_links(folder=''):
+    """Блок canonical + hreflang. Целиком выводится из SITE, руками не правится."""
+    rows = [f'<link rel="canonical" href="{SITE}{folder}">',
+            f'<link rel="alternate" hreflang="ru" href="{SITE}">']
+    for lang, f in DIRS.items():
+        code = {'en': 'en', 'kk': 'kk', 'zh': 'zh-Hans'}[lang]
+        rows.append(f'<link rel="alternate" hreflang="{code}" href="{SITE}{f}/">')
+    rows.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}">')
+    return '\n'.join(rows)
+
+
+BLOCK_RE = re.compile(r'<link rel="canonical"[^>]*>\n(?:<link rel="alternate"[^>]*>\n?)+')
+
+
+def sync_head_links(src, folder=''):
+    block = head_links(folder)
+    new, n = BLOCK_RE.subn(block + '\n', src, count=1)
+    if n != 1:
+        sys.exit('не нашёл блок canonical/hreflang в index.html')
+    return new
 
 
 def load_dict(lang):
@@ -70,8 +92,7 @@ def render(src, lang, d):
     htmllang = {'en': 'en', 'kk': 'kk', 'zh': 'zh-Hans'}[lang]
     # Отмечаем, какой язык уже свёрстан в файле: движок по нему решает, прятать страницу или нет.
     out = out.replace('<html lang="ru">', f'<html lang="{htmllang}" data-i18n-baked="{lang}">', 1)
-    out = out.replace(f'<link rel="canonical" href="{SITE}">',
-                      f'<link rel="canonical" href="{SITE}{folder}/">', 1)
+    out = sync_head_links(out, folder + '/')
     # страница лежит на уровень глубже — ассеты и ссылки переключателя ведут наверх
     out = out.replace('"assets/', '"../assets/').replace("'assets/", "'../assets/")
     out = re.sub(r'(<a href=")(\./|en/|kz/|zh/)(" data-langlink)', r'\1../\2\3', out)
@@ -109,6 +130,12 @@ def main():
     src = io.open(SRC, encoding='utf-8').read()
     if 'data-langlink' not in src:
         sys.exit('index.html: не нашёл ссылки переключателя (data-langlink)')
+    # русская страница — тоже из SITE, чтобы домен жил ровно в одном месте
+    synced = sync_head_links(src)
+    if synced != src:
+        io.open(SRC, 'w', encoding='utf-8').write(synced)
+        print('index.html: canonical/hreflang приведены к ' + SITE)
+        src = synced
     for lang, folder in DIRS.items():
         d = load_dict(lang)
         path = os.path.join(ROOT, folder, 'index.html')
