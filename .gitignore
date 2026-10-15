@@ -15,3 +15,5 @@ wordpress-theme/azk-almaz.zip
 .firecrawl/
 
 __pycache__/
+
+deploy/

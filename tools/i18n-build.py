@@ -12,6 +12,7 @@
 Полный цикл после правки контента:
   python3 tools/i18n-extract.py && python3 tools/i18n-check.py && python3 tools/i18n-build.py
 """
+import datetime
 import html as htmlmod
 import importlib.util
 import io, json, os, re, sys
@@ -19,6 +20,9 @@ import io, json, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 SRC = os.path.join(ROOT, 'index.html')
+# Единственное место, где живёт адрес сайта. Он идёт в canonical, hreflang,
+# robots.txt и sitemap.xml. При переезде на боевой домен меняется только здесь
+# (и дальше `python3 tools/i18n-build.py`).
 SITE = 'https://farik9797.github.io/almaz-azk/'
 # код языка -> папка. У казахского папка kz: так привычнее посетителям, код остаётся kk.
 DIRS = {'en': 'en', 'kk': 'kz', 'zh': 'zh'}
@@ -76,6 +80,31 @@ def render(src, lang, d):
     return out
 
 
+def write_robots_and_sitemap():
+    """robots.txt и sitemap.xml — по одному адресу на язык, все четыре равноправны."""
+    io.open(os.path.join(ROOT, 'robots.txt'), 'w', encoding='utf-8').write(
+        'User-agent: *\nAllow: /\n\nSitemap: ' + SITE + 'sitemap.xml\n')
+
+    pages = [('', 'ru')] + [(DIRS[l] + '/', l) for l in DIRS]
+    today = datetime.date.today().isoformat()
+    out = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+           'xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    for path, _ in pages:
+        out.append('  <url>')
+        out.append(f'    <loc>{SITE}{path}</loc>')
+        # каждая страница перечисляет все языковые версии — так требует hreflang
+        for alt_path, alt_lang in pages:
+            code = {'ru': 'ru', 'en': 'en', 'kk': 'kk', 'zh': 'zh-Hans'}[alt_lang]
+            out.append(f'    <xhtml:link rel="alternate" hreflang="{code}" href="{SITE}{alt_path}"/>')
+        out.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}"/>')
+        out.append(f'    <lastmod>{today}</lastmod>')
+        out.append('  </url>')
+    out.append('</urlset>')
+    io.open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
+    print('robots.txt и sitemap.xml  ←  ' + SITE)
+
+
 def main():
     src = io.open(SRC, encoding='utf-8').read()
     if 'data-langlink' not in src:
@@ -86,6 +115,7 @@ def main():
         os.makedirs(os.path.dirname(path), exist_ok=True)
         io.open(path, 'w', encoding='utf-8').write(render(src, lang, d))
         print(f'/{folder}/  ←  {lang} ({len(d)} строк)')
+    write_robots_and_sitemap()
 
 
 if __name__ == '__main__':
