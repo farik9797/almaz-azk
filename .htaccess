@@ -1,19 +1,18 @@
-# Статический сайт ТОО «АЗК Алмаз». Apache (Hoster.KZ / ps.kz — ISPmanager или cPanel).
-# Если хостинг на nginx без .htaccess — те же правила нужно перенести в конфиг nginx.
+# Статический сайт ТОО «АЗК Алмаз». Hoster.KZ, Plesk: nginx спереди, Apache сзади.
+# Проверено на живом сервере: ErrorDocument и сроки кэша применяются,
+# а заголовки <IfModule mod_headers.c> в ответе НЕ появляются — модуль, похоже,
+# не подключён. Если они нужны, их придётся добавить в Plesk → Apache & nginx
+# Settings → Additional nginx directives.
 
-# --- www → без www (канонический адрес один, иначе дубли для поисковиков) ---
+# --- Редиректы ---------------------------------------------------------------
+# Проверено на живом сервере 15.10.2026:
+#   http → https делает сам Plesk (после выпуска Let's Encrypt) — дублировать не надо;
+#   www → без www Plesk НЕ делает: без правила ниже https://www.azkalmaz.kz/
+#   отдаёт 200 и сайт доступен на двух хостах сразу. Правило нужно.
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  RewriteRule ^(.*)$ %{REQUEST_SCHEME}://%1/$1 [R=301,L]
-
-  # --- Принудительный HTTPS ---------------------------------------------------
-  # ВКЛЮЧИТЬ ПОСЛЕ ВЫПУСКА СЕРТИФИКАТА (Plesk → SSL/TLS Certificates →
-  # Let's Encrypt). Сейчас на домене только самоподписанный сертификат Plesk,
-  # и с этим редиректом сайт будет открываться с предупреждением браузера.
-  # RewriteCond %{HTTPS} !=on
-  # RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 </IfModule>
 
 # --- Своя страница 404 ------------------------------------------------------

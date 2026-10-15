@@ -19,7 +19,7 @@ rm -f "$OUT"
 zip -qr "$OUT" \
   index.html 404.html robots.txt sitemap.xml .htaccess \
   assets en kz zh \
-  -x '*.DS_Store' 'assets/i18n/ru.reference.json'
+  -x '*.DS_Store' 'assets/i18n/ru.reference.json' 'assets/images/azs-map.json'
 
 echo "архив: $OUT  ($(du -h "$OUT" | cut -f1))"
 echo "в нём:"
