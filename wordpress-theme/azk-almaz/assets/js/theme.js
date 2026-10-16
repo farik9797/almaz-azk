@@ -67,16 +67,8 @@
           return '<span class="bg-navy/90 text-slate-200 px-2 py-1 rounded border border-slate-700">' + a + '</span>';
         }).join('');
       }
-      document.querySelectorAll('.marker span').forEach(function (m) {
-        m.classList.remove('bg-accent', 'text-navy', 'border-white');
-        m.classList.add('bg-navy', 'text-white', 'border-accent');
-      });
       document.querySelectorAll('.marker').forEach(function (m) {
-        if (m.dataset.station === id) {
-          var span = m.querySelector('span');
-          span.classList.remove('bg-navy', 'text-white', 'border-accent');
-          span.classList.add('bg-accent', 'text-navy', 'border-white');
-        }
+        m.classList.toggle('active', m.dataset.station === id);
       });
       document.querySelectorAll('.station-card').forEach(function (c) {
         if (c.dataset.station === id) { c.classList.add('active', 'border-navy'); c.classList.remove('border-slate-200'); }

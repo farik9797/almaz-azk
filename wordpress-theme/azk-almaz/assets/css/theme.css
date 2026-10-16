@@ -5,3 +5,13 @@ details > summary::-webkit-details-marker { display: none; }
 .tab-btn.active { background: #0F2A47; color: #F5B301; }
 .station-card.active { border-color: #0F2A47; box-shadow: 0 0 0 2px rgba(15, 42, 71, 0.1); }
 .marker.active { transform: translate(-50%, -50%) scale(1.2); z-index: 20; }
+.marker.active > span { background: #F5B301; color: #0F2A47; border-color: #fff; }
+/* АЗС-2 и АЗС-3 стоят в 150 м друг от друга — на этом масштабе кружки сливаются,
+   поэтому разведены в экранных пикселях. На узком экране карта мельче и маркеры
+   тоже, так что и разводить их нужно слабее, иначе АЗС-3 налезет на АЗС-4. */
+.marker[data-station="azs-2"] { margin-left: -13px; }
+.marker[data-station="azs-3"] { margin-left: 13px; }
+@media (min-width: 640px) {
+  .marker[data-station="azs-2"] { margin-left: -22px; }
+  .marker[data-station="azs-3"] { margin-left: 22px; }
+}

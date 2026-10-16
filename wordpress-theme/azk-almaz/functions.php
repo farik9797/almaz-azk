@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) exit;
 
-define('AZK_THEME_VER', '1.0.0');
+define('AZK_THEME_VER', '1.1.0');
 define('AZK_THEME_DIR', get_template_directory());
 define('AZK_THEME_URI', get_template_directory_uri());
 

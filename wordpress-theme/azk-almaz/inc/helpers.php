@@ -119,10 +119,31 @@ function azk_tel($phone) {
 }
 
 /**
+ * Приводит значение поля-картинки к пригодному URL.
+ *
+ * Пустой медиа-селектор ACF отдаёт не '', а false (в базе лежит «0»), и такой
+ * ответ нельзя просто вывести в src — получается сломанная картинка. Поэтому
+ * здесь один набор правил на все изображения: готовый URL отдаём как есть,
+ * одно имя файла достраиваем до картинки темы, всё остальное считаем пустым.
+ */
+function azk_image_src($value, $default_filename) {
+    if (is_array($value)) $value = $value['url'] ?? '';          // return_format = array
+    if (is_numeric($value) && (int) $value > 0) {                 // return_format = id
+        $url = wp_get_attachment_url((int) $value);
+        if ($url) return $url;
+        $value = '';
+    }
+    if (is_string($value) && $value !== '' && !is_numeric($value)) {
+        return strpos($value, '/') === false
+            ? AZK_THEME_URI . '/assets/images/' . $value          // просто имя файла
+            : $value;
+    }
+    return AZK_THEME_URI . '/assets/images/' . $default_filename;
+}
+
+/**
  * URL картинки из ACF Image (return_format='url') с дефолтом на файл темы.
  */
 function azk_image($key, $default_filename, $post_id = null) {
-    $val = azk_field($key, '', $post_id);
-    if (is_string($val) && $val !== '') return $val;
-    return AZK_THEME_URI . '/assets/images/' . $default_filename;
+    return azk_image_src(azk_field($key, '', $post_id), $default_filename);
 }

@@ -13,21 +13,27 @@ if (function_exists('have_rows') && have_rows('principles')) {
 }
 if (!$principles) $principles = azk_default('principles');
 
+// Фото вкладок: если медиа-селектор пуст, подставляем снимок, который лежит
+// в самой теме, — иначе вместо фото остаётся пустой src и сломанная картинка.
+$gallery_defaults = azk_default('gallery_tabs');
 $gallery_tabs = [];
 if (function_exists('have_rows') && have_rows('gallery_tabs')) {
+    $i = 0;
     while (have_rows('gallery_tabs')) { the_row();
         $gallery_tabs[] = [
             'icon' => azk_sub('icon'), 'tab_label' => azk_sub('tab_label'),
-            'image' => azk_sub('image'), 'badge' => azk_sub('badge'),
+            'image' => azk_image_src(azk_sub_raw('image'), $gallery_defaults[$i]['image'] ?? 'about-gas-station.jpg'),
+            'badge' => azk_sub('badge'),
             'title' => azk_sub('title'), 'subtitle' => azk_sub('subtitle'),
         ];
+        $i++;
     }
 }
 if (!$gallery_tabs) {
     $gallery_tabs = array_map(function ($row) {
-        $row['image'] = AZK_THEME_URI . '/assets/images/' . $row['image'];
+        $row['image'] = azk_image_src('', $row['image']);
         return $row;
-    }, azk_default('gallery_tabs'));
+    }, $gallery_defaults);
 }
 
 $stats = [];

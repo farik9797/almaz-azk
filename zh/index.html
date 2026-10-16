@@ -67,7 +67,17 @@
   details > summary::-webkit-details-marker { display: none; }
   .tab-btn.active { background: #0F2A47; color: #F5B301; }
   .station-card.active { border-color: #0F2A47; box-shadow: 0 0 0 2px rgba(15,42,71,0.1); }
-  .marker.active { background: #F5B301; color: #0F2A47; border-color: #fff; transform: translate(-50%,-50%) scale(1.2); z-index: 20; }
+  .marker.active { transform: translate(-50%,-50%) scale(1.2); z-index: 20; }
+  .marker.active > span { background: #F5B301; color: #0F2A47; border-color: #fff; }
+  /* АЗС-2 и АЗС-3 стоят в 150 м друг от друга — на этом масштабе кружки сливаются,
+     поэтому разведены в экранных пикселях. На узком экране карта мельче и маркеры
+     тоже, так что и разводить их нужно слабее, иначе АЗС-3 налезет на АЗС-4. */
+  .marker[data-station="azs-2"] { margin-left: -13px; }
+  .marker[data-station="azs-3"] { margin-left: 13px; }
+  @media (min-width: 640px) {
+    .marker[data-station="azs-2"] { margin-left: -22px; }
+    .marker[data-station="azs-3"] { margin-left: 22px; }
+  }
 </style>
 </head>
 
@@ -617,19 +627,19 @@
                Маркеры позиционируются в процентах от размера картинки, поэтому
                изображение должно отображаться целиком (w-full h-auto), без object-cover. -->
           <img src="../assets/images/azs-map.jpg" alt="Карта сети АЗС ALMAZ в Шымкенте и Туркестанской области" class="w-full h-auto block" width="1200" height="800" loading="lazy">
-          <button data-station="azs-1" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:71.54%; left:42.56%;">
-            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.9">1号</span>
+          <button data-station="azs-1" class="marker active absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 p-1.5 sm:p-0" style="top:71.54%; left:42.56%;">
+            <span class="w-6 h-6 sm:w-11 sm:h-11 rounded-full flex items-center justify-center font-black text-[11px] sm:text-xs shadow-xl border-2 bg-navy text-white border-accent"><span class="sm:hidden">1</span><span class="hidden sm:inline" data-i18n="azs-network.9">1号</span></span>
           </button>
-          <button data-station="azs-2" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:28.72%; left:48.74%; margin-left:-22px;">
-            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.10">2号</span>
+          <button data-station="azs-2" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 p-1.5 sm:p-0" style="top:28.72%; left:48.74%;">
+            <span class="w-6 h-6 sm:w-11 sm:h-11 rounded-full flex items-center justify-center font-black text-[11px] sm:text-xs shadow-xl border-2 bg-navy text-white border-accent"><span class="sm:hidden">2</span><span class="hidden sm:inline" data-i18n="azs-network.10">2号</span></span>
           </button>
-          <button data-station="azs-3" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:28.43%; left:48.86%; margin-left:22px;">
-            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.11">3号</span>
+          <button data-station="azs-3" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 p-1.5 sm:p-0" style="top:28.43%; left:48.86%;">
+            <span class="w-6 h-6 sm:w-11 sm:h-11 rounded-full flex items-center justify-center font-black text-[11px] sm:text-xs shadow-xl border-2 bg-navy text-white border-accent"><span class="sm:hidden">3</span><span class="hidden sm:inline" data-i18n="azs-network.11">3号</span></span>
           </button>
-          <button data-station="azs-4" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:38.51%; left:57.44%;">
-            <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.12">4号</span>
+          <button data-station="azs-4" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 p-1.5 sm:p-0" style="top:38.51%; left:57.44%;">
+            <span class="w-6 h-6 sm:w-11 sm:h-11 rounded-full flex items-center justify-center font-black text-[11px] sm:text-xs shadow-xl border-2 bg-navy text-white border-accent"><span class="sm:hidden">4</span><span class="hidden sm:inline" data-i18n="azs-network.12">4号</span></span>
           </button>
-          <div class="absolute bottom-3 left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300 max-w-[70%]">
+          <div class="relative m-3 sm:absolute sm:m-0 sm:bottom-3 sm:left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300 sm:max-w-[70%]">
             <span class="font-bold text-white block mb-0.5" data-i18n="azs-network.13">点击加油站标记：</span><span data-i18n="azs-network.14">即可查看地址并规划路线</span>
           </div>
         </div>
@@ -936,8 +946,7 @@
     // В ссылку на карту всегда подставляем русский адрес — по переведённому геокодер Яндекса точку не находит.
     document.getElementById('station-route').href = `https://yandex.ru/maps/?text=${encodeURIComponent(s.address)}`;
     document.getElementById('station-amenities').innerHTML = AZK.tList(`station.${id}.amenities`, s.amenities).map(a => `<span class="bg-navy/90 text-slate-200 px-2 py-1 rounded border border-slate-700">${a}</span>`).join('');
-    document.querySelectorAll('.marker span').forEach(m => m.classList.remove('active'));
-    document.querySelectorAll('.marker').forEach(m => { if (m.dataset.station === id) m.querySelector('span').classList.add('active'); });
+    document.querySelectorAll('.marker').forEach(m => m.classList.toggle('active', m.dataset.station === id));
     document.querySelectorAll('.station-card').forEach(c => {
       if (c.dataset.station === id) { c.classList.add('active','border-navy'); c.classList.remove('border-slate-200'); }
       else { c.classList.remove('active','border-navy'); c.classList.add('border-slate-200'); }

@@ -69,13 +69,14 @@ foreach ($stations as $s) {
                    АЗС-2 и АЗС-3 стоят в 150 м друг от друга — на этом масштабе
                    кружки сливаются, поэтому разведены сдвигом в экранных пикселях. */ ?>
           <img src="<?php echo esc_url($map_image); ?>" alt="<?php echo esc_attr(azk_translate('Карта сети АЗС ALMAZ в Шымкенте и Туркестанской области')); ?>" class="w-full h-auto block" width="1200" height="800" loading="lazy">
-          <?php $nudge = ['azs-2' => ' margin-left:-22px;', 'azs-3' => ' margin-left:22px;']; ?>
           <?php foreach ($stations as $i => $s): ?>
-            <button data-station="<?php echo esc_attr($s['slug']); ?>" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:<?php echo esc_attr($s['marker_top']); ?>%; left:<?php echo esc_attr($s['marker_left']); ?>%;<?php echo $nudge[$s['slug']] ?? ''; ?>">
-              <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent"><?php echo esc_html(azk_translate($s['label'], null, 'marker')); ?></span>
+            <?php /* На телефоне карта мельче подписи — оставляем только номер станции. */ ?>
+            <?php $num = preg_replace('/\D/', '', $s['slug']) ?: (string) ($i + 1); ?>
+            <button data-station="<?php echo esc_attr($s['slug']); ?>" class="marker<?php echo $i === 0 ? ' active' : ''; ?> absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 p-1.5 sm:p-0" style="top:<?php echo esc_attr($s['marker_top']); ?>%; left:<?php echo esc_attr($s['marker_left']); ?>%;">
+              <span class="w-6 h-6 sm:w-11 sm:h-11 rounded-full flex items-center justify-center font-black text-[11px] sm:text-xs shadow-xl border-2 bg-navy text-white border-accent"><span class="sm:hidden"><?php echo esc_html($num); ?></span><span class="hidden sm:inline"><?php echo esc_html(azk_translate($s['label'], null, 'marker')); ?></span></span>
             </button>
           <?php endforeach; ?>
-          <div class="absolute bottom-3 left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300 max-w-[70%]">
+          <div class="relative m-3 sm:absolute sm:m-0 sm:bottom-3 sm:left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300 sm:max-w-[70%]">
             <span class="font-bold text-white block mb-0.5"><?php azk_e('Кликните по маркеру АЗС:'); ?></span><span><?php azk_e('чтобы увидеть адрес и проложить маршрут'); ?></span>
           </div>
         </div>
