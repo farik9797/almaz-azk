@@ -12,9 +12,9 @@ function azk_field($key, $default = '', $post_id = null) {
             if ($val !== null && $val !== '' && $val !== false) return $val;
         }
         $val = get_field($key, $post_id);
-        if ($val !== null && $val !== '' && $val !== false) return $val;
+        if ($val !== null && $val !== '' && $val !== false) return azk_translate_value($val);
     }
-    return $default;
+    return azk_translate_value($default);
 }
 
 /**
@@ -27,9 +27,9 @@ function azk_sub($key, $default = '') {
             if ($val !== null && $val !== '' && $val !== false) return $val;
         }
         $val = get_sub_field($key);
-        if ($val !== null && $val !== '' && $val !== false) return $val;
+        if ($val !== null && $val !== '' && $val !== false) return azk_translate_value($val);
     }
-    return $default;
+    return azk_translate_value($default);
 }
 
 /**
@@ -42,9 +42,22 @@ function azk_setting($key, $default = '') {
             if ($val !== null && $val !== '' && $val !== false) return $val;
         }
         $val = get_field($key, 'option');
-        if ($val !== null && $val !== '' && $val !== false) return $val;
+        if ($val !== null && $val !== '' && $val !== false) return azk_translate_value($val);
     }
-    return $default;
+    return azk_translate_value($default);
+}
+
+/**
+ * Запасной перевод: значение пришло по-русски (из поля или из дефолта),
+ * а языкового поля для него не завели. Тогда переводим по самому тексту
+ * таблицей из inc/translations.php. Так нерусские версии остаются полными,
+ * даже если в админке переведены не все поля.
+ */
+function azk_translate_value($val) {
+    if (azk_lang() === 'ru') return $val;
+    if (is_string($val)) return azk_translate($val);
+    if (is_array($val)) return array_map('azk_translate_value', $val);
+    return $val;
 }
 
 /**

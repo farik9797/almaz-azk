@@ -15,37 +15,37 @@ $founding_year     = azk_setting('founding_year', '1998');
       <div class="lg:col-span-5 space-y-4">
         <div class="flex items-center space-x-3">
           <img src="<?php echo esc_url(AZK_THEME_URI . '/assets/images/logo/logo-horizontal.png'); ?>" alt="ALMAZ" class="h-9 w-auto">
-          <p class="text-[10px] text-slate-400 font-bold uppercase">ТОО «АЗК Алмаз» • Светлые нефтепродукты • с <?php echo esc_html($founding_year); ?> года</p>
+          <p class="text-[10px] text-slate-400 font-bold uppercase"><?php azk_e('ТОО «АЗК Алмаз» • Светлые нефтепродукты • с'); ?> <?php echo esc_html($founding_year); ?> <?php azk_e('года'); ?></p>
         </div>
-        <p class="text-xs text-slate-400 leading-relaxed">Надёжные оптовые и розничные поставки высококачественного бензина (АИ-92, АИ-95) и дизельного топлива Евро-4 в Шымкенте и Туркестанской области.</p>
+        <p class="text-xs text-slate-400 leading-relaxed"><?php azk_e('Надёжные оптовые и розничные поставки высококачественного бензина (АИ-92, АИ-95) и дизельного топлива Евро-4 в Шымкенте и Туркестанской области.'); ?></p>
         <div class="text-xs text-slate-400"><div class="flex items-center space-x-2 text-white font-semibold"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span><?php echo esc_html($address_full); ?></span></div></div>
       </div>
       <div class="lg:col-span-3 space-y-3">
-        <div class="text-xs font-bold text-white uppercase tracking-wider">Навигация</div>
+        <div class="text-xs font-bold text-white uppercase tracking-wider"><?php azk_e('Навигация'); ?></div>
         <ul class="space-y-2 text-xs">
-          <li><a href="#about" class="hover:text-accent transition-colors">О компании</a></li>
-          <li><a href="#services" class="hover:text-accent transition-colors">Услуги</a></li>
-          <li><a href="#products" class="hover:text-accent transition-colors">Продукция (Евро-4)</a></li>
-          <li><a href="#azs" class="hover:text-accent transition-colors">Сеть АЗС</a></li>
-          <li><a href="#faq" class="hover:text-accent transition-colors">Частые вопросы</a></li>
-          <li><a href="#contacts" class="hover:text-accent transition-colors">Контакты</a></li>
+          <li><a href="#about" class="hover:text-accent transition-colors"><?php azk_e('О компании'); ?></a></li>
+          <li><a href="#services" class="hover:text-accent transition-colors"><?php azk_e('Услуги'); ?></a></li>
+          <li><a href="#products" class="hover:text-accent transition-colors"><?php azk_e('Продукция (Евро-4)'); ?></a></li>
+          <li><a href="#azs" class="hover:text-accent transition-colors"><?php azk_e('Сеть АЗС'); ?></a></li>
+          <li><a href="#faq" class="hover:text-accent transition-colors"><?php azk_e('Частые вопросы'); ?></a></li>
+          <li><a href="#contacts" class="hover:text-accent transition-colors"><?php azk_e('Контакты'); ?></a></li>
         </ul>
       </div>
       <div class="lg:col-span-4 space-y-3">
-        <div class="text-xs font-bold text-white uppercase tracking-wider">Телефоны отделов</div>
+        <div class="text-xs font-bold text-white uppercase tracking-wider"><?php azk_e('Телефоны отделов'); ?></div>
         <div class="space-y-2 text-xs">
-          <div><span class="text-slate-400 block text-[11px]">По вопросам оптовой реализации:</span><a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_wholesale); ?></a></div>
-          <div><span class="text-slate-400 block text-[11px]">По вопросам розничной реализации через сеть АЗС:</span><a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_cooperation); ?></a></div>
-          <div><span class="text-slate-400 block text-[11px]">По общим вопросам:</span><a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_general); ?></a></div>
-          <div><span class="text-slate-400 block text-[11px]">Бухгалтерия:</span><a href="tel:<?php echo esc_attr(azk_tel($phone_accounting)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_accounting); ?></a></div>
+          <div><span class="text-slate-400 block text-[11px]"><?php azk_e('По вопросам оптовой реализации:'); ?></span><a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_wholesale); ?></a></div>
+          <div><span class="text-slate-400 block text-[11px]"><?php azk_e('По вопросам розничной реализации через сеть АЗС:'); ?></span><a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_cooperation); ?></a></div>
+          <div><span class="text-slate-400 block text-[11px]"><?php azk_e('По общим вопросам:'); ?></span><a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_general); ?></a></div>
+          <div><span class="text-slate-400 block text-[11px]"><?php azk_e('Бухгалтерия:'); ?></span><a href="tel:<?php echo esc_attr(azk_tel($phone_accounting)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_accounting); ?></a></div>
         </div>
       </div>
     </div>
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-      <div class="flex items-center space-x-4"><span class="font-semibold">© <?php echo esc_html($founding_year); ?> - <?php echo esc_html(date('Y')); ?> ТОО «АЗК Алмаз». Все права защищены.</span><span class="hidden sm:inline">|</span><span class="hidden sm:inline text-slate-500">БИН <?php echo esc_html($bin); ?></span></div>
+      <div class="flex items-center space-x-4"><span class="font-semibold">© <?php echo esc_html($founding_year); ?> - <?php echo esc_html(date('Y')); ?> <?php azk_e('ТОО «АЗК Алмаз». Все права защищены.'); ?></span><span class="hidden sm:inline">|</span><span class="hidden sm:inline text-slate-500"><?php azk_e('БИН'); ?> <?php echo esc_html($bin); ?></span></div>
       <div class="flex items-center space-x-6">
-        <button data-policy="privacy" class="policy-btn hover:text-white transition-colors">Политика конфиденциальности</button>
-        <button data-policy="terms" class="policy-btn hover:text-white transition-colors">Условия использования</button>
+        <button data-policy="privacy" class="policy-btn hover:text-white transition-colors"><?php azk_e('Политика конфиденциальности'); ?></button>
+        <button data-policy="terms" class="policy-btn hover:text-white transition-colors"><?php azk_e('Условия использования'); ?></button>
       </div>
     </div>
   </div>

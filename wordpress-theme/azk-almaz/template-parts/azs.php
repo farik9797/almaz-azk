@@ -9,14 +9,14 @@ $stations = [];
 if (function_exists('have_rows') && have_rows('stations')) {
     while (have_rows('stations')) { the_row();
         $fuels = [];
-        if (have_rows('fuels')) { while (have_rows('fuels')) { the_row(); $fuels[] = get_sub_field('fuel'); } }
+        if (have_rows('fuels')) { while (have_rows('fuels')) { the_row(); $fuels[] = azk_sub('fuel'); } }
         $amenities = [];
-        if (have_rows('amenities')) { while (have_rows('amenities')) { the_row(); $amenities[] = get_sub_field('amenity'); } }
+        if (have_rows('amenities')) { while (have_rows('amenities')) { the_row(); $amenities[] = azk_sub('amenity'); } }
         $stations[] = [
-            'slug' => get_sub_field('slug'), 'label' => get_sub_field('label'), 'name' => get_sub_field('name'),
-            'region' => get_sub_field('region'), 'address' => get_sub_field('address'), 'direction' => get_sub_field('direction'),
-            'phone' => get_sub_field('phone'), 'hours' => get_sub_field('hours'),
-            'marker_top' => get_sub_field('marker_top'), 'marker_left' => get_sub_field('marker_left'),
+            'slug' => azk_sub('slug'), 'label' => azk_sub('label'), 'name' => azk_sub('name'),
+            'region' => azk_sub('region'), 'address' => azk_sub('address'), 'direction' => azk_sub('direction'),
+            'phone' => azk_sub('phone'), 'hours' => azk_sub('hours'),
+            'marker_top' => azk_sub('marker_top'), 'marker_left' => azk_sub('marker_left'),
             'fuels' => $fuels, 'amenities' => $amenities,
         ];
     }
@@ -39,12 +39,12 @@ foreach ($stations as $s) {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
       <div>
-        <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Розница и обслуживание</div>
+        <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2"><?php azk_e('Розница и обслуживание'); ?></div>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight"><?php echo esc_html($title); ?></h2>
         <p class="mt-2 text-slate-600 text-sm max-w-2xl"><?php echo esc_html($subtitle); ?></p>
       </div>
       <div class="flex items-center space-x-2 bg-white p-1 rounded-lg border border-slate-200 text-xs font-bold" id="azs-filters">
-        <button data-filter="all" class="azs-filter-btn px-3 py-1.5 rounded-md bg-navy text-white">Все АЗС (<?php echo count($stations); ?>)</button>
+        <button data-filter="all" class="azs-filter-btn px-3 py-1.5 rounded-md bg-navy text-white"><?php azk_e('Все АЗС ('); ?><?php echo count($stations); ?>)</button>
         <?php foreach ($regions as $r): ?>
           <button data-filter="<?php echo esc_attr($r); ?>" class="azs-filter-btn px-3 py-1.5 rounded-md text-slate-600 hover:text-navy"><?php echo esc_html($r); ?> (<?php echo (int) $region_counts[$r]; ?>)</button>
         <?php endforeach; ?>
@@ -54,8 +54,8 @@ foreach ($stations as $s) {
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       <div class="lg:col-span-6 bg-navy rounded-2xl overflow-hidden border border-slate-800 shadow-xl relative min-h-[420px] flex flex-col justify-between">
         <div class="p-4 bg-navy-dark border-b border-slate-800 flex items-center justify-between text-xs text-slate-300">
-          <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i><span class="font-bold text-white">Шымкент &amp; Туркестанская область</span></div>
-          <span class="text-leaf font-semibold flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-leaf"></span><span>Все станции работают 24/7</span></span>
+          <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i><span class="font-bold text-white"><?php azk_e('Шымкент &amp; Туркестанская область'); ?></span></div>
+          <span class="text-leaf font-semibold flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-leaf"></span><span><?php azk_e('Все станции работают 24/7'); ?></span></span>
         </div>
         <div class="relative w-full h-[320px] bg-navy-dark p-6 overflow-hidden">
           <svg class="absolute inset-0 w-full h-full stroke-slate-700/60 stroke-2 fill-none" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +69,7 @@ foreach ($stations as $s) {
             </button>
           <?php endforeach; ?>
           <div class="absolute bottom-3 left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300">
-            <span class="font-bold text-white block mb-0.5">Кликните по маркеру АЗС:</span><span>чтобы увидеть адрес и проложить маршрут</span>
+            <span class="font-bold text-white block mb-0.5"><?php azk_e('Кликните по маркеру АЗС:'); ?></span><span><?php azk_e('чтобы увидеть адрес и проложить маршрут'); ?></span>
           </div>
         </div>
 
@@ -78,13 +78,13 @@ foreach ($stations as $s) {
           <div class="absolute inset-0 bg-gradient-to-r from-navy-light via-navy-light/95 to-navy/90"></div>
           <div class="relative z-10 flex justify-between items-start">
             <div>
-              <span class="text-[10px] bg-accent text-navy px-2 py-0.5 rounded font-black uppercase">Выбрана на карте</span>
+              <span class="text-[10px] bg-accent text-navy px-2 py-0.5 rounded font-black uppercase"><?php azk_e('Выбрана на карте'); ?></span>
               <h4 id="station-name" class="text-base font-bold text-white mt-1"><?php echo esc_html($first['name']); ?></h4>
               <p id="station-address" class="text-xs text-slate-300"><?php echo esc_html($first['address']); ?></p>
               <p id="station-direction" class="text-xs text-accent font-semibold mt-0.5"><?php echo esc_html($first['direction']); ?></p>
             </div>
             <a id="station-route" href="https://yandex.ru/maps/?text=<?php echo rawurlencode($first['address']); ?>" target="_blank" rel="noopener" class="bg-accent hover:bg-accent-dark text-navy text-xs font-bold px-3 py-2 rounded flex items-center space-x-1 shadow shrink-0">
-              <i data-lucide="navigation" class="w-3.5 h-3.5"></i><span>Маршрут</span><i data-lucide="external-link" class="w-3 h-3"></i>
+              <i data-lucide="navigation" class="w-3.5 h-3.5"></i><span><?php azk_e('Маршрут'); ?></span><i data-lucide="external-link" class="w-3 h-3"></i>
             </a>
           </div>
           <div id="station-amenities" class="relative z-10 flex flex-wrap gap-1.5 pt-1 text-xs">
@@ -105,7 +105,7 @@ foreach ($stations as $s) {
             </div>
             <div class="text-xs text-slate-700 mb-4 flex items-start space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-navy shrink-0 mt-0.5"></i><div><span class="font-bold text-slate-900"><?php echo esc_html($s['address']); ?></span><p class="text-slate-500 font-medium"><?php echo esc_html($s['direction']); ?></p></div></div>
             <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
-              <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700">Топливо:</span><div class="flex space-x-1"><?php foreach ($s['fuels'] as $f): ?><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded"><?php echo esc_html($f); ?></span><?php endforeach; ?></div></div>
+              <div class="flex items-center space-x-2"><i data-lucide="fuel" class="w-4 h-4 text-navy"></i><span class="font-bold text-slate-700"><?php azk_e('Топливо:'); ?></span><div class="flex space-x-1"><?php foreach ($s['fuels'] as $f): ?><span class="bg-navy text-accent font-extrabold px-2 py-0.5 rounded"><?php echo esc_html($f); ?></span><?php endforeach; ?></div></div>
               <a href="tel:<?php echo esc_attr(azk_tel($s['phone'])); ?>" class="text-navy font-bold hover:underline flex items-center space-x-1"><i data-lucide="phone" class="w-3.5 h-3.5"></i><span><?php echo esc_html($s['phone']); ?></span></a>
             </div>
           </div>

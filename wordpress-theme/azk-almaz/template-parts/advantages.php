@@ -8,10 +8,10 @@ if (function_exists('have_rows') && have_rows('advantages')) {
     while (have_rows('advantages')) {
         the_row();
         $rows[] = [
-            'icon' => get_sub_field('icon'),
-            'number' => get_sub_field('number'),
-            'title' => get_sub_field('title'),
-            'text' => get_sub_field('text'),
+            'icon' => azk_sub('icon'),
+            'number' => azk_sub('number'),
+            'title' => azk_sub('title'),
+            'text' => azk_sub('text'),
         ];
     }
 }
@@ -20,7 +20,7 @@ if (!$rows) $rows = azk_default('advantages');
 <section class="py-16 bg-white border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-12">
-      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Наши преимущества</div>
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2"><?php azk_e('Наши преимущества'); ?></div>
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight"><?php echo esc_html($title); ?></h2>
       <p class="mt-3 text-slate-600 text-base"><?php echo esc_html($subtitle); ?></p>
     </div>
@@ -31,7 +31,7 @@ if (!$rows) $rows = azk_default('advantages');
           <div class="text-xs font-bold text-slate-400 mb-1"><?php echo esc_html($row['number']); ?></div>
           <h3 class="text-xl font-bold text-navy mb-3"><?php echo esc_html($row['title']); ?></h3>
           <p class="text-sm text-slate-600 leading-relaxed"><?php echo esc_html($row['text']); ?></p>
-          <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span>Гарантия АЗК Алмаз</div>
+          <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-navy"><span class="w-2 h-2 rounded-full bg-accent mr-2"></span><?php azk_e('Гарантия АЗК Алмаз'); ?></div>
         </div>
       <?php endforeach; ?>
     </div>

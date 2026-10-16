@@ -28,14 +28,26 @@ function azk_lang() {
 
     $q = get_query_var('azk_lang');
     if (!$q) {
-        // запасной путь: если правила перезаписи ещё не сброшены, берём язык из URI
-        $path = trim(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '', '/');
+        // Запасной путь, пока запрос не разобран. Учитываем, что WordPress может
+        // стоять в подпапке: тогда REQUEST_URI это /wp/en, а слаг — просто en.
+        $path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
+        $base = trim((string) parse_url(home_url('/'), PHP_URL_PATH), '/');
+        if ($base !== '' && strpos($path, $base) === 0) {
+            $path = trim(substr($path, strlen($base)), '/');
+        }
         $q = $path;
     }
+
+    $found = 'ru';
     foreach (azk_languages() as $code => $cfg) {
-        if ($cfg['slug'] !== '' && $q === $cfg['slug']) return $lang = $code;
+        if ($cfg['slug'] !== '' && $q === $cfg['slug']) { $found = $code; break; }
     }
-    return $lang = 'ru';
+
+    // Кэшируем только после разбора запроса. Иначе ранний вызов — например из
+    // acf/init, когда дефолты полей читаются до WP_Query, — зафиксировал бы
+    // русский на всю страницу, и языковые адреса отдавали бы русский текст.
+    if (did_action('wp')) $lang = $found;
+    return $found;
 }
 
 /** Адрес языковой версии текущей страницы. */
@@ -120,6 +132,14 @@ add_filter('language_attributes', function ($output) {
  * и на /en/ выводит адрес главной, из-за чего в head оказывается два canonical.
  */
 remove_action('wp_head', 'rel_canonical');
+
+/**
+ * Заголовок вкладки. WordPress собирает его из названия сайта, которое одно на
+ * все языки, поэтому задаём свой и переводим по тексту.
+ */
+add_filter('pre_get_document_title', function () {
+    return azk_translate('АЗК Алмаз — Поставки нефтепродуктов и сеть АЗС с 1998 года');
+}, 20);
 
 /** canonical + hreflang на все четыре версии. */
 function azk_head_links() {

@@ -7,7 +7,7 @@ $subtitle = azk_field('services_subtitle', 'Обеспечиваем надёж�
 $services = [];
 if (function_exists('have_rows') && have_rows('services')) {
     while (have_rows('services')) { the_row();
-        $services[] = ['icon' => get_sub_field('icon'), 'title' => get_sub_field('title'), 'description' => get_sub_field('description'), 'details' => get_sub_field('details')];
+        $services[] = ['icon' => azk_sub('icon'), 'title' => azk_sub('title'), 'description' => azk_sub('description'), 'details' => azk_sub('details')];
     }
 }
 if (!$services) $services = azk_default('services');
@@ -15,7 +15,7 @@ if (!$services) $services = azk_default('services');
 <section id="services" class="py-16 bg-[#F8FAFC]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
     <div class="text-center max-w-3xl mx-auto">
-      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2">Наши услуги</div>
+      <div class="inline-block px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider mb-2"><?php azk_e('Наши услуги'); ?></div>
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight"><?php echo esc_html($title); ?></h2>
       <p class="mt-3 text-slate-600 text-base"><?php echo esc_html($subtitle); ?></p>
     </div>
@@ -28,7 +28,7 @@ if (!$services) $services = azk_default('services');
             <p class="text-sm font-medium text-slate-800 mb-2"><?php echo esc_html($s['description']); ?></p>
             <p class="text-xs text-slate-500 leading-relaxed mb-4"><?php echo esc_html($s['details']); ?></p>
           </div>
-          <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group">Позвонить по этой услуге<i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
+          <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="pt-3 border-t border-slate-100 text-xs font-bold text-navy hover:text-navy-light flex items-center justify-between w-full group"><?php azk_e('Позвонить по этой услуге'); ?><i data-lucide="chevron-right" class="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform"></i></a>
         </div>
       <?php endforeach; ?>
     </div>

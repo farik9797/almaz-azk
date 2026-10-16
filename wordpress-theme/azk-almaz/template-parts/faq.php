@@ -6,7 +6,7 @@ $title = azk_field('faq_title', 'Частые вопросы');
 $items = [];
 if (function_exists('have_rows') && have_rows('faq_items')) {
     while (have_rows('faq_items')) { the_row();
-        $items[] = ['question' => get_sub_field('question'), 'answer' => get_sub_field('answer')];
+        $items[] = ['question' => azk_sub('question'), 'answer' => azk_sub('answer')];
     }
 }
 if (!$items) $items = azk_default('faq');
@@ -14,9 +14,9 @@ if (!$items) $items = azk_default('faq');
 <section id="faq" class="py-16 bg-white border-t border-slate-200/80">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
     <div class="text-center space-y-3">
-      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-navy/10 text-navy text-xs font-black uppercase tracking-wider"><i data-lucide="help-circle" class="w-4 h-4 text-accent"></i><span>Вопросы и ответы</span></div>
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-navy/10 text-navy text-xs font-black uppercase tracking-wider"><i data-lucide="help-circle" class="w-4 h-4 text-accent"></i><span><?php azk_e('Вопросы и ответы'); ?></span></div>
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-navy"><?php echo esc_html($title); ?></h2>
-      <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">Отвечаем на вопросы клиентов</p>
+      <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto"><?php azk_e('Отвечаем на вопросы клиентов'); ?></p>
     </div>
 
     <div class="space-y-4">
@@ -29,7 +29,7 @@ if (!$items) $items = azk_default('faq');
     </div>
 
     <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="space-y-1 text-center sm:text-left"><h4 class="font-extrabold text-navy text-base sm:text-lg">Остались другие вопросы?</h4><p class="text-xs sm:text-sm text-slate-600">Свяжитесь с отделом продаж ТОО «АЗК Алмаз» для консультации.</p></div>
+      <div class="space-y-1 text-center sm:text-left"><h4 class="font-extrabold text-navy text-base sm:text-lg"><?php azk_e('Остались другие вопросы?'); ?></h4><p class="text-xs sm:text-sm text-slate-600"><?php azk_e('Свяжитесь с отделом продаж ТОО «АЗК Алмаз» для консультации.'); ?></p></div>
       <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="inline-flex items-center space-x-2 bg-navy hover:bg-navy-light text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl"><i data-lucide="phone-call" class="w-4 h-4 text-accent"></i><span><?php echo esc_html($phone_general); ?></span></a>
     </div>
   </div>

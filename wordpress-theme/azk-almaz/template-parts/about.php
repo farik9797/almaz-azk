@@ -7,7 +7,7 @@ $text2 = azk_field('about_text2', 'Наличие собственной сов�
 $principles = [];
 if (function_exists('have_rows') && have_rows('principles')) {
     while (have_rows('principles')) { the_row();
-        $principles[] = ['title' => get_sub_field('title'), 'text' => get_sub_field('text')];
+        $principles[] = ['title' => azk_sub('title'), 'text' => azk_sub('text')];
     }
 }
 if (!$principles) $principles = azk_default('principles');
@@ -16,9 +16,9 @@ $gallery_tabs = [];
 if (function_exists('have_rows') && have_rows('gallery_tabs')) {
     while (have_rows('gallery_tabs')) { the_row();
         $gallery_tabs[] = [
-            'icon' => get_sub_field('icon'), 'tab_label' => get_sub_field('tab_label'),
-            'image' => get_sub_field('image'), 'badge' => get_sub_field('badge'),
-            'title' => get_sub_field('title'), 'subtitle' => get_sub_field('subtitle'),
+            'icon' => azk_sub('icon'), 'tab_label' => azk_sub('tab_label'),
+            'image' => azk_sub('image'), 'badge' => azk_sub('badge'),
+            'title' => azk_sub('title'), 'subtitle' => azk_sub('subtitle'),
         ];
     }
 }
@@ -32,7 +32,7 @@ if (!$gallery_tabs) {
 $stats = [];
 if (function_exists('have_rows') && have_rows('stats')) {
     while (have_rows('stats')) { the_row();
-        $stats[] = ['value' => get_sub_field('value'), 'label' => get_sub_field('label')];
+        $stats[] = ['value' => azk_sub('value'), 'label' => azk_sub('label')];
     }
 }
 if (!$stats) $stats = azk_default('stats');
@@ -42,14 +42,14 @@ if (!$stats) $stats = azk_default('stats');
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
       <div class="space-y-6">
         <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-navy/10 text-navy text-xs font-extrabold uppercase tracking-wider">
-          <i data-lucide="building-2" class="w-3.5 h-3.5"></i><span>О компании</span>
+          <i data-lucide="building-2" class="w-3.5 h-3.5"></i><span><?php azk_e('О компании'); ?></span>
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight leading-tight"><?php echo esc_html($title); ?></h2>
         <p class="text-slate-700 text-base leading-relaxed"><?php echo esc_html($text1); ?></p>
         <p class="text-slate-600 text-sm leading-relaxed"><?php echo esc_html($text2); ?></p>
 
         <div class="pt-2">
-          <h3 class="text-sm font-bold text-navy uppercase tracking-wider mb-3">Фундаментальные принципы компании:</h3>
+          <h3 class="text-sm font-bold text-navy uppercase tracking-wider mb-3"><?php azk_e('Фундаментальные принципы компании:'); ?></h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
             <?php foreach ($principles as $p): ?>
               <div class="flex items-start space-x-2.5 p-3 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-navy transition-colors">

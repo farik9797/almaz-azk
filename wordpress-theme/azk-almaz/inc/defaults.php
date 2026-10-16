@@ -160,5 +160,7 @@ function azk_default($key) {
 
     ];
 
-    return $data[$key] ?? [];
+    // Дефолты написаны по-русски. На нерусских адресах переводим их по тексту
+    // таблицей из inc/translations.php — иначе весь контент репитеров остался бы русским.
+    return azk_translate_value($data[$key] ?? []);
 }
