@@ -47,6 +47,7 @@ window.AZK_I18N.zh = {
   "azs-network.1": "零售与服务",
   "azs-network.10": "2号",
   "azs-network.11": "3号",
+  "azs-network.12": "4号",
   "azs-network.13": "点击加油站标记：",
   "azs-network.14": "即可查看地址并规划路线",
   "azs-network.15": "已在地图上选中",

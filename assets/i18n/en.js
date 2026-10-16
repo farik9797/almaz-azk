@@ -47,6 +47,7 @@ window.AZK_I18N.en = {
   "azs-network.1": "Retail and service",
   "azs-network.10": "2",
   "azs-network.11": "3",
+  "azs-network.12": "4",
   "azs-network.13": "Click a station marker:",
   "azs-network.14": "to see the address and get directions",
   "azs-network.15": "Selected on the map",
