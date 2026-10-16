@@ -56,8 +56,8 @@ foreach ($stations as $s) {
       </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <div class="lg:col-span-6 bg-navy rounded-2xl overflow-hidden border border-slate-800 shadow-xl relative min-h-[420px] flex flex-col justify-between">
+    <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+      <div class="xl:col-span-6 bg-navy rounded-2xl overflow-hidden border border-slate-800 shadow-xl relative min-h-[420px] flex flex-col justify-between">
         <div class="p-4 bg-navy-dark border-b border-slate-800 flex items-center justify-between text-xs text-slate-300">
           <div class="flex items-center space-x-2"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i><span class="font-bold text-white"><?php azk_e('Шымкент &amp; Туркестанская область'); ?></span></div>
           <span class="text-leaf font-semibold flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-leaf"></span><span><?php azk_e('Все станции работают 24/7'); ?></span></span>
@@ -101,7 +101,7 @@ foreach ($stations as $s) {
         </div>
       </div>
 
-      <div class="lg:col-span-6 space-y-4" id="station-cards">
+      <div class="xl:col-span-6 space-y-4" id="station-cards">
         <?php foreach ($stations as $i => $s): ?>
           <div class="station-card <?php echo $i === 0 ? 'active border-navy' : 'border-slate-200 hover:border-slate-400'; ?> cursor-pointer rounded-2xl p-6 transition-all border-2 shadow-sm bg-white" data-station="<?php echo esc_attr($s['slug']); ?>" data-region="<?php echo esc_attr($s['region']); ?>">
             <div class="flex items-start justify-between gap-3 mb-3">
