@@ -2,7 +2,8 @@
 <?php
 $title = azk_field('about_title', 'ТОО «АЗК Алмаз» — устойчивое развитие и глубокий опыт с 1998 года');
 $text1 = azk_field('about_text1', 'Более 25 лет ТОО «АЗК Алмаз» является ключевым участником рынка нефтепродуктов Южного Казахстана. Мы специализируемся на поставках качественного топлива: АИ-92, АИ-95, ДТ — для промышленных, сельскохозяйственных, транспортных предприятий и розничных автовладельцев.');
-$text2 = azk_field('about_text2', 'Наличие собственной современной нефтебазы в г. Шымкент позволяет гарантировать непрерывность поставок, точный учёт объёмов и строгое соблюдение всех технических стандартов.');
+$text2_default = 'Наличие собственной современной нефтебазы в г. Шымкент позволяет гарантировать непрерывность поставок, точный учёт объёмов и строгое соблюдение всех технических стандартов.';
+$text2 = azk_field('about_text2', $text2_default);
 
 $principles = [];
 if (function_exists('have_rows') && have_rows('principles')) {
@@ -46,7 +47,13 @@ if (!$stats) $stats = azk_default('stats');
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight leading-tight"><?php echo esc_html($title); ?></h2>
         <p class="text-slate-700 text-base leading-relaxed"><?php echo esc_html($text1); ?></p>
+        <?php /* Как в статике: середина фразы выделена жирным. Если поле правили в админке,
+                 показываем его целиком — разбивать чужой текст по шаблону нельзя. */ ?>
+        <?php if (azk_field_raw('about_text2', $text2_default) === $text2_default): ?>
+        <p class="text-slate-600 text-sm leading-relaxed"><?php azk_e('Наличие'); ?> <strong class="text-navy"><?php azk_e('собственной современной нефтебазы в г. Шымкент'); ?></strong><?php azk_e(' позволяет гарантировать непрерывность поставок, точный учёт объёмов и строгое соблюдение всех технических стандартов.'); ?></p>
+        <?php else: ?>
         <p class="text-slate-600 text-sm leading-relaxed"><?php echo esc_html($text2); ?></p>
+        <?php endif; ?>
 
         <div class="pt-2">
           <h3 class="text-sm font-bold text-navy uppercase tracking-wider mb-3"><?php azk_e('Фундаментальные принципы компании:'); ?></h3>

@@ -57,8 +57,13 @@ if (!$products) $products = azk_default('products');
             </div>
           </div>
           <div class="p-6 pt-0 space-y-2">
-            <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span><?php azk_e('Запросить оптовую цену'); ?></span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
-            <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span><?php azk_e('Запросить Паспорт качества'); ?></span></a>
+            <?php /* У позиций без подтверждённой оптовой цены (автогаз) кнопка одна — как в статике. */ ?>
+            <?php if ($p['price_per_liter'] > 0): ?>
+              <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span><?php azk_e('Запросить оптовую цену'); ?></span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+              <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="w-full text-xs text-slate-500 hover:text-navy font-medium text-center py-1 flex items-center justify-center space-x-1"><i data-lucide="file-text" class="w-3.5 h-3.5"></i><span><?php azk_e('Запросить Паспорт качества'); ?></span></a>
+            <?php else: ?>
+              <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="w-full bg-navy hover:bg-navy-light text-white font-bold text-sm py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow"><span><?php azk_e('Уточнить наличие и цену'); ?></span><i data-lucide="arrow-right" class="w-4 h-4 text-accent"></i></a>
+            <?php endif; ?>
           </div>
         </div>
       <?php endforeach; ?>

@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) exit;
  * соответствующие поля ACF (или если ACF Pro ещё не установлен). Все тексты и цифры
  * взяты 1:1 из утверждённой статической версии сайта.
  */
-function azk_default($key) {
+function azk_default($key, $raw = false) {
     $data = [
 
         'advantages' => [
@@ -160,7 +160,10 @@ function azk_default($key) {
 
     ];
 
+    $out = $data[$key] ?? [];
     // Дефолты написаны по-русски. На нерусских адресах переводим их по тексту
-    // таблицей из inc/translations.php — иначе весь контент репитеров остался бы русским.
-    return azk_translate_value($data[$key] ?? []);
+    // (inc/translations.php) — иначе контент репитеров остался бы русским.
+    // $raw = true нужен там, где значение участвует в логике (фильтр по региону,
+    // подпись станции): такие значения переводятся уже при выводе и с контекстом.
+    return $raw ? $out : azk_translate_value($out);
 }

@@ -15,7 +15,7 @@ $founding_year     = azk_setting('founding_year', '1998');
       <div class="lg:col-span-5 space-y-4">
         <div class="flex items-center space-x-3">
           <img src="<?php echo esc_url(AZK_THEME_URI . '/assets/images/logo/logo-horizontal.png'); ?>" alt="ALMAZ" class="h-9 w-auto">
-          <p class="text-[10px] text-slate-400 font-bold uppercase"><?php azk_e('ТОО «АЗК Алмаз» • Светлые нефтепродукты • с'); ?> <?php echo esc_html($founding_year); ?> <?php azk_e('года'); ?></p>
+          <p class="text-[10px] text-slate-400 font-bold uppercase"><?php echo esc_html(azk_translate('ТОО «АЗК Алмаз» • Светлые нефтепродукты • с ' . $founding_year . ' года')); ?></p>
         </div>
         <p class="text-xs text-slate-400 leading-relaxed"><?php azk_e('Надёжные оптовые и розничные поставки высококачественного бензина (АИ-92, АИ-95) и дизельного топлива Евро-4 в Шымкенте и Туркестанской области.'); ?></p>
         <div class="text-xs text-slate-400"><div class="flex items-center space-x-2 text-white font-semibold"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span><?php echo esc_html($address_full); ?></span></div></div>
@@ -23,12 +23,12 @@ $founding_year     = azk_setting('founding_year', '1998');
       <div class="lg:col-span-3 space-y-3">
         <div class="text-xs font-bold text-white uppercase tracking-wider"><?php azk_e('Навигация'); ?></div>
         <ul class="space-y-2 text-xs">
-          <li><a href="#about" class="hover:text-accent transition-colors"><?php azk_e('О компании'); ?></a></li>
-          <li><a href="#services" class="hover:text-accent transition-colors"><?php azk_e('Услуги'); ?></a></li>
-          <li><a href="#products" class="hover:text-accent transition-colors"><?php azk_e('Продукция (Евро-4)'); ?></a></li>
-          <li><a href="#azs" class="hover:text-accent transition-colors"><?php azk_e('Сеть АЗС'); ?></a></li>
-          <li><a href="#faq" class="hover:text-accent transition-colors"><?php azk_e('Частые вопросы'); ?></a></li>
-          <li><a href="#contacts" class="hover:text-accent transition-colors"><?php azk_e('Контакты'); ?></a></li>
+          <li><a href="#about" class="hover:text-accent transition-colors"><?php azk_e('О компании', 'footer'); ?></a></li>
+          <li><a href="#services" class="hover:text-accent transition-colors"><?php azk_e('Услуги', 'footer'); ?></a></li>
+          <li><a href="#products" class="hover:text-accent transition-colors"><?php azk_e('Продукция (Евро-4)', 'footer'); ?></a></li>
+          <li><a href="#azs" class="hover:text-accent transition-colors"><?php azk_e('Сеть АЗС', 'footer'); ?></a></li>
+          <li><a href="#faq" class="hover:text-accent transition-colors"><?php azk_e('Частые вопросы', 'footer'); ?></a></li>
+          <li><a href="#contacts" class="hover:text-accent transition-colors"><?php azk_e('Контакты', 'footer'); ?></a></li>
         </ul>
       </div>
       <div class="lg:col-span-4 space-y-3">
@@ -42,7 +42,9 @@ $founding_year     = azk_setting('founding_year', '1998');
       </div>
     </div>
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-      <div class="flex items-center space-x-4"><span class="font-semibold">© <?php echo esc_html($founding_year); ?> - <?php echo esc_html(date('Y')); ?> <?php azk_e('ТОО «АЗК Алмаз». Все права защищены.'); ?></span><span class="hidden sm:inline">|</span><span class="hidden sm:inline text-slate-500"><?php azk_e('БИН'); ?> <?php echo esc_html($bin); ?></span></div>
+      <div class="flex items-center space-x-4"><?php /* Переводим целыми строками: по частям в китайском появляются лишние пробелы,
+         а в английском тире набирается иначе. */ ?>
+        <span class="font-semibold"><?php echo esc_html(azk_translate('© ' . $founding_year . ' - ' . date('Y') . ' ТОО «АЗК Алмаз». Все права защищены.')); ?></span><span class="hidden sm:inline">|</span><span class="hidden sm:inline text-slate-500"><?php echo esc_html(azk_translate('БИН ' . $bin)); ?></span></div>
       <div class="flex items-center space-x-6">
         <button data-policy="privacy" class="policy-btn hover:text-white transition-colors"><?php azk_e('Политика конфиденциальности'); ?></button>
         <button data-policy="terms" class="policy-btn hover:text-white transition-colors"><?php azk_e('Условия использования'); ?></button>

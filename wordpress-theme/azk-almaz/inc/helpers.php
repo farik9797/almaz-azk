@@ -47,6 +47,36 @@ function azk_setting($key, $default = '') {
     return azk_translate_value($default);
 }
 
+/** Значение поля записи БЕЗ перевода — см. azk_setting_raw(). */
+function azk_field_raw($key, $default = '', $post_id = null) {
+    if (function_exists('get_field')) {
+        $val = get_field($key, $post_id);
+        if ($val !== null && $val !== '' && $val !== false) return $val;
+    }
+    return $default;
+}
+
+/** Подполе репитера БЕЗ перевода — см. azk_setting_raw(). */
+function azk_sub_raw($key, $default = '') {
+    if (function_exists('get_sub_field')) {
+        $val = get_sub_field($key);
+        if ($val !== null && $val !== '' && $val !== false) return $val;
+    }
+    return $default;
+}
+
+/**
+ * Значение поля БЕЗ перевода. Нужно, когда шаблон склеивает фразу из частей:
+ * перевести надо всю фразу целиком, а не кусок, уже переведённый по дороге.
+ */
+function azk_setting_raw($key, $default = '') {
+    if (function_exists('get_field')) {
+        $val = get_field($key, 'option');
+        if ($val !== null && $val !== '' && $val !== false) return $val;
+    }
+    return $default;
+}
+
 /**
  * Запасной перевод: значение пришло по-русски (из поля или из дефолта),
  * а языкового поля для него не завели. Тогда переводим по самому тексту

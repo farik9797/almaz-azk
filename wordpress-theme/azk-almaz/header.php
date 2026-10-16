@@ -49,7 +49,8 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
         <div class="flex items-center space-x-2 whitespace-nowrap"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span><?php azk_e('Официальные поставки Евро-4 с 1998 года'); ?></span></div>
       </div>
       <div class="flex items-center space-x-3">
-        <span class="text-slate-400 whitespace-nowrap"><?php azk_e('Офис и нефтебаза:'); ?> <?php echo esc_html($hours_office); ?></span>
+        <?php /* Переводим всю строку целиком: по частям казахский и китайский склеиваются с лишним пробелом. */ ?>
+        <span class="text-slate-400 whitespace-nowrap"><?php echo esc_html(azk_translate('Офис и нефтебаза: ' . azk_setting_raw('hours_office', 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00'))); ?></span>
         <span class="inline-flex items-center shrink-0 whitespace-nowrap space-x-1.5 px-2 py-0.5 rounded bg-leaf/20 text-leaf border border-leaf/40 font-bold"><i data-lucide="clock" class="w-3.5 h-3.5"></i><span><?php azk_e('АЗС 24/7'); ?></span></span>
         <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i><span><?php echo esc_html($phone_general); ?></span>
@@ -68,12 +69,12 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
       </a>
 
       <nav class="hidden xl:flex items-center space-x-1 xl:space-x-2 text-sm font-semibold text-navy">
-        <a href="#about" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('О компании'); ?></a>
-        <a href="#services" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('Услуги'); ?></a>
-        <a href="#products" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('Продукция'); ?></a>
-        <a href="#azs" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('Сеть АЗС'); ?></a>
-        <a href="#faq" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('Вопросы'); ?></a>
-        <a href="#contacts" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('Контакты'); ?></a>
+        <a href="#about" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('О компании', 'nav'); ?></a>
+        <a href="#services" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('Услуги', 'nav'); ?></a>
+        <a href="#products" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('Продукция', 'nav'); ?></a>
+        <a href="#azs" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('Сеть АЗС', 'nav'); ?></a>
+        <a href="#faq" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('Вопросы', 'nav'); ?></a>
+        <a href="#contacts" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors"><?php azk_e('Контакты', 'nav'); ?></a>
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
@@ -113,19 +114,28 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
       <span><?php echo esc_html($address_short); ?></span><span class="text-accent-dark font-semibold"><?php azk_e('АЗС 24/7'); ?></span>
     </div>
     <div class="flex flex-col space-y-1 pt-1">
-      <a href="#about" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('О компании'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
-      <a href="#services" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('Услуги'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
-      <a href="#products" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('Продукция'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
-      <a href="#azs" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('Сеть АЗС'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
-      <a href="#faq" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('Вопросы'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
-      <a href="#contacts" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('Контакты'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#about" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('О компании', 'nav_mobile'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#services" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('Услуги', 'nav_mobile'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#products" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('Продукция', 'nav_mobile'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#azs" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('Сеть АЗС', 'nav_mobile'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#faq" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('Вопросы', 'nav_mobile'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+      <a href="#contacts" class="mobile-link flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium hover:bg-slate-100 hover:text-accent-dark"><?php azk_e('Контакты', 'nav_mobile'); ?> <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
     </div>
     <div class="pt-3 border-t border-slate-200 space-y-2">
       <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="flex items-center justify-between p-3 rounded bg-navy text-sm font-semibold text-white">
-        <span class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4 text-accent"></i><span><?php azk_e('Оптовая реализация:'); ?> <?php echo esc_html($phone_wholesale); ?></span></span>
+        <span class="flex items-center space-x-2"><i data-lucide="phone" class="w-4 h-4 text-accent"></i><span><?php echo esc_html(azk_translate('Оптовая реализация: ' . $phone_wholesale)); ?></span></span>
         <span class="text-xs text-accent"><?php azk_e('Позвонить'); ?></span>
       </a>
       <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="mobile-link w-full block bg-accent text-navy font-bold py-3 rounded-md text-center text-sm shadow-md"><?php azk_e('Позвонить нам'); ?></a>
+    </div>
+    <div class="pt-3 border-t border-slate-200">
+      <div class="text-xs font-semibold text-slate-500 mb-2"><?php azk_e('Язык сайта'); ?></div>
+      <div class="grid grid-cols-4 gap-2">
+        <?php foreach ($azk_langs as $code => $cfg): ?>
+        <a href="<?php echo esc_url(azk_lang_url($code)); ?>" data-lang="<?php echo esc_attr($code); ?>"
+           class="lang-opt py-2 rounded border border-slate-300 text-xs font-bold text-center cursor-pointer <?php echo $code === $azk_cur ? 'text-navy bg-slate-50 border-navy' : 'text-slate-600 hover:border-navy'; ?>"><?php echo esc_html($cfg['label']); ?></a>
+        <?php endforeach; ?>
+      </div>
     </div>
   </nav>
 </header>

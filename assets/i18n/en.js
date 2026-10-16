@@ -188,7 +188,7 @@ window.AZK_I18N.en = {
   "header.22": "Call us",
   "header.23": "Site language",
   "header.24": "Stations 24/7",
-  "header.3": "Office and tank farm: Mon – Fri 08:00 – 17:00, Sat 08:00 – 13:00",
+  "header.3": "Office and tank farm: Mon – Fri: 08:00 – 17:00, Sat: 08:00 – 13:00",
   "header.4": "About",
   "header.5": "Services",
   "header.6": "Products",

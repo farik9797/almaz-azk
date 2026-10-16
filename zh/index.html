@@ -80,7 +80,7 @@
         <div class="flex items-center space-x-2 whitespace-nowrap"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span data-i18n="header.2">自1998年起正规供应欧4燃油</span></div>
       </div>
       <div class="flex items-center space-x-3">
-        <span class="text-slate-400 whitespace-nowrap" data-i18n="header.3">办公室及油库：周一至周五 08:00 - 17:00，周六 08:00 - 13:00</span>
+        <span class="text-slate-400 whitespace-nowrap" data-i18n="header.3">办公室及油库：周一至周五：08:00 - 17:00，周六：08:00 - 13:00</span>
         <span class="inline-flex items-center shrink-0 whitespace-nowrap space-x-1.5 px-2 py-0.5 rounded bg-leaf/20 text-leaf border border-leaf/40 font-bold"><i data-lucide="clock" class="w-3.5 h-3.5"></i><span data-i18n="header.24">加油站 24/7</span></span>
         <a href="tel:+77252357444" class="flex items-center shrink-0 whitespace-nowrap space-x-1.5 text-accent font-semibold hover:underline">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i><span>+7 (7252) 357-444</span>
@@ -615,16 +615,16 @@
                Маркеры позиционируются в процентах от размера картинки, поэтому
                изображение должно отображаться целиком (w-full h-auto), без object-cover. -->
           <img src="../assets/images/azs-map.jpg" alt="Карта сети АЗС ALMAZ в Шымкенте и Туркестанской области" class="w-full h-auto block" width="1200" height="800" loading="lazy">
-          <button data-station="azs-1" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:71.54%; left:44.55%;">
+          <button data-station="azs-1" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:71.54%; left:42.56%;">
             <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.9">1号</span>
           </button>
-          <button data-station="azs-2" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:28.72%; left:50.74%; margin-left:-22px;">
+          <button data-station="azs-2" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:28.72%; left:48.74%; margin-left:-22px;">
             <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.10">2号</span>
           </button>
-          <button data-station="azs-3" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:28.43%; left:50.85%; margin-left:22px;">
+          <button data-station="azs-3" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:28.43%; left:48.86%; margin-left:22px;">
             <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.11">3号</span>
           </button>
-          <button data-station="azs-4" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:51.06%; left:55.45%;">
+          <button data-station="azs-4" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:38.51%; left:57.44%;">
             <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent" data-i18n="azs-network.12">4号</span>
           </button>
           <div class="absolute bottom-3 left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300 max-w-[70%]">
@@ -1005,8 +1005,10 @@
 
   // Блоки, которые рисует JS, общий проход движка вернул бы к значениям из разметки —
   // поэтому после смены языка перерисовываем их с текущим состоянием.
-  document.addEventListener('azk:langchange', (e) => {
-    if (e.detail.initial) return;
+  document.addEventListener('azk:langchange', () => {
+    // Отрисовываем и на старте тоже: перечень удобств АЗС в разметке пустой,
+    // он берётся из данных станции — без этого вызова строка остаётся пустой,
+    // пока посетитель не кликнет по станции.
     renderGallery(currentGallery);
     selectStation(currentStation);
   });
