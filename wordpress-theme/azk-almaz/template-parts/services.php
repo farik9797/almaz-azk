@@ -24,7 +24,7 @@ if (!$services) $services = azk_default('services');
       <?php foreach ($services as $i => $s): ?>
         <div class="bg-white rounded-xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-navy hover:-translate-y-1 transition-all flex flex-col justify-between">
           <div>
-            <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="<?php echo esc_attr($s['icon']); ?>" class="w-6 h-6 text-accent"></i></div><div><h3 class="text-lg font-bold text-navy"><?php echo esc_html($s['title']); ?></h3></div></div>
+            <div class="flex items-center space-x-3 mb-4"><div class="w-12 h-12 rounded-lg bg-navy flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="<?php echo esc_attr($s['icon']); ?>" class="w-6 h-6 <?php echo azk_icon_tone('services', $s['icon']); ?>"></i></div><div><h3 class="text-lg font-bold text-navy"><?php echo esc_html($s['title']); ?></h3></div></div>
             <p class="text-sm font-medium text-slate-800 mb-2"><?php echo esc_html($s['description']); ?></p>
             <p class="text-xs text-slate-500 leading-relaxed mb-4"><?php echo esc_html($s['details']); ?></p>
           </div>

@@ -17,3 +17,5 @@ wordpress-theme/azk-almaz.zip
 __pycache__/
 
 deploy/
+
+.DS_Store

@@ -20,13 +20,15 @@ if (!$cards) $cards = azk_default('promo_cards');
       </div>
       <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="bg-accent hover:bg-accent-dark text-navy font-extrabold text-sm px-5 py-3 rounded-lg shadow flex items-center justify-center space-x-2 self-start md:self-auto"><span><?php azk_e('Оформить топливную карту'); ?></span><i data-lucide="arrow-right" class="w-4 h-4"></i></a>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <?php foreach ($cards as $c): ?>
         <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 space-y-3 hover:border-accent/60 transition-colors">
-          <div class="w-10 h-10 rounded-lg bg-accent/20 text-accent flex items-center justify-center"><i data-lucide="<?php echo esc_attr($c['icon']); ?>" class="w-5 h-5"></i></div>
+          <?php /* Карточка со скидками/бонусами зелёная, остальные жёлтые — как в статике. */ ?>
+          <?php $leaf = $c['icon'] === 'percent'; ?>
+          <div class="w-10 h-10 rounded-lg <?php echo $leaf ? 'bg-leaf/20 text-leaf' : 'bg-accent/20 text-accent'; ?> flex items-center justify-center"><i data-lucide="<?php echo esc_attr($c['icon']); ?>" class="w-5 h-5"></i></div>
           <h3 class="text-lg font-bold"><?php echo esc_html($c['title']); ?></h3>
           <p class="text-xs text-slate-300 leading-relaxed"><?php echo esc_html($c['text']); ?></p>
-          <div class="pt-2 text-xs font-bold text-accent"><?php echo esc_html($c['tagline']); ?></div>
+          <div class="pt-2 text-xs font-bold <?php echo $leaf ? 'text-leaf' : 'text-accent'; ?>"><?php echo esc_html($c['tagline']); ?></div>
         </div>
       <?php endforeach; ?>
     </div>

@@ -43,7 +43,7 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
 
 <header class="sticky top-0 z-40 w-full">
   <div class="bg-[#0A1E36] text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden xl:block">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
       <div class="flex items-center space-x-3">
         <div class="flex items-center space-x-2 whitespace-nowrap"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span><?php echo esc_html($address_short); ?></span></div>
         <div class="flex items-center space-x-2 whitespace-nowrap"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-leaf"></i><span><?php azk_e('Официальные поставки Евро-4 с 1998 года'); ?></span></div>
@@ -52,10 +52,10 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
         <?php /* Переводим всю строку целиком: по частям казахский и китайский склеиваются с лишним пробелом. */ ?>
         <span class="text-slate-400 whitespace-nowrap"><?php echo esc_html(azk_translate('Офис и нефтебаза: ' . azk_setting_raw('hours_office', 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00'))); ?></span>
         <span class="inline-flex items-center shrink-0 whitespace-nowrap space-x-1.5 px-2 py-0.5 rounded bg-leaf/20 text-leaf border border-leaf/40 font-bold"><i data-lucide="clock" class="w-3.5 h-3.5"></i><span><?php azk_e('АЗС 24/7'); ?></span></span>
-        <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
+        <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="flex items-center shrink-0 whitespace-nowrap space-x-1.5 text-accent font-semibold hover:underline">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i><span><?php echo esc_html($phone_general); ?></span>
         </a>
-        <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="flex items-center space-x-1.5 text-accent font-semibold hover:underline">
+        <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="flex items-center shrink-0 whitespace-nowrap space-x-1.5 text-accent font-semibold hover:underline">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i><span><?php echo esc_html($phone_cooperation); ?></span>
         </a>
       </div>
@@ -90,7 +90,7 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
           <ul id="lang-menu" class="hidden absolute right-0 mt-1.5 w-36 bg-white border border-slate-200 rounded-md shadow-lg py-1 z-50">
             <?php foreach ($azk_langs as $code => $cfg) : ?>
             <li><a href="<?php echo esc_url(azk_lang_url($code)); ?>" data-lang="<?php echo esc_attr($code); ?>"
-                   class="lang-opt block w-full text-left px-3 py-2 text-sm <?php echo $code === $azk_cur ? 'text-navy font-bold bg-slate-50' : 'text-slate-600'; ?> hover:bg-slate-100"><?php echo esc_html($cfg['label']); ?></a></li>
+                   class="lang-opt block w-full text-left px-3 py-2 text-sm <?php echo $code === $azk_cur ? 'text-navy font-bold bg-slate-50' : 'text-slate-600'; ?> hover:bg-slate-100 cursor-pointer"><?php echo esc_html($cfg['label']); ?></a></li>
             <?php endforeach; ?>
           </ul>
         </div>

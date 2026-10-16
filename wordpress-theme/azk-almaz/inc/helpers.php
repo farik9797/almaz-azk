@@ -47,6 +47,23 @@ function azk_setting($key, $default = '') {
     return azk_translate_value($default);
 }
 
+/**
+ * Цвет иконки карточки. В макете он назначен вручную по карточкам, а не выводится
+ * из чего-то — поэтому держим соответствие «секция + иконка → цвет» здесь.
+ * Незнакомая иконка (клиент выбрал свою) получает жёлтый акцент.
+ */
+function azk_icon_tone($section, $icon) {
+    $map = [
+        'advantages'  => ['trending-down' => 'text-accent', 'shield-check' => 'text-leaf',
+                          'user-check' => 'text-accent', 'clock' => 'text-navy'],
+        'services'    => ['truck' => 'text-accent', 'fuel' => 'text-leaf', 'warehouse' => 'text-accent',
+                          'file-check' => 'text-leaf', 'credit-card' => 'text-accent'],
+        'phone_cards' => ['phone-call' => 'text-accent', 'briefcase' => 'text-leaf',
+                          'fuel' => 'text-leaf', 'credit-card' => 'text-navy-light'],
+    ];
+    return $map[$section][$icon] ?? 'text-accent';
+}
+
 /** Значение поля записи БЕЗ перевода — см. azk_setting_raw(). */
 function azk_field_raw($key, $default = '', $post_id = null) {
     if (function_exists('get_field')) {

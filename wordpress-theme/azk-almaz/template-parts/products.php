@@ -34,7 +34,9 @@ if (!$products) $products = azk_default('products');
         <div class="bg-[#F8FAFC] rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy transition-all flex flex-col justify-between">
           <div>
             <div class="bg-navy text-white p-6">
-              <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent"><?php echo esc_html($p['name']); ?></span><span class="text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono"><?php echo esc_html($p['code']); ?></span></div>
+              <div class="flex items-center justify-between mb-2"><span class="text-2xl font-black text-accent"><?php echo esc_html($p['name']); ?></span><?php /* Длинный код («ГОСТ 32511-2013 / Евро-4») не влезает в строку с названием — в статике он уходит под неё отдельным блоком и чуть мельче. */ ?>
+              <?php $long_code = mb_strlen($p['code']) > 18; ?>
+              <span class="<?php echo $long_code ? 'text-[11px] bg-white/10 text-slate-300 px-2 py-1 rounded border border-white/20 font-mono block w-fit mb-1' : 'text-xs bg-white/10 text-slate-300 px-2.5 py-1 rounded border border-white/20 font-mono'; ?>"><?php echo esc_html($p['code']); ?></span></div>
               <?php if ($p['specs']): ?>
                 <div class="inline-flex items-center space-x-1.5 bg-leaf/20 border border-leaf/50 px-3 py-1 rounded text-xs font-bold text-leaf mt-1"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i><span><?php azk_e('Соответствует требованиям качества'); ?></span></div>
               <?php endif; ?>

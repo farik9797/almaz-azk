@@ -72,10 +72,10 @@ foreach ($stations as $s) {
           <?php $nudge = ['azs-2' => ' margin-left:-22px;', 'azs-3' => ' margin-left:22px;']; ?>
           <?php foreach ($stations as $i => $s): ?>
             <button data-station="<?php echo esc_attr($s['slug']); ?>" class="marker absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10" style="top:<?php echo esc_attr($s['marker_top']); ?>%; left:<?php echo esc_attr($s['marker_left']); ?>%;<?php echo $nudge[$s['slug']] ?? ''; ?>">
-              <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 <?php echo $i === 0 ? 'bg-accent text-navy border-white' : 'bg-navy text-white border-accent'; ?>"><?php echo esc_html(azk_translate($s['label'], null, 'marker')); ?></span>
+              <span class="w-11 h-11 rounded-full flex items-center justify-center font-black text-xs shadow-xl border-2 bg-navy text-white border-accent"><?php echo esc_html(azk_translate($s['label'], null, 'marker')); ?></span>
             </button>
           <?php endforeach; ?>
-          <div class="absolute bottom-3 left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300">
+          <div class="absolute bottom-3 left-3 bg-navy/90 backdrop-blur p-2.5 rounded-lg border border-slate-800 text-[11px] text-slate-300 max-w-[70%]">
             <span class="font-bold text-white block mb-0.5"><?php azk_e('Кликните по маркеру АЗС:'); ?></span><span><?php azk_e('чтобы увидеть адрес и проложить маршрут'); ?></span>
           </div>
         </div>

@@ -27,7 +27,7 @@ if (!$rows) $rows = azk_default('advantages');
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <?php foreach ($rows as $row): ?>
         <div class="bg-[#F8FAFC] p-6 rounded-xl border border-slate-200/80 hover:border-accent/60 hover:shadow-md transition-all">
-          <div class="w-14 h-14 rounded-lg bg-white border border-slate-200 flex items-center justify-center mb-5 shadow-sm"><i data-lucide="<?php echo esc_attr($row['icon']); ?>" class="w-8 h-8 text-accent"></i></div>
+          <div class="w-14 h-14 rounded-lg bg-white border border-slate-200 flex items-center justify-center mb-5 shadow-sm"><i data-lucide="<?php echo esc_attr($row['icon']); ?>" class="w-8 h-8 <?php echo azk_icon_tone('advantages', $row['icon']); ?>"></i></div>
           <div class="text-xs font-bold text-slate-400 mb-1"><?php echo esc_html($row['number']); ?></div>
           <h3 class="text-xl font-bold text-navy mb-3"><?php echo esc_html($row['title']); ?></h3>
           <p class="text-sm text-slate-600 leading-relaxed"><?php echo esc_html($row['text']); ?></p>
