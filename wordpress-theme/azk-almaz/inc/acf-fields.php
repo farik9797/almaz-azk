@@ -10,6 +10,30 @@ function azk_register_acf_fields() {
     azk_acf_policies();
 }
 
+/**
+ * Языковые близнецы поля.
+ *
+ * Отдаёт исходное поле плюс по одному на en/kk/zh: hero_title → hero_title_en и т.д.
+ * Именно эти имена ищет azk_field() на нерусских адресах (см. inc/i18n.php).
+ * У переводов намеренно нет default_value: пустое поле означает «показать русский»,
+ * а не «показать пустоту». Писать три копии руками не нужно — оборачиваем поле сюда.
+ *
+ * Применять только к полям с текстом. Телефоны, БИН, год и прочее от языка не зависят.
+ */
+function azk_i18n_field(array $field) {
+    $out = [$field];
+    foreach (['en' => 'English', 'kk' => 'Қазақша', 'zh' => '中文'] as $code => $label) {
+        $copy = $field;
+        $copy['key']   = $field['key'] . '_' . $code;
+        $copy['name']  = $field['name'] . '_' . $code;
+        $copy['label'] = $field['label'] . ' — ' . $label;
+        unset($copy['default_value'], $copy['required']);
+        $copy['wrapper'] = ['class' => 'azk-i18n azk-i18n-' . $code];
+        $out[] = $copy;
+    }
+    return $out;
+}
+
 /* Общий список иконок Lucide, использованных в макете — см. assets/js/theme.js (lucide.createIcons()). */
 function azk_icon_choices() {
     return [
@@ -39,12 +63,12 @@ function azk_acf_options() {
             ['key' => 'field_azk_opt_phone_cooperation', 'name' => 'phone_cooperation', 'label' => 'Телефон: по вопросам розничной реализации через сеть АЗС', 'type' => 'text', 'default_value' => '+7 (775) 865-37-37'],
             ['key' => 'field_azk_opt_phone_general', 'name' => 'phone_general', 'label' => 'Телефон: офис', 'type' => 'text', 'default_value' => '+7 (7252) 357-444'],
             ['key' => 'field_azk_opt_phone_accounting', 'name' => 'phone_accounting', 'label' => 'Телефон: бухгалтерия', 'type' => 'text', 'default_value' => '+7 (771) 061-10-66'],
-            ['key' => 'field_azk_opt_address_short', 'name' => 'address_short', 'label' => 'Адрес (кратко, для топбара)', 'type' => 'text', 'default_value' => 'г. Шымкент, проспект Абая, 1А'],
-            ['key' => 'field_azk_opt_address_full', 'name' => 'address_full', 'label' => 'Адрес офиса (полный)', 'type' => 'text', 'default_value' => 'г. Шымкент, район Тұран, проспект Абая, 1А'],
-            ['key' => 'field_azk_opt_hours_office', 'name' => 'hours_office', 'label' => 'Режим работы офиса и нефтебазы', 'type' => 'text', 'default_value' => 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00'],
-            ['key' => 'field_azk_opt_hours_depot', 'name' => 'hours_depot', 'label' => 'Режим работы АЗС', 'type' => 'text', 'default_value' => 'Круглосуточно, 24/7'],
+            ...azk_i18n_field(['key' => 'field_azk_opt_address_short', 'name' => 'address_short', 'label' => 'Адрес (кратко, для топбара)', 'type' => 'text', 'default_value' => 'г. Шымкент, проспект Абая, 1А']),
+            ...azk_i18n_field(['key' => 'field_azk_opt_address_full', 'name' => 'address_full', 'label' => 'Адрес офиса (полный)', 'type' => 'text', 'default_value' => 'г. Шымкент, район Тұран, проспект Абая, 1А']),
+            ...azk_i18n_field(['key' => 'field_azk_opt_hours_office', 'name' => 'hours_office', 'label' => 'Режим работы офиса и нефтебазы', 'type' => 'text', 'default_value' => 'Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00']),
+            ...azk_i18n_field(['key' => 'field_azk_opt_hours_depot', 'name' => 'hours_depot', 'label' => 'Режим работы АЗС', 'type' => 'text', 'default_value' => 'Круглосуточно, 24/7']),
             ['key' => 'field_azk_opt_bin', 'name' => 'bin', 'label' => 'БИН компании', 'type' => 'text', 'default_value' => '011240001881'],
-            ['key' => 'field_azk_opt_legal_entity', 'name' => 'legal_entity', 'label' => 'Юридическое наименование', 'type' => 'text', 'default_value' => 'ТОО «АЗК Алмаз»'],
+            ...azk_i18n_field(['key' => 'field_azk_opt_legal_entity', 'name' => 'legal_entity', 'label' => 'Юридическое наименование', 'type' => 'text', 'default_value' => 'ТОО «АЗК Алмаз»']),
             ['key' => 'field_azk_opt_founding_year', 'name' => 'founding_year', 'label' => 'Год основания', 'type' => 'text', 'default_value' => '1998'],
             ['key' => 'field_azk_opt_years_count', 'name' => 'years_count', 'label' => 'Лет на рынке (бейдж)', 'type' => 'text', 'default_value' => '25+'],
         ],
