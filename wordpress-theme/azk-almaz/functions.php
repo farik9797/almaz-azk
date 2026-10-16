@@ -5,6 +5,7 @@ define('AZK_THEME_VER', '1.0.0');
 define('AZK_THEME_DIR', get_template_directory());
 define('AZK_THEME_URI', get_template_directory_uri());
 
+require_once AZK_THEME_DIR . '/inc/i18n.php';
 require_once AZK_THEME_DIR . '/inc/helpers.php';
 require_once AZK_THEME_DIR . '/inc/defaults.php';
 require_once AZK_THEME_DIR . '/inc/acf-fields.php';

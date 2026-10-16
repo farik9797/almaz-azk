@@ -2,6 +2,27 @@
   document.addEventListener('DOMContentLoaded', function () {
     if (window.lucide) lucide.createIcons();
 
+    /* Переключатель языка: пункты — обычные ссылки на /en/, /kz/, /zh/,
+       нам остаётся только открывать и закрывать список. */
+    var langBtn = document.getElementById('lang-btn');
+    var langMenu = document.getElementById('lang-menu');
+    if (langBtn && langMenu) {
+      langBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = langMenu.classList.toggle('hidden');
+        langBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+      document.addEventListener('click', function (e) {
+        if (!langMenu.contains(e.target) && e.target !== langBtn) {
+          langMenu.classList.add('hidden');
+          langBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') langMenu.classList.add('hidden');
+      });
+    }
+
     /* Mobile menu */
     var menuBtn = document.getElementById('menu-btn');
     var mobileMenu = document.getElementById('mobile-menu');

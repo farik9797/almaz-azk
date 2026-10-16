@@ -27,6 +27,7 @@
 </script>
 <script src="https://unpkg.com/lucide@latest"></script>
 
+<?php azk_head_links(); ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class('antialiased'); ?>>
@@ -41,7 +42,7 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
 ?>
 
 <header class="sticky top-0 z-40 w-full">
-  <div class="bg-[#0A1E36] text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden lg:block">
+  <div class="bg-[#0A1E36] text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden xl:block">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <div class="flex items-center space-x-2 whitespace-nowrap"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-accent"></i><span><?php echo esc_html($address_short); ?></span></div>
@@ -66,7 +67,7 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
         <img src="<?php echo esc_url(AZK_THEME_URI . '/assets/images/logo/logo-horizontal.png'); ?>" alt="ALMAZ" class="h-8 sm:h-9 w-auto max-w-none">
       </a>
 
-      <nav class="hidden lg:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-navy">
+      <nav class="hidden xl:flex items-center space-x-1 xl:space-x-2 text-sm font-semibold text-navy">
         <a href="#about" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">О компании</a>
         <a href="#services" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">Услуги</a>
         <a href="#products" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">Продукция</a>
@@ -75,20 +76,39 @@ $hours_office      = azk_setting('hours_office', 'Пн - Пт: 08:00 - 17:00, С
         <a href="#contacts" class="px-3 py-2 rounded-md hover:text-accent-dark hover:bg-slate-100 transition-colors">Контакты</a>
       </nav>
 
-      <div class="hidden sm:flex items-center space-x-3">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+
+        <?php $azk_langs = azk_languages(); $azk_cur = azk_lang(); ?>
+        <div class="relative shrink-0">
+          <button id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Язык сайта"
+                  class="flex items-center gap-1.5 px-2.5 py-2 rounded-md border border-slate-300 text-navy text-xs font-bold hover:border-navy hover:bg-slate-50 transition-colors cursor-pointer">
+            <i data-lucide="globe" class="w-4 h-4 text-slate-500"></i>
+            <span id="lang-current"><?php echo esc_html($azk_langs[$azk_cur]['short']); ?></span>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400"></i>
+          </button>
+          <ul id="lang-menu" class="hidden absolute right-0 mt-1.5 w-36 bg-white border border-slate-200 rounded-md shadow-lg py-1 z-50">
+            <?php foreach ($azk_langs as $code => $cfg) : ?>
+            <li><a href="<?php echo esc_url(azk_lang_url($code)); ?>" data-lang="<?php echo esc_attr($code); ?>"
+                   class="lang-opt block w-full text-left px-3 py-2 text-sm <?php echo $code === $azk_cur ? 'text-navy font-bold bg-slate-50' : 'text-slate-600'; ?> hover:bg-slate-100"><?php echo esc_html($cfg['label']); ?></a></li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+
+      <div class="hidden md:flex items-center space-x-3">
         <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="text-xs font-bold text-navy hover:text-white hover:bg-navy px-3 py-2 rounded border border-slate-300 hover:border-navy transition-colors">Оптовые цены</a>
         <a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="bg-accent hover:bg-accent-dark text-navy font-bold text-sm px-4 py-2.5 rounded-md shadow-md transition-all flex items-center space-x-2">
           <i data-lucide="phone" class="w-4 h-4"></i><span>Связаться</span>
         </a>
       </div>
 
-      <button id="menu-btn" class="lg:hidden text-navy p-2 rounded-md hover:bg-slate-100" aria-label="Открыть меню">
+      <button id="menu-btn" class="xl:hidden text-navy p-2 rounded-md hover:bg-slate-100" aria-label="Открыть меню">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
+      </div>
     </div>
   </div>
 
-  <nav id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 shadow-md text-navy px-4 pt-3 pb-6 space-y-3">
+  <nav id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 shadow-md text-navy px-4 pt-3 pb-6 space-y-3">
     <div class="text-xs text-slate-500 pb-2 border-b border-slate-200 flex justify-between items-center">
       <span><?php echo esc_html($address_short); ?></span><span class="text-accent-dark font-semibold">АЗС 24/7</span>
     </div>

@@ -6,6 +6,11 @@ if (!defined('ABSPATH')) exit;
  */
 function azk_field($key, $default = '', $post_id = null) {
     if (function_exists('get_field')) {
+        // Для нерусского языка сначала ищем перевод (hero_title_en), потом исходное поле.
+        if (($i18n = azk_i18n_key($key)) !== $key) {
+            $val = get_field($i18n, $post_id);
+            if ($val !== null && $val !== '' && $val !== false) return $val;
+        }
         $val = get_field($key, $post_id);
         if ($val !== null && $val !== '' && $val !== false) return $val;
     }
@@ -17,6 +22,10 @@ function azk_field($key, $default = '', $post_id = null) {
  */
 function azk_sub($key, $default = '') {
     if (function_exists('get_sub_field')) {
+        if (($i18n = azk_i18n_key($key)) !== $key) {
+            $val = get_sub_field($i18n);
+            if ($val !== null && $val !== '' && $val !== false) return $val;
+        }
         $val = get_sub_field($key);
         if ($val !== null && $val !== '' && $val !== false) return $val;
     }
@@ -28,6 +37,10 @@ function azk_sub($key, $default = '') {
  */
 function azk_setting($key, $default = '') {
     if (function_exists('get_field')) {
+        if (($i18n = azk_i18n_key($key)) !== $key) {
+            $val = get_field($i18n, 'option');
+            if ($val !== null && $val !== '' && $val !== false) return $val;
+        }
         $val = get_field($key, 'option');
         if ($val !== null && $val !== '' && $val !== false) return $val;
     }
