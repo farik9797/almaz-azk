@@ -3,7 +3,7 @@ window.AZK_I18N = window.AZK_I18N || {};
 window.AZK_I18N.en = {
   "advantages-attr.1": "Branded mini-market at an ALMAZ filling station",
   "advantages.1": "Our strengths",
-  "advantages.10": "Client-focused service",
+  "advantages.10": "Care for every customer",
   "advantages.11": "A dedicated manager for every wholesale buyer, flexible payment schemes and prompt paperwork.",
   "advantages.12": "AZK Almaz guarantee",
   "advantages.13": "Fast response",

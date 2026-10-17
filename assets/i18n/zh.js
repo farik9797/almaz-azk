@@ -3,7 +3,7 @@ window.AZK_I18N = window.AZK_I18N || {};
 window.AZK_I18N.zh = {
   "advantages-attr.1": "ALMAZ 加油站的自营便利店",
   "advantages.1": "我们的优势",
-  "advantages.10": "以客户为中心的服务",
+  "advantages.10": "关怀每一位客户",
   "advantages.11": "为每一位批发客户配备专属经理，提供灵活的付款方式和高效的单据流转。",
   "advantages.12": "AZK Almaz 品质保证",
   "advantages.13": "响应迅速",
