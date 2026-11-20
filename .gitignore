@@ -19,3 +19,6 @@ __pycache__/
 deploy/
 
 .DS_Store
+
+# бэкапы с живого сайта (wp-config с паролем БД) — не коммитить
+backups/
