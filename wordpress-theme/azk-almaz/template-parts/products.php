@@ -13,7 +13,7 @@ if (function_exists('have_rows') && have_rows('products')) {
         $features = [];
         if (have_rows('features')) { while (have_rows('features')) { the_row(); $features[] = azk_sub('feature'); } }
         $products[] = [
-            'id' => azk_sub('id'), 'name' => azk_sub('name'), 'code' => azk_sub('code'),
+            'id' => azk_sub('id'), 'name' => azk_translate(azk_sub_raw('name'), null, 'product'), 'code' => azk_sub('code'),
             'description' => azk_sub('description'), 'specs' => $specs, 'features' => $features,
             'price_per_liter' => (float) azk_sub('price_per_liter'), 'density' => (float) azk_sub('density'),
         ];

@@ -344,6 +344,17 @@ python3 tools/i18n-check.py       # убедиться, что всё сходи
 
 **Версия темы поднята до 1.1.0** — иначе браузеры и кеш хостинга продолжали отдавать старые `theme.css` и `theme.js`.
 
+## Английский текст от клиента (20.11)
+Клиент прислал свой перевод сайта (`AZK Almaz LLP_eng (1).docx`, в Загрузках). Он **заменил наш английский**: 270 ключей `assets/i18n/en.js` взяты из документа, 236 из них изменились. Казахский и китайский не трогали.
+
+- **Термины клиента** разнесены и на строки, которых в документе нет (шапка, title, description, вкладка «Розница», политика): oil depot вместо tank farm, fuel station вместо filling station, Euro IV вместо Euro 4.
+- **Мелкая правка документа при переносе:** «product typ» → type, «How can i / What should i» → I, «Sulfur/Sulphur» и «Environmental/Emission class» сведены к одному варианту на все три карточки, класс везде «K4 (Euro IV)», кнопки продукции одинаковые во всех карточках, адрес офиса везде в одном виде (`1A Abay Avenue, Turan District, Shymkent, Kazakhstan`), регистр заголовков — как в остальном сайте.
+- **Где английский говорит больше русского** (взято у клиента как есть, русский не меняли): hero — «we ensure consistent quality, dependable delivery, and competitive pricing»; О компании — «serving thousands of motorists»; FAQ стали заметно длиннее (обещания про «promptly, professionally, and transparently», «flexible purchasing arrangements»); LPG — «available across *selected* stations»; трасса у АЗС-1 — **Almaty–Tashkent** (в русском «Алматы–Термез»); «участок 349» у АЗС-2 стал «block 349». Подписи акций «Explore current offers» / «Learn more about corporate fuel cards» звучат как ссылки, но ссылками не являются.
+- Третье преимущество в английском — **Dedicated customer support** (из документа), а не наш вариант Care for every customer.
+- **WordPress:** таблица `inc/translations.php` пересобрана; английские фрагменты в `tools/make-theme-translations.py` (EXTRA) обновлены под новый текст. Одна русская строка теперь переводится по-разному в hero и подвале («Wholesale:» / «Wholesale enquiries:»), у названия продукта и у чипа топлива («AI-92 Gasoline» / «AI-92»), в контактах и в карточке АЗС («Shymkent, Kazakhstan» / «Shymkent») — для этого добавлены контексты `hero`, `product`, `contacts`, `footer`. Английские поля контактов в админке (`address_short_en`, `address_full_en`, `hours_office_en`) обновлены разовым скриптом.
+- `i18n.js?v=4` → `v=5`, иначе браузер держал старый `en.js` при переключении языка.
+- Проверено: тексты статики и WordPress совпадают на всех четырёх языках; на /en/ при 375 и 1280 ничего не вылезает, верхняя полоса в одну строку.
+
 ## Хостинг
 - **Боевой: Hoster.KZ, Plesk, https://azkalmaz.kz/** — заливка по FTP, см. раздел «Перенос на хостинг». Доступы в `password.md`.
 - **Как кладём файлы:** `curl -T` по одному адресу за раз, реквизиты скрипт читает из `password.md` и наружу не печатает. Один и тот же способ и для статики в корне, и для файлов темы в `/wp/wp-content/themes/azk-almaz/`.

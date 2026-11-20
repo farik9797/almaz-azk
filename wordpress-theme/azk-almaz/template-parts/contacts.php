@@ -46,7 +46,7 @@ if (!$cards) $cards = azk_default('phone_cards');
           <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="map-pin" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold"><?php azk_e('Адрес головного офиса:'); ?></span><span class="font-bold"><?php echo esc_html($address_full); ?></span></div></div>
           <div class="flex items-start space-x-3 p-3 rounded-lg bg-navy-light border border-slate-700"><i data-lucide="clock" class="w-5 h-5 text-leaf shrink-0 mt-0.5"></i><div><span class="text-xs text-slate-400 block font-semibold"><?php azk_e('Режим работы офиса и нефтебазы:'); ?></span><span class="font-bold"><?php echo esc_html($hours_office); ?></span><p class="text-xs text-slate-300 mt-0.5"><?php echo esc_html(azk_translate('АЗС: ' . azk_setting_raw('hours_depot', 'Круглосуточно, 24/7'))); ?></p></div></div>
         </div>
-        <div class="pt-2 text-xs text-slate-400 border-t border-slate-700/80 flex justify-between"><span><?php echo esc_html(azk_translate('БИН: ' . $bin)); ?></span><span><?php azk_e('г. Шымкент'); ?></span></div>
+        <div class="pt-2 text-xs text-slate-400 border-t border-slate-700/80 flex justify-between"><span><?php echo esc_html(azk_translate('БИН: ' . $bin)); ?></span><span><?php azk_e('г. Шымкент', 'contacts'); ?></span></div>
       </div>
     </div>
   </div>

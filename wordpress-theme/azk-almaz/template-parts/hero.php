@@ -60,11 +60,11 @@ $hero_image    = azk_image('hero_image', 'hero-depot.jpg');
         </div>
         <div class="space-y-3 text-sm">
           <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-accent/50 transition-colors">
-            <div class="text-xs text-slate-400 mb-0.5"><?php azk_e('По вопросам оптовой реализации:'); ?></div>
+            <div class="text-xs text-slate-400 mb-0.5"><?php azk_e('По вопросам оптовой реализации:', 'hero'); ?></div>
             <a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="text-lg font-black text-accent hover:underline"><?php echo esc_html($phone_wholesale); ?></a>
           </div>
           <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-slate-600 transition-colors">
-            <div class="text-xs text-slate-400 mb-0.5"><?php azk_e('По вопросам розничной реализации через сеть АЗС:'); ?></div>
+            <div class="text-xs text-slate-400 mb-0.5"><?php azk_e('По вопросам розничной реализации через сеть АЗС:', 'hero'); ?></div>
             <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="text-lg font-black text-white hover:text-accent"><?php echo esc_html($phone_cooperation); ?></a>
           </div>
           <div class="p-3 rounded-lg bg-navy border border-slate-800 hover:border-slate-600 transition-colors">

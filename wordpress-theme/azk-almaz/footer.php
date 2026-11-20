@@ -34,8 +34,8 @@ $founding_year     = azk_setting('founding_year', '1998');
       <div class="lg:col-span-4 space-y-3">
         <div class="text-xs font-bold text-white uppercase tracking-wider"><?php azk_e('Телефоны отделов'); ?></div>
         <div class="space-y-2 text-xs">
-          <div><span class="text-slate-400 block text-[11px]"><?php azk_e('По вопросам оптовой реализации:'); ?></span><a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_wholesale); ?></a></div>
-          <div><span class="text-slate-400 block text-[11px]"><?php azk_e('По вопросам розничной реализации через сеть АЗС:'); ?></span><a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_cooperation); ?></a></div>
+          <div><span class="text-slate-400 block text-[11px]"><?php azk_e('По вопросам оптовой реализации:', 'footer'); ?></span><a href="tel:<?php echo esc_attr(azk_tel($phone_wholesale)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_wholesale); ?></a></div>
+          <div><span class="text-slate-400 block text-[11px]"><?php azk_e('По вопросам розничной реализации через сеть АЗС:', 'footer'); ?></span><a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_cooperation); ?></a></div>
           <div><span class="text-slate-400 block text-[11px]"><?php azk_e('По общим вопросам:'); ?></span><a href="tel:<?php echo esc_attr(azk_tel($phone_general)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_general); ?></a></div>
           <div><span class="text-slate-400 block text-[11px]"><?php azk_e('Бухгалтерия:'); ?></span><a href="tel:<?php echo esc_attr(azk_tel($phone_accounting)); ?>" class="font-bold text-white hover:text-accent"><?php echo esc_html($phone_accounting); ?></a></div>
         </div>

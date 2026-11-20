@@ -28,37 +28,41 @@ def load_js(lang):
 CONTEXTS = {
     'nav':          ['header.4','header.5','header.6','header.7','header.8','header.9'],
     'nav_mobile':   ['header.14','header.15','header.16','header.17','header.18','header.19'],
-    'footer':       ['footer.5','footer.6','footer.7','footer.8','footer.9','footer.10'],
+    'footer':       ['footer.5','footer.6','footer.7','footer.8','footer.9','footer.10','footer.12','footer.13'],
     'marker':       ['azs-network.9','azs-network.10','azs-network.11','azs-network.12'],
     'station_card': ['azs-network.20','azs-network.29','azs-network.39','azs-network.49'],
+    # подписи телефонов: в карточке hero короче, чем в подвале
+    'hero':         ['hero.16','hero.17'],
+    'contacts':     ['contacts.24'],
+    'product':      ['products.4','products.22'],
 }
 
 EXTRA = {
-    'Все АЗС (':            {'en': 'All stations (',        'kk': 'Барлық АЖҚС (',     'zh': '全部加油站（'},
+    'Все АЗС (':            {'en': 'All gas stations (',        'kk': 'Барлық АЖҚС (',     'zh': '全部加油站（'},
     'АЗС:':                 {'en': 'Stations:',             'kk': 'АЖҚС:',             'zh': '加油站：'},
-    'БИН:':                 {'en': 'BIN:',                  'kk': 'БСН:',              'zh': '企业识别号（BIN）：'},
+    'БИН:':                 {'en': 'Business Identification Number (BIN):',                  'kk': 'БСН:',              'zh': '企业识别号（BIN）：'},
     'БИН':                  {'en': 'BIN',                   'kk': 'БСН',               'zh': '企业识别号（BIN）'},
-    'Офис и нефтебаза:':    {'en': 'Office and tank farm:', 'kk': 'Кеңсе, мұнай базасы:', 'zh': '办公室及油库：'},
+    'Офис и нефтебаза:':    {'en': 'Office and oil depot:', 'kk': 'Кеңсе, мұнай базасы:', 'zh': '办公室及油库：'},
     'Оптовая реализация:':  {'en': 'Wholesale:',            'kk': 'Көтерме сату:',     'zh': '批发销售：'},
     # «ТОО … • с» + 1998 + «года»
     'ТОО «АЗК Алмаз» • Светлые нефтепродукты • с':
-        {'en': 'AZK Almaz LLP • Light petroleum products • since',
+        {'en': 'AZK Almaz LLP • Light petroleum products • Since',
          'kk': '«АЗК Алмаз» ЖШС • Ашық мұнай өнімдері •',
          'zh': 'AZK Almaz 有限责任公司 • 轻质油品 • 自'},
     'года':                 {'en': '',                      'kk': 'жылдан бері',       'zh': '年起'},
     # Части фразы «Наличие <жирным> позволяет…» — в статике это три отдельных ключа.
     'Наличие':                                            {'en': 'Our',  'kk': 'Компанияның', 'zh': '公司拥有'},
-    'собственной современной нефтебазы в г. Шымкент':     {'en': 'own modern tank farm in Shymkent',
+    'собственной современной нефтебазы в г. Шымкент':     {'en': 'own oil depot in Shymkent',
                                                            'kk': 'Шымкент қаласындағы меншікті заманауи мұнай базасы',
                                                            'zh': '位于奇姆肯特市的自有现代化油库。'},
     ' позволяет гарантировать непрерывность поставок, точный учёт объёмов и строгое соблюдение всех технических стандартов.':
-        {'en': 'allows us to guarantee uninterrupted supply, accurate volume accounting and strict compliance with all technical standards.',
+        {'en': 'enables us to maintain stable inventory levels, ensure uninterrupted supply, and uphold strict quality control standards throughout the entire supply chain.',
          'kk': 'бар — бұл жеткізілімнің үздіксіздігіне, көлемнің дәл есебіне және барлық техникалық стандарттардың қатаң сақталуына кепілдік береді.',
          'zh': '这确保供应不间断、计量准确，并严格遵守各项技术标准。'},
     'Круглосуточно, 24/7':  {'en': 'Round the clock, 24/7', 'kk': 'Тәулік бойы, 24/7', 'zh': '全天候 24/7'},
     # В статике эта фраза разбита на три части жирным выделением, в теме она одним полем.
     'Наличие собственной современной нефтебазы в г. Шымкент позволяет гарантировать непрерывность поставок, точный учёт объёмов и строгое соблюдение всех технических стандартов.':
-        {'en': 'Our own modern tank farm in Shymkent allows us to guarantee uninterrupted supply, accurate volume accounting and strict compliance with all technical standards.',
+        {'en': 'Our own oil depot in Shymkent enables us to maintain stable inventory levels, ensure uninterrupted supply, and uphold strict quality control standards throughout the entire supply chain.',
          'kk': 'Компанияның Шымкент қаласындағы меншікті заманауи мұнай базасы бар — бұл жеткізілімнің үздіксіздігіне, көлемнің дәл есебіне және барлық техникалық стандарттардың қатаң сақталуына кепілдік береді.',
          'zh': '公司拥有位于奇姆肯特市的自有现代化油库，可确保供应不间断、计量准确，并严格遵守各项技术标准。'},
     'ТОО «АЗК Алмаз». Все права защищены.':
@@ -96,31 +100,31 @@ for key, rus in ru.items():
 # подписи фильтров по региону: в статике это целые строки со счётчиком, в теме — части
 EXTRA.update({
     # фильтры переводятся вместе со счётчиком: в китайском у них свой счётный суффикс
-    'Все АЗС (4)':              {'en': 'All stations (4)', 'kk': 'Барлық АЖҚС (4)', 'zh': '全部加油站（4座）'},
+    'Все АЗС (4)':              {'en': 'All gas stations (4)', 'kk': 'Барлық АЖҚС (4)', 'zh': '全部加油站（4座）'},
     'Шымкент (3)':              {'en': 'Shymkent (3)',     'kk': 'Шымкент (3)',     'zh': '奇姆肯特（3座）'},
     'Туркестанская обл. (1)':   {'en': 'Turkistan Region (1)', 'kk': 'Түркістан обл. (1)', 'zh': '突厥斯坦州（1座）'},
     'Оптовая реализация: +7 (707) 729-40-51':
         {'en': 'Wholesale: +7 (707) 729-40-51', 'kk': 'Көтерме сату: +7 (707) 729-40-51',
          'zh': '批发销售：+7 (707) 729-40-51'},
-    'БИН: 011240001881': {'en': 'BIN: 011240001881', 'kk': 'БСН: 011240001881',
+    'БИН: 011240001881': {'en': 'Business Identification Number (BIN): 011240001881', 'kk': 'БСН: 011240001881',
                           'zh': '企业识别号（BIN）：011240001881'},
     'ТОО «АЗК Алмаз» • Светлые нефтепродукты • с 1998 года':
-        {'en': 'AZK Almaz LLP • Light petroleum products • since 1998',
+        {'en': 'AZK Almaz LLP • Light petroleum products • Since 1998',
          'kk': '«АЗК Алмаз» ЖШС • Ашық мұнай өнімдері • 1998 жылдан бері',
          'zh': 'AZK Almaz 有限责任公司 • 轻质油品 • 自1998年起'},
     'АЗС: Круглосуточно, 24/7': {'en': 'Stations: round the clock, 24/7',
                                  'kk': 'АЖҚС: Тәулік бойы, 24/7', 'zh': '加油站：全天候 24/7'},
     '© 1998 - 2026 ТОО «АЗК Алмаз». Все права защищены.':
-        {'en': '© 1998 – 2026 AZK Almaz LLP. All rights reserved.',
+        {'en': '© 1998–2026 AZK Almaz LLP. All rights reserved.',
          'kk': '© 1998 - 2026 «АЗК Алмаз» ЖШС. Барлық құқық қорғалған.',
          'zh': '© 1998 - 2026 AZK Almaz 有限责任公司。保留所有权利。'},
-    'БИН 011240001881': {'en': 'BIN 011240001881', 'kk': 'БСН 011240001881',
+    'БИН 011240001881': {'en': 'BIN: 011240001881', 'kk': 'БСН 011240001881',
                          'zh': '企业识别号（BIN）011240001881'},
     'filter|Шымкент':           {'en': 'Shymkent',        'kk': 'Шымкент',          'zh': '奇姆肯特'},
     'filter|Туркестанская обл.': {'en': 'Turkistan Region', 'kk': 'Түркістан обл.',  'zh': '突厥斯坦州'},
     # график в верхней полосе: у казахского он сжат, иначе полоса переносится
     'Офис и нефтебаза: Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00':
-        {'en': 'Office and tank farm: Mon – Fri: 08:00 – 17:00, Sat: 08:00 – 13:00',
+        {'en': 'Office and oil depot: Mon – Fri: 08:00 – 17:00, Sat: 08:00 – 13:00',
          'kk': 'Кеңсе, мұнай базасы: Дс-Жм: 08:00-17:00, Сн: 08:00-13:00',
          'zh': '办公室及油库：周一至周五：08:00 - 17:00，周六：08:00 - 13:00'},
     'topbar|Пн - Пт: 08:00 - 17:00, Сб: 08:00 - 13:00':
