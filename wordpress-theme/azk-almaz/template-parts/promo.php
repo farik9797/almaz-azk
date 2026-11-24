@@ -28,7 +28,8 @@ if (!$cards) $cards = azk_default('promo_cards');
           <div class="w-10 h-10 rounded-lg <?php echo $leaf ? 'bg-leaf/20 text-leaf' : 'bg-accent/20 text-accent'; ?> flex items-center justify-center"><i data-lucide="<?php echo esc_attr($c['icon']); ?>" class="w-5 h-5"></i></div>
           <h3 class="text-lg font-bold"><?php echo esc_html($c['title']); ?></h3>
           <p class="text-xs text-slate-300 leading-relaxed"><?php echo esc_html($c['text']); ?></p>
-          <div class="pt-2 text-xs font-bold <?php echo $leaf ? 'text-leaf' : 'text-accent'; ?>"><?php echo esc_html($c['tagline']); ?></div>
+          <?php /* Подпись под акцией ведёт на розничный номер — так решил клиент 24.11. */ ?>
+          <a href="tel:<?php echo esc_attr(azk_tel($phone_cooperation)); ?>" class="inline-block pt-2 text-xs font-bold <?php echo $leaf ? 'text-leaf' : 'text-accent'; ?> hover:underline"><?php echo esc_html($c['tagline']); ?></a>
         </div>
       <?php endforeach; ?>
     </div>

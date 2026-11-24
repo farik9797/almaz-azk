@@ -297,7 +297,7 @@ window.AZK_I18N.en = {
   "products.58": "Autogas (LPG)",
   "products.59": "LPG",
   "products.6": "Meets quality standards",
-  "products.60": "Liquefied Petroleum Gas (propane-butane blend) for vehicles equipped with LPG systems. Available across selected ALMAZ fuel stations.",
+  "products.60": "Liquefied Petroleum Gas (propane-butane blend) for vehicles equipped with LPG systems. Available at all ALMAZ fuel stations.",
   "products.61": "Cost-effective alternative to gasoline",
   "products.62": "Available at ALMAZ fuel stations",
   "products.63": "Check availability & price",
