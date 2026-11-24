@@ -70,7 +70,7 @@ window.AZK_I18N.zh = {
   "azs-network.30": "ALMAZ 2号加油站",
   "azs-network.31": "奇姆肯特市",
   "azs-network.32": "全天候（24/7）",
-  "azs-network.33": "奇姆肯特市阿拜区，卡伊纳尔布拉克居住区 349 号地块",
+  "azs-network.33": "奇姆肯特市阿拜区，卡伊纳尔布拉克居住区 349 街区",
   "azs-network.34": "开往塔拉兹方向，位于右侧",
   "azs-network.35": "燃油：",
   "azs-network.36": "AI-92",
@@ -355,7 +355,7 @@ window.AZK_I18N.zh = {
   ],
   "station.azs-1.direction": "开往塔什干方向，位于右侧",
   "station.azs-1.name": "ALMAZ 1号加油站",
-  "station.azs-2.address": "奇姆肯特市阿拜区，卡伊纳尔布拉克居住区 349 号地块",
+  "station.azs-2.address": "奇姆肯特市阿拜区，卡伊纳尔布拉克居住区 349 街区",
   "station.azs-2.amenities": [
     "便利店",
     "司机休息区",
